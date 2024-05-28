@@ -16,6 +16,12 @@ The following traits should be usable across all major types
 - `contains(obj)`
 - 'delete(obj)`
 
+## Dot Lexer and Parser
+
+LALRPOP is used for the lexer and parser replacing 
+flex and bison from original graphviz
+
+
 # Notes
 
 ## Disciplines
