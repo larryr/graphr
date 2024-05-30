@@ -64,6 +64,6 @@ impl Ctx {
     }
 
     pub fn plugin_list(&self, kind : String, cnt: i32) {
-        println!("plugin_list");
+        println!("plugin_list - kind: {}, cnt: {}", kind, cnt);
     }
 }

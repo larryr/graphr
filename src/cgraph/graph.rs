@@ -18,7 +18,7 @@ use super::Graph;
 ///
 impl Graph {
     pub fn new() -> Graph {
-        println!("new Graph");
+        println!("Graph::new()");
         Graph {}
     }
 
@@ -27,7 +27,7 @@ impl Graph {
     ///
     pub fn parse(reader : &mut dyn io::Read) -> Graph
        {
-        println!("parse a byte stream in the DOT language");
+        println!("Graph::parse(): parse a byte stream in the DOT language");
 
         // copy dot to stdout
         let mut stdout = io::stdout();
@@ -37,32 +37,32 @@ impl Graph {
     }
 
     pub fn nodes(&self) -> u32 {
-        println!("nodes");
+        println!("Graph::nodes");
         0
     }
 
     pub fn edges(&self) -> u32 {
-        println!("edges");
+        println!("Graph::edges");
         0
     }
 
     pub fn sub_graphs(&self) -> u32 {
-        println!("sub_graphs");
+        println!("Graph::sub_graphs");
         0
     }
 
     pub fn is_directed(&self) -> bool {
-        println!("is_directed");
+        println!("Graph::is_directed");
         false
     }
 
     pub fn is_strict(&self) -> bool {
-        println!("is_strict");
+        println!("Graph::is_strict");
         false
     }
 
     pub fn is_simple(&self) -> bool {
-        println!("is_simple");
+        println!("Graph::is_simple");
         false
     }
 }

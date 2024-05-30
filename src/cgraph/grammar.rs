@@ -1,4 +1,4 @@
-// auto-generated: "lalrpop 0.20.0"
+// auto-generated: "lalrpop 0.20.2"
 // sha3: 819690cb95588dcfcd424e6a78759f86587619d4227b8f965e3303374b7e2fe1
 use std::str::FromStr;
 #[allow(unused_extern_crates)]
@@ -9,7 +9,7 @@ extern crate core;
 extern crate alloc;
 
 #[rustfmt::skip]
-#[allow(non_snake_case, non_camel_case_types, unused_mut, unused_variables, unused_imports, unused_parens, clippy::all)]
+#[allow(non_snake_case, non_camel_case_types, unused_mut, unused_variables, unused_imports, unused_parens, clippy::needless_lifetimes, clippy::type_complexity, clippy::needless_return, clippy::too_many_arguments, clippy::never_loop, clippy::match_single_binding, clippy::needless_raw_string_hashes)]
 mod __parse__T_digraph {
 
     use std::str::FromStr;
@@ -91,7 +91,7 @@ mod __parse__T_digraph {
             }
         }).collect()
     }
-    pub(crate) struct __StateMachine<'input>
+    struct __StateMachine<'input>
     where 
     {
         input: &'input str,
@@ -218,7 +218,7 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> __Symbol<'input>
     {
-        match __token_index {
+        #[allow(clippy::manual_range_patterns)]match __token_index {
             0 | 1 | 2 | 3 | 4 | 5 | 6 => match __token {
                 Token(1, __tok0) | Token(2, __tok0) | Token(3, __tok0) | Token(4, __tok0) | Token(5, __tok0) | Token(6, __tok0) | Token(0, __tok0) if true => __Symbol::Variant0(__tok0),
                 _ => unreachable!(),
@@ -357,6 +357,7 @@ mod __parse__T_digraph {
         _priv: (),
     }
 
+    impl Default for T_digraphParser { fn default() -> Self { Self::new() } }
     impl T_digraphParser {
         pub fn new() -> T_digraphParser {
             let __builder = super::__intern_token::new_builder();
@@ -417,7 +418,7 @@ mod __parse__T_digraph {
             __states.push(__next_state);
         }
     }
-    pub(crate) fn __reduce<
+    fn __reduce<
         'input,
     >(
         input: &'input str,
@@ -540,7 +541,7 @@ mod __parse__T_digraph {
             _ => __symbol_type_mismatch()
         }
     }
-    pub(crate) fn __reduce0<
+    fn __reduce0<
         'input,
     >(
         input: &'input str,
@@ -557,7 +558,7 @@ mod __parse__T_digraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 0)
     }
-    pub(crate) fn __reduce1<
+    fn __reduce1<
         'input,
     >(
         input: &'input str,
@@ -574,7 +575,7 @@ mod __parse__T_digraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 1)
     }
-    pub(crate) fn __reduce2<
+    fn __reduce2<
         'input,
     >(
         input: &'input str,
@@ -591,7 +592,7 @@ mod __parse__T_digraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 2)
     }
-    pub(crate) fn __reduce3<
+    fn __reduce3<
         'input,
     >(
         input: &'input str,
@@ -608,7 +609,7 @@ mod __parse__T_digraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 3)
     }
-    pub(crate) fn __reduce4<
+    fn __reduce4<
         'input,
     >(
         input: &'input str,
@@ -625,7 +626,7 @@ mod __parse__T_digraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 4)
     }
-    pub(crate) fn __reduce5<
+    fn __reduce5<
         'input,
     >(
         input: &'input str,
@@ -642,7 +643,7 @@ mod __parse__T_digraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 5)
     }
-    pub(crate) fn __reduce6<
+    fn __reduce6<
         'input,
     >(
         input: &'input str,
@@ -659,7 +660,7 @@ mod __parse__T_digraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 6)
     }
-    pub(crate) fn __reduce7<
+    fn __reduce7<
         'input,
     >(
         input: &'input str,
@@ -676,7 +677,7 @@ mod __parse__T_digraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 7)
     }
-    pub(crate) fn __reduce8<
+    fn __reduce8<
         'input,
     >(
         input: &'input str,
@@ -693,7 +694,7 @@ mod __parse__T_digraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 8)
     }
-    pub(crate) fn __reduce9<
+    fn __reduce9<
         'input,
     >(
         input: &'input str,
@@ -710,7 +711,7 @@ mod __parse__T_digraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 9)
     }
-    pub(crate) fn __reduce10<
+    fn __reduce10<
         'input,
     >(
         input: &'input str,
@@ -727,7 +728,7 @@ mod __parse__T_digraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 10)
     }
-    pub(crate) fn __reduce11<
+    fn __reduce11<
         'input,
     >(
         input: &'input str,
@@ -744,7 +745,7 @@ mod __parse__T_digraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 11)
     }
-    pub(crate) fn __reduce12<
+    fn __reduce12<
         'input,
     >(
         input: &'input str,
@@ -761,7 +762,7 @@ mod __parse__T_digraph {
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 12)
     }
-    pub(crate) fn __reduce14<
+    fn __reduce14<
         'input,
     >(
         input: &'input str,
@@ -778,7 +779,7 @@ mod __parse__T_digraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 14)
     }
-    pub(crate) fn __reduce15<
+    fn __reduce15<
         'input,
     >(
         input: &'input str,
@@ -795,7 +796,7 @@ mod __parse__T_digraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 15)
     }
-    pub(crate) fn __reduce16<
+    fn __reduce16<
         'input,
     >(
         input: &'input str,
@@ -812,7 +813,7 @@ mod __parse__T_digraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 16)
     }
-    pub(crate) fn __reduce17<
+    fn __reduce17<
         'input,
     >(
         input: &'input str,
@@ -829,7 +830,7 @@ mod __parse__T_digraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 17)
     }
-    pub(crate) fn __reduce18<
+    fn __reduce18<
         'input,
     >(
         input: &'input str,
@@ -846,7 +847,7 @@ mod __parse__T_digraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 18)
     }
-    pub(crate) fn __reduce19<
+    fn __reduce19<
         'input,
     >(
         input: &'input str,
@@ -864,10 +865,11 @@ mod __parse__T_digraph {
         (1, 19)
     }
 }
+#[allow(unused_imports)]
 pub use self::__parse__T_digraph::T_digraphParser;
 
 #[rustfmt::skip]
-#[allow(non_snake_case, non_camel_case_types, unused_mut, unused_variables, unused_imports, unused_parens, clippy::all)]
+#[allow(non_snake_case, non_camel_case_types, unused_mut, unused_variables, unused_imports, unused_parens, clippy::needless_lifetimes, clippy::type_complexity, clippy::needless_return, clippy::too_many_arguments, clippy::never_loop, clippy::match_single_binding, clippy::needless_raw_string_hashes)]
 mod __parse__T_edge {
 
     use std::str::FromStr;
@@ -949,7 +951,7 @@ mod __parse__T_edge {
             }
         }).collect()
     }
-    pub(crate) struct __StateMachine<'input>
+    struct __StateMachine<'input>
     where 
     {
         input: &'input str,
@@ -1076,7 +1078,7 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> __Symbol<'input>
     {
-        match __token_index {
+        #[allow(clippy::manual_range_patterns)]match __token_index {
             0 | 1 | 2 | 3 | 4 | 5 | 6 => match __token {
                 Token(1, __tok0) | Token(2, __tok0) | Token(3, __tok0) | Token(4, __tok0) | Token(5, __tok0) | Token(6, __tok0) | Token(0, __tok0) if true => __Symbol::Variant0(__tok0),
                 _ => unreachable!(),
@@ -1215,6 +1217,7 @@ mod __parse__T_edge {
         _priv: (),
     }
 
+    impl Default for T_edgeParser { fn default() -> Self { Self::new() } }
     impl T_edgeParser {
         pub fn new() -> T_edgeParser {
             let __builder = super::__intern_token::new_builder();
@@ -1275,7 +1278,7 @@ mod __parse__T_edge {
             __states.push(__next_state);
         }
     }
-    pub(crate) fn __reduce<
+    fn __reduce<
         'input,
     >(
         input: &'input str,
@@ -1398,7 +1401,7 @@ mod __parse__T_edge {
             _ => __symbol_type_mismatch()
         }
     }
-    pub(crate) fn __reduce0<
+    fn __reduce0<
         'input,
     >(
         input: &'input str,
@@ -1415,7 +1418,7 @@ mod __parse__T_edge {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 0)
     }
-    pub(crate) fn __reduce1<
+    fn __reduce1<
         'input,
     >(
         input: &'input str,
@@ -1432,7 +1435,7 @@ mod __parse__T_edge {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 1)
     }
-    pub(crate) fn __reduce2<
+    fn __reduce2<
         'input,
     >(
         input: &'input str,
@@ -1449,7 +1452,7 @@ mod __parse__T_edge {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 2)
     }
-    pub(crate) fn __reduce3<
+    fn __reduce3<
         'input,
     >(
         input: &'input str,
@@ -1466,7 +1469,7 @@ mod __parse__T_edge {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 3)
     }
-    pub(crate) fn __reduce4<
+    fn __reduce4<
         'input,
     >(
         input: &'input str,
@@ -1483,7 +1486,7 @@ mod __parse__T_edge {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 4)
     }
-    pub(crate) fn __reduce5<
+    fn __reduce5<
         'input,
     >(
         input: &'input str,
@@ -1500,7 +1503,7 @@ mod __parse__T_edge {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 5)
     }
-    pub(crate) fn __reduce6<
+    fn __reduce6<
         'input,
     >(
         input: &'input str,
@@ -1517,7 +1520,7 @@ mod __parse__T_edge {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 6)
     }
-    pub(crate) fn __reduce7<
+    fn __reduce7<
         'input,
     >(
         input: &'input str,
@@ -1534,7 +1537,7 @@ mod __parse__T_edge {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 7)
     }
-    pub(crate) fn __reduce8<
+    fn __reduce8<
         'input,
     >(
         input: &'input str,
@@ -1551,7 +1554,7 @@ mod __parse__T_edge {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 8)
     }
-    pub(crate) fn __reduce9<
+    fn __reduce9<
         'input,
     >(
         input: &'input str,
@@ -1568,7 +1571,7 @@ mod __parse__T_edge {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 9)
     }
-    pub(crate) fn __reduce10<
+    fn __reduce10<
         'input,
     >(
         input: &'input str,
@@ -1585,7 +1588,7 @@ mod __parse__T_edge {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 10)
     }
-    pub(crate) fn __reduce11<
+    fn __reduce11<
         'input,
     >(
         input: &'input str,
@@ -1602,7 +1605,7 @@ mod __parse__T_edge {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 11)
     }
-    pub(crate) fn __reduce12<
+    fn __reduce12<
         'input,
     >(
         input: &'input str,
@@ -1619,7 +1622,7 @@ mod __parse__T_edge {
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 12)
     }
-    pub(crate) fn __reduce13<
+    fn __reduce13<
         'input,
     >(
         input: &'input str,
@@ -1636,7 +1639,7 @@ mod __parse__T_edge {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 13)
     }
-    pub(crate) fn __reduce15<
+    fn __reduce15<
         'input,
     >(
         input: &'input str,
@@ -1653,7 +1656,7 @@ mod __parse__T_edge {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 15)
     }
-    pub(crate) fn __reduce16<
+    fn __reduce16<
         'input,
     >(
         input: &'input str,
@@ -1670,7 +1673,7 @@ mod __parse__T_edge {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 16)
     }
-    pub(crate) fn __reduce17<
+    fn __reduce17<
         'input,
     >(
         input: &'input str,
@@ -1687,7 +1690,7 @@ mod __parse__T_edge {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 17)
     }
-    pub(crate) fn __reduce18<
+    fn __reduce18<
         'input,
     >(
         input: &'input str,
@@ -1704,7 +1707,7 @@ mod __parse__T_edge {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 18)
     }
-    pub(crate) fn __reduce19<
+    fn __reduce19<
         'input,
     >(
         input: &'input str,
@@ -1722,10 +1725,11 @@ mod __parse__T_edge {
         (1, 19)
     }
 }
+#[allow(unused_imports)]
 pub use self::__parse__T_edge::T_edgeParser;
 
 #[rustfmt::skip]
-#[allow(non_snake_case, non_camel_case_types, unused_mut, unused_variables, unused_imports, unused_parens, clippy::all)]
+#[allow(non_snake_case, non_camel_case_types, unused_mut, unused_variables, unused_imports, unused_parens, clippy::needless_lifetimes, clippy::type_complexity, clippy::needless_return, clippy::too_many_arguments, clippy::never_loop, clippy::match_single_binding, clippy::needless_raw_string_hashes)]
 mod __parse__T_graph {
 
     use std::str::FromStr;
@@ -1807,7 +1811,7 @@ mod __parse__T_graph {
             }
         }).collect()
     }
-    pub(crate) struct __StateMachine<'input>
+    struct __StateMachine<'input>
     where 
     {
         input: &'input str,
@@ -1934,7 +1938,7 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> __Symbol<'input>
     {
-        match __token_index {
+        #[allow(clippy::manual_range_patterns)]match __token_index {
             0 | 1 | 2 | 3 | 4 | 5 | 6 => match __token {
                 Token(1, __tok0) | Token(2, __tok0) | Token(3, __tok0) | Token(4, __tok0) | Token(5, __tok0) | Token(6, __tok0) | Token(0, __tok0) if true => __Symbol::Variant0(__tok0),
                 _ => unreachable!(),
@@ -2073,6 +2077,7 @@ mod __parse__T_graph {
         _priv: (),
     }
 
+    impl Default for T_graphParser { fn default() -> Self { Self::new() } }
     impl T_graphParser {
         pub fn new() -> T_graphParser {
             let __builder = super::__intern_token::new_builder();
@@ -2133,7 +2138,7 @@ mod __parse__T_graph {
             __states.push(__next_state);
         }
     }
-    pub(crate) fn __reduce<
+    fn __reduce<
         'input,
     >(
         input: &'input str,
@@ -2256,7 +2261,7 @@ mod __parse__T_graph {
             _ => __symbol_type_mismatch()
         }
     }
-    pub(crate) fn __reduce0<
+    fn __reduce0<
         'input,
     >(
         input: &'input str,
@@ -2273,7 +2278,7 @@ mod __parse__T_graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 0)
     }
-    pub(crate) fn __reduce1<
+    fn __reduce1<
         'input,
     >(
         input: &'input str,
@@ -2290,7 +2295,7 @@ mod __parse__T_graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 1)
     }
-    pub(crate) fn __reduce2<
+    fn __reduce2<
         'input,
     >(
         input: &'input str,
@@ -2307,7 +2312,7 @@ mod __parse__T_graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 2)
     }
-    pub(crate) fn __reduce3<
+    fn __reduce3<
         'input,
     >(
         input: &'input str,
@@ -2324,7 +2329,7 @@ mod __parse__T_graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 3)
     }
-    pub(crate) fn __reduce4<
+    fn __reduce4<
         'input,
     >(
         input: &'input str,
@@ -2341,7 +2346,7 @@ mod __parse__T_graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 4)
     }
-    pub(crate) fn __reduce5<
+    fn __reduce5<
         'input,
     >(
         input: &'input str,
@@ -2358,7 +2363,7 @@ mod __parse__T_graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 5)
     }
-    pub(crate) fn __reduce6<
+    fn __reduce6<
         'input,
     >(
         input: &'input str,
@@ -2375,7 +2380,7 @@ mod __parse__T_graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 6)
     }
-    pub(crate) fn __reduce7<
+    fn __reduce7<
         'input,
     >(
         input: &'input str,
@@ -2392,7 +2397,7 @@ mod __parse__T_graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 7)
     }
-    pub(crate) fn __reduce8<
+    fn __reduce8<
         'input,
     >(
         input: &'input str,
@@ -2409,7 +2414,7 @@ mod __parse__T_graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 8)
     }
-    pub(crate) fn __reduce9<
+    fn __reduce9<
         'input,
     >(
         input: &'input str,
@@ -2426,7 +2431,7 @@ mod __parse__T_graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 9)
     }
-    pub(crate) fn __reduce10<
+    fn __reduce10<
         'input,
     >(
         input: &'input str,
@@ -2443,7 +2448,7 @@ mod __parse__T_graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 10)
     }
-    pub(crate) fn __reduce11<
+    fn __reduce11<
         'input,
     >(
         input: &'input str,
@@ -2460,7 +2465,7 @@ mod __parse__T_graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 11)
     }
-    pub(crate) fn __reduce12<
+    fn __reduce12<
         'input,
     >(
         input: &'input str,
@@ -2477,7 +2482,7 @@ mod __parse__T_graph {
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 12)
     }
-    pub(crate) fn __reduce13<
+    fn __reduce13<
         'input,
     >(
         input: &'input str,
@@ -2494,7 +2499,7 @@ mod __parse__T_graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 13)
     }
-    pub(crate) fn __reduce14<
+    fn __reduce14<
         'input,
     >(
         input: &'input str,
@@ -2511,7 +2516,7 @@ mod __parse__T_graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 14)
     }
-    pub(crate) fn __reduce16<
+    fn __reduce16<
         'input,
     >(
         input: &'input str,
@@ -2528,7 +2533,7 @@ mod __parse__T_graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 16)
     }
-    pub(crate) fn __reduce17<
+    fn __reduce17<
         'input,
     >(
         input: &'input str,
@@ -2545,7 +2550,7 @@ mod __parse__T_graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 17)
     }
-    pub(crate) fn __reduce18<
+    fn __reduce18<
         'input,
     >(
         input: &'input str,
@@ -2562,7 +2567,7 @@ mod __parse__T_graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 18)
     }
-    pub(crate) fn __reduce19<
+    fn __reduce19<
         'input,
     >(
         input: &'input str,
@@ -2580,10 +2585,11 @@ mod __parse__T_graph {
         (1, 19)
     }
 }
+#[allow(unused_imports)]
 pub use self::__parse__T_graph::T_graphParser;
 
 #[rustfmt::skip]
-#[allow(non_snake_case, non_camel_case_types, unused_mut, unused_variables, unused_imports, unused_parens, clippy::all)]
+#[allow(non_snake_case, non_camel_case_types, unused_mut, unused_variables, unused_imports, unused_parens, clippy::needless_lifetimes, clippy::type_complexity, clippy::needless_return, clippy::too_many_arguments, clippy::never_loop, clippy::match_single_binding, clippy::needless_raw_string_hashes)]
 mod __parse__T_node {
 
     use std::str::FromStr;
@@ -2665,7 +2671,7 @@ mod __parse__T_node {
             }
         }).collect()
     }
-    pub(crate) struct __StateMachine<'input>
+    struct __StateMachine<'input>
     where 
     {
         input: &'input str,
@@ -2792,7 +2798,7 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> __Symbol<'input>
     {
-        match __token_index {
+        #[allow(clippy::manual_range_patterns)]match __token_index {
             0 | 1 | 2 | 3 | 4 | 5 | 6 => match __token {
                 Token(1, __tok0) | Token(2, __tok0) | Token(3, __tok0) | Token(4, __tok0) | Token(5, __tok0) | Token(6, __tok0) | Token(0, __tok0) if true => __Symbol::Variant0(__tok0),
                 _ => unreachable!(),
@@ -2931,6 +2937,7 @@ mod __parse__T_node {
         _priv: (),
     }
 
+    impl Default for T_nodeParser { fn default() -> Self { Self::new() } }
     impl T_nodeParser {
         pub fn new() -> T_nodeParser {
             let __builder = super::__intern_token::new_builder();
@@ -2991,7 +2998,7 @@ mod __parse__T_node {
             __states.push(__next_state);
         }
     }
-    pub(crate) fn __reduce<
+    fn __reduce<
         'input,
     >(
         input: &'input str,
@@ -3114,7 +3121,7 @@ mod __parse__T_node {
             _ => __symbol_type_mismatch()
         }
     }
-    pub(crate) fn __reduce0<
+    fn __reduce0<
         'input,
     >(
         input: &'input str,
@@ -3131,7 +3138,7 @@ mod __parse__T_node {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 0)
     }
-    pub(crate) fn __reduce1<
+    fn __reduce1<
         'input,
     >(
         input: &'input str,
@@ -3148,7 +3155,7 @@ mod __parse__T_node {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 1)
     }
-    pub(crate) fn __reduce2<
+    fn __reduce2<
         'input,
     >(
         input: &'input str,
@@ -3165,7 +3172,7 @@ mod __parse__T_node {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 2)
     }
-    pub(crate) fn __reduce3<
+    fn __reduce3<
         'input,
     >(
         input: &'input str,
@@ -3182,7 +3189,7 @@ mod __parse__T_node {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 3)
     }
-    pub(crate) fn __reduce4<
+    fn __reduce4<
         'input,
     >(
         input: &'input str,
@@ -3199,7 +3206,7 @@ mod __parse__T_node {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 4)
     }
-    pub(crate) fn __reduce5<
+    fn __reduce5<
         'input,
     >(
         input: &'input str,
@@ -3216,7 +3223,7 @@ mod __parse__T_node {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 5)
     }
-    pub(crate) fn __reduce6<
+    fn __reduce6<
         'input,
     >(
         input: &'input str,
@@ -3233,7 +3240,7 @@ mod __parse__T_node {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 6)
     }
-    pub(crate) fn __reduce7<
+    fn __reduce7<
         'input,
     >(
         input: &'input str,
@@ -3250,7 +3257,7 @@ mod __parse__T_node {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 7)
     }
-    pub(crate) fn __reduce8<
+    fn __reduce8<
         'input,
     >(
         input: &'input str,
@@ -3267,7 +3274,7 @@ mod __parse__T_node {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 8)
     }
-    pub(crate) fn __reduce9<
+    fn __reduce9<
         'input,
     >(
         input: &'input str,
@@ -3284,7 +3291,7 @@ mod __parse__T_node {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 9)
     }
-    pub(crate) fn __reduce10<
+    fn __reduce10<
         'input,
     >(
         input: &'input str,
@@ -3301,7 +3308,7 @@ mod __parse__T_node {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 10)
     }
-    pub(crate) fn __reduce11<
+    fn __reduce11<
         'input,
     >(
         input: &'input str,
@@ -3318,7 +3325,7 @@ mod __parse__T_node {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 11)
     }
-    pub(crate) fn __reduce12<
+    fn __reduce12<
         'input,
     >(
         input: &'input str,
@@ -3335,7 +3342,7 @@ mod __parse__T_node {
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 12)
     }
-    pub(crate) fn __reduce13<
+    fn __reduce13<
         'input,
     >(
         input: &'input str,
@@ -3352,7 +3359,7 @@ mod __parse__T_node {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 13)
     }
-    pub(crate) fn __reduce14<
+    fn __reduce14<
         'input,
     >(
         input: &'input str,
@@ -3369,7 +3376,7 @@ mod __parse__T_node {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 14)
     }
-    pub(crate) fn __reduce15<
+    fn __reduce15<
         'input,
     >(
         input: &'input str,
@@ -3386,7 +3393,7 @@ mod __parse__T_node {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 15)
     }
-    pub(crate) fn __reduce17<
+    fn __reduce17<
         'input,
     >(
         input: &'input str,
@@ -3403,7 +3410,7 @@ mod __parse__T_node {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 17)
     }
-    pub(crate) fn __reduce18<
+    fn __reduce18<
         'input,
     >(
         input: &'input str,
@@ -3420,7 +3427,7 @@ mod __parse__T_node {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 18)
     }
-    pub(crate) fn __reduce19<
+    fn __reduce19<
         'input,
     >(
         input: &'input str,
@@ -3438,10 +3445,11 @@ mod __parse__T_node {
         (1, 19)
     }
 }
+#[allow(unused_imports)]
 pub use self::__parse__T_node::T_nodeParser;
 
 #[rustfmt::skip]
-#[allow(non_snake_case, non_camel_case_types, unused_mut, unused_variables, unused_imports, unused_parens, clippy::all)]
+#[allow(non_snake_case, non_camel_case_types, unused_mut, unused_variables, unused_imports, unused_parens, clippy::needless_lifetimes, clippy::type_complexity, clippy::needless_return, clippy::too_many_arguments, clippy::never_loop, clippy::match_single_binding, clippy::needless_raw_string_hashes)]
 mod __parse__T_strict {
 
     use std::str::FromStr;
@@ -3523,7 +3531,7 @@ mod __parse__T_strict {
             }
         }).collect()
     }
-    pub(crate) struct __StateMachine<'input>
+    struct __StateMachine<'input>
     where 
     {
         input: &'input str,
@@ -3650,7 +3658,7 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> __Symbol<'input>
     {
-        match __token_index {
+        #[allow(clippy::manual_range_patterns)]match __token_index {
             0 | 1 | 2 | 3 | 4 | 5 | 6 => match __token {
                 Token(1, __tok0) | Token(2, __tok0) | Token(3, __tok0) | Token(4, __tok0) | Token(5, __tok0) | Token(6, __tok0) | Token(0, __tok0) if true => __Symbol::Variant0(__tok0),
                 _ => unreachable!(),
@@ -3789,6 +3797,7 @@ mod __parse__T_strict {
         _priv: (),
     }
 
+    impl Default for T_strictParser { fn default() -> Self { Self::new() } }
     impl T_strictParser {
         pub fn new() -> T_strictParser {
             let __builder = super::__intern_token::new_builder();
@@ -3849,7 +3858,7 @@ mod __parse__T_strict {
             __states.push(__next_state);
         }
     }
-    pub(crate) fn __reduce<
+    fn __reduce<
         'input,
     >(
         input: &'input str,
@@ -3972,7 +3981,7 @@ mod __parse__T_strict {
             _ => __symbol_type_mismatch()
         }
     }
-    pub(crate) fn __reduce0<
+    fn __reduce0<
         'input,
     >(
         input: &'input str,
@@ -3989,7 +3998,7 @@ mod __parse__T_strict {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 0)
     }
-    pub(crate) fn __reduce1<
+    fn __reduce1<
         'input,
     >(
         input: &'input str,
@@ -4006,7 +4015,7 @@ mod __parse__T_strict {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 1)
     }
-    pub(crate) fn __reduce2<
+    fn __reduce2<
         'input,
     >(
         input: &'input str,
@@ -4023,7 +4032,7 @@ mod __parse__T_strict {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 2)
     }
-    pub(crate) fn __reduce3<
+    fn __reduce3<
         'input,
     >(
         input: &'input str,
@@ -4040,7 +4049,7 @@ mod __parse__T_strict {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 3)
     }
-    pub(crate) fn __reduce4<
+    fn __reduce4<
         'input,
     >(
         input: &'input str,
@@ -4057,7 +4066,7 @@ mod __parse__T_strict {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 4)
     }
-    pub(crate) fn __reduce5<
+    fn __reduce5<
         'input,
     >(
         input: &'input str,
@@ -4074,7 +4083,7 @@ mod __parse__T_strict {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 5)
     }
-    pub(crate) fn __reduce6<
+    fn __reduce6<
         'input,
     >(
         input: &'input str,
@@ -4091,7 +4100,7 @@ mod __parse__T_strict {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 6)
     }
-    pub(crate) fn __reduce7<
+    fn __reduce7<
         'input,
     >(
         input: &'input str,
@@ -4108,7 +4117,7 @@ mod __parse__T_strict {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 7)
     }
-    pub(crate) fn __reduce8<
+    fn __reduce8<
         'input,
     >(
         input: &'input str,
@@ -4125,7 +4134,7 @@ mod __parse__T_strict {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 8)
     }
-    pub(crate) fn __reduce9<
+    fn __reduce9<
         'input,
     >(
         input: &'input str,
@@ -4142,7 +4151,7 @@ mod __parse__T_strict {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 9)
     }
-    pub(crate) fn __reduce10<
+    fn __reduce10<
         'input,
     >(
         input: &'input str,
@@ -4159,7 +4168,7 @@ mod __parse__T_strict {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 10)
     }
-    pub(crate) fn __reduce11<
+    fn __reduce11<
         'input,
     >(
         input: &'input str,
@@ -4176,7 +4185,7 @@ mod __parse__T_strict {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 11)
     }
-    pub(crate) fn __reduce12<
+    fn __reduce12<
         'input,
     >(
         input: &'input str,
@@ -4193,7 +4202,7 @@ mod __parse__T_strict {
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 12)
     }
-    pub(crate) fn __reduce13<
+    fn __reduce13<
         'input,
     >(
         input: &'input str,
@@ -4210,7 +4219,7 @@ mod __parse__T_strict {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 13)
     }
-    pub(crate) fn __reduce14<
+    fn __reduce14<
         'input,
     >(
         input: &'input str,
@@ -4227,7 +4236,7 @@ mod __parse__T_strict {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 14)
     }
-    pub(crate) fn __reduce15<
+    fn __reduce15<
         'input,
     >(
         input: &'input str,
@@ -4244,7 +4253,7 @@ mod __parse__T_strict {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 15)
     }
-    pub(crate) fn __reduce16<
+    fn __reduce16<
         'input,
     >(
         input: &'input str,
@@ -4261,7 +4270,7 @@ mod __parse__T_strict {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 16)
     }
-    pub(crate) fn __reduce18<
+    fn __reduce18<
         'input,
     >(
         input: &'input str,
@@ -4278,7 +4287,7 @@ mod __parse__T_strict {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 18)
     }
-    pub(crate) fn __reduce19<
+    fn __reduce19<
         'input,
     >(
         input: &'input str,
@@ -4296,10 +4305,11 @@ mod __parse__T_strict {
         (1, 19)
     }
 }
+#[allow(unused_imports)]
 pub use self::__parse__T_strict::T_strictParser;
 
 #[rustfmt::skip]
-#[allow(non_snake_case, non_camel_case_types, unused_mut, unused_variables, unused_imports, unused_parens, clippy::all)]
+#[allow(non_snake_case, non_camel_case_types, unused_mut, unused_variables, unused_imports, unused_parens, clippy::needless_lifetimes, clippy::type_complexity, clippy::needless_return, clippy::too_many_arguments, clippy::never_loop, clippy::match_single_binding, clippy::needless_raw_string_hashes)]
 mod __parse__T_subgraph {
 
     use std::str::FromStr;
@@ -4381,7 +4391,7 @@ mod __parse__T_subgraph {
             }
         }).collect()
     }
-    pub(crate) struct __StateMachine<'input>
+    struct __StateMachine<'input>
     where 
     {
         input: &'input str,
@@ -4508,7 +4518,7 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> __Symbol<'input>
     {
-        match __token_index {
+        #[allow(clippy::manual_range_patterns)]match __token_index {
             0 | 1 | 2 | 3 | 4 | 5 | 6 => match __token {
                 Token(1, __tok0) | Token(2, __tok0) | Token(3, __tok0) | Token(4, __tok0) | Token(5, __tok0) | Token(6, __tok0) | Token(0, __tok0) if true => __Symbol::Variant0(__tok0),
                 _ => unreachable!(),
@@ -4647,6 +4657,7 @@ mod __parse__T_subgraph {
         _priv: (),
     }
 
+    impl Default for T_subgraphParser { fn default() -> Self { Self::new() } }
     impl T_subgraphParser {
         pub fn new() -> T_subgraphParser {
             let __builder = super::__intern_token::new_builder();
@@ -4707,7 +4718,7 @@ mod __parse__T_subgraph {
             __states.push(__next_state);
         }
     }
-    pub(crate) fn __reduce<
+    fn __reduce<
         'input,
     >(
         input: &'input str,
@@ -4830,7 +4841,7 @@ mod __parse__T_subgraph {
             _ => __symbol_type_mismatch()
         }
     }
-    pub(crate) fn __reduce0<
+    fn __reduce0<
         'input,
     >(
         input: &'input str,
@@ -4847,7 +4858,7 @@ mod __parse__T_subgraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 0)
     }
-    pub(crate) fn __reduce1<
+    fn __reduce1<
         'input,
     >(
         input: &'input str,
@@ -4864,7 +4875,7 @@ mod __parse__T_subgraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 1)
     }
-    pub(crate) fn __reduce2<
+    fn __reduce2<
         'input,
     >(
         input: &'input str,
@@ -4881,7 +4892,7 @@ mod __parse__T_subgraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 2)
     }
-    pub(crate) fn __reduce3<
+    fn __reduce3<
         'input,
     >(
         input: &'input str,
@@ -4898,7 +4909,7 @@ mod __parse__T_subgraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 3)
     }
-    pub(crate) fn __reduce4<
+    fn __reduce4<
         'input,
     >(
         input: &'input str,
@@ -4915,7 +4926,7 @@ mod __parse__T_subgraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 4)
     }
-    pub(crate) fn __reduce5<
+    fn __reduce5<
         'input,
     >(
         input: &'input str,
@@ -4932,7 +4943,7 @@ mod __parse__T_subgraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 5)
     }
-    pub(crate) fn __reduce6<
+    fn __reduce6<
         'input,
     >(
         input: &'input str,
@@ -4949,7 +4960,7 @@ mod __parse__T_subgraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 6)
     }
-    pub(crate) fn __reduce7<
+    fn __reduce7<
         'input,
     >(
         input: &'input str,
@@ -4966,7 +4977,7 @@ mod __parse__T_subgraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 7)
     }
-    pub(crate) fn __reduce8<
+    fn __reduce8<
         'input,
     >(
         input: &'input str,
@@ -4983,7 +4994,7 @@ mod __parse__T_subgraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 8)
     }
-    pub(crate) fn __reduce9<
+    fn __reduce9<
         'input,
     >(
         input: &'input str,
@@ -5000,7 +5011,7 @@ mod __parse__T_subgraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 9)
     }
-    pub(crate) fn __reduce10<
+    fn __reduce10<
         'input,
     >(
         input: &'input str,
@@ -5017,7 +5028,7 @@ mod __parse__T_subgraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 10)
     }
-    pub(crate) fn __reduce11<
+    fn __reduce11<
         'input,
     >(
         input: &'input str,
@@ -5034,7 +5045,7 @@ mod __parse__T_subgraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 11)
     }
-    pub(crate) fn __reduce12<
+    fn __reduce12<
         'input,
     >(
         input: &'input str,
@@ -5051,7 +5062,7 @@ mod __parse__T_subgraph {
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 12)
     }
-    pub(crate) fn __reduce13<
+    fn __reduce13<
         'input,
     >(
         input: &'input str,
@@ -5068,7 +5079,7 @@ mod __parse__T_subgraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 13)
     }
-    pub(crate) fn __reduce14<
+    fn __reduce14<
         'input,
     >(
         input: &'input str,
@@ -5085,7 +5096,7 @@ mod __parse__T_subgraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 14)
     }
-    pub(crate) fn __reduce15<
+    fn __reduce15<
         'input,
     >(
         input: &'input str,
@@ -5102,7 +5113,7 @@ mod __parse__T_subgraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 15)
     }
-    pub(crate) fn __reduce16<
+    fn __reduce16<
         'input,
     >(
         input: &'input str,
@@ -5119,7 +5130,7 @@ mod __parse__T_subgraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 16)
     }
-    pub(crate) fn __reduce17<
+    fn __reduce17<
         'input,
     >(
         input: &'input str,
@@ -5136,7 +5147,7 @@ mod __parse__T_subgraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 17)
     }
-    pub(crate) fn __reduce19<
+    fn __reduce19<
         'input,
     >(
         input: &'input str,
@@ -5154,10 +5165,11 @@ mod __parse__T_subgraph {
         (1, 19)
     }
 }
+#[allow(unused_imports)]
 pub use self::__parse__T_subgraph::T_subgraphParser;
 
 #[rustfmt::skip]
-#[allow(non_snake_case, non_camel_case_types, unused_mut, unused_variables, unused_imports, unused_parens, clippy::all)]
+#[allow(non_snake_case, non_camel_case_types, unused_mut, unused_variables, unused_imports, unused_parens, clippy::needless_lifetimes, clippy::type_complexity, clippy::needless_return, clippy::too_many_arguments, clippy::never_loop, clippy::match_single_binding, clippy::needless_raw_string_hashes)]
 mod __parse__Term {
 
     use std::str::FromStr;
@@ -5234,7 +5246,7 @@ mod __parse__Term {
             }
         }).collect()
     }
-    pub(crate) struct __StateMachine<'input>
+    struct __StateMachine<'input>
     where 
     {
         input: &'input str,
@@ -5361,7 +5373,7 @@ mod __parse__Term {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> __Symbol<'input>
     {
-        match __token_index {
+        #[allow(clippy::manual_range_patterns)]match __token_index {
             0 | 1 | 2 | 3 | 4 | 5 | 6 => match __token {
                 Token(1, __tok0) | Token(2, __tok0) | Token(3, __tok0) | Token(4, __tok0) | Token(5, __tok0) | Token(6, __tok0) | Token(0, __tok0) if true => __Symbol::Variant0(__tok0),
                 _ => unreachable!(),
@@ -5500,6 +5512,7 @@ mod __parse__Term {
         _priv: (),
     }
 
+    impl Default for TermParser { fn default() -> Self { Self::new() } }
     impl TermParser {
         pub fn new() -> TermParser {
             let __builder = super::__intern_token::new_builder();
@@ -5560,7 +5573,7 @@ mod __parse__Term {
             __states.push(__next_state);
         }
     }
-    pub(crate) fn __reduce<
+    fn __reduce<
         'input,
     >(
         input: &'input str,
@@ -5683,7 +5696,7 @@ mod __parse__Term {
             _ => __symbol_type_mismatch()
         }
     }
-    pub(crate) fn __reduce0<
+    fn __reduce0<
         'input,
     >(
         input: &'input str,
@@ -5700,7 +5713,7 @@ mod __parse__Term {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 0)
     }
-    pub(crate) fn __reduce1<
+    fn __reduce1<
         'input,
     >(
         input: &'input str,
@@ -5717,7 +5730,7 @@ mod __parse__Term {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 1)
     }
-    pub(crate) fn __reduce2<
+    fn __reduce2<
         'input,
     >(
         input: &'input str,
@@ -5734,7 +5747,7 @@ mod __parse__Term {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 2)
     }
-    pub(crate) fn __reduce3<
+    fn __reduce3<
         'input,
     >(
         input: &'input str,
@@ -5751,7 +5764,7 @@ mod __parse__Term {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 3)
     }
-    pub(crate) fn __reduce4<
+    fn __reduce4<
         'input,
     >(
         input: &'input str,
@@ -5768,7 +5781,7 @@ mod __parse__Term {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 4)
     }
-    pub(crate) fn __reduce5<
+    fn __reduce5<
         'input,
     >(
         input: &'input str,
@@ -5785,7 +5798,7 @@ mod __parse__Term {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 5)
     }
-    pub(crate) fn __reduce6<
+    fn __reduce6<
         'input,
     >(
         input: &'input str,
@@ -5802,7 +5815,7 @@ mod __parse__Term {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 6)
     }
-    pub(crate) fn __reduce7<
+    fn __reduce7<
         'input,
     >(
         input: &'input str,
@@ -5819,7 +5832,7 @@ mod __parse__Term {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 7)
     }
-    pub(crate) fn __reduce8<
+    fn __reduce8<
         'input,
     >(
         input: &'input str,
@@ -5836,7 +5849,7 @@ mod __parse__Term {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 8)
     }
-    pub(crate) fn __reduce9<
+    fn __reduce9<
         'input,
     >(
         input: &'input str,
@@ -5853,7 +5866,7 @@ mod __parse__Term {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 9)
     }
-    pub(crate) fn __reduce10<
+    fn __reduce10<
         'input,
     >(
         input: &'input str,
@@ -5870,7 +5883,7 @@ mod __parse__Term {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 10)
     }
-    pub(crate) fn __reduce11<
+    fn __reduce11<
         'input,
     >(
         input: &'input str,
@@ -5887,7 +5900,7 @@ mod __parse__Term {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 11)
     }
-    pub(crate) fn __reduce12<
+    fn __reduce12<
         'input,
     >(
         input: &'input str,
@@ -5904,7 +5917,7 @@ mod __parse__Term {
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 12)
     }
-    pub(crate) fn __reduce13<
+    fn __reduce13<
         'input,
     >(
         input: &'input str,
@@ -5921,7 +5934,7 @@ mod __parse__Term {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 13)
     }
-    pub(crate) fn __reduce14<
+    fn __reduce14<
         'input,
     >(
         input: &'input str,
@@ -5938,7 +5951,7 @@ mod __parse__Term {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 14)
     }
-    pub(crate) fn __reduce15<
+    fn __reduce15<
         'input,
     >(
         input: &'input str,
@@ -5955,7 +5968,7 @@ mod __parse__Term {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 15)
     }
-    pub(crate) fn __reduce16<
+    fn __reduce16<
         'input,
     >(
         input: &'input str,
@@ -5972,7 +5985,7 @@ mod __parse__Term {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 16)
     }
-    pub(crate) fn __reduce17<
+    fn __reduce17<
         'input,
     >(
         input: &'input str,
@@ -5989,7 +6002,7 @@ mod __parse__Term {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 17)
     }
-    pub(crate) fn __reduce18<
+    fn __reduce18<
         'input,
     >(
         input: &'input str,
@@ -6007,8 +6020,9 @@ mod __parse__Term {
         (1, 18)
     }
 }
+#[allow(unused_imports)]
 pub use self::__parse__Term::TermParser;
-#[cfg_attr(rustfmt, rustfmt_skip)]
+#[rustfmt::skip]
 mod __intern_token {
     #![allow(unused_imports)]
     use std::str::FromStr;
@@ -6020,14 +6034,14 @@ mod __intern_token {
     extern crate alloc;
     pub fn new_builder() -> __lalrpop_util::lexer::MatcherBuilder {
         let __strs: &[(&str, bool)] = &[
-            ("^([0-9]+)", false),
-            ("^((?:digraph))", false),
-            ("^((?:edge))", false),
-            ("^((?:graph))", false),
-            ("^((?:node))", false),
-            ("^((?:strict))", false),
-            ("^((?:subgraph))", false),
-            (r"^(\s*)", true),
+            ("[0-9]+", false),
+            ("(?:digraph)", false),
+            ("(?:edge)", false),
+            ("(?:graph)", false),
+            ("(?:node)", false),
+            ("(?:strict)", false),
+            ("(?:subgraph)", false),
+            (r"\s+", true),
         ];
         __lalrpop_util::lexer::MatcherBuilder::new(__strs.iter().copied()).unwrap()
     }
@@ -6035,7 +6049,7 @@ mod __intern_token {
 pub(crate) use self::__lalrpop_util::lexer::Token;
 
 #[allow(unused_variables)]
-#[allow(clippy::too_many_arguments)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes, clippy::just_underscores_and_digits)]
 fn __action0<
     'input,
 >(
@@ -6047,7 +6061,7 @@ fn __action0<
 }
 
 #[allow(unused_variables)]
-#[allow(clippy::too_many_arguments)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes, clippy::just_underscores_and_digits)]
 fn __action1<
     'input,
 >(
@@ -6058,7 +6072,7 @@ fn __action1<
 }
 
 #[allow(unused_variables)]
-#[allow(clippy::too_many_arguments)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes, clippy::just_underscores_and_digits)]
 fn __action2<
     'input,
 >(
@@ -6069,7 +6083,7 @@ fn __action2<
 }
 
 #[allow(unused_variables)]
-#[allow(clippy::too_many_arguments)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes, clippy::just_underscores_and_digits)]
 fn __action3<
     'input,
 >(
@@ -6080,7 +6094,7 @@ fn __action3<
 }
 
 #[allow(unused_variables)]
-#[allow(clippy::too_many_arguments)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes, clippy::just_underscores_and_digits)]
 fn __action4<
     'input,
 >(
@@ -6091,7 +6105,7 @@ fn __action4<
 }
 
 #[allow(unused_variables)]
-#[allow(clippy::too_many_arguments)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes, clippy::just_underscores_and_digits)]
 fn __action5<
     'input,
 >(
@@ -6102,7 +6116,7 @@ fn __action5<
 }
 
 #[allow(unused_variables)]
-#[allow(clippy::too_many_arguments)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes, clippy::just_underscores_and_digits)]
 fn __action6<
     'input,
 >(
@@ -6113,7 +6127,7 @@ fn __action6<
 }
 
 #[allow(unused_variables)]
-#[allow(clippy::too_many_arguments)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes, clippy::just_underscores_and_digits)]
 fn __action7<
     'input,
 >(
@@ -6124,7 +6138,7 @@ fn __action7<
 }
 
 #[allow(unused_variables)]
-#[allow(clippy::too_many_arguments)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes, clippy::just_underscores_and_digits)]
 fn __action8<
     'input,
 >(
@@ -6135,7 +6149,7 @@ fn __action8<
 }
 
 #[allow(unused_variables)]
-#[allow(clippy::too_many_arguments)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes, clippy::just_underscores_and_digits)]
 fn __action9<
     'input,
 >(
@@ -6146,7 +6160,7 @@ fn __action9<
 }
 
 #[allow(unused_variables)]
-#[allow(clippy::too_many_arguments)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes, clippy::just_underscores_and_digits)]
 fn __action10<
     'input,
 >(
@@ -6157,7 +6171,7 @@ fn __action10<
 }
 
 #[allow(unused_variables)]
-#[allow(clippy::too_many_arguments)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes, clippy::just_underscores_and_digits)]
 fn __action11<
     'input,
 >(
@@ -6168,7 +6182,7 @@ fn __action11<
 }
 
 #[allow(unused_variables)]
-#[allow(clippy::too_many_arguments)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes, clippy::just_underscores_and_digits)]
 fn __action12<
     'input,
 >(
@@ -6179,7 +6193,7 @@ fn __action12<
 }
 
 #[allow(unused_variables)]
-#[allow(clippy::too_many_arguments)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes, clippy::just_underscores_and_digits)]
 fn __action13<
     'input,
 >(
@@ -6191,7 +6205,7 @@ fn __action13<
 }
 
 #[allow(unused_variables)]
-#[allow(clippy::too_many_arguments)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes, clippy::just_underscores_and_digits)]
 fn __action14<
     'input,
 >(
@@ -6202,7 +6216,7 @@ fn __action14<
 }
 
 #[allow(unused_variables)]
-#[allow(clippy::too_many_arguments)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes, clippy::just_underscores_and_digits)]
 fn __action15<
     'input,
 >(
@@ -6213,7 +6227,7 @@ fn __action15<
 }
 
 #[allow(unused_variables)]
-#[allow(clippy::too_many_arguments)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes, clippy::just_underscores_and_digits)]
 fn __action16<
     'input,
 >(
@@ -6224,7 +6238,7 @@ fn __action16<
 }
 
 #[allow(unused_variables)]
-#[allow(clippy::too_many_arguments)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes, clippy::just_underscores_and_digits)]
 fn __action17<
     'input,
 >(
@@ -6235,7 +6249,7 @@ fn __action17<
 }
 
 #[allow(unused_variables)]
-#[allow(clippy::too_many_arguments)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes, clippy::just_underscores_and_digits)]
 fn __action18<
     'input,
 >(
@@ -6246,7 +6260,7 @@ fn __action18<
 }
 
 #[allow(unused_variables)]
-#[allow(clippy::too_many_arguments)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes, clippy::just_underscores_and_digits)]
 fn __action19<
     'input,
 >(
@@ -6255,9 +6269,9 @@ fn __action19<
 )
 {
 }
-#[allow(clippy::type_complexity)]
+#[allow(clippy::type_complexity, dead_code)]
 
-pub trait __ToTriple<'input, >
+pub  trait __ToTriple<'input, >
 {
     fn to_triple(value: Self) -> Result<(usize,Token<'input>,usize), __lalrpop_util::ParseError<usize, Token<'input>, &'static str>>;
 }
