@@ -3,87 +3,100 @@ use graphr::cgraph::grammar;
 
 
 #[test]
-fn dot1() {
+fn dot01() {
 
     println!("dot lang test 1");
     assert!(grammar::TermParser::new().parse("2").is_ok())
 }
 
 #[test]
-fn dot2() {
+fn dot01a() {
+
+    println!("dot lang test 1");
+    assert!(grammar::TermParser::new().parse("22").is_ok())
+}
+#[test]
+fn dot01b() {
+
+    println!("dot lang test 1");
+    assert!(grammar::TermParser::new().parse("-2").is_ok())
+}
+
+#[test]
+fn dot02() {
 
     println!("dot lang test 2");
     assert!(grammar::TermParser::new().parse("2.3").is_ok())
 }
 
 #[test]
-fn dot3() {
+fn dot03() {
 
     println!("dot lang test 3");
-    assert!(grammar::TermParser::new().parse("2.3e-4").is_ok())
+    assert!(grammar::TermParser::new().parse("-2.3").is_ok())
 }
 
 #[test]
-fn dot4() {
+fn dot04() {
 
     println!("dot lang test 4");
     assert!(grammar::TermParser::new().parse("2.3e+4").is_ok())
 }
 
 #[test]
-fn dot5() {
+fn dot05() {
 
     println!("dot lang test 5");
-    assert!(grammar::TermParser::new().parse("2.3e4").is_ok())
+    assert!(grammar::TermParser::new().parse("2.3-e4").is_ok())
 }
 
 #[test]
-fn dot6() {
+fn dot06() {
 
     println!("dot lang test 6");
     assert!(grammar::TermParser::new().parse("2.3e4").is_ok())
 }
 
 #[test]
-fn dot7() {
+fn dot07() {
 
     println!("dot lang test 7");
-    assert!(grammar::TermParser::new().parse("2.3e+4").is_ok())
+    assert!(grammar::TermParser::new().parse("-2.3e4").is_ok())
 }
 
 #[test]
-fn dot8() {
+fn dot08() {
 
     println!("dot lang test 8");
-    assert!(grammar::TermParser::new().parse("2.3e-4").is_ok())
+    assert!(grammar::TermParser::new().parse("-2.3e-4").is_ok())
 }
 
 #[test]
-fn dot9() {
+fn dot09() {
 
     println!("dot lang test 9");
-    assert!(grammar::TermParser::new().parse("2.3e4").is_ok())
+    assert!(grammar::TermParser::new().parse("+2.3e4").is_ok())
 }
 
 #[test]
 fn dot10() {
 
     println!("dot lang test 10");
-    assert!(grammar::TermParser::new().parse("2.3e-4").is_ok())
+    assert!(grammar::TermParser::new().parse("0100").is_ok())
 }
 
 #[test]
 fn dot11() {
 
     println!("dot lang test 11");
-    assert!(grammar::TermParser::new().parse("2.3e4").is_ok())
+    assert!(grammar::TermParser::new().parse("0x800").is_ok())
 }
 
 #[test]
 fn dot12() {
 
     println!("dot lang test 12");
-    assert!(grammar::TermParser::new().parse("2.3e-4").is_ok())
+    assert!(grammar::TermParser::new().parse("100").is_ok())
 }
 
 #[test]
