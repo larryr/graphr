@@ -1,5 +1,5 @@
 // auto-generated: "lalrpop 0.20.2"
-// sha3: 819690cb95588dcfcd424e6a78759f86587619d4227b8f965e3303374b7e2fe1
+// sha3: 4acdfc51d1d8ec887e95aaae4d1a697ef0a3a14c2e408ea9918ac003a6bea7a1
 use std::str::FromStr;
 #[allow(unused_extern_crates)]
 extern crate lalrpop_util as __lalrpop_util;
@@ -29,42 +29,44 @@ mod __parse__T_digraph {
     }
     const __ACTION: &[i8] = &[
         // State 0
-        4, 0, 0, 0, 0, 0, 0,
+        0, 0, 4, 0, 0, 0, 0, 0, 0,
         // State 1
-        0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 2
-        0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 3
-        0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
     ];
     fn __action(state: i8, integer: usize) -> i8 {
-        __ACTION[(state as usize) * 7 + integer]
+        __ACTION[(state as usize) * 9 + integer]
     }
     const __EOF_ACTION: &[i8] = &[
         // State 0
         0,
         // State 1
-        -7,
+        -8,
         // State 2
-        -14,
+        -16,
         // State 3
         -1,
     ];
     fn __goto(state: i8, nt: usize) -> i8 {
         match nt {
             0 => 1,
-            6 => 2,
+            7 => 2,
             _ => 0,
         }
     }
     const __TERMINAL: &[&str] = &[
+        r###""(""###,
+        r###"")""###,
         r###""digraph""###,
         r###""edge""###,
         r###""graph""###,
         r###""node""###,
         r###""strict""###,
         r###""subgraph""###,
-        r###"r#"[0-9]+"#"###,
+        r###"r#"[-]*[0-9]+"#"###,
     ];
     fn __expected_tokens(__state: i8) -> alloc::vec::Vec<alloc::string::String> {
         __TERMINAL.iter().enumerate().filter_map(|(index, terminal)| {
@@ -133,7 +135,7 @@ mod __parse__T_digraph {
 
         #[inline]
         fn error_action(&self, state: i8) -> i8 {
-            __action(state, 7 - 1)
+            __action(state, 9 - 1)
         }
 
         #[inline]
@@ -206,7 +208,9 @@ mod __parse__T_digraph {
             Token(4, _) if true => Some(3),
             Token(5, _) if true => Some(4),
             Token(6, _) if true => Some(5),
-            Token(0, _) if true => Some(6),
+            Token(7, _) if true => Some(6),
+            Token(8, _) if true => Some(7),
+            Token(0, _) if true => Some(8),
             _ => None,
         }
     }
@@ -219,8 +223,8 @@ mod __parse__T_digraph {
     ) -> __Symbol<'input>
     {
         #[allow(clippy::manual_range_patterns)]match __token_index {
-            0 | 1 | 2 | 3 | 4 | 5 | 6 => match __token {
-                Token(1, __tok0) | Token(2, __tok0) | Token(3, __tok0) | Token(4, __tok0) | Token(5, __tok0) | Token(6, __tok0) | Token(0, __tok0) if true => __Symbol::Variant0(__tok0),
+            0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 => match __token {
+                Token(1, __tok0) | Token(2, __tok0) | Token(3, __tok0) | Token(4, __tok0) | Token(5, __tok0) | Token(6, __tok0) | Token(7, __tok0) | Token(8, __tok0) | Token(0, __tok0) if true => __Symbol::Variant0(__tok0),
                 _ => unreachable!(),
             },
             _ => unreachable!(),
@@ -312,41 +316,53 @@ mod __parse__T_digraph {
                     nonterminal_produced: 12,
                 }
             }
-            13 => __state_machine::SimulatedReduce::Accept,
-            14 => {
+            13 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 14,
+                    nonterminal_produced: 13,
                 }
             }
-            15 => {
+            14 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 3,
+                    nonterminal_produced: 13,
+                }
+            }
+            15 => __state_machine::SimulatedReduce::Accept,
+            16 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 15,
                 }
             }
-            16 => {
+            17 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 16,
                 }
             }
-            17 => {
+            18 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 17,
                 }
             }
-            18 => {
+            19 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 18,
                 }
             }
-            19 => {
+            20 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 19,
+                }
+            }
+            21 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 20,
                 }
             }
             _ => panic!("invalid reduction index {}", __reduce_index)
@@ -470,18 +486,18 @@ mod __parse__T_digraph {
                 __reduce12(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             13 => {
+                __reduce13(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            14 => {
+                __reduce14(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            15 => {
                 // __T_digraph = T_digraph => ActionFn(4);
                 let __sym0 = __pop_Variant1(__symbols);
                 let __start = __sym0.0;
                 let __end = __sym0.2;
                 let __nt = super::__action4::<>(input, __sym0);
                 return Some(Ok(__nt));
-            }
-            14 => {
-                __reduce14(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
-            }
-            15 => {
-                __reduce15(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             16 => {
                 __reduce16(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
@@ -494,6 +510,12 @@ mod __parse__T_digraph {
             }
             19 => {
                 __reduce19(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            20 => {
+                __reduce20(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            21 => {
+                __reduce21(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             _ => panic!("invalid action code {}", __action)
         };
@@ -618,15 +640,32 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
+        // Num = r#"[-]*[0-9]+"# => ActionFn(15);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym0.2;
+        let __nt = super::__action15::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (1, 4)
+    }
+    fn __reduce5<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
         // STRICT = "strict" => ActionFn(12);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action12::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 4)
+        (1, 5)
     }
-    fn __reduce5<
+    fn __reduce6<
         'input,
     >(
         input: &'input str,
@@ -641,23 +680,6 @@ mod __parse__T_digraph {
         let __end = __sym0.2;
         let __nt = super::__action11::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 5)
-    }
-    fn __reduce6<
-        'input,
-    >(
-        input: &'input str,
-        __lookahead_start: Option<&usize>,
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
-        _: core::marker::PhantomData<(&'input ())>,
-    ) -> (usize, usize)
-    {
-        // T_digraph = DIGRAPH => ActionFn(17);
-        let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action17::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 6)
     }
     fn __reduce7<
@@ -669,11 +691,11 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_edge = EDGE => ActionFn(15);
+        // T_digraph = DIGRAPH => ActionFn(19);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action15::<>(input, __sym0);
+        let __nt = super::__action19::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 7)
     }
@@ -686,11 +708,11 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_graph = GRAPH => ActionFn(16);
+        // T_edge = EDGE => ActionFn(17);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action16::<>(input, __sym0);
+        let __nt = super::__action17::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 8)
     }
@@ -703,11 +725,11 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_node = NODE => ActionFn(14);
+        // T_graph = GRAPH => ActionFn(18);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action14::<>(input, __sym0);
+        let __nt = super::__action18::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 9)
     }
@@ -720,11 +742,11 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_strict = STRICT => ActionFn(19);
+        // T_node = NODE => ActionFn(16);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action19::<>(input, __sym0);
+        let __nt = super::__action16::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 10)
     }
@@ -737,11 +759,11 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_subgraph = SUBGRAPH => ActionFn(18);
+        // T_strict = STRICT => ActionFn(21);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action18::<>(input, __sym0);
+        let __nt = super::__action21::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 11)
     }
@@ -754,15 +776,52 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Term = r#"[0-9]+"# => ActionFn(13);
-        let __sym0 = __pop_Variant0(__symbols);
+        // T_subgraph = SUBGRAPH => ActionFn(20);
+        let __sym0 = __pop_Variant1(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym0.2;
+        let __nt = super::__action20::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        (1, 12)
+    }
+    fn __reduce13<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // Term = Num => ActionFn(13);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action13::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
-        (1, 12)
+        (1, 13)
     }
     fn __reduce14<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // Term = "(", Term, ")" => ActionFn(14);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant0(__symbols);
+        let __sym1 = __pop_Variant2(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym2.2;
+        let __nt = super::__action14::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (3, 13)
+    }
+    fn __reduce16<
         'input,
     >(
         input: &'input str,
@@ -777,9 +836,9 @@ mod __parse__T_digraph {
         let __end = __sym0.2;
         let __nt = super::__action2::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 14)
+        (1, 15)
     }
-    fn __reduce15<
+    fn __reduce17<
         'input,
     >(
         input: &'input str,
@@ -794,9 +853,9 @@ mod __parse__T_digraph {
         let __end = __sym0.2;
         let __nt = super::__action3::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 15)
+        (1, 16)
     }
-    fn __reduce16<
+    fn __reduce18<
         'input,
     >(
         input: &'input str,
@@ -811,9 +870,9 @@ mod __parse__T_digraph {
         let __end = __sym0.2;
         let __nt = super::__action1::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 16)
+        (1, 17)
     }
-    fn __reduce17<
+    fn __reduce19<
         'input,
     >(
         input: &'input str,
@@ -828,9 +887,9 @@ mod __parse__T_digraph {
         let __end = __sym0.2;
         let __nt = super::__action6::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 17)
+        (1, 18)
     }
-    fn __reduce18<
+    fn __reduce20<
         'input,
     >(
         input: &'input str,
@@ -845,9 +904,9 @@ mod __parse__T_digraph {
         let __end = __sym0.2;
         let __nt = super::__action5::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 18)
+        (1, 19)
     }
-    fn __reduce19<
+    fn __reduce21<
         'input,
     >(
         input: &'input str,
@@ -862,7 +921,7 @@ mod __parse__T_digraph {
         let __end = __sym0.2;
         let __nt = super::__action0::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
-        (1, 19)
+        (1, 20)
     }
 }
 #[allow(unused_imports)]
@@ -889,42 +948,44 @@ mod __parse__T_edge {
     }
     const __ACTION: &[i8] = &[
         // State 0
-        0, 4, 0, 0, 0, 0, 0,
+        0, 0, 0, 4, 0, 0, 0, 0, 0,
         // State 1
-        0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 2
-        0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 3
-        0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
     ];
     fn __action(state: i8, integer: usize) -> i8 {
-        __ACTION[(state as usize) * 7 + integer]
+        __ACTION[(state as usize) * 9 + integer]
     }
     const __EOF_ACTION: &[i8] = &[
         // State 0
         0,
         // State 1
-        -8,
+        -9,
         // State 2
-        -15,
+        -17,
         // State 3
         -2,
     ];
     fn __goto(state: i8, nt: usize) -> i8 {
         match nt {
             1 => 1,
-            7 => 2,
+            8 => 2,
             _ => 0,
         }
     }
     const __TERMINAL: &[&str] = &[
+        r###""(""###,
+        r###"")""###,
         r###""digraph""###,
         r###""edge""###,
         r###""graph""###,
         r###""node""###,
         r###""strict""###,
         r###""subgraph""###,
-        r###"r#"[0-9]+"#"###,
+        r###"r#"[-]*[0-9]+"#"###,
     ];
     fn __expected_tokens(__state: i8) -> alloc::vec::Vec<alloc::string::String> {
         __TERMINAL.iter().enumerate().filter_map(|(index, terminal)| {
@@ -993,7 +1054,7 @@ mod __parse__T_edge {
 
         #[inline]
         fn error_action(&self, state: i8) -> i8 {
-            __action(state, 7 - 1)
+            __action(state, 9 - 1)
         }
 
         #[inline]
@@ -1066,7 +1127,9 @@ mod __parse__T_edge {
             Token(4, _) if true => Some(3),
             Token(5, _) if true => Some(4),
             Token(6, _) if true => Some(5),
-            Token(0, _) if true => Some(6),
+            Token(7, _) if true => Some(6),
+            Token(8, _) if true => Some(7),
+            Token(0, _) if true => Some(8),
             _ => None,
         }
     }
@@ -1079,8 +1142,8 @@ mod __parse__T_edge {
     ) -> __Symbol<'input>
     {
         #[allow(clippy::manual_range_patterns)]match __token_index {
-            0 | 1 | 2 | 3 | 4 | 5 | 6 => match __token {
-                Token(1, __tok0) | Token(2, __tok0) | Token(3, __tok0) | Token(4, __tok0) | Token(5, __tok0) | Token(6, __tok0) | Token(0, __tok0) if true => __Symbol::Variant0(__tok0),
+            0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 => match __token {
+                Token(1, __tok0) | Token(2, __tok0) | Token(3, __tok0) | Token(4, __tok0) | Token(5, __tok0) | Token(6, __tok0) | Token(7, __tok0) | Token(8, __tok0) | Token(0, __tok0) if true => __Symbol::Variant0(__tok0),
                 _ => unreachable!(),
             },
             _ => unreachable!(),
@@ -1178,35 +1241,47 @@ mod __parse__T_edge {
                     nonterminal_produced: 13,
                 }
             }
-            14 => __state_machine::SimulatedReduce::Accept,
+            14 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 3,
+                    nonterminal_produced: 13,
+                }
+            }
             15 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 15,
+                    nonterminal_produced: 14,
                 }
             }
-            16 => {
+            16 => __state_machine::SimulatedReduce::Accept,
+            17 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 16,
                 }
             }
-            17 => {
+            18 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 17,
                 }
             }
-            18 => {
+            19 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 18,
                 }
             }
-            19 => {
+            20 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 19,
+                }
+            }
+            21 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 20,
                 }
             }
             _ => panic!("invalid reduction index {}", __reduce_index)
@@ -1333,18 +1408,18 @@ mod __parse__T_edge {
                 __reduce13(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             14 => {
+                __reduce14(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            15 => {
+                __reduce15(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            16 => {
                 // __T_edge = T_edge => ActionFn(2);
                 let __sym0 = __pop_Variant1(__symbols);
                 let __start = __sym0.0;
                 let __end = __sym0.2;
                 let __nt = super::__action2::<>(input, __sym0);
                 return Some(Ok(__nt));
-            }
-            15 => {
-                __reduce15(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
-            }
-            16 => {
-                __reduce16(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             17 => {
                 __reduce17(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
@@ -1354,6 +1429,12 @@ mod __parse__T_edge {
             }
             19 => {
                 __reduce19(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            20 => {
+                __reduce20(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            21 => {
+                __reduce21(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             _ => panic!("invalid action code {}", __action)
         };
@@ -1478,15 +1559,32 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
+        // Num = r#"[-]*[0-9]+"# => ActionFn(15);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym0.2;
+        let __nt = super::__action15::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (1, 4)
+    }
+    fn __reduce5<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
         // STRICT = "strict" => ActionFn(12);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action12::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 4)
+        (1, 5)
     }
-    fn __reduce5<
+    fn __reduce6<
         'input,
     >(
         input: &'input str,
@@ -1501,23 +1599,6 @@ mod __parse__T_edge {
         let __end = __sym0.2;
         let __nt = super::__action11::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 5)
-    }
-    fn __reduce6<
-        'input,
-    >(
-        input: &'input str,
-        __lookahead_start: Option<&usize>,
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
-        _: core::marker::PhantomData<(&'input ())>,
-    ) -> (usize, usize)
-    {
-        // T_digraph = DIGRAPH => ActionFn(17);
-        let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action17::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 6)
     }
     fn __reduce7<
@@ -1529,11 +1610,11 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_edge = EDGE => ActionFn(15);
+        // T_digraph = DIGRAPH => ActionFn(19);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action15::<>(input, __sym0);
+        let __nt = super::__action19::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 7)
     }
@@ -1546,11 +1627,11 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_graph = GRAPH => ActionFn(16);
+        // T_edge = EDGE => ActionFn(17);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action16::<>(input, __sym0);
+        let __nt = super::__action17::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 8)
     }
@@ -1563,11 +1644,11 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_node = NODE => ActionFn(14);
+        // T_graph = GRAPH => ActionFn(18);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action14::<>(input, __sym0);
+        let __nt = super::__action18::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 9)
     }
@@ -1580,11 +1661,11 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_strict = STRICT => ActionFn(19);
+        // T_node = NODE => ActionFn(16);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action19::<>(input, __sym0);
+        let __nt = super::__action16::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 10)
     }
@@ -1597,11 +1678,11 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_subgraph = SUBGRAPH => ActionFn(18);
+        // T_strict = STRICT => ActionFn(21);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action18::<>(input, __sym0);
+        let __nt = super::__action21::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 11)
     }
@@ -1614,15 +1695,52 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Term = r#"[0-9]+"# => ActionFn(13);
-        let __sym0 = __pop_Variant0(__symbols);
+        // T_subgraph = SUBGRAPH => ActionFn(20);
+        let __sym0 = __pop_Variant1(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym0.2;
+        let __nt = super::__action20::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        (1, 12)
+    }
+    fn __reduce13<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // Term = Num => ActionFn(13);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action13::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
-        (1, 12)
+        (1, 13)
     }
-    fn __reduce13<
+    fn __reduce14<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // Term = "(", Term, ")" => ActionFn(14);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant0(__symbols);
+        let __sym1 = __pop_Variant2(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym2.2;
+        let __nt = super::__action14::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (3, 13)
+    }
+    fn __reduce15<
         'input,
     >(
         input: &'input str,
@@ -1637,9 +1755,9 @@ mod __parse__T_edge {
         let __end = __sym0.2;
         let __nt = super::__action4::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 13)
+        (1, 14)
     }
-    fn __reduce15<
+    fn __reduce17<
         'input,
     >(
         input: &'input str,
@@ -1654,9 +1772,9 @@ mod __parse__T_edge {
         let __end = __sym0.2;
         let __nt = super::__action3::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 15)
+        (1, 16)
     }
-    fn __reduce16<
+    fn __reduce18<
         'input,
     >(
         input: &'input str,
@@ -1671,9 +1789,9 @@ mod __parse__T_edge {
         let __end = __sym0.2;
         let __nt = super::__action1::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 16)
+        (1, 17)
     }
-    fn __reduce17<
+    fn __reduce19<
         'input,
     >(
         input: &'input str,
@@ -1688,9 +1806,9 @@ mod __parse__T_edge {
         let __end = __sym0.2;
         let __nt = super::__action6::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 17)
+        (1, 18)
     }
-    fn __reduce18<
+    fn __reduce20<
         'input,
     >(
         input: &'input str,
@@ -1705,9 +1823,9 @@ mod __parse__T_edge {
         let __end = __sym0.2;
         let __nt = super::__action5::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 18)
+        (1, 19)
     }
-    fn __reduce19<
+    fn __reduce21<
         'input,
     >(
         input: &'input str,
@@ -1722,7 +1840,7 @@ mod __parse__T_edge {
         let __end = __sym0.2;
         let __nt = super::__action0::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
-        (1, 19)
+        (1, 20)
     }
 }
 #[allow(unused_imports)]
@@ -1749,42 +1867,44 @@ mod __parse__T_graph {
     }
     const __ACTION: &[i8] = &[
         // State 0
-        0, 0, 4, 0, 0, 0, 0,
+        0, 0, 0, 0, 4, 0, 0, 0, 0,
         // State 1
-        0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 2
-        0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 3
-        0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
     ];
     fn __action(state: i8, integer: usize) -> i8 {
-        __ACTION[(state as usize) * 7 + integer]
+        __ACTION[(state as usize) * 9 + integer]
     }
     const __EOF_ACTION: &[i8] = &[
         // State 0
         0,
         // State 1
-        -9,
+        -10,
         // State 2
-        -16,
+        -18,
         // State 3
         -3,
     ];
     fn __goto(state: i8, nt: usize) -> i8 {
         match nt {
             2 => 1,
-            8 => 2,
+            9 => 2,
             _ => 0,
         }
     }
     const __TERMINAL: &[&str] = &[
+        r###""(""###,
+        r###"")""###,
         r###""digraph""###,
         r###""edge""###,
         r###""graph""###,
         r###""node""###,
         r###""strict""###,
         r###""subgraph""###,
-        r###"r#"[0-9]+"#"###,
+        r###"r#"[-]*[0-9]+"#"###,
     ];
     fn __expected_tokens(__state: i8) -> alloc::vec::Vec<alloc::string::String> {
         __TERMINAL.iter().enumerate().filter_map(|(index, terminal)| {
@@ -1853,7 +1973,7 @@ mod __parse__T_graph {
 
         #[inline]
         fn error_action(&self, state: i8) -> i8 {
-            __action(state, 7 - 1)
+            __action(state, 9 - 1)
         }
 
         #[inline]
@@ -1926,7 +2046,9 @@ mod __parse__T_graph {
             Token(4, _) if true => Some(3),
             Token(5, _) if true => Some(4),
             Token(6, _) if true => Some(5),
-            Token(0, _) if true => Some(6),
+            Token(7, _) if true => Some(6),
+            Token(8, _) if true => Some(7),
+            Token(0, _) if true => Some(8),
             _ => None,
         }
     }
@@ -1939,8 +2061,8 @@ mod __parse__T_graph {
     ) -> __Symbol<'input>
     {
         #[allow(clippy::manual_range_patterns)]match __token_index {
-            0 | 1 | 2 | 3 | 4 | 5 | 6 => match __token {
-                Token(1, __tok0) | Token(2, __tok0) | Token(3, __tok0) | Token(4, __tok0) | Token(5, __tok0) | Token(6, __tok0) | Token(0, __tok0) if true => __Symbol::Variant0(__tok0),
+            0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 => match __token {
+                Token(1, __tok0) | Token(2, __tok0) | Token(3, __tok0) | Token(4, __tok0) | Token(5, __tok0) | Token(6, __tok0) | Token(7, __tok0) | Token(8, __tok0) | Token(0, __tok0) if true => __Symbol::Variant0(__tok0),
                 _ => unreachable!(),
             },
             _ => unreachable!(),
@@ -2040,33 +2162,45 @@ mod __parse__T_graph {
             }
             14 => {
                 __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 3,
+                    nonterminal_produced: 13,
+                }
+            }
+            15 => {
+                __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 14,
                 }
             }
-            15 => __state_machine::SimulatedReduce::Accept,
             16 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 16,
+                    nonterminal_produced: 15,
                 }
             }
-            17 => {
+            17 => __state_machine::SimulatedReduce::Accept,
+            18 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 17,
                 }
             }
-            18 => {
+            19 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 18,
                 }
             }
-            19 => {
+            20 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 19,
+                }
+            }
+            21 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 20,
                 }
             }
             _ => panic!("invalid reduction index {}", __reduce_index)
@@ -2196,6 +2330,12 @@ mod __parse__T_graph {
                 __reduce14(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             15 => {
+                __reduce15(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            16 => {
+                __reduce16(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            17 => {
                 // __T_graph = T_graph => ActionFn(3);
                 let __sym0 = __pop_Variant1(__symbols);
                 let __start = __sym0.0;
@@ -2203,17 +2343,17 @@ mod __parse__T_graph {
                 let __nt = super::__action3::<>(input, __sym0);
                 return Some(Ok(__nt));
             }
-            16 => {
-                __reduce16(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
-            }
-            17 => {
-                __reduce17(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
-            }
             18 => {
                 __reduce18(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             19 => {
                 __reduce19(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            20 => {
+                __reduce20(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            21 => {
+                __reduce21(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             _ => panic!("invalid action code {}", __action)
         };
@@ -2338,15 +2478,32 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
+        // Num = r#"[-]*[0-9]+"# => ActionFn(15);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym0.2;
+        let __nt = super::__action15::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (1, 4)
+    }
+    fn __reduce5<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
         // STRICT = "strict" => ActionFn(12);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action12::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 4)
+        (1, 5)
     }
-    fn __reduce5<
+    fn __reduce6<
         'input,
     >(
         input: &'input str,
@@ -2361,23 +2518,6 @@ mod __parse__T_graph {
         let __end = __sym0.2;
         let __nt = super::__action11::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 5)
-    }
-    fn __reduce6<
-        'input,
-    >(
-        input: &'input str,
-        __lookahead_start: Option<&usize>,
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
-        _: core::marker::PhantomData<(&'input ())>,
-    ) -> (usize, usize)
-    {
-        // T_digraph = DIGRAPH => ActionFn(17);
-        let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action17::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 6)
     }
     fn __reduce7<
@@ -2389,11 +2529,11 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_edge = EDGE => ActionFn(15);
+        // T_digraph = DIGRAPH => ActionFn(19);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action15::<>(input, __sym0);
+        let __nt = super::__action19::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 7)
     }
@@ -2406,11 +2546,11 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_graph = GRAPH => ActionFn(16);
+        // T_edge = EDGE => ActionFn(17);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action16::<>(input, __sym0);
+        let __nt = super::__action17::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 8)
     }
@@ -2423,11 +2563,11 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_node = NODE => ActionFn(14);
+        // T_graph = GRAPH => ActionFn(18);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action14::<>(input, __sym0);
+        let __nt = super::__action18::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 9)
     }
@@ -2440,11 +2580,11 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_strict = STRICT => ActionFn(19);
+        // T_node = NODE => ActionFn(16);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action19::<>(input, __sym0);
+        let __nt = super::__action16::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 10)
     }
@@ -2457,11 +2597,11 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_subgraph = SUBGRAPH => ActionFn(18);
+        // T_strict = STRICT => ActionFn(21);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action18::<>(input, __sym0);
+        let __nt = super::__action21::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 11)
     }
@@ -2474,15 +2614,52 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Term = r#"[0-9]+"# => ActionFn(13);
-        let __sym0 = __pop_Variant0(__symbols);
+        // T_subgraph = SUBGRAPH => ActionFn(20);
+        let __sym0 = __pop_Variant1(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym0.2;
+        let __nt = super::__action20::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        (1, 12)
+    }
+    fn __reduce13<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // Term = Num => ActionFn(13);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action13::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
-        (1, 12)
+        (1, 13)
     }
-    fn __reduce13<
+    fn __reduce14<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // Term = "(", Term, ")" => ActionFn(14);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant0(__symbols);
+        let __sym1 = __pop_Variant2(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym2.2;
+        let __nt = super::__action14::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (3, 13)
+    }
+    fn __reduce15<
         'input,
     >(
         input: &'input str,
@@ -2497,9 +2674,9 @@ mod __parse__T_graph {
         let __end = __sym0.2;
         let __nt = super::__action4::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 13)
+        (1, 14)
     }
-    fn __reduce14<
+    fn __reduce16<
         'input,
     >(
         input: &'input str,
@@ -2514,9 +2691,9 @@ mod __parse__T_graph {
         let __end = __sym0.2;
         let __nt = super::__action2::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 14)
+        (1, 15)
     }
-    fn __reduce16<
+    fn __reduce18<
         'input,
     >(
         input: &'input str,
@@ -2531,9 +2708,9 @@ mod __parse__T_graph {
         let __end = __sym0.2;
         let __nt = super::__action1::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 16)
+        (1, 17)
     }
-    fn __reduce17<
+    fn __reduce19<
         'input,
     >(
         input: &'input str,
@@ -2548,9 +2725,9 @@ mod __parse__T_graph {
         let __end = __sym0.2;
         let __nt = super::__action6::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 17)
+        (1, 18)
     }
-    fn __reduce18<
+    fn __reduce20<
         'input,
     >(
         input: &'input str,
@@ -2565,9 +2742,9 @@ mod __parse__T_graph {
         let __end = __sym0.2;
         let __nt = super::__action5::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 18)
+        (1, 19)
     }
-    fn __reduce19<
+    fn __reduce21<
         'input,
     >(
         input: &'input str,
@@ -2582,7 +2759,7 @@ mod __parse__T_graph {
         let __end = __sym0.2;
         let __nt = super::__action0::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
-        (1, 19)
+        (1, 20)
     }
 }
 #[allow(unused_imports)]
@@ -2609,42 +2786,44 @@ mod __parse__T_node {
     }
     const __ACTION: &[i8] = &[
         // State 0
-        0, 0, 0, 4, 0, 0, 0,
+        0, 0, 0, 0, 0, 4, 0, 0, 0,
         // State 1
-        0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 2
-        0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 3
-        0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
     ];
     fn __action(state: i8, integer: usize) -> i8 {
-        __ACTION[(state as usize) * 7 + integer]
+        __ACTION[(state as usize) * 9 + integer]
     }
     const __EOF_ACTION: &[i8] = &[
         // State 0
         0,
         // State 1
-        -10,
+        -11,
         // State 2
-        -17,
+        -19,
         // State 3
         -4,
     ];
     fn __goto(state: i8, nt: usize) -> i8 {
         match nt {
             3 => 1,
-            9 => 2,
+            10 => 2,
             _ => 0,
         }
     }
     const __TERMINAL: &[&str] = &[
+        r###""(""###,
+        r###"")""###,
         r###""digraph""###,
         r###""edge""###,
         r###""graph""###,
         r###""node""###,
         r###""strict""###,
         r###""subgraph""###,
-        r###"r#"[0-9]+"#"###,
+        r###"r#"[-]*[0-9]+"#"###,
     ];
     fn __expected_tokens(__state: i8) -> alloc::vec::Vec<alloc::string::String> {
         __TERMINAL.iter().enumerate().filter_map(|(index, terminal)| {
@@ -2713,7 +2892,7 @@ mod __parse__T_node {
 
         #[inline]
         fn error_action(&self, state: i8) -> i8 {
-            __action(state, 7 - 1)
+            __action(state, 9 - 1)
         }
 
         #[inline]
@@ -2786,7 +2965,9 @@ mod __parse__T_node {
             Token(4, _) if true => Some(3),
             Token(5, _) if true => Some(4),
             Token(6, _) if true => Some(5),
-            Token(0, _) if true => Some(6),
+            Token(7, _) if true => Some(6),
+            Token(8, _) if true => Some(7),
+            Token(0, _) if true => Some(8),
             _ => None,
         }
     }
@@ -2799,8 +2980,8 @@ mod __parse__T_node {
     ) -> __Symbol<'input>
     {
         #[allow(clippy::manual_range_patterns)]match __token_index {
-            0 | 1 | 2 | 3 | 4 | 5 | 6 => match __token {
-                Token(1, __tok0) | Token(2, __tok0) | Token(3, __tok0) | Token(4, __tok0) | Token(5, __tok0) | Token(6, __tok0) | Token(0, __tok0) if true => __Symbol::Variant0(__tok0),
+            0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 => match __token {
+                Token(1, __tok0) | Token(2, __tok0) | Token(3, __tok0) | Token(4, __tok0) | Token(5, __tok0) | Token(6, __tok0) | Token(7, __tok0) | Token(8, __tok0) | Token(0, __tok0) if true => __Symbol::Variant0(__tok0),
                 _ => unreachable!(),
             },
             _ => unreachable!(),
@@ -2900,33 +3081,45 @@ mod __parse__T_node {
             }
             14 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 14,
+                    states_to_pop: 3,
+                    nonterminal_produced: 13,
                 }
             }
             15 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
+                    nonterminal_produced: 14,
+                }
+            }
+            16 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
                     nonterminal_produced: 15,
                 }
             }
-            16 => __state_machine::SimulatedReduce::Accept,
             17 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 17,
+                    nonterminal_produced: 16,
                 }
             }
-            18 => {
+            18 => __state_machine::SimulatedReduce::Accept,
+            19 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 18,
                 }
             }
-            19 => {
+            20 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 19,
+                }
+            }
+            21 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 20,
                 }
             }
             _ => panic!("invalid reduction index {}", __reduce_index)
@@ -3059,6 +3252,12 @@ mod __parse__T_node {
                 __reduce15(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             16 => {
+                __reduce16(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            17 => {
+                __reduce17(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            18 => {
                 // __T_node = T_node => ActionFn(1);
                 let __sym0 = __pop_Variant1(__symbols);
                 let __start = __sym0.0;
@@ -3066,14 +3265,14 @@ mod __parse__T_node {
                 let __nt = super::__action1::<>(input, __sym0);
                 return Some(Ok(__nt));
             }
-            17 => {
-                __reduce17(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
-            }
-            18 => {
-                __reduce18(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
-            }
             19 => {
                 __reduce19(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            20 => {
+                __reduce20(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            21 => {
+                __reduce21(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             _ => panic!("invalid action code {}", __action)
         };
@@ -3198,15 +3397,32 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
+        // Num = r#"[-]*[0-9]+"# => ActionFn(15);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym0.2;
+        let __nt = super::__action15::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (1, 4)
+    }
+    fn __reduce5<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
         // STRICT = "strict" => ActionFn(12);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action12::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 4)
+        (1, 5)
     }
-    fn __reduce5<
+    fn __reduce6<
         'input,
     >(
         input: &'input str,
@@ -3221,23 +3437,6 @@ mod __parse__T_node {
         let __end = __sym0.2;
         let __nt = super::__action11::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 5)
-    }
-    fn __reduce6<
-        'input,
-    >(
-        input: &'input str,
-        __lookahead_start: Option<&usize>,
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
-        _: core::marker::PhantomData<(&'input ())>,
-    ) -> (usize, usize)
-    {
-        // T_digraph = DIGRAPH => ActionFn(17);
-        let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action17::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 6)
     }
     fn __reduce7<
@@ -3249,11 +3448,11 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_edge = EDGE => ActionFn(15);
+        // T_digraph = DIGRAPH => ActionFn(19);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action15::<>(input, __sym0);
+        let __nt = super::__action19::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 7)
     }
@@ -3266,11 +3465,11 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_graph = GRAPH => ActionFn(16);
+        // T_edge = EDGE => ActionFn(17);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action16::<>(input, __sym0);
+        let __nt = super::__action17::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 8)
     }
@@ -3283,11 +3482,11 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_node = NODE => ActionFn(14);
+        // T_graph = GRAPH => ActionFn(18);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action14::<>(input, __sym0);
+        let __nt = super::__action18::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 9)
     }
@@ -3300,11 +3499,11 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_strict = STRICT => ActionFn(19);
+        // T_node = NODE => ActionFn(16);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action19::<>(input, __sym0);
+        let __nt = super::__action16::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 10)
     }
@@ -3317,11 +3516,11 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_subgraph = SUBGRAPH => ActionFn(18);
+        // T_strict = STRICT => ActionFn(21);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action18::<>(input, __sym0);
+        let __nt = super::__action21::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 11)
     }
@@ -3334,15 +3533,52 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Term = r#"[0-9]+"# => ActionFn(13);
-        let __sym0 = __pop_Variant0(__symbols);
+        // T_subgraph = SUBGRAPH => ActionFn(20);
+        let __sym0 = __pop_Variant1(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym0.2;
+        let __nt = super::__action20::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        (1, 12)
+    }
+    fn __reduce13<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // Term = Num => ActionFn(13);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action13::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
-        (1, 12)
+        (1, 13)
     }
-    fn __reduce13<
+    fn __reduce14<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // Term = "(", Term, ")" => ActionFn(14);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant0(__symbols);
+        let __sym1 = __pop_Variant2(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym2.2;
+        let __nt = super::__action14::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (3, 13)
+    }
+    fn __reduce15<
         'input,
     >(
         input: &'input str,
@@ -3357,9 +3593,9 @@ mod __parse__T_node {
         let __end = __sym0.2;
         let __nt = super::__action4::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 13)
+        (1, 14)
     }
-    fn __reduce14<
+    fn __reduce16<
         'input,
     >(
         input: &'input str,
@@ -3374,9 +3610,9 @@ mod __parse__T_node {
         let __end = __sym0.2;
         let __nt = super::__action2::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 14)
+        (1, 15)
     }
-    fn __reduce15<
+    fn __reduce17<
         'input,
     >(
         input: &'input str,
@@ -3391,9 +3627,9 @@ mod __parse__T_node {
         let __end = __sym0.2;
         let __nt = super::__action3::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 15)
+        (1, 16)
     }
-    fn __reduce17<
+    fn __reduce19<
         'input,
     >(
         input: &'input str,
@@ -3408,9 +3644,9 @@ mod __parse__T_node {
         let __end = __sym0.2;
         let __nt = super::__action6::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 17)
+        (1, 18)
     }
-    fn __reduce18<
+    fn __reduce20<
         'input,
     >(
         input: &'input str,
@@ -3425,9 +3661,9 @@ mod __parse__T_node {
         let __end = __sym0.2;
         let __nt = super::__action5::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 18)
+        (1, 19)
     }
-    fn __reduce19<
+    fn __reduce21<
         'input,
     >(
         input: &'input str,
@@ -3442,7 +3678,7 @@ mod __parse__T_node {
         let __end = __sym0.2;
         let __nt = super::__action0::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
-        (1, 19)
+        (1, 20)
     }
 }
 #[allow(unused_imports)]
@@ -3469,42 +3705,44 @@ mod __parse__T_strict {
     }
     const __ACTION: &[i8] = &[
         // State 0
-        0, 0, 0, 0, 4, 0, 0,
+        0, 0, 0, 0, 0, 0, 4, 0, 0,
         // State 1
-        0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 2
-        0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 3
-        0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
     ];
     fn __action(state: i8, integer: usize) -> i8 {
-        __ACTION[(state as usize) * 7 + integer]
+        __ACTION[(state as usize) * 9 + integer]
     }
     const __EOF_ACTION: &[i8] = &[
         // State 0
         0,
         // State 1
-        -11,
+        -12,
         // State 2
-        -18,
+        -20,
         // State 3
-        -5,
+        -6,
     ];
     fn __goto(state: i8, nt: usize) -> i8 {
         match nt {
-            4 => 1,
-            10 => 2,
+            5 => 1,
+            11 => 2,
             _ => 0,
         }
     }
     const __TERMINAL: &[&str] = &[
+        r###""(""###,
+        r###"")""###,
         r###""digraph""###,
         r###""edge""###,
         r###""graph""###,
         r###""node""###,
         r###""strict""###,
         r###""subgraph""###,
-        r###"r#"[0-9]+"#"###,
+        r###"r#"[-]*[0-9]+"#"###,
     ];
     fn __expected_tokens(__state: i8) -> alloc::vec::Vec<alloc::string::String> {
         __TERMINAL.iter().enumerate().filter_map(|(index, terminal)| {
@@ -3573,7 +3811,7 @@ mod __parse__T_strict {
 
         #[inline]
         fn error_action(&self, state: i8) -> i8 {
-            __action(state, 7 - 1)
+            __action(state, 9 - 1)
         }
 
         #[inline]
@@ -3646,7 +3884,9 @@ mod __parse__T_strict {
             Token(4, _) if true => Some(3),
             Token(5, _) if true => Some(4),
             Token(6, _) if true => Some(5),
-            Token(0, _) if true => Some(6),
+            Token(7, _) if true => Some(6),
+            Token(8, _) if true => Some(7),
+            Token(0, _) if true => Some(8),
             _ => None,
         }
     }
@@ -3659,8 +3899,8 @@ mod __parse__T_strict {
     ) -> __Symbol<'input>
     {
         #[allow(clippy::manual_range_patterns)]match __token_index {
-            0 | 1 | 2 | 3 | 4 | 5 | 6 => match __token {
-                Token(1, __tok0) | Token(2, __tok0) | Token(3, __tok0) | Token(4, __tok0) | Token(5, __tok0) | Token(6, __tok0) | Token(0, __tok0) if true => __Symbol::Variant0(__tok0),
+            0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 => match __token {
+                Token(1, __tok0) | Token(2, __tok0) | Token(3, __tok0) | Token(4, __tok0) | Token(5, __tok0) | Token(6, __tok0) | Token(7, __tok0) | Token(8, __tok0) | Token(0, __tok0) if true => __Symbol::Variant0(__tok0),
                 _ => unreachable!(),
             },
             _ => unreachable!(),
@@ -3760,33 +4000,45 @@ mod __parse__T_strict {
             }
             14 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 14,
+                    states_to_pop: 3,
+                    nonterminal_produced: 13,
                 }
             }
             15 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 15,
+                    nonterminal_produced: 14,
                 }
             }
             16 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
+                    nonterminal_produced: 15,
+                }
+            }
+            17 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
                     nonterminal_produced: 16,
                 }
             }
-            17 => __state_machine::SimulatedReduce::Accept,
             18 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 18,
+                    nonterminal_produced: 17,
                 }
             }
-            19 => {
+            19 => __state_machine::SimulatedReduce::Accept,
+            20 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 19,
+                }
+            }
+            21 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 20,
                 }
             }
             _ => panic!("invalid reduction index {}", __reduce_index)
@@ -3922,6 +4174,12 @@ mod __parse__T_strict {
                 __reduce16(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             17 => {
+                __reduce17(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            18 => {
+                __reduce18(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            19 => {
                 // __T_strict = T_strict => ActionFn(6);
                 let __sym0 = __pop_Variant1(__symbols);
                 let __start = __sym0.0;
@@ -3929,11 +4187,11 @@ mod __parse__T_strict {
                 let __nt = super::__action6::<>(input, __sym0);
                 return Some(Ok(__nt));
             }
-            18 => {
-                __reduce18(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            20 => {
+                __reduce20(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
-            19 => {
-                __reduce19(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            21 => {
+                __reduce21(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             _ => panic!("invalid action code {}", __action)
         };
@@ -4058,15 +4316,32 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
+        // Num = r#"[-]*[0-9]+"# => ActionFn(15);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym0.2;
+        let __nt = super::__action15::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (1, 4)
+    }
+    fn __reduce5<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
         // STRICT = "strict" => ActionFn(12);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action12::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 4)
+        (1, 5)
     }
-    fn __reduce5<
+    fn __reduce6<
         'input,
     >(
         input: &'input str,
@@ -4081,23 +4356,6 @@ mod __parse__T_strict {
         let __end = __sym0.2;
         let __nt = super::__action11::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 5)
-    }
-    fn __reduce6<
-        'input,
-    >(
-        input: &'input str,
-        __lookahead_start: Option<&usize>,
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
-        _: core::marker::PhantomData<(&'input ())>,
-    ) -> (usize, usize)
-    {
-        // T_digraph = DIGRAPH => ActionFn(17);
-        let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action17::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 6)
     }
     fn __reduce7<
@@ -4109,11 +4367,11 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_edge = EDGE => ActionFn(15);
+        // T_digraph = DIGRAPH => ActionFn(19);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action15::<>(input, __sym0);
+        let __nt = super::__action19::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 7)
     }
@@ -4126,11 +4384,11 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_graph = GRAPH => ActionFn(16);
+        // T_edge = EDGE => ActionFn(17);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action16::<>(input, __sym0);
+        let __nt = super::__action17::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 8)
     }
@@ -4143,11 +4401,11 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_node = NODE => ActionFn(14);
+        // T_graph = GRAPH => ActionFn(18);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action14::<>(input, __sym0);
+        let __nt = super::__action18::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 9)
     }
@@ -4160,11 +4418,11 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_strict = STRICT => ActionFn(19);
+        // T_node = NODE => ActionFn(16);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action19::<>(input, __sym0);
+        let __nt = super::__action16::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 10)
     }
@@ -4177,11 +4435,11 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_subgraph = SUBGRAPH => ActionFn(18);
+        // T_strict = STRICT => ActionFn(21);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action18::<>(input, __sym0);
+        let __nt = super::__action21::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 11)
     }
@@ -4194,15 +4452,52 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Term = r#"[0-9]+"# => ActionFn(13);
-        let __sym0 = __pop_Variant0(__symbols);
+        // T_subgraph = SUBGRAPH => ActionFn(20);
+        let __sym0 = __pop_Variant1(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym0.2;
+        let __nt = super::__action20::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        (1, 12)
+    }
+    fn __reduce13<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // Term = Num => ActionFn(13);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action13::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
-        (1, 12)
+        (1, 13)
     }
-    fn __reduce13<
+    fn __reduce14<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // Term = "(", Term, ")" => ActionFn(14);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant0(__symbols);
+        let __sym1 = __pop_Variant2(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym2.2;
+        let __nt = super::__action14::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (3, 13)
+    }
+    fn __reduce15<
         'input,
     >(
         input: &'input str,
@@ -4217,9 +4512,9 @@ mod __parse__T_strict {
         let __end = __sym0.2;
         let __nt = super::__action4::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 13)
+        (1, 14)
     }
-    fn __reduce14<
+    fn __reduce16<
         'input,
     >(
         input: &'input str,
@@ -4234,9 +4529,9 @@ mod __parse__T_strict {
         let __end = __sym0.2;
         let __nt = super::__action2::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 14)
+        (1, 15)
     }
-    fn __reduce15<
+    fn __reduce17<
         'input,
     >(
         input: &'input str,
@@ -4251,9 +4546,9 @@ mod __parse__T_strict {
         let __end = __sym0.2;
         let __nt = super::__action3::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 15)
+        (1, 16)
     }
-    fn __reduce16<
+    fn __reduce18<
         'input,
     >(
         input: &'input str,
@@ -4268,9 +4563,9 @@ mod __parse__T_strict {
         let __end = __sym0.2;
         let __nt = super::__action1::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 16)
+        (1, 17)
     }
-    fn __reduce18<
+    fn __reduce20<
         'input,
     >(
         input: &'input str,
@@ -4285,9 +4580,9 @@ mod __parse__T_strict {
         let __end = __sym0.2;
         let __nt = super::__action5::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 18)
+        (1, 19)
     }
-    fn __reduce19<
+    fn __reduce21<
         'input,
     >(
         input: &'input str,
@@ -4302,7 +4597,7 @@ mod __parse__T_strict {
         let __end = __sym0.2;
         let __nt = super::__action0::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
-        (1, 19)
+        (1, 20)
     }
 }
 #[allow(unused_imports)]
@@ -4329,42 +4624,44 @@ mod __parse__T_subgraph {
     }
     const __ACTION: &[i8] = &[
         // State 0
-        0, 0, 0, 0, 0, 4, 0,
+        0, 0, 0, 0, 0, 0, 0, 4, 0,
         // State 1
-        0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 2
-        0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 3
-        0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
     ];
     fn __action(state: i8, integer: usize) -> i8 {
-        __ACTION[(state as usize) * 7 + integer]
+        __ACTION[(state as usize) * 9 + integer]
     }
     const __EOF_ACTION: &[i8] = &[
         // State 0
         0,
         // State 1
-        -12,
+        -13,
         // State 2
-        -19,
+        -21,
         // State 3
-        -6,
+        -7,
     ];
     fn __goto(state: i8, nt: usize) -> i8 {
         match nt {
-            5 => 1,
-            11 => 2,
+            6 => 1,
+            12 => 2,
             _ => 0,
         }
     }
     const __TERMINAL: &[&str] = &[
+        r###""(""###,
+        r###"")""###,
         r###""digraph""###,
         r###""edge""###,
         r###""graph""###,
         r###""node""###,
         r###""strict""###,
         r###""subgraph""###,
-        r###"r#"[0-9]+"#"###,
+        r###"r#"[-]*[0-9]+"#"###,
     ];
     fn __expected_tokens(__state: i8) -> alloc::vec::Vec<alloc::string::String> {
         __TERMINAL.iter().enumerate().filter_map(|(index, terminal)| {
@@ -4433,7 +4730,7 @@ mod __parse__T_subgraph {
 
         #[inline]
         fn error_action(&self, state: i8) -> i8 {
-            __action(state, 7 - 1)
+            __action(state, 9 - 1)
         }
 
         #[inline]
@@ -4506,7 +4803,9 @@ mod __parse__T_subgraph {
             Token(4, _) if true => Some(3),
             Token(5, _) if true => Some(4),
             Token(6, _) if true => Some(5),
-            Token(0, _) if true => Some(6),
+            Token(7, _) if true => Some(6),
+            Token(8, _) if true => Some(7),
+            Token(0, _) if true => Some(8),
             _ => None,
         }
     }
@@ -4519,8 +4818,8 @@ mod __parse__T_subgraph {
     ) -> __Symbol<'input>
     {
         #[allow(clippy::manual_range_patterns)]match __token_index {
-            0 | 1 | 2 | 3 | 4 | 5 | 6 => match __token {
-                Token(1, __tok0) | Token(2, __tok0) | Token(3, __tok0) | Token(4, __tok0) | Token(5, __tok0) | Token(6, __tok0) | Token(0, __tok0) if true => __Symbol::Variant0(__tok0),
+            0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 => match __token {
+                Token(1, __tok0) | Token(2, __tok0) | Token(3, __tok0) | Token(4, __tok0) | Token(5, __tok0) | Token(6, __tok0) | Token(7, __tok0) | Token(8, __tok0) | Token(0, __tok0) if true => __Symbol::Variant0(__tok0),
                 _ => unreachable!(),
             },
             _ => unreachable!(),
@@ -4620,33 +4919,45 @@ mod __parse__T_subgraph {
             }
             14 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 14,
+                    states_to_pop: 3,
+                    nonterminal_produced: 13,
                 }
             }
             15 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 15,
+                    nonterminal_produced: 14,
                 }
             }
             16 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 16,
+                    nonterminal_produced: 15,
                 }
             }
             17 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
+                    nonterminal_produced: 16,
+                }
+            }
+            18 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
                     nonterminal_produced: 17,
                 }
             }
-            18 => __state_machine::SimulatedReduce::Accept,
             19 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 19,
+                    nonterminal_produced: 18,
+                }
+            }
+            20 => __state_machine::SimulatedReduce::Accept,
+            21 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 20,
                 }
             }
             _ => panic!("invalid reduction index {}", __reduce_index)
@@ -4785,6 +5096,12 @@ mod __parse__T_subgraph {
                 __reduce17(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             18 => {
+                __reduce18(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            19 => {
+                __reduce19(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            20 => {
                 // __T_subgraph = T_subgraph => ActionFn(5);
                 let __sym0 = __pop_Variant1(__symbols);
                 let __start = __sym0.0;
@@ -4792,8 +5109,8 @@ mod __parse__T_subgraph {
                 let __nt = super::__action5::<>(input, __sym0);
                 return Some(Ok(__nt));
             }
-            19 => {
-                __reduce19(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            21 => {
+                __reduce21(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             _ => panic!("invalid action code {}", __action)
         };
@@ -4918,15 +5235,32 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
+        // Num = r#"[-]*[0-9]+"# => ActionFn(15);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym0.2;
+        let __nt = super::__action15::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (1, 4)
+    }
+    fn __reduce5<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
         // STRICT = "strict" => ActionFn(12);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action12::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 4)
+        (1, 5)
     }
-    fn __reduce5<
+    fn __reduce6<
         'input,
     >(
         input: &'input str,
@@ -4941,23 +5275,6 @@ mod __parse__T_subgraph {
         let __end = __sym0.2;
         let __nt = super::__action11::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 5)
-    }
-    fn __reduce6<
-        'input,
-    >(
-        input: &'input str,
-        __lookahead_start: Option<&usize>,
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
-        _: core::marker::PhantomData<(&'input ())>,
-    ) -> (usize, usize)
-    {
-        // T_digraph = DIGRAPH => ActionFn(17);
-        let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action17::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 6)
     }
     fn __reduce7<
@@ -4969,11 +5286,11 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_edge = EDGE => ActionFn(15);
+        // T_digraph = DIGRAPH => ActionFn(19);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action15::<>(input, __sym0);
+        let __nt = super::__action19::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 7)
     }
@@ -4986,11 +5303,11 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_graph = GRAPH => ActionFn(16);
+        // T_edge = EDGE => ActionFn(17);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action16::<>(input, __sym0);
+        let __nt = super::__action17::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 8)
     }
@@ -5003,11 +5320,11 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_node = NODE => ActionFn(14);
+        // T_graph = GRAPH => ActionFn(18);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action14::<>(input, __sym0);
+        let __nt = super::__action18::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 9)
     }
@@ -5020,11 +5337,11 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_strict = STRICT => ActionFn(19);
+        // T_node = NODE => ActionFn(16);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action19::<>(input, __sym0);
+        let __nt = super::__action16::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 10)
     }
@@ -5037,11 +5354,11 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_subgraph = SUBGRAPH => ActionFn(18);
+        // T_strict = STRICT => ActionFn(21);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action18::<>(input, __sym0);
+        let __nt = super::__action21::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 11)
     }
@@ -5054,15 +5371,52 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Term = r#"[0-9]+"# => ActionFn(13);
-        let __sym0 = __pop_Variant0(__symbols);
+        // T_subgraph = SUBGRAPH => ActionFn(20);
+        let __sym0 = __pop_Variant1(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym0.2;
+        let __nt = super::__action20::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        (1, 12)
+    }
+    fn __reduce13<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // Term = Num => ActionFn(13);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action13::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
-        (1, 12)
+        (1, 13)
     }
-    fn __reduce13<
+    fn __reduce14<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // Term = "(", Term, ")" => ActionFn(14);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant0(__symbols);
+        let __sym1 = __pop_Variant2(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym2.2;
+        let __nt = super::__action14::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (3, 13)
+    }
+    fn __reduce15<
         'input,
     >(
         input: &'input str,
@@ -5077,9 +5431,9 @@ mod __parse__T_subgraph {
         let __end = __sym0.2;
         let __nt = super::__action4::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 13)
+        (1, 14)
     }
-    fn __reduce14<
+    fn __reduce16<
         'input,
     >(
         input: &'input str,
@@ -5094,9 +5448,9 @@ mod __parse__T_subgraph {
         let __end = __sym0.2;
         let __nt = super::__action2::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 14)
+        (1, 15)
     }
-    fn __reduce15<
+    fn __reduce17<
         'input,
     >(
         input: &'input str,
@@ -5111,9 +5465,9 @@ mod __parse__T_subgraph {
         let __end = __sym0.2;
         let __nt = super::__action3::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 15)
+        (1, 16)
     }
-    fn __reduce16<
+    fn __reduce18<
         'input,
     >(
         input: &'input str,
@@ -5128,9 +5482,9 @@ mod __parse__T_subgraph {
         let __end = __sym0.2;
         let __nt = super::__action1::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 16)
+        (1, 17)
     }
-    fn __reduce17<
+    fn __reduce19<
         'input,
     >(
         input: &'input str,
@@ -5145,9 +5499,9 @@ mod __parse__T_subgraph {
         let __end = __sym0.2;
         let __nt = super::__action6::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 17)
+        (1, 18)
     }
-    fn __reduce19<
+    fn __reduce21<
         'input,
     >(
         input: &'input str,
@@ -5162,7 +5516,7 @@ mod __parse__T_subgraph {
         let __end = __sym0.2;
         let __nt = super::__action0::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
-        (1, 19)
+        (1, 20)
     }
 }
 #[allow(unused_imports)]
@@ -5189,37 +5543,59 @@ mod __parse__Term {
     }
     const __ACTION: &[i8] = &[
         // State 0
-        0, 0, 0, 0, 0, 0, 3,
+        2, 0, 0, 0, 0, 0, 0, 0, 5,
         // State 1
-        0, 0, 0, 0, 0, 0, 0,
+        2, 0, 0, 0, 0, 0, 0, 0, 5,
         // State 2
-        0, 0, 0, 0, 0, 0, 0,
+        0, -14, 0, 0, 0, 0, 0, 0, 0,
+        // State 3
+        0, 0, 0, 0, 0, 0, 0, 0, 0,
+        // State 4
+        0, -5, 0, 0, 0, 0, 0, 0, 0,
+        // State 5
+        0, 7, 0, 0, 0, 0, 0, 0, 0,
+        // State 6
+        0, -15, 0, 0, 0, 0, 0, 0, 0,
     ];
     fn __action(state: i8, integer: usize) -> i8 {
-        __ACTION[(state as usize) * 7 + integer]
+        __ACTION[(state as usize) * 9 + integer]
     }
     const __EOF_ACTION: &[i8] = &[
         // State 0
         0,
         // State 1
-        -20,
+        0,
         // State 2
-        -13,
+        -14,
+        // State 3
+        -22,
+        // State 4
+        -5,
+        // State 5
+        0,
+        // State 6
+        -15,
     ];
     fn __goto(state: i8, nt: usize) -> i8 {
         match nt {
-            12 => 1,
+            4 => 2,
+            13 => match state {
+                1 => 5,
+                _ => 3,
+            },
             _ => 0,
         }
     }
     const __TERMINAL: &[&str] = &[
+        r###""(""###,
+        r###"")""###,
         r###""digraph""###,
         r###""edge""###,
         r###""graph""###,
         r###""node""###,
         r###""strict""###,
         r###""subgraph""###,
-        r###"r#"[0-9]+"#"###,
+        r###"r#"[-]*[0-9]+"#"###,
     ];
     fn __expected_tokens(__state: i8) -> alloc::vec::Vec<alloc::string::String> {
         __TERMINAL.iter().enumerate().filter_map(|(index, terminal)| {
@@ -5288,7 +5664,7 @@ mod __parse__Term {
 
         #[inline]
         fn error_action(&self, state: i8) -> i8 {
-            __action(state, 7 - 1)
+            __action(state, 9 - 1)
         }
 
         #[inline]
@@ -5361,7 +5737,9 @@ mod __parse__Term {
             Token(4, _) if true => Some(3),
             Token(5, _) if true => Some(4),
             Token(6, _) if true => Some(5),
-            Token(0, _) if true => Some(6),
+            Token(7, _) if true => Some(6),
+            Token(8, _) if true => Some(7),
+            Token(0, _) if true => Some(8),
             _ => None,
         }
     }
@@ -5374,8 +5752,8 @@ mod __parse__Term {
     ) -> __Symbol<'input>
     {
         #[allow(clippy::manual_range_patterns)]match __token_index {
-            0 | 1 | 2 | 3 | 4 | 5 | 6 => match __token {
-                Token(1, __tok0) | Token(2, __tok0) | Token(3, __tok0) | Token(4, __tok0) | Token(5, __tok0) | Token(6, __tok0) | Token(0, __tok0) if true => __Symbol::Variant0(__tok0),
+            0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 => match __token {
+                Token(1, __tok0) | Token(2, __tok0) | Token(3, __tok0) | Token(4, __tok0) | Token(5, __tok0) | Token(6, __tok0) | Token(7, __tok0) | Token(8, __tok0) | Token(0, __tok0) if true => __Symbol::Variant0(__tok0),
                 _ => unreachable!(),
             },
             _ => unreachable!(),
@@ -5475,35 +5853,47 @@ mod __parse__Term {
             }
             14 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 14,
+                    states_to_pop: 3,
+                    nonterminal_produced: 13,
                 }
             }
             15 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 15,
+                    nonterminal_produced: 14,
                 }
             }
             16 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 16,
+                    nonterminal_produced: 15,
                 }
             }
             17 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 17,
+                    nonterminal_produced: 16,
                 }
             }
             18 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
+                    nonterminal_produced: 17,
+                }
+            }
+            19 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
                     nonterminal_produced: 18,
                 }
             }
-            19 => __state_machine::SimulatedReduce::Accept,
+            20 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
+                    nonterminal_produced: 19,
+                }
+            }
+            21 => __state_machine::SimulatedReduce::Accept,
             _ => panic!("invalid reduction index {}", __reduce_index)
         }
     }
@@ -5643,6 +6033,12 @@ mod __parse__Term {
                 __reduce18(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             19 => {
+                __reduce19(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            20 => {
+                __reduce20(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            21 => {
                 // __Term = Term => ActionFn(0);
                 let __sym0 = __pop_Variant2(__symbols);
                 let __start = __sym0.0;
@@ -5773,15 +6169,32 @@ mod __parse__Term {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
+        // Num = r#"[-]*[0-9]+"# => ActionFn(15);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym0.2;
+        let __nt = super::__action15::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (1, 4)
+    }
+    fn __reduce5<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
         // STRICT = "strict" => ActionFn(12);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action12::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 4)
+        (1, 5)
     }
-    fn __reduce5<
+    fn __reduce6<
         'input,
     >(
         input: &'input str,
@@ -5796,23 +6209,6 @@ mod __parse__Term {
         let __end = __sym0.2;
         let __nt = super::__action11::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 5)
-    }
-    fn __reduce6<
-        'input,
-    >(
-        input: &'input str,
-        __lookahead_start: Option<&usize>,
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
-        _: core::marker::PhantomData<(&'input ())>,
-    ) -> (usize, usize)
-    {
-        // T_digraph = DIGRAPH => ActionFn(17);
-        let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action17::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 6)
     }
     fn __reduce7<
@@ -5824,11 +6220,11 @@ mod __parse__Term {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_edge = EDGE => ActionFn(15);
+        // T_digraph = DIGRAPH => ActionFn(19);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action15::<>(input, __sym0);
+        let __nt = super::__action19::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 7)
     }
@@ -5841,11 +6237,11 @@ mod __parse__Term {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_graph = GRAPH => ActionFn(16);
+        // T_edge = EDGE => ActionFn(17);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action16::<>(input, __sym0);
+        let __nt = super::__action17::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 8)
     }
@@ -5858,11 +6254,11 @@ mod __parse__Term {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_node = NODE => ActionFn(14);
+        // T_graph = GRAPH => ActionFn(18);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action14::<>(input, __sym0);
+        let __nt = super::__action18::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 9)
     }
@@ -5875,11 +6271,11 @@ mod __parse__Term {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_strict = STRICT => ActionFn(19);
+        // T_node = NODE => ActionFn(16);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action19::<>(input, __sym0);
+        let __nt = super::__action16::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 10)
     }
@@ -5892,11 +6288,11 @@ mod __parse__Term {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_subgraph = SUBGRAPH => ActionFn(18);
+        // T_strict = STRICT => ActionFn(21);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action18::<>(input, __sym0);
+        let __nt = super::__action21::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 11)
     }
@@ -5909,15 +6305,52 @@ mod __parse__Term {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Term = r#"[0-9]+"# => ActionFn(13);
-        let __sym0 = __pop_Variant0(__symbols);
+        // T_subgraph = SUBGRAPH => ActionFn(20);
+        let __sym0 = __pop_Variant1(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym0.2;
+        let __nt = super::__action20::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        (1, 12)
+    }
+    fn __reduce13<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // Term = Num => ActionFn(13);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action13::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant2(__nt), __end));
-        (1, 12)
+        (1, 13)
     }
-    fn __reduce13<
+    fn __reduce14<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // Term = "(", Term, ")" => ActionFn(14);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant0(__symbols);
+        let __sym1 = __pop_Variant2(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym2.2;
+        let __nt = super::__action14::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (3, 13)
+    }
+    fn __reduce15<
         'input,
     >(
         input: &'input str,
@@ -5932,9 +6365,9 @@ mod __parse__Term {
         let __end = __sym0.2;
         let __nt = super::__action4::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 13)
+        (1, 14)
     }
-    fn __reduce14<
+    fn __reduce16<
         'input,
     >(
         input: &'input str,
@@ -5949,9 +6382,9 @@ mod __parse__Term {
         let __end = __sym0.2;
         let __nt = super::__action2::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 14)
+        (1, 15)
     }
-    fn __reduce15<
+    fn __reduce17<
         'input,
     >(
         input: &'input str,
@@ -5966,9 +6399,9 @@ mod __parse__Term {
         let __end = __sym0.2;
         let __nt = super::__action3::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 15)
+        (1, 16)
     }
-    fn __reduce16<
+    fn __reduce18<
         'input,
     >(
         input: &'input str,
@@ -5983,9 +6416,9 @@ mod __parse__Term {
         let __end = __sym0.2;
         let __nt = super::__action1::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 16)
+        (1, 17)
     }
-    fn __reduce17<
+    fn __reduce19<
         'input,
     >(
         input: &'input str,
@@ -6000,9 +6433,9 @@ mod __parse__Term {
         let __end = __sym0.2;
         let __nt = super::__action6::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 17)
+        (1, 18)
     }
-    fn __reduce18<
+    fn __reduce20<
         'input,
     >(
         input: &'input str,
@@ -6017,7 +6450,7 @@ mod __parse__Term {
         let __end = __sym0.2;
         let __nt = super::__action5::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 18)
+        (1, 19)
     }
 }
 #[allow(unused_imports)]
@@ -6034,7 +6467,9 @@ mod __intern_token {
     extern crate alloc;
     pub fn new_builder() -> __lalrpop_util::lexer::MatcherBuilder {
         let __strs: &[(&str, bool)] = &[
-            ("[0-9]+", false),
+            ("(?:\\-*[0-9]+)", false),
+            ("\\(", false),
+            ("\\)", false),
             ("(?:digraph)", false),
             ("(?:edge)", false),
             ("(?:graph)", false),
@@ -6198,10 +6633,10 @@ fn __action13<
     'input,
 >(
     input: &'input str,
-    (_, s, _): (usize, &'input str, usize),
+    (_, n, _): (usize, i32, usize),
 ) -> i32
 {
-    i32::from_str(s).unwrap()
+    n
 }
 
 #[allow(unused_variables)]
@@ -6210,9 +6645,12 @@ fn __action14<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-)
+    (_, _, _): (usize, &'input str, usize),
+    (_, t, _): (usize, i32, usize),
+    (_, _, _): (usize, &'input str, usize),
+) -> i32
 {
+    t
 }
 
 #[allow(unused_variables)]
@@ -6221,9 +6659,10 @@ fn __action15<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-)
+    (_, s, _): (usize, &'input str, usize),
+) -> i32
 {
+    i32::from_str(s).unwrap()
 }
 
 #[allow(unused_variables)]
@@ -6262,6 +6701,28 @@ fn __action18<
 #[allow(unused_variables)]
 #[allow(clippy::too_many_arguments, clippy::needless_lifetimes, clippy::just_underscores_and_digits)]
 fn __action19<
+    'input,
+>(
+    input: &'input str,
+    (_, __0, _): (usize, (), usize),
+)
+{
+}
+
+#[allow(unused_variables)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes, clippy::just_underscores_and_digits)]
+fn __action20<
+    'input,
+>(
+    input: &'input str,
+    (_, __0, _): (usize, (), usize),
+)
+{
+}
+
+#[allow(unused_variables)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes, clippy::just_underscores_and_digits)]
+fn __action21<
     'input,
 >(
     input: &'input str,

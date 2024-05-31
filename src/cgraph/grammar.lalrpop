@@ -28,7 +28,15 @@ STRICT: () = "strict";
 // Parser rules
 //
 
-pub Term: i32 = <s:r"[0-9]+"> => i32::from_str(s).unwrap();
+
+pub Term: i32 = {
+    <n:Num> => n,
+    "(" <t:Term> ")" => t,
+};
+
+Num: i32 =
+    <s:r"[-]*[0-9]+"> => i32::from_str(s).unwrap();
+
 
 pub T_node: () = NODE;
 pub T_edge: () = EDGE;

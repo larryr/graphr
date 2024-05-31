@@ -21,6 +21,12 @@ fn dot01b() {
     println!("dot lang test 1");
     assert!(grammar::TermParser::new().parse("-2").is_ok())
 }
+#[test]
+fn dot01c() {
+
+    println!("dot lang test 1");
+    assert!(grammar::TermParser::new().parse("(((2)))").is_ok())
+}
 
 #[test]
 fn dot02() {
@@ -111,4 +117,12 @@ fn dot14() {
 
     println!("dot lang test 14");
     assert!(grammar::TermParser::new().parse("2.3e-4").is_ok())
+}
+
+
+#[test]
+fn dot15() {
+
+    println!("dot lang test 15");
+    assert!(grammar::TermParser::new().parse(r#"digraph G {  a -> b  label="this is a graph" }"#).is_ok())
 }
