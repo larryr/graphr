@@ -28,14 +28,141 @@ STRICT: () = "strict";
 // Parser rules
 //
 
+pub graph: () = {
+    "strict" graph_kind id stmt_block,
+    graph_kind id stmt_block,
+};
 
-pub Term: i32 = {
+graph_kind: () = {
+    "graph",
+    "digraph",
+};
+
+stmt_block: () = {
+    "{" stmt_list "}",
+};
+
+stmt_list: () = {
+    stmt semicolon stmt_list,
+    stmt stmt_list,
+    (),
+};
+
+stmt: () = {
+    node_stmt,
+    edge_stmt,
+    attr_stmt,
+    id "=" id,
+    subgraph,
+};
+
+attr_stmt: () = {
+    "graph" attr_list,
+    "node" attr_list,
+    "edge" attr_list,
+};
+
+attr_list: () = {
+    lbracket a_list rbracket attr_list,
+    lbracket a_list rbracket,
+};
+
+a_list: () = {
+    elem_pair a_list,
+    elem_pair,
+};
+
+elem_pair: () = {
+    id "=" id semicolon,
+    id "=" id, comma,
+};
+
+edge_stmt: () = {
+    node_id edge_rhs,
+    node_id edge_rhs attr_list,
+    subgraph edge_rhs attr_list,
+    subgraph edge_rhs,
+};
+
+edge_rhs: () = {
+    edgeop node_id edge_rhs,
+    edgeop node_id,
+    edgeop subgraph edge_rhs,
+    edgeop subgraph,
+};
+
+node_stmt: () = {
+    node_id attr_list,
+    node_id,
+};
+
+node_id: () = {
+    id port,
+    id,
+};
+
+port: () = {
+    colon id colon compass_pt,
+    colon id,
+    colon compass_pt,
+};
+
+subgraph: () = {
+    "subgraph" id "{" stmt_list "}",
+    "subgraph" id "{" stmt_list "}"
+};
+
+compass_pt: () = {
+    "n",
+    "ne",
+    "e",
+    "se",
+    "s",
+    "sw",
+    "w",
+    "nw",
+    "c",
+    "_"
+};
+
+id: () = {
+    r"[a-zA-Z_][a-zA-Z0-9_]*",
+};
+
+colon: () = {
+    ":",
+};
+
+semicolon: () = {
+    ";",
+};
+
+comma: () = {
+    ",",
+};
+
+lbracket: () = {
+    "[",
+};
+
+rbracket: () = {
+    "]",
+};
+
+edgeop: () = {
+    "->",
+    "--",
+};
+
+// ---- old
+
+pub Term: f32 = {
     <n:Num> => n,
     "(" <t:Term> ")" => t,
 };
 
-Num: i32 =
-    <s:r"[-]*[0-9]+"> => i32::from_str(s).unwrap();
+Num: f32 =
+    <s:r"[-]*[0-9]+"> => f32::from_str(s).unwrap();
 
 
 pub T_node: () = NODE;

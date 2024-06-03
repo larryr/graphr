@@ -124,5 +124,5 @@ fn dot14() {
 fn dot15() {
 
     println!("dot lang test 15");
-    assert!(grammar::TermParser::new().parse(r#"digraph G {  a -> b  label="this is a graph" }"#).is_ok())
+    assert!(grammar::GraphParser::new().parse(r#"digraph G {  a -> b  label="this is a graph" }"#).is_ok())
 }
