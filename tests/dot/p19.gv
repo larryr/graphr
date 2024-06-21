@@ -1,0 +1,3 @@
+//comment
+digraph G { a -> {b c} ;  label = 5 }
+
