@@ -1,1 +1,5 @@
-graph G { a = "a string" }
+// comment
+
+graph G {
+    a = "a string"  //comment
+}

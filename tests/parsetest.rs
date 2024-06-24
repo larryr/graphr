@@ -161,3 +161,57 @@ fn dot210() {
     }
 }
 
+fn read_file(file: &str) -> String {
+    use std::fs::File;
+    use std::io::Read;
+    let mut f = File::open(file).expect("file not found");
+    let mut contents = String::new();
+    f.read_to_string(&mut contents).expect("something went wrong reading the file");
+    contents
+}
+
+fn match_extension(file: &str, ext: &str) -> bool {
+    use std::path::Path;
+    let path = Path::new(file);
+    match path.extension() {
+        Some(e) => {
+            if e == ext {
+                return true;
+            }
+        }
+        None => return false,
+    }
+    false
+}
+
+fn list_files(dir: &str) -> Vec<String> {
+    use std::fs;
+    let mut files = Vec::new();
+    for entry in fs::read_dir(dir).expect("read_dir call failed") {
+        let entry = entry.expect("DirEntry");
+        let path = entry.path();
+        if path.is_file() && match_extension(&path.to_str().unwrap(), "gv"){
+            let s = path.to_str().unwrap().to_string();
+            files.push(s);
+        }
+    }
+    files
+}
+
+
+#[test]
+fn dot300() {
+    let files = list_files("tests/dot");
+    //iterate through the files
+    for file in files {
+        let contents = read_file(&file);
+        println!("dot lang test {}", file);
+        match grammar::GraphParser::new().parse(&contents) {
+            Ok(_) => println!("Parse 300 successful"),
+            Err(e) => {
+                println!("Parse 300 failed with error: {:?}", e);
+                assert!(false);
+            }
+        }
+    }
+}

@@ -11,6 +11,17 @@ extern {
 //
 // Lexer rules
 //
+
+
+match {
+    r"\s*" => { }, // The default whitespace skipping is disabled if an `ignore pattern` is specified
+    r"//[^\n\r]*[\n\r]*" => { }, // Skip `// comments`
+    r#"\(\*[^*]*\*+/?:[^\)*][^*]*\*+/*\)"# => { },  // Skip `/* comments */)`
+} else {
+    _
+}
+
+
 //GRAPH_EOF_TOKEN: char = r'\u{0000}'; // EOF represented as null character
 //LETTER: () = r"[A-Za-z_]|[\u0080-\u00FF]";
 //DIGIT: () = r"[0-9]";
