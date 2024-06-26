@@ -1,5 +1,5 @@
 // auto-generated: "lalrpop 0.20.2"
-// sha3: cda7f633751c92a641415f7beaf6ee0c8dbdda28b3c84fcb8117297330380faa
+// sha3: f8cfe94b68f6d28b31b5e310744726b8315d1dd29772068517c10acd9bb3c9c9
 use std::str::FromStr;
 #[allow(unused_extern_crates)]
 extern crate lalrpop_util as __lalrpop_util;
@@ -23213,7 +23213,8 @@ mod __intern_token {
             ("\\{", false),
             ("\\}", false),
             ("(?:(?://)[\0-\t\u{b}\u{c}\u{e}-\u{10ffff}]*[\n\r]*)", true),
-            ("(?:(?:\\(\\*)[\0-\\)\\+-\u{10ffff}]*\\*+/?:[\0-\\(\\+-\u{10ffff}][\0-\\)\\+-\u{10ffff}]*\\*+/*\\))", true),
+            ("(?:(?:/\\*)[\0-\\)\\+-\u{10ffff}]*\\*+/)", true),
+            ("(?:[\n\r]\\#[\0-\t\u{b}\u{c}\u{e}-\u{10ffff}]*[\n\r]*)", true),
             ("[\t-\r \u{85}\u{a0}\u{1680}\u{2000}-\u{200a}\u{2028}\u{2029}\u{202f}\u{205f}\u{3000}]*", true),
         ];
         __lalrpop_util::lexer::MatcherBuilder::new(__strs.iter().copied()).unwrap()

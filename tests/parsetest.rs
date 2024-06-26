@@ -203,6 +203,7 @@ fn list_files(dir: &str) -> Vec<String> {
 fn dot300() {
     let files = list_files("tests/dot");
     //iterate through the files
+    let mut failed = false;
     for file in files {
         let contents = read_file(&file);
         println!("dot lang test {}", file);
@@ -210,8 +211,9 @@ fn dot300() {
             Ok(_) => println!("Parse 300 successful"),
             Err(e) => {
                 println!("Parse 300 failed with error: {:?}", e);
-                assert!(false);
+                failed = true;
             }
         }
     }
+    assert!(!failed);
 }

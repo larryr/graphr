@@ -12,11 +12,14 @@ extern {
 // Lexer rules
 //
 
+//NOTE: lrr: the last regex does not handle a comment like "/* /* comment */"
 
 match {
     r"\s*" => { }, // The default whitespace skipping is disabled if an `ignore pattern` is specified
     r"//[^\n\r]*[\n\r]*" => { }, // Skip `// comments`
-    r#"\(\*[^*]*\*+/?:[^\)*][^*]*\*+/*\)"# => { },  // Skip `/* comments */)`
+    r#"/\*[^*]*\*+/"# => { },  // Skip `/* comments */)`
+    // add for skipping "# directive" lines where "#" is first char after \n\r
+    r"[\n\r]#[^\n\r]*[\n\r]*" => { },
 } else {
     _
 }

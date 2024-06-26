@@ -1,5 +1,11 @@
 // comment
-
+/* comment */
+# C preprocessor directive
 graph G {
-    a = "a string"  //comment
-}
+    /* //comments /*/
+    a = "#a string"  //comment
+    b = "
+# another string"
+    /* another comment
+    that spans multiple lines */
+}  /* another comment */
