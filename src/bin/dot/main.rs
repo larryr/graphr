@@ -33,13 +33,13 @@ fn main() {
 
     //testing
 
-    let g = cgraph::Graph::new();
+    let g = cgraph::Graph::new("testgraph".to_string(), cgraph::GraphKind::Directed);
     let n = cgraph::Node::new();
     let e = cgraph::Edge::new();
     let a = cgraph::Attribute::new();
 
 
-    println!("g={:?}", g);
+    println!("g={}", g);
     println!("n={}", n);
     println!("e={}", e);
     println!("a={}", a);

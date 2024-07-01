@@ -1,7 +1,8 @@
+use std::fmt;
 use std::io::{self, Read};
-use super::Graph;
+use super::{Graph, GraphKind, Node};
 
-/// A Graph is the top level abastraction to hold a
+/// A Graph is the top level abstraction to hold
 /// the graph definition and attributes.
 ///
 /// Each graph has a collection of:
@@ -17,9 +18,16 @@ use super::Graph;
 /// A Graph can be rendered to a byte-stream in a variety of formats.
 ///
 impl Graph {
-    pub fn new() -> Graph {
+
+    pub fn new(name: String, kind: GraphKind) -> Graph {
         println!("Graph::new()");
-        Graph {}
+        Graph {
+            name,
+            kind,
+            nodes: Vec::new(),
+            edges: Vec::new(),
+            attributes: Vec::new()
+        }
     }
 
     /// Parse a graph descriptor in the **DOT** language.
@@ -33,7 +41,13 @@ impl Graph {
         let mut stdout = io::stdout();
         io::copy(reader, &mut stdout).unwrap();
 
-        Graph {}
+        Graph {
+            name: "no-dot".to_string(),
+            kind: GraphKind::Directed,
+            nodes: Vec::new(),
+            edges: Vec::new(),
+            attributes: Vec::new()
+        }
     }
 
     pub fn nodes(&self) -> u32 {
@@ -65,5 +79,11 @@ impl Graph {
         println!("Graph::is_simple");
         false
     }
+
 }
 
+impl fmt::Display for Graph {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "Graph: {} kind: {:?}", self.name, self.kind)
+    }
+}

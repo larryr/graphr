@@ -1,7 +1,16 @@
 
 
-#[derive(Debug)]
-pub struct Graph;
+
+pub struct Graph {
+    name: String,
+    kind: GraphKind,
+
+    nodes: Vec<Node>,
+    edges: Vec<Edge>,
+    attributes: Vec<Attribute>
+}
+
+pub struct X;
 
 pub struct Node;
 
@@ -18,4 +27,12 @@ pub mod attribute;
 pub mod dotlang;
 pub mod grammar;
 // common definitions
+
+#[derive(Debug)]
+pub enum GraphKind {
+    Directed,
+    Undirected,
+    StrictDirected,
+    StrictUndirected
+}
 
