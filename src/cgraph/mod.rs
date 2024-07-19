@@ -1,5 +1,4 @@
-
-
+mod graph;
 
 pub struct Graph {
     name: String,
@@ -12,20 +11,26 @@ pub struct Graph {
 
 pub struct X;
 
-pub struct Node;
+pub struct Node {
+    name: String,
+    id: u64,
+    attributes: Vec<Attribute>
+}
 
-pub struct Edge;
+pub struct Edge {
+    name: String
+}
 
 pub struct Attribute;
 
 
 // bring in sub modules
-pub mod graph;
-pub mod node;
-pub mod edge;
-pub mod attribute;
-pub mod dotlang;
-pub mod grammar;
+//pub mod graph;
+//pub mod node;
+//pub mod edge;
+//pub mod attribute;
+//pub mod dotlang;
+//pub mod grammar;
 // common definitions
 
 #[derive(Debug)]

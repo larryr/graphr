@@ -50,6 +50,27 @@ impl Graph {
         }
     }
 
+    //
+    // Graph API for adding nodes, edges, sub-graphs, and attributes
+    //
+
+    // add node to graph.
+    pub fn add_node(&mut self, name : String) -> Node {
+        println!("Graph::add_node");
+        // check if node-name exists; add if not
+        if ! self.nodes.iter().any(|n| n.name == name) {
+            let node = Node::new(name);
+            self.nodes.push(node);
+            return node;
+        }
+        // return an error
+
+    }
+
+
+
+
+
     pub fn nodes(&self) -> u32 {
         println!("Graph::nodes");
         0

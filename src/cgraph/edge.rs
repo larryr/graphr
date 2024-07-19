@@ -1,9 +1,14 @@
 use super::Edge;
 use std::fmt;
 impl Edge {
-    pub fn new() -> Edge {
+    fn new(name: String) -> Edge {
         println!("new Edge");
-        Edge {}
+        Edge {
+            name: name,
+            attributes: Vec::new()
+            id: 0,
+
+        }
     }
 }
 
