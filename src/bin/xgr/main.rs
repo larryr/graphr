@@ -1,32 +1,18 @@
-use graphr::gvc::ctx;
 use graphr::cgraph;
 
 fn main() {
     println!("xgr - graphr example");
-    graphr::common::print();
-    graphr::gvc::print();
 
-    // load plugins if we decide that
+    // create a digraph programmatically
+    let mut g = cgraph::Graph::new("Sport".to_string(), cgraph::GraphKind::Directed);
 
-    // get a global context
-    let ctx = ctx::new();
-
-    // parse command line args
-    ctx.parse_args();
-
-    // create a digraph
-    let g = cgraph::Graph::new("Sport".to_string(), cgraph::GraphKind::Directed);
-
-    let node_run = cgraph::Node::new();
-    let node_bike = cgraph::Node::new();
-    let node_tri  = cgraph::Node::new();
+    g.add_node("run".to_string());
+    g.add_node("bike".to_string());
+    g.add_node("tri".to_string());
 
     // connect nodes with edges
-    let edge_tri_run = cgraph::Edge::new(&node_tri, &node_run);
-    let edge_tri_bike = cgraph::Edge::new(&node_tri, &node_bike);
+    g.add_edge("tri".to_string(), "run".to_string());
+    g.add_edge("tri".to_string(), "bike".to_string());
 
-    // add nodes to graph
-    g.add_node(node_tri);
-
-    println!("dump graph description:\ng={}", g);
+    println!("dump graph description:\n{}", g);
 }

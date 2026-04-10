@@ -1,6 +1,7 @@
 // auto-generated: "lalrpop 0.20.2"
-// sha3: f8cfe94b68f6d28b31b5e310744726b8315d1dd29772068517c10acd9bb3c9c9
+// sha3: d52e275260d9ccc411c05ed42185774efa407695959cf2db9f93240a0623b1bf
 use std::str::FromStr;
+use crate::cgraph::ast::*;
 #[allow(unused_extern_crates)]
 extern crate lalrpop_util as __lalrpop_util;
 #[allow(unused_imports)]
@@ -13,6 +14,7 @@ extern crate alloc;
 mod __parse__Expr1 {
 
     use std::str::FromStr;
+    use crate::cgraph::ast::*;
     #[allow(unused_extern_crates)]
     extern crate lalrpop_util as __lalrpop_util;
     #[allow(unused_imports)]
@@ -25,6 +27,17 @@ mod __parse__Expr1 {
      {
         Variant0(&'input str),
         Variant1(()),
+        Variant2(AstNodeId),
+        Variant3(Vec<AstAttr>),
+        Variant4(AstGraph),
+        Variant5(AstStmt),
+        Variant6(String),
+        Variant7(Vec<AstEdgeEndpoint>),
+        Variant8(AstAttr),
+        Variant9(bool),
+        Variant10(core::option::Option<String>),
+        Variant11(Vec<AstStmt>),
+        Variant12(AstSubGraph),
     }
     const __ACTION: &[i8] = &[
         // State 0
@@ -36,27 +49,27 @@ mod __parse__Expr1 {
         // State 3
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 4
-        0, 0, 0, -56, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, -57, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 5
-        0, 0, 0, -53, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        // State 6
         0, 0, 0, -54, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        // State 7
+        // State 6
         0, 0, 0, -55, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        // State 7
+        0, 0, 0, -56, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 8
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 9
-        0, 0, 0, -60, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, -63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 10
-        0, 0, 0, -57, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, -60, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 11
-        0, 0, 0, -59, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, -62, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 12
-        0, 0, 0, -58, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, -61, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 13
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 14
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -35, -35, -35, -35,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -36, -36, -36, -36,
         // State 15
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ];
@@ -67,35 +80,35 @@ mod __parse__Expr1 {
         // State 0
         0,
         // State 1
-        -63,
+        -66,
         // State 2
         0,
         // State 3
-        -19,
+        -20,
         // State 4
-        -56,
+        -57,
         // State 5
-        -53,
-        // State 6
         -54,
-        // State 7
+        // State 6
         -55,
+        // State 7
+        -56,
         // State 8
         -4,
         // State 9
-        -60,
+        -63,
         // State 10
-        -57,
+        -60,
         // State 11
-        -59,
-        // State 12
-        -58,
-        // State 13
         -62,
+        // State 12
+        -61,
+        // State 13
+        -65,
         // State 14
         0,
         // State 15
-        -66,
+        -69,
     ];
     fn __goto(state: i8, nt: usize) -> i8 {
         match nt {
@@ -105,12 +118,12 @@ mod __parse__Expr1 {
                 2 => 15,
                 _ => 1,
             },
-            37 => 4,
-            38 => 5,
-            39 => 6,
-            40 => 7,
-            42 => 8,
-            44 => 13,
+            38 => 4,
+            39 => 5,
+            40 => 6,
+            41 => 7,
+            43 => 8,
+            45 => 13,
             _ => 0,
         }
     }
@@ -133,7 +146,7 @@ mod __parse__Expr1 {
         r###""}""###,
         r###"r#"\"[^\"]*\""#"###,
         r###"r#"<[^>]*>"#"###,
-        r###"r#"[-]*[0-9]+"#"###,
+        r###"r#"[-]?[0-9]+(\\.[0-9]+)?"#"###,
         r###"r#"[a-zA-Z_][a-zA-Z0-9_]*"#"###,
     ];
     fn __expected_tokens(__state: i8) -> alloc::vec::Vec<alloc::string::String> {
@@ -175,7 +188,7 @@ mod __parse__Expr1 {
         type Token = Token<'input>;
         type TokenIndex = usize;
         type Symbol = __Symbol<'input>;
-        type Success = ();
+        type Success = AstNodeId;
         type StateIndex = i8;
         type Action = i8;
         type ReduceIndex = i8;
@@ -367,141 +380,141 @@ mod __parse__Expr1 {
             }
             8 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 6,
                 }
             }
             9 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 7,
+                    states_to_pop: 2,
+                    nonterminal_produced: 6,
                 }
             }
             10 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 8,
+                    nonterminal_produced: 7,
                 }
             }
             11 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 9,
+                    nonterminal_produced: 8,
                 }
             }
             12 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 10,
+                    nonterminal_produced: 9,
                 }
             }
             13 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 11,
+                    nonterminal_produced: 10,
                 }
             }
             14 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 12,
+                    nonterminal_produced: 11,
                 }
             }
             15 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 13,
+                    nonterminal_produced: 12,
                 }
             }
             16 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 14,
+                    nonterminal_produced: 13,
                 }
             }
             17 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
+                    nonterminal_produced: 14,
+                }
+            }
+            18 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
                     nonterminal_produced: 15,
                 }
             }
-            18 => __state_machine::SimulatedReduce::Accept,
-            19 => {
+            19 => __state_machine::SimulatedReduce::Accept,
+            20 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 17,
                 }
             }
-            20 => {
+            21 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 18,
                 }
             }
-            21 => {
+            22 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 19,
                 }
             }
-            22 => {
+            23 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 20,
                 }
             }
-            23 => {
+            24 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 21,
                 }
             }
-            24 => {
+            25 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 22,
                 }
             }
-            25 => {
+            26 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 23,
                 }
             }
-            26 => {
+            27 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 24,
                 }
             }
-            27 => {
-                __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 25,
-                }
-            }
             28 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
+                    states_to_pop: 2,
                     nonterminal_produced: 25,
                 }
             }
             29 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
-                    nonterminal_produced: 26,
+                    states_to_pop: 1,
+                    nonterminal_produced: 25,
                 }
             }
             30 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 4,
                     nonterminal_produced: 26,
                 }
             }
             31 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 27,
+                    states_to_pop: 3,
+                    nonterminal_produced: 26,
                 }
             }
             32 => {
@@ -518,55 +531,55 @@ mod __parse__Expr1 {
             }
             34 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 28,
+                    states_to_pop: 2,
+                    nonterminal_produced: 27,
                 }
             }
             35 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 29,
+                    nonterminal_produced: 28,
                 }
             }
             36 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 30,
+                    nonterminal_produced: 29,
                 }
             }
             37 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
-                    nonterminal_produced: 31,
+                    states_to_pop: 1,
+                    nonterminal_produced: 30,
                 }
             }
             38 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 31,
                 }
             }
             39 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 2,
                     nonterminal_produced: 31,
                 }
             }
             40 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 31,
                 }
             }
             41 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 2,
-                    nonterminal_produced: 32,
+                    nonterminal_produced: 31,
                 }
             }
             42 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 2,
                     nonterminal_produced: 32,
                 }
             }
@@ -578,14 +591,14 @@ mod __parse__Expr1 {
             }
             44 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 32,
                 }
             }
             45 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 33,
+                    states_to_pop: 2,
+                    nonterminal_produced: 32,
                 }
             }
             46 => {
@@ -596,8 +609,8 @@ mod __parse__Expr1 {
             }
             47 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
-                    nonterminal_produced: 34,
+                    states_to_pop: 1,
+                    nonterminal_produced: 33,
                 }
             }
             48 => {
@@ -608,14 +621,14 @@ mod __parse__Expr1 {
             }
             49 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 4,
                     nonterminal_produced: 34,
                 }
             }
             50 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 35,
+                    states_to_pop: 3,
+                    nonterminal_produced: 34,
                 }
             }
             51 => {
@@ -627,7 +640,7 @@ mod __parse__Expr1 {
             52 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 36,
+                    nonterminal_produced: 35,
                 }
             }
             53 => {
@@ -651,85 +664,85 @@ mod __parse__Expr1 {
             56 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 37,
+                    nonterminal_produced: 36,
                 }
             }
             57 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 38,
+                    nonterminal_produced: 37,
                 }
             }
             58 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 39,
+                    states_to_pop: 0,
+                    nonterminal_produced: 37,
                 }
             }
             59 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 40,
+                    nonterminal_produced: 38,
                 }
             }
             60 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 41,
+                    nonterminal_produced: 39,
                 }
             }
             61 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 42,
+                    states_to_pop: 1,
+                    nonterminal_produced: 40,
                 }
             }
             62 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 42,
+                    nonterminal_produced: 41,
                 }
             }
             63 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 43,
+                    states_to_pop: 1,
+                    nonterminal_produced: 42,
                 }
             }
             64 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
+                    states_to_pop: 2,
                     nonterminal_produced: 43,
                 }
             }
             65 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 44,
+                    states_to_pop: 1,
+                    nonterminal_produced: 43,
                 }
             }
             66 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 45,
+                    states_to_pop: 2,
+                    nonterminal_produced: 44,
                 }
             }
             67 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 46,
+                    nonterminal_produced: 44,
                 }
             }
             68 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    states_to_pop: 2,
+                    nonterminal_produced: 45,
                 }
             }
             69 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    nonterminal_produced: 46,
                 }
             }
             70 => {
@@ -740,56 +753,74 @@ mod __parse__Expr1 {
             }
             71 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
-                    nonterminal_produced: 47,
+                    states_to_pop: 1,
+                    nonterminal_produced: 48,
                 }
             }
             72 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    nonterminal_produced: 48,
                 }
             }
             73 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 1,
                     nonterminal_produced: 48,
                 }
             }
             74 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 3,
-                    nonterminal_produced: 49,
+                    nonterminal_produced: 48,
                 }
             }
             75 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 49,
+                    states_to_pop: 1,
+                    nonterminal_produced: 48,
                 }
             }
             76 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 0,
+                    states_to_pop: 3,
                     nonterminal_produced: 49,
                 }
             }
             77 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 5,
+                    states_to_pop: 3,
                     nonterminal_produced: 50,
                 }
             }
             78 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
+                    states_to_pop: 2,
                     nonterminal_produced: 50,
                 }
             }
             79 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 0,
                     nonterminal_produced: 50,
+                }
+            }
+            80 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 5,
+                    nonterminal_produced: 51,
+                }
+            }
+            81 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 4,
+                    nonterminal_produced: 51,
+                }
+            }
+            82 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 3,
+                    nonterminal_produced: 51,
                 }
             }
             _ => panic!("invalid reduction index {}", __reduce_index)
@@ -816,7 +847,7 @@ mod __parse__Expr1 {
         >(
             &self,
             input: &'input str,
-        ) -> Result<(), __lalrpop_util::ParseError<usize, Token<'input>, &'static str>>
+        ) -> Result<AstNodeId, __lalrpop_util::ParseError<usize, Token<'input>, &'static str>>
         {
             let mut __tokens = self.builder.matcher(input);
             __state_machine::Parser::drive(
@@ -870,7 +901,7 @@ mod __parse__Expr1 {
         __states: &mut alloc::vec::Vec<i8>,
         __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
         _: core::marker::PhantomData<(&'input ())>,
-    ) -> Option<Result<(),__lalrpop_util::ParseError<usize, Token<'input>, &'static str>>>
+    ) -> Option<Result<AstNodeId,__lalrpop_util::ParseError<usize, Token<'input>, &'static str>>>
     {
         let (__pop_states, __nonterminal) = match __action {
             0 => {
@@ -928,15 +959,15 @@ mod __parse__Expr1 {
                 __reduce17(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             18 => {
+                __reduce18(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            19 => {
                 // __Expr1 = Expr1 => ActionFn(1);
-                let __sym0 = __pop_Variant1(__symbols);
+                let __sym0 = __pop_Variant2(__symbols);
                 let __start = __sym0.0;
                 let __end = __sym0.2;
                 let __nt = super::__action1::<>(input, __sym0);
                 return Some(Ok(__nt));
-            }
-            19 => {
-                __reduce19(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             20 => {
                 __reduce20(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
@@ -1118,6 +1149,15 @@ mod __parse__Expr1 {
             79 => {
                 __reduce79(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
+            80 => {
+                __reduce80(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            81 => {
+                __reduce81(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            82 => {
+                __reduce82(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
             _ => panic!("invalid action code {}", __action)
         };
         let __states_len = __states.len();
@@ -1142,6 +1182,127 @@ mod __parse__Expr1 {
             _ => __symbol_type_mismatch()
         }
     }
+    fn __pop_Variant8<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstAttr, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant8(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant4<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstGraph, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant4(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant2<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstNodeId, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant2(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant5<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstStmt, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant5(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant12<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstSubGraph, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant12(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant6<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, String, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant6(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant3<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstAttr>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant3(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant7<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstEdgeEndpoint>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant7(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant11<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstStmt>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant11(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant9<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, bool, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant9(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant10<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, core::option::Option<String>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant10(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
     fn __pop_Variant0<
       'input,
     >(
@@ -1162,10 +1323,10 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // () =  => ActionFn(79);
+        // () =  => ActionFn(78);
         let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
         let __end = __start;
-        let __nt = super::__action79::<>(input, &__start, &__end);
+        let __nt = super::__action78::<>(input, &__start, &__end);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (0, 0)
     }
@@ -1212,12 +1373,12 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Expr1 = node_id => ActionFn(18);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Expr1 = node_id => ActionFn(17);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action18::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action17::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 3)
     }
     fn __reduce4<
@@ -1229,12 +1390,12 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Expr2 = a_list => ActionFn(19);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Expr2 = a_list => ActionFn(18);
+        let __sym0 = __pop_Variant3(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action19::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action18::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
         (1, 4)
     }
     fn __reduce5<
@@ -1263,16 +1424,16 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = "strict", graph_kind, id, stmt_block => ActionFn(15);
+        // Graph = "strict", graph_kind, id, stmt_block => ActionFn(82);
         assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym3 = __pop_Variant11(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant9(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym3.2;
-        let __nt = super::__action15::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action82::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (4, 6)
     }
     fn __reduce7<
@@ -1284,15 +1445,15 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = graph_kind, id, stmt_block => ActionFn(16);
+        // Graph = "strict", graph_kind, stmt_block => ActionFn(83);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant9(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action16::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action83::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (3, 6)
     }
     fn __reduce8<
@@ -1304,17 +1465,37 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = graph_kind, stmt_block => ActionFn(17);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Graph = graph_kind, id, stmt_block => ActionFn(84);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant9(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action17::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 6)
+        let __end = __sym2.2;
+        let __nt = super::__action84::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
+        (3, 6)
     }
     fn __reduce9<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // Graph = graph_kind, stmt_block => ActionFn(85);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant9(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym1.2;
+        let __nt = super::__action85::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
+        (2, 6)
+    }
+    fn __reduce10<
         'input,
     >(
         input: &'input str,
@@ -1331,7 +1512,7 @@ mod __parse__Expr1 {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 7)
     }
-    fn __reduce10<
+    fn __reduce11<
         'input,
     >(
         input: &'input str,
@@ -1348,7 +1529,7 @@ mod __parse__Expr1 {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 8)
     }
-    fn __reduce11<
+    fn __reduce12<
         'input,
     >(
         input: &'input str,
@@ -1365,23 +1546,6 @@ mod __parse__Expr1 {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 9)
     }
-    fn __reduce12<
-        'input,
-    >(
-        input: &'input str,
-        __lookahead_start: Option<&usize>,
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
-        _: core::marker::PhantomData<(&'input ())>,
-    ) -> (usize, usize)
-    {
-        // T_digraph = DIGRAPH => ActionFn(76);
-        let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action76::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 10)
-    }
     fn __reduce13<
         'input,
     >(
@@ -1391,13 +1555,13 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_edge = EDGE => ActionFn(74);
+        // T_digraph = DIGRAPH => ActionFn(75);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action74::<>(input, __sym0);
+        let __nt = super::__action75::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 11)
+        (1, 10)
     }
     fn __reduce14<
         'input,
@@ -1408,13 +1572,13 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_graph = GRAPH => ActionFn(75);
+        // T_edge = EDGE => ActionFn(73);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action75::<>(input, __sym0);
+        let __nt = super::__action73::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 12)
+        (1, 11)
     }
     fn __reduce15<
         'input,
@@ -1425,13 +1589,13 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_node = NODE => ActionFn(73);
+        // T_graph = GRAPH => ActionFn(74);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action73::<>(input, __sym0);
+        let __nt = super::__action74::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 13)
+        (1, 12)
     }
     fn __reduce16<
         'input,
@@ -1442,13 +1606,13 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_strict = STRICT => ActionFn(78);
+        // T_node = NODE => ActionFn(72);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action78::<>(input, __sym0);
+        let __nt = super::__action72::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 14)
+        (1, 13)
     }
     fn __reduce17<
         'input,
@@ -1459,15 +1623,15 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_subgraph = SUBGRAPH => ActionFn(77);
+        // T_strict = STRICT => ActionFn(77);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action77::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 15)
+        (1, 14)
     }
-    fn __reduce19<
+    fn __reduce18<
         'input,
     >(
         input: &'input str,
@@ -1476,13 +1640,13 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // __Expr2 = Expr2 => ActionFn(2);
+        // T_subgraph = SUBGRAPH => ActionFn(76);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action2::<>(input, __sym0);
+        let __nt = super::__action76::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 17)
+        (1, 15)
     }
     fn __reduce20<
         'input,
@@ -1493,15 +1657,32 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
+        // __Expr2 = Expr2 => ActionFn(2);
+        let __sym0 = __pop_Variant3(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym0.2;
+        let __nt = super::__action2::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (1, 17)
+    }
+    fn __reduce21<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
         // __Graph = Graph => ActionFn(0);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant4(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action0::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (1, 18)
     }
-    fn __reduce21<
+    fn __reduce22<
         'input,
     >(
         input: &'input str,
@@ -1518,7 +1699,7 @@ mod __parse__Expr1 {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 19)
     }
-    fn __reduce22<
+    fn __reduce23<
         'input,
     >(
         input: &'input str,
@@ -1535,7 +1716,7 @@ mod __parse__Expr1 {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 20)
     }
-    fn __reduce23<
+    fn __reduce24<
         'input,
     >(
         input: &'input str,
@@ -1552,7 +1733,7 @@ mod __parse__Expr1 {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 21)
     }
-    fn __reduce24<
+    fn __reduce25<
         'input,
     >(
         input: &'input str,
@@ -1569,7 +1750,7 @@ mod __parse__Expr1 {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 22)
     }
-    fn __reduce25<
+    fn __reduce26<
         'input,
     >(
         input: &'input str,
@@ -1586,7 +1767,7 @@ mod __parse__Expr1 {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 23)
     }
-    fn __reduce26<
+    fn __reduce27<
         'input,
     >(
         input: &'input str,
@@ -1603,25 +1784,6 @@ mod __parse__Expr1 {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 24)
     }
-    fn __reduce27<
-        'input,
-    >(
-        input: &'input str,
-        __lookahead_start: Option<&usize>,
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
-        _: core::marker::PhantomData<(&'input ())>,
-    ) -> (usize, usize)
-    {
-        // a_list = elem_pair, a_list => ActionFn(36);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action36::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 25)
-    }
     fn __reduce28<
         'input,
     >(
@@ -1631,13 +1793,15 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // a_list = elem_pair => ActionFn(37);
-        let __sym0 = __pop_Variant1(__symbols);
+        // a_list = elem_pair, a_list => ActionFn(35);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant8(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action37::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 25)
+        let __end = __sym1.2;
+        let __nt = super::__action35::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (2, 25)
     }
     fn __reduce29<
         'input,
@@ -1648,17 +1812,13 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_list = lbracket, a_list, rbracket, attr_list => ActionFn(34);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // a_list = elem_pair => ActionFn(36);
+        let __sym0 = __pop_Variant8(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action34::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 26)
+        let __end = __sym0.2;
+        let __nt = super::__action36::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (1, 25)
     }
     fn __reduce30<
         'input,
@@ -1669,16 +1829,17 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_list = lbracket, a_list, rbracket => ActionFn(35);
-        assert!(__symbols.len() >= 3);
+        // attr_list = lbracket, a_list, rbracket, attr_list => ActionFn(33);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant3(__symbols);
         let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action35::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 26)
+        let __end = __sym3.2;
+        let __nt = super::__action33::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (4, 26)
     }
     fn __reduce31<
         'input,
@@ -1689,15 +1850,16 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "graph", attr_list => ActionFn(31);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // attr_list = lbracket, a_list, rbracket => ActionFn(34);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action31::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 27)
+        let __end = __sym2.2;
+        let __nt = super::__action34::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (3, 26)
     }
     fn __reduce32<
         'input,
@@ -1708,14 +1870,14 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "node", attr_list => ActionFn(32);
+        // attr_stmt = "graph", attr_list => ActionFn(30);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action32::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action30::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (2, 27)
     }
     fn __reduce33<
@@ -1727,14 +1889,14 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "edge", attr_list => ActionFn(33);
+        // attr_stmt = "node", attr_list => ActionFn(31);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action33::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action31::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (2, 27)
     }
     fn __reduce34<
@@ -1746,13 +1908,15 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // colon = ":" => ActionFn(66);
+        // attr_stmt = "edge", attr_list => ActionFn(32);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action66::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 28)
+        let __end = __sym1.2;
+        let __nt = super::__action32::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 27)
     }
     fn __reduce35<
         'input,
@@ -1763,13 +1927,13 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // comma = "," => ActionFn(68);
+        // colon = ":" => ActionFn(65);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action68::<>(input, __sym0);
+        let __nt = super::__action65::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 29)
+        (1, 28)
     }
     fn __reduce36<
         'input,
@@ -1780,13 +1944,13 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // compass_pt = id_ident => ActionFn(57);
-        let __sym0 = __pop_Variant1(__symbols);
+        // comma = "," => ActionFn(67);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action57::<>(input, __sym0);
+        let __nt = super::__action67::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 30)
+        (1, 29)
     }
     fn __reduce37<
         'input,
@@ -1797,16 +1961,13 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, node_id, edge_rhs => ActionFn(45);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // compass_pt = id_ident => ActionFn(56);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action45::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 31)
+        let __end = __sym0.2;
+        let __nt = super::__action56::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 30)
     }
     fn __reduce38<
         'input,
@@ -1817,15 +1978,16 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, node_id => ActionFn(46);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, node_id, edge_rhs => ActionFn(44);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant7(__symbols);
+        let __sym1 = __pop_Variant2(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action46::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 31)
+        let __end = __sym2.2;
+        let __nt = super::__action44::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (3, 31)
     }
     fn __reduce39<
         'input,
@@ -1836,16 +1998,15 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, subgraph, edge_rhs => ActionFn(47);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, node_id => ActionFn(45);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant2(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action47::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 31)
+        let __end = __sym1.2;
+        let __nt = super::__action45::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (2, 31)
     }
     fn __reduce40<
         'input,
@@ -1856,15 +2017,16 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, subgraph => ActionFn(48);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, subgraph, edge_rhs => ActionFn(46);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant7(__symbols);
+        let __sym1 = __pop_Variant12(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action48::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 31)
+        let __end = __sym2.2;
+        let __nt = super::__action46::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (3, 31)
     }
     fn __reduce41<
         'input,
@@ -1875,15 +2037,15 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = node_id, edge_rhs => ActionFn(41);
+        // edge_rhs = edgeop, subgraph => ActionFn(47);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant12(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action41::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 32)
+        let __nt = super::__action47::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (2, 31)
     }
     fn __reduce42<
         'input,
@@ -1894,16 +2056,15 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = node_id, edge_rhs, attr_list => ActionFn(42);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edge_stmt = node_id, edge_rhs => ActionFn(40);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action42::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 32)
+        let __end = __sym1.2;
+        let __nt = super::__action40::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 32)
     }
     fn __reduce43<
         'input,
@@ -1914,15 +2075,15 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = subgraph, edge_rhs, attr_list => ActionFn(43);
+        // edge_stmt = node_id, edge_rhs, attr_list => ActionFn(41);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant3(__symbols);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action43::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action41::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (3, 32)
     }
     fn __reduce44<
@@ -1934,15 +2095,16 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = subgraph, edge_rhs => ActionFn(44);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edge_stmt = subgraph, edge_rhs, attr_list => ActionFn(42);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant3(__symbols);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action44::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 32)
+        let __end = __sym2.2;
+        let __nt = super::__action42::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (3, 32)
     }
     fn __reduce45<
         'input,
@@ -1953,13 +2115,15 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edgeop = "->" => ActionFn(71);
-        let __sym0 = __pop_Variant0(__symbols);
+        // edge_stmt = subgraph, edge_rhs => ActionFn(43);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action71::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 33)
+        let __end = __sym1.2;
+        let __nt = super::__action43::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 32)
     }
     fn __reduce46<
         'input,
@@ -1970,11 +2134,11 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edgeop = "--" => ActionFn(72);
+        // edgeop = "->" => ActionFn(70);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action72::<>(input, __sym0);
+        let __nt = super::__action70::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 33)
     }
@@ -1987,17 +2151,13 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id, semicolon => ActionFn(38);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edgeop = "--" => ActionFn(71);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action38::<>(input, __sym0, __sym1, __sym2, __sym3);
+        let __end = __sym0.2;
+        let __nt = super::__action71::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 34)
+        (1, 33)
     }
     fn __reduce48<
         'input,
@@ -2008,16 +2168,16 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id, comma => ActionFn(39);
+        // elem_pair = id, "=", id, semicolon => ActionFn(37);
         assert!(__symbols.len() >= 4);
         let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym3.2;
-        let __nt = super::__action39::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action37::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
         (4, 34)
     }
     fn __reduce49<
@@ -2029,16 +2189,17 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id => ActionFn(40);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
+        // elem_pair = id, "=", id, comma => ActionFn(38);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action40::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 34)
+        let __end = __sym3.2;
+        let __nt = super::__action38::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
+        (4, 34)
     }
     fn __reduce50<
         'input,
@@ -2049,13 +2210,16 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // graph_kind = "graph" => ActionFn(20);
-        let __sym0 = __pop_Variant0(__symbols);
+        // elem_pair = id, "=", id => ActionFn(39);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action20::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 35)
+        let __end = __sym2.2;
+        let __nt = super::__action39::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
+        (3, 34)
     }
     fn __reduce51<
         'input,
@@ -2066,12 +2230,12 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // graph_kind = "digraph" => ActionFn(21);
+        // graph_kind = "graph" => ActionFn(19);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action21::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action19::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant9(__nt), __end));
         (1, 35)
     }
     fn __reduce52<
@@ -2083,13 +2247,13 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_ident => ActionFn(58);
-        let __sym0 = __pop_Variant1(__symbols);
+        // graph_kind = "digraph" => ActionFn(20);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action58::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 36)
+        let __nt = super::__action20::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant9(__nt), __end));
+        (1, 35)
     }
     fn __reduce53<
         'input,
@@ -2100,12 +2264,12 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_num => ActionFn(59);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_ident => ActionFn(57);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action59::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action57::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce54<
@@ -2117,12 +2281,12 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_str => ActionFn(60);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_num => ActionFn(58);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action60::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action58::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce55<
@@ -2134,12 +2298,12 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_html => ActionFn(61);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_str => ActionFn(59);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action61::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action59::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce56<
@@ -2151,13 +2315,13 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_html = r#"<[^>]*>"# => ActionFn(65);
-        let __sym0 = __pop_Variant0(__symbols);
+        // id = id_html => ActionFn(60);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action65::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 37)
+        let __nt = super::__action60::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 36)
     }
     fn __reduce57<
         'input,
@@ -2168,13 +2332,13 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_ident = r#"[a-zA-Z_][a-zA-Z0-9_]*"# => ActionFn(62);
-        let __sym0 = __pop_Variant0(__symbols);
+        // id? = id => ActionFn(79);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action62::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 38)
+        let __nt = super::__action79::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant10(__nt), __end));
+        (1, 37)
     }
     fn __reduce58<
         'input,
@@ -2185,13 +2349,12 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_num = r#"[-]*[0-9]+"# => ActionFn(63);
-        let __sym0 = __pop_Variant0(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action63::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 39)
+        // id? =  => ActionFn(80);
+        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
+        let __end = __start;
+        let __nt = super::__action80::<>(input, &__start, &__end);
+        __symbols.push((__start, __Symbol::Variant10(__nt), __end));
+        (0, 37)
     }
     fn __reduce59<
         'input,
@@ -2202,13 +2365,13 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_str = r#"\"[^\"]*\""# => ActionFn(64);
+        // id_html = r#"<[^>]*>"# => ActionFn(64);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action64::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 40)
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 38)
     }
     fn __reduce60<
         'input,
@@ -2219,13 +2382,13 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // lbracket = "[" => ActionFn(69);
+        // id_ident = r#"[a-zA-Z_][a-zA-Z0-9_]*"# => ActionFn(61);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action69::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 41)
+        let __nt = super::__action61::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 39)
     }
     fn __reduce61<
         'input,
@@ -2236,15 +2399,13 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_id = id, port => ActionFn(51);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id_num = r#"[-]?[0-9]+(\\.[0-9]+)?"# => ActionFn(62);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action51::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 42)
+        let __end = __sym0.2;
+        let __nt = super::__action62::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 40)
     }
     fn __reduce62<
         'input,
@@ -2255,13 +2416,13 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_id = id => ActionFn(52);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id_str = r#"\"[^\"]*\""# => ActionFn(63);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action52::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 42)
+        let __nt = super::__action63::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 41)
     }
     fn __reduce63<
         'input,
@@ -2272,15 +2433,13 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_stmt = node_id, attr_list => ActionFn(49);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // lbracket = "[" => ActionFn(68);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action49::<>(input, __sym0, __sym1);
+        let __end = __sym0.2;
+        let __nt = super::__action68::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 43)
+        (1, 42)
     }
     fn __reduce64<
         'input,
@@ -2291,13 +2450,15 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_stmt = node_id => ActionFn(50);
-        let __sym0 = __pop_Variant1(__symbols);
+        // node_id = id, port => ActionFn(50);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action50::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 43)
+        let __end = __sym1.2;
+        let __nt = super::__action50::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (2, 43)
     }
     fn __reduce65<
         'input,
@@ -2308,15 +2469,13 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // port = colon, id => ActionFn(53);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // node_id = id => ActionFn(51);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action53::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 44)
+        let __end = __sym0.2;
+        let __nt = super::__action51::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (1, 43)
     }
     fn __reduce66<
         'input,
@@ -2327,13 +2486,15 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // rbracket = "]" => ActionFn(70);
-        let __sym0 = __pop_Variant0(__symbols);
+        // node_stmt = node_id, attr_list => ActionFn(48);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action70::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 45)
+        let __end = __sym1.2;
+        let __nt = super::__action48::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 44)
     }
     fn __reduce67<
         'input,
@@ -2344,13 +2505,13 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // semicolon = ";" => ActionFn(67);
-        let __sym0 = __pop_Variant0(__symbols);
+        // node_stmt = node_id => ActionFn(49);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action67::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 46)
+        let __nt = super::__action49::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 44)
     }
     fn __reduce68<
         'input,
@@ -2361,13 +2522,15 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = node_stmt => ActionFn(26);
+        // port = colon, id => ActionFn(52);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant6(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action26::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        let __end = __sym1.2;
+        let __nt = super::__action52::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (2, 45)
     }
     fn __reduce69<
         'input,
@@ -2378,13 +2541,13 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = edge_stmt => ActionFn(27);
-        let __sym0 = __pop_Variant1(__symbols);
+        // rbracket = "]" => ActionFn(69);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action27::<>(input, __sym0);
+        let __nt = super::__action69::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        (1, 46)
     }
     fn __reduce70<
         'input,
@@ -2395,11 +2558,11 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = attr_stmt => ActionFn(28);
-        let __sym0 = __pop_Variant1(__symbols);
+        // semicolon = ";" => ActionFn(66);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action28::<>(input, __sym0);
+        let __nt = super::__action66::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 47)
     }
@@ -2412,16 +2575,13 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = id, "=", id => ActionFn(29);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = node_stmt => ActionFn(25);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action29::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 47)
+        let __end = __sym0.2;
+        let __nt = super::__action25::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce72<
         'input,
@@ -2432,13 +2592,13 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = subgraph => ActionFn(30);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = edge_stmt => ActionFn(26);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action30::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        let __nt = super::__action26::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce73<
         'input,
@@ -2449,16 +2609,13 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_block = "{", stmt_list, "}" => ActionFn(22);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // stmt = attr_stmt => ActionFn(27);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action22::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 48)
+        let __end = __sym0.2;
+        let __nt = super::__action27::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce74<
         'input,
@@ -2469,16 +2626,16 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list = stmt, semicolon, stmt_list => ActionFn(23);
+        // stmt = id, "=", id => ActionFn(28);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action23::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 49)
+        let __nt = super::__action28::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (3, 48)
     }
     fn __reduce75<
         'input,
@@ -2489,15 +2646,13 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list = stmt, stmt_list => ActionFn(24);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = subgraph => ActionFn(29);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action24::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 49)
+        let __end = __sym0.2;
+        let __nt = super::__action29::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce76<
         'input,
@@ -2508,12 +2663,16 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list =  => ActionFn(80);
-        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
-        let __end = __start;
-        let __nt = super::__action80::<>(input, &__start, &__end);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (0, 49)
+        // stmt_block = "{", stmt_list, "}" => ActionFn(21);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant0(__symbols);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym2.2;
+        let __nt = super::__action21::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (3, 49)
     }
     fn __reduce77<
         'input,
@@ -2524,18 +2683,16 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "subgraph", id, "{", stmt_list, "}" => ActionFn(54);
-        assert!(__symbols.len() >= 5);
-        let __sym4 = __pop_Variant0(__symbols);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant0(__symbols);
+        // stmt_list = stmt, semicolon, stmt_list => ActionFn(22);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant11(__symbols);
         let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym4.2;
-        let __nt = super::__action54::<>(input, __sym0, __sym1, __sym2, __sym3, __sym4);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (5, 50)
+        let __end = __sym2.2;
+        let __nt = super::__action22::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (3, 50)
     }
     fn __reduce78<
         'input,
@@ -2546,17 +2703,15 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "subgraph", "{", stmt_list, "}" => ActionFn(55);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant0(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // stmt_list = stmt, stmt_list => ActionFn(23);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action55::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 50)
+        let __end = __sym1.2;
+        let __nt = super::__action23::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (2, 50)
     }
     fn __reduce79<
         'input,
@@ -2567,16 +2722,75 @@ mod __parse__Expr1 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "{", stmt_list, "}" => ActionFn(56);
+        // stmt_list =  => ActionFn(81);
+        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
+        let __end = __start;
+        let __nt = super::__action81::<>(input, &__start, &__end);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (0, 50)
+    }
+    fn __reduce80<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "subgraph", id, "{", stmt_list, "}" => ActionFn(53);
+        assert!(__symbols.len() >= 5);
+        let __sym4 = __pop_Variant0(__symbols);
+        let __sym3 = __pop_Variant11(__symbols);
+        let __sym2 = __pop_Variant0(__symbols);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym4.2;
+        let __nt = super::__action53::<>(input, __sym0, __sym1, __sym2, __sym3, __sym4);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (5, 51)
+    }
+    fn __reduce81<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "subgraph", "{", stmt_list, "}" => ActionFn(54);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant0(__symbols);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym3.2;
+        let __nt = super::__action54::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (4, 51)
+    }
+    fn __reduce82<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "{", stmt_list, "}" => ActionFn(55);
         assert!(__symbols.len() >= 3);
         let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant11(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action56::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 50)
+        let __nt = super::__action55::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (3, 51)
     }
 }
 #[allow(unused_imports)]
@@ -2587,6 +2801,7 @@ pub use self::__parse__Expr1::Expr1Parser;
 mod __parse__Expr2 {
 
     use std::str::FromStr;
+    use crate::cgraph::ast::*;
     #[allow(unused_extern_crates)]
     extern crate lalrpop_util as __lalrpop_util;
     #[allow(unused_imports)]
@@ -2599,6 +2814,17 @@ mod __parse__Expr2 {
      {
         Variant0(&'input str),
         Variant1(()),
+        Variant2(AstNodeId),
+        Variant3(Vec<AstAttr>),
+        Variant4(AstGraph),
+        Variant5(AstStmt),
+        Variant6(String),
+        Variant7(Vec<AstEdgeEndpoint>),
+        Variant8(AstAttr),
+        Variant9(bool),
+        Variant10(core::option::Option<String>),
+        Variant11(Vec<AstStmt>),
+        Variant12(AstSubGraph),
     }
     const __ACTION: &[i8] = &[
         // State 0
@@ -2608,7 +2834,7 @@ mod __parse__Expr2 {
         // State 2
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 13, 14, 15,
         // State 3
-        19, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -50, -50, -50, -50,
+        19, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -51, -51, -51, -51,
         // State 4
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 5
@@ -2616,31 +2842,31 @@ mod __parse__Expr2 {
         // State 6
         0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 7
-        -56, 0, 0, 0, -56, -56, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -56, -56, -56, -56,
-        // State 8
-        -53, 0, 0, 0, -53, -53, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -53, -53, -53, -53,
-        // State 9
-        -54, 0, 0, 0, -54, -54, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -54, -54, -54, -54,
-        // State 10
-        -55, 0, 0, 0, -55, -55, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -55, -55, -55, -55,
-        // State 11
-        -60, 0, 0, 0, -60, -60, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -60, -60, -60, -60,
-        // State 12
         -57, 0, 0, 0, -57, -57, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -57, -57, -57, -57,
+        // State 8
+        -54, 0, 0, 0, -54, -54, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -54, -54, -54, -54,
+        // State 9
+        -55, 0, 0, 0, -55, -55, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -55, -55, -55, -55,
+        // State 10
+        -56, 0, 0, 0, -56, -56, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -56, -56, -56, -56,
+        // State 11
+        -63, 0, 0, 0, -63, -63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -63, -63, -63, -63,
+        // State 12
+        -60, 0, 0, 0, -60, -60, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -60, -60, -60, -60,
         // State 13
-        -59, 0, 0, 0, -59, -59, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -59, -59, -59, -59,
+        -62, 0, 0, 0, -62, -62, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -62, -62, -62, -62,
         // State 14
-        -58, 0, 0, 0, -58, -58, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -58, -58, -58, -58,
+        -61, 0, 0, 0, -61, -61, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -61, -61, -61, -61,
         // State 15
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 16
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -49, -49, -49, -49,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -50, -50, -50, -50,
         // State 17
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -48, -48, -48, -48,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -49, -49, -49, -49,
         // State 18
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -36, -36, -36, -36,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -37, -37, -37, -37,
         // State 19
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -68, -68, -68, -68,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -71, -71, -71, -71,
     ];
     fn __action(state: i8, integer: usize) -> i8 {
         __ACTION[(state as usize) * 20 + integer]
@@ -2649,43 +2875,43 @@ mod __parse__Expr2 {
         // State 0
         0,
         // State 1
-        -29,
+        -30,
         // State 2
         0,
         // State 3
-        -50,
+        -51,
         // State 4
-        -20,
+        -21,
         // State 5
         -5,
         // State 6
         0,
         // State 7
-        -56,
-        // State 8
-        -53,
-        // State 9
-        -54,
-        // State 10
-        -55,
-        // State 11
-        -60,
-        // State 12
         -57,
+        // State 8
+        -54,
+        // State 9
+        -55,
+        // State 10
+        -56,
+        // State 11
+        -63,
+        // State 12
+        -60,
         // State 13
-        -59,
+        -62,
         // State 14
-        -58,
+        -61,
         // State 15
-        -28,
+        -29,
         // State 16
-        -49,
+        -50,
         // State 17
-        -48,
+        -49,
         // State 18
-        -36,
+        -37,
         // State 19
-        -68,
+        -71,
     ];
     fn __goto(state: i8, nt: usize) -> i8 {
         match nt {
@@ -2700,11 +2926,11 @@ mod __parse__Expr2 {
                 0..=1 => 6,
                 _ => 3,
             },
-            37 => 7,
-            38 => 8,
-            39 => 9,
-            40 => 10,
-            46 => 17,
+            38 => 7,
+            39 => 8,
+            40 => 9,
+            41 => 10,
+            47 => 17,
             _ => 0,
         }
     }
@@ -2727,7 +2953,7 @@ mod __parse__Expr2 {
         r###""}""###,
         r###"r#"\"[^\"]*\""#"###,
         r###"r#"<[^>]*>"#"###,
-        r###"r#"[-]*[0-9]+"#"###,
+        r###"r#"[-]?[0-9]+(\\.[0-9]+)?"#"###,
         r###"r#"[a-zA-Z_][a-zA-Z0-9_]*"#"###,
     ];
     fn __expected_tokens(__state: i8) -> alloc::vec::Vec<alloc::string::String> {
@@ -2769,7 +2995,7 @@ mod __parse__Expr2 {
         type Token = Token<'input>;
         type TokenIndex = usize;
         type Symbol = __Symbol<'input>;
-        type Success = ();
+        type Success = Vec<AstAttr>;
         type StateIndex = i8;
         type Action = i8;
         type ReduceIndex = i8;
@@ -2961,141 +3187,141 @@ mod __parse__Expr2 {
             }
             8 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 6,
                 }
             }
             9 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 7,
+                    states_to_pop: 2,
+                    nonterminal_produced: 6,
                 }
             }
             10 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 8,
+                    nonterminal_produced: 7,
                 }
             }
             11 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 9,
+                    nonterminal_produced: 8,
                 }
             }
             12 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 10,
+                    nonterminal_produced: 9,
                 }
             }
             13 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 11,
+                    nonterminal_produced: 10,
                 }
             }
             14 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 12,
+                    nonterminal_produced: 11,
                 }
             }
             15 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 13,
+                    nonterminal_produced: 12,
                 }
             }
             16 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 14,
+                    nonterminal_produced: 13,
                 }
             }
             17 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 15,
+                    nonterminal_produced: 14,
                 }
             }
             18 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
+                    nonterminal_produced: 15,
+                }
+            }
+            19 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
                     nonterminal_produced: 16,
                 }
             }
-            19 => __state_machine::SimulatedReduce::Accept,
-            20 => {
+            20 => __state_machine::SimulatedReduce::Accept,
+            21 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 18,
                 }
             }
-            21 => {
+            22 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 19,
                 }
             }
-            22 => {
+            23 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 20,
                 }
             }
-            23 => {
+            24 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 21,
                 }
             }
-            24 => {
+            25 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 22,
                 }
             }
-            25 => {
+            26 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 23,
                 }
             }
-            26 => {
+            27 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 24,
                 }
             }
-            27 => {
-                __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 25,
-                }
-            }
             28 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
+                    states_to_pop: 2,
                     nonterminal_produced: 25,
                 }
             }
             29 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
-                    nonterminal_produced: 26,
+                    states_to_pop: 1,
+                    nonterminal_produced: 25,
                 }
             }
             30 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 4,
                     nonterminal_produced: 26,
                 }
             }
             31 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 27,
+                    states_to_pop: 3,
+                    nonterminal_produced: 26,
                 }
             }
             32 => {
@@ -3112,55 +3338,55 @@ mod __parse__Expr2 {
             }
             34 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 28,
+                    states_to_pop: 2,
+                    nonterminal_produced: 27,
                 }
             }
             35 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 29,
+                    nonterminal_produced: 28,
                 }
             }
             36 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 30,
+                    nonterminal_produced: 29,
                 }
             }
             37 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
-                    nonterminal_produced: 31,
+                    states_to_pop: 1,
+                    nonterminal_produced: 30,
                 }
             }
             38 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 31,
                 }
             }
             39 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 2,
                     nonterminal_produced: 31,
                 }
             }
             40 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 31,
                 }
             }
             41 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 2,
-                    nonterminal_produced: 32,
+                    nonterminal_produced: 31,
                 }
             }
             42 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 2,
                     nonterminal_produced: 32,
                 }
             }
@@ -3172,14 +3398,14 @@ mod __parse__Expr2 {
             }
             44 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 32,
                 }
             }
             45 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 33,
+                    states_to_pop: 2,
+                    nonterminal_produced: 32,
                 }
             }
             46 => {
@@ -3190,8 +3416,8 @@ mod __parse__Expr2 {
             }
             47 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
-                    nonterminal_produced: 34,
+                    states_to_pop: 1,
+                    nonterminal_produced: 33,
                 }
             }
             48 => {
@@ -3202,14 +3428,14 @@ mod __parse__Expr2 {
             }
             49 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 4,
                     nonterminal_produced: 34,
                 }
             }
             50 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 35,
+                    states_to_pop: 3,
+                    nonterminal_produced: 34,
                 }
             }
             51 => {
@@ -3221,7 +3447,7 @@ mod __parse__Expr2 {
             52 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 36,
+                    nonterminal_produced: 35,
                 }
             }
             53 => {
@@ -3245,85 +3471,85 @@ mod __parse__Expr2 {
             56 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 37,
+                    nonterminal_produced: 36,
                 }
             }
             57 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 38,
+                    nonterminal_produced: 37,
                 }
             }
             58 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 39,
+                    states_to_pop: 0,
+                    nonterminal_produced: 37,
                 }
             }
             59 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 40,
+                    nonterminal_produced: 38,
                 }
             }
             60 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 41,
+                    nonterminal_produced: 39,
                 }
             }
             61 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 42,
+                    states_to_pop: 1,
+                    nonterminal_produced: 40,
                 }
             }
             62 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 42,
+                    nonterminal_produced: 41,
                 }
             }
             63 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 43,
+                    states_to_pop: 1,
+                    nonterminal_produced: 42,
                 }
             }
             64 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
+                    states_to_pop: 2,
                     nonterminal_produced: 43,
                 }
             }
             65 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 44,
+                    states_to_pop: 1,
+                    nonterminal_produced: 43,
                 }
             }
             66 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 45,
+                    states_to_pop: 2,
+                    nonterminal_produced: 44,
                 }
             }
             67 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 46,
+                    nonterminal_produced: 44,
                 }
             }
             68 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    states_to_pop: 2,
+                    nonterminal_produced: 45,
                 }
             }
             69 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    nonterminal_produced: 46,
                 }
             }
             70 => {
@@ -3334,56 +3560,74 @@ mod __parse__Expr2 {
             }
             71 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
-                    nonterminal_produced: 47,
+                    states_to_pop: 1,
+                    nonterminal_produced: 48,
                 }
             }
             72 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    nonterminal_produced: 48,
                 }
             }
             73 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 1,
                     nonterminal_produced: 48,
                 }
             }
             74 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 3,
-                    nonterminal_produced: 49,
+                    nonterminal_produced: 48,
                 }
             }
             75 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 49,
+                    states_to_pop: 1,
+                    nonterminal_produced: 48,
                 }
             }
             76 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 0,
+                    states_to_pop: 3,
                     nonterminal_produced: 49,
                 }
             }
             77 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 5,
+                    states_to_pop: 3,
                     nonterminal_produced: 50,
                 }
             }
             78 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
+                    states_to_pop: 2,
                     nonterminal_produced: 50,
                 }
             }
             79 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 0,
                     nonterminal_produced: 50,
+                }
+            }
+            80 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 5,
+                    nonterminal_produced: 51,
+                }
+            }
+            81 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 4,
+                    nonterminal_produced: 51,
+                }
+            }
+            82 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 3,
+                    nonterminal_produced: 51,
                 }
             }
             _ => panic!("invalid reduction index {}", __reduce_index)
@@ -3410,7 +3654,7 @@ mod __parse__Expr2 {
         >(
             &self,
             input: &'input str,
-        ) -> Result<(), __lalrpop_util::ParseError<usize, Token<'input>, &'static str>>
+        ) -> Result<Vec<AstAttr>, __lalrpop_util::ParseError<usize, Token<'input>, &'static str>>
         {
             let mut __tokens = self.builder.matcher(input);
             __state_machine::Parser::drive(
@@ -3464,7 +3708,7 @@ mod __parse__Expr2 {
         __states: &mut alloc::vec::Vec<i8>,
         __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
         _: core::marker::PhantomData<(&'input ())>,
-    ) -> Option<Result<(),__lalrpop_util::ParseError<usize, Token<'input>, &'static str>>>
+    ) -> Option<Result<Vec<AstAttr>,__lalrpop_util::ParseError<usize, Token<'input>, &'static str>>>
     {
         let (__pop_states, __nonterminal) = match __action {
             0 => {
@@ -3525,15 +3769,15 @@ mod __parse__Expr2 {
                 __reduce18(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             19 => {
+                __reduce19(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            20 => {
                 // __Expr2 = Expr2 => ActionFn(2);
-                let __sym0 = __pop_Variant1(__symbols);
+                let __sym0 = __pop_Variant3(__symbols);
                 let __start = __sym0.0;
                 let __end = __sym0.2;
                 let __nt = super::__action2::<>(input, __sym0);
                 return Some(Ok(__nt));
-            }
-            20 => {
-                __reduce20(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             21 => {
                 __reduce21(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
@@ -3712,6 +3956,15 @@ mod __parse__Expr2 {
             79 => {
                 __reduce79(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
+            80 => {
+                __reduce80(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            81 => {
+                __reduce81(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            82 => {
+                __reduce82(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
             _ => panic!("invalid action code {}", __action)
         };
         let __states_len = __states.len();
@@ -3736,6 +3989,127 @@ mod __parse__Expr2 {
             _ => __symbol_type_mismatch()
         }
     }
+    fn __pop_Variant8<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstAttr, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant8(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant4<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstGraph, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant4(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant2<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstNodeId, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant2(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant5<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstStmt, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant5(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant12<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstSubGraph, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant12(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant6<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, String, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant6(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant3<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstAttr>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant3(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant7<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstEdgeEndpoint>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant7(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant11<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstStmt>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant11(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant9<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, bool, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant9(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant10<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, core::option::Option<String>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant10(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
     fn __pop_Variant0<
       'input,
     >(
@@ -3756,10 +4130,10 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // () =  => ActionFn(79);
+        // () =  => ActionFn(78);
         let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
         let __end = __start;
-        let __nt = super::__action79::<>(input, &__start, &__end);
+        let __nt = super::__action78::<>(input, &__start, &__end);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (0, 0)
     }
@@ -3806,12 +4180,12 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Expr1 = node_id => ActionFn(18);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Expr1 = node_id => ActionFn(17);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action18::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action17::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 3)
     }
     fn __reduce4<
@@ -3823,12 +4197,12 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Expr2 = a_list => ActionFn(19);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Expr2 = a_list => ActionFn(18);
+        let __sym0 = __pop_Variant3(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action19::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action18::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
         (1, 4)
     }
     fn __reduce5<
@@ -3857,16 +4231,16 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = "strict", graph_kind, id, stmt_block => ActionFn(15);
+        // Graph = "strict", graph_kind, id, stmt_block => ActionFn(82);
         assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym3 = __pop_Variant11(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant9(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym3.2;
-        let __nt = super::__action15::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action82::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (4, 6)
     }
     fn __reduce7<
@@ -3878,15 +4252,15 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = graph_kind, id, stmt_block => ActionFn(16);
+        // Graph = "strict", graph_kind, stmt_block => ActionFn(83);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant9(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action16::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action83::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (3, 6)
     }
     fn __reduce8<
@@ -3898,17 +4272,37 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = graph_kind, stmt_block => ActionFn(17);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Graph = graph_kind, id, stmt_block => ActionFn(84);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant9(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action17::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 6)
+        let __end = __sym2.2;
+        let __nt = super::__action84::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
+        (3, 6)
     }
     fn __reduce9<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // Graph = graph_kind, stmt_block => ActionFn(85);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant9(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym1.2;
+        let __nt = super::__action85::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
+        (2, 6)
+    }
+    fn __reduce10<
         'input,
     >(
         input: &'input str,
@@ -3925,7 +4319,7 @@ mod __parse__Expr2 {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 7)
     }
-    fn __reduce10<
+    fn __reduce11<
         'input,
     >(
         input: &'input str,
@@ -3942,7 +4336,7 @@ mod __parse__Expr2 {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 8)
     }
-    fn __reduce11<
+    fn __reduce12<
         'input,
     >(
         input: &'input str,
@@ -3959,23 +4353,6 @@ mod __parse__Expr2 {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 9)
     }
-    fn __reduce12<
-        'input,
-    >(
-        input: &'input str,
-        __lookahead_start: Option<&usize>,
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
-        _: core::marker::PhantomData<(&'input ())>,
-    ) -> (usize, usize)
-    {
-        // T_digraph = DIGRAPH => ActionFn(76);
-        let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action76::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 10)
-    }
     fn __reduce13<
         'input,
     >(
@@ -3985,13 +4362,13 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_edge = EDGE => ActionFn(74);
+        // T_digraph = DIGRAPH => ActionFn(75);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action74::<>(input, __sym0);
+        let __nt = super::__action75::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 11)
+        (1, 10)
     }
     fn __reduce14<
         'input,
@@ -4002,13 +4379,13 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_graph = GRAPH => ActionFn(75);
+        // T_edge = EDGE => ActionFn(73);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action75::<>(input, __sym0);
+        let __nt = super::__action73::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 12)
+        (1, 11)
     }
     fn __reduce15<
         'input,
@@ -4019,13 +4396,13 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_node = NODE => ActionFn(73);
+        // T_graph = GRAPH => ActionFn(74);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action73::<>(input, __sym0);
+        let __nt = super::__action74::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 13)
+        (1, 12)
     }
     fn __reduce16<
         'input,
@@ -4036,13 +4413,13 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_strict = STRICT => ActionFn(78);
+        // T_node = NODE => ActionFn(72);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action78::<>(input, __sym0);
+        let __nt = super::__action72::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 14)
+        (1, 13)
     }
     fn __reduce17<
         'input,
@@ -4053,13 +4430,13 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_subgraph = SUBGRAPH => ActionFn(77);
+        // T_strict = STRICT => ActionFn(77);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action77::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 15)
+        (1, 14)
     }
     fn __reduce18<
         'input,
@@ -4070,15 +4447,32 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // __Expr1 = Expr1 => ActionFn(1);
+        // T_subgraph = SUBGRAPH => ActionFn(76);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action1::<>(input, __sym0);
+        let __nt = super::__action76::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        (1, 15)
+    }
+    fn __reduce19<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // __Expr1 = Expr1 => ActionFn(1);
+        let __sym0 = __pop_Variant2(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym0.2;
+        let __nt = super::__action1::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 16)
     }
-    fn __reduce20<
+    fn __reduce21<
         'input,
     >(
         input: &'input str,
@@ -4088,14 +4482,14 @@ mod __parse__Expr2 {
     ) -> (usize, usize)
     {
         // __Graph = Graph => ActionFn(0);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant4(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action0::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (1, 18)
     }
-    fn __reduce21<
+    fn __reduce22<
         'input,
     >(
         input: &'input str,
@@ -4112,7 +4506,7 @@ mod __parse__Expr2 {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 19)
     }
-    fn __reduce22<
+    fn __reduce23<
         'input,
     >(
         input: &'input str,
@@ -4129,7 +4523,7 @@ mod __parse__Expr2 {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 20)
     }
-    fn __reduce23<
+    fn __reduce24<
         'input,
     >(
         input: &'input str,
@@ -4146,7 +4540,7 @@ mod __parse__Expr2 {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 21)
     }
-    fn __reduce24<
+    fn __reduce25<
         'input,
     >(
         input: &'input str,
@@ -4163,7 +4557,7 @@ mod __parse__Expr2 {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 22)
     }
-    fn __reduce25<
+    fn __reduce26<
         'input,
     >(
         input: &'input str,
@@ -4180,7 +4574,7 @@ mod __parse__Expr2 {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 23)
     }
-    fn __reduce26<
+    fn __reduce27<
         'input,
     >(
         input: &'input str,
@@ -4197,25 +4591,6 @@ mod __parse__Expr2 {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 24)
     }
-    fn __reduce27<
-        'input,
-    >(
-        input: &'input str,
-        __lookahead_start: Option<&usize>,
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
-        _: core::marker::PhantomData<(&'input ())>,
-    ) -> (usize, usize)
-    {
-        // a_list = elem_pair, a_list => ActionFn(36);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action36::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 25)
-    }
     fn __reduce28<
         'input,
     >(
@@ -4225,13 +4600,15 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // a_list = elem_pair => ActionFn(37);
-        let __sym0 = __pop_Variant1(__symbols);
+        // a_list = elem_pair, a_list => ActionFn(35);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant8(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action37::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 25)
+        let __end = __sym1.2;
+        let __nt = super::__action35::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (2, 25)
     }
     fn __reduce29<
         'input,
@@ -4242,17 +4619,13 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_list = lbracket, a_list, rbracket, attr_list => ActionFn(34);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // a_list = elem_pair => ActionFn(36);
+        let __sym0 = __pop_Variant8(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action34::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 26)
+        let __end = __sym0.2;
+        let __nt = super::__action36::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (1, 25)
     }
     fn __reduce30<
         'input,
@@ -4263,16 +4636,17 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_list = lbracket, a_list, rbracket => ActionFn(35);
-        assert!(__symbols.len() >= 3);
+        // attr_list = lbracket, a_list, rbracket, attr_list => ActionFn(33);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant3(__symbols);
         let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action35::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 26)
+        let __end = __sym3.2;
+        let __nt = super::__action33::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (4, 26)
     }
     fn __reduce31<
         'input,
@@ -4283,15 +4657,16 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "graph", attr_list => ActionFn(31);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // attr_list = lbracket, a_list, rbracket => ActionFn(34);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action31::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 27)
+        let __end = __sym2.2;
+        let __nt = super::__action34::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (3, 26)
     }
     fn __reduce32<
         'input,
@@ -4302,14 +4677,14 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "node", attr_list => ActionFn(32);
+        // attr_stmt = "graph", attr_list => ActionFn(30);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action32::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action30::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (2, 27)
     }
     fn __reduce33<
@@ -4321,14 +4696,14 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "edge", attr_list => ActionFn(33);
+        // attr_stmt = "node", attr_list => ActionFn(31);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action33::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action31::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (2, 27)
     }
     fn __reduce34<
@@ -4340,13 +4715,15 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // colon = ":" => ActionFn(66);
+        // attr_stmt = "edge", attr_list => ActionFn(32);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action66::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 28)
+        let __end = __sym1.2;
+        let __nt = super::__action32::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 27)
     }
     fn __reduce35<
         'input,
@@ -4357,13 +4734,13 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // comma = "," => ActionFn(68);
+        // colon = ":" => ActionFn(65);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action68::<>(input, __sym0);
+        let __nt = super::__action65::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 29)
+        (1, 28)
     }
     fn __reduce36<
         'input,
@@ -4374,13 +4751,13 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // compass_pt = id_ident => ActionFn(57);
-        let __sym0 = __pop_Variant1(__symbols);
+        // comma = "," => ActionFn(67);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action57::<>(input, __sym0);
+        let __nt = super::__action67::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 30)
+        (1, 29)
     }
     fn __reduce37<
         'input,
@@ -4391,16 +4768,13 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, node_id, edge_rhs => ActionFn(45);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // compass_pt = id_ident => ActionFn(56);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action45::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 31)
+        let __end = __sym0.2;
+        let __nt = super::__action56::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 30)
     }
     fn __reduce38<
         'input,
@@ -4411,15 +4785,16 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, node_id => ActionFn(46);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, node_id, edge_rhs => ActionFn(44);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant7(__symbols);
+        let __sym1 = __pop_Variant2(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action46::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 31)
+        let __end = __sym2.2;
+        let __nt = super::__action44::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (3, 31)
     }
     fn __reduce39<
         'input,
@@ -4430,16 +4805,15 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, subgraph, edge_rhs => ActionFn(47);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, node_id => ActionFn(45);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant2(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action47::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 31)
+        let __end = __sym1.2;
+        let __nt = super::__action45::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (2, 31)
     }
     fn __reduce40<
         'input,
@@ -4450,15 +4824,16 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, subgraph => ActionFn(48);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, subgraph, edge_rhs => ActionFn(46);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant7(__symbols);
+        let __sym1 = __pop_Variant12(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action48::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 31)
+        let __end = __sym2.2;
+        let __nt = super::__action46::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (3, 31)
     }
     fn __reduce41<
         'input,
@@ -4469,15 +4844,15 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = node_id, edge_rhs => ActionFn(41);
+        // edge_rhs = edgeop, subgraph => ActionFn(47);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant12(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action41::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 32)
+        let __nt = super::__action47::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (2, 31)
     }
     fn __reduce42<
         'input,
@@ -4488,16 +4863,15 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = node_id, edge_rhs, attr_list => ActionFn(42);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edge_stmt = node_id, edge_rhs => ActionFn(40);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action42::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 32)
+        let __end = __sym1.2;
+        let __nt = super::__action40::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 32)
     }
     fn __reduce43<
         'input,
@@ -4508,15 +4882,15 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = subgraph, edge_rhs, attr_list => ActionFn(43);
+        // edge_stmt = node_id, edge_rhs, attr_list => ActionFn(41);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant3(__symbols);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action43::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action41::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (3, 32)
     }
     fn __reduce44<
@@ -4528,15 +4902,16 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = subgraph, edge_rhs => ActionFn(44);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edge_stmt = subgraph, edge_rhs, attr_list => ActionFn(42);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant3(__symbols);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action44::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 32)
+        let __end = __sym2.2;
+        let __nt = super::__action42::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (3, 32)
     }
     fn __reduce45<
         'input,
@@ -4547,13 +4922,15 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edgeop = "->" => ActionFn(71);
-        let __sym0 = __pop_Variant0(__symbols);
+        // edge_stmt = subgraph, edge_rhs => ActionFn(43);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action71::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 33)
+        let __end = __sym1.2;
+        let __nt = super::__action43::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 32)
     }
     fn __reduce46<
         'input,
@@ -4564,11 +4941,11 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edgeop = "--" => ActionFn(72);
+        // edgeop = "->" => ActionFn(70);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action72::<>(input, __sym0);
+        let __nt = super::__action70::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 33)
     }
@@ -4581,17 +4958,13 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id, semicolon => ActionFn(38);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edgeop = "--" => ActionFn(71);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action38::<>(input, __sym0, __sym1, __sym2, __sym3);
+        let __end = __sym0.2;
+        let __nt = super::__action71::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 34)
+        (1, 33)
     }
     fn __reduce48<
         'input,
@@ -4602,16 +4975,16 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id, comma => ActionFn(39);
+        // elem_pair = id, "=", id, semicolon => ActionFn(37);
         assert!(__symbols.len() >= 4);
         let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym3.2;
-        let __nt = super::__action39::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action37::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
         (4, 34)
     }
     fn __reduce49<
@@ -4623,16 +4996,17 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id => ActionFn(40);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
+        // elem_pair = id, "=", id, comma => ActionFn(38);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action40::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 34)
+        let __end = __sym3.2;
+        let __nt = super::__action38::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
+        (4, 34)
     }
     fn __reduce50<
         'input,
@@ -4643,13 +5017,16 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // graph_kind = "graph" => ActionFn(20);
-        let __sym0 = __pop_Variant0(__symbols);
+        // elem_pair = id, "=", id => ActionFn(39);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action20::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 35)
+        let __end = __sym2.2;
+        let __nt = super::__action39::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
+        (3, 34)
     }
     fn __reduce51<
         'input,
@@ -4660,12 +5037,12 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // graph_kind = "digraph" => ActionFn(21);
+        // graph_kind = "graph" => ActionFn(19);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action21::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action19::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant9(__nt), __end));
         (1, 35)
     }
     fn __reduce52<
@@ -4677,13 +5054,13 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_ident => ActionFn(58);
-        let __sym0 = __pop_Variant1(__symbols);
+        // graph_kind = "digraph" => ActionFn(20);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action58::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 36)
+        let __nt = super::__action20::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant9(__nt), __end));
+        (1, 35)
     }
     fn __reduce53<
         'input,
@@ -4694,12 +5071,12 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_num => ActionFn(59);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_ident => ActionFn(57);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action59::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action57::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce54<
@@ -4711,12 +5088,12 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_str => ActionFn(60);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_num => ActionFn(58);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action60::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action58::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce55<
@@ -4728,12 +5105,12 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_html => ActionFn(61);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_str => ActionFn(59);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action61::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action59::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce56<
@@ -4745,13 +5122,13 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_html = r#"<[^>]*>"# => ActionFn(65);
-        let __sym0 = __pop_Variant0(__symbols);
+        // id = id_html => ActionFn(60);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action65::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 37)
+        let __nt = super::__action60::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 36)
     }
     fn __reduce57<
         'input,
@@ -4762,13 +5139,13 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_ident = r#"[a-zA-Z_][a-zA-Z0-9_]*"# => ActionFn(62);
-        let __sym0 = __pop_Variant0(__symbols);
+        // id? = id => ActionFn(79);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action62::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 38)
+        let __nt = super::__action79::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant10(__nt), __end));
+        (1, 37)
     }
     fn __reduce58<
         'input,
@@ -4779,13 +5156,12 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_num = r#"[-]*[0-9]+"# => ActionFn(63);
-        let __sym0 = __pop_Variant0(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action63::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 39)
+        // id? =  => ActionFn(80);
+        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
+        let __end = __start;
+        let __nt = super::__action80::<>(input, &__start, &__end);
+        __symbols.push((__start, __Symbol::Variant10(__nt), __end));
+        (0, 37)
     }
     fn __reduce59<
         'input,
@@ -4796,13 +5172,13 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_str = r#"\"[^\"]*\""# => ActionFn(64);
+        // id_html = r#"<[^>]*>"# => ActionFn(64);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action64::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 40)
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 38)
     }
     fn __reduce60<
         'input,
@@ -4813,13 +5189,13 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // lbracket = "[" => ActionFn(69);
+        // id_ident = r#"[a-zA-Z_][a-zA-Z0-9_]*"# => ActionFn(61);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action69::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 41)
+        let __nt = super::__action61::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 39)
     }
     fn __reduce61<
         'input,
@@ -4830,15 +5206,13 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_id = id, port => ActionFn(51);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id_num = r#"[-]?[0-9]+(\\.[0-9]+)?"# => ActionFn(62);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action51::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 42)
+        let __end = __sym0.2;
+        let __nt = super::__action62::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 40)
     }
     fn __reduce62<
         'input,
@@ -4849,13 +5223,13 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_id = id => ActionFn(52);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id_str = r#"\"[^\"]*\""# => ActionFn(63);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action52::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 42)
+        let __nt = super::__action63::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 41)
     }
     fn __reduce63<
         'input,
@@ -4866,15 +5240,13 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_stmt = node_id, attr_list => ActionFn(49);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // lbracket = "[" => ActionFn(68);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action49::<>(input, __sym0, __sym1);
+        let __end = __sym0.2;
+        let __nt = super::__action68::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 43)
+        (1, 42)
     }
     fn __reduce64<
         'input,
@@ -4885,13 +5257,15 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_stmt = node_id => ActionFn(50);
-        let __sym0 = __pop_Variant1(__symbols);
+        // node_id = id, port => ActionFn(50);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action50::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 43)
+        let __end = __sym1.2;
+        let __nt = super::__action50::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (2, 43)
     }
     fn __reduce65<
         'input,
@@ -4902,15 +5276,13 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // port = colon, id => ActionFn(53);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // node_id = id => ActionFn(51);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action53::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 44)
+        let __end = __sym0.2;
+        let __nt = super::__action51::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (1, 43)
     }
     fn __reduce66<
         'input,
@@ -4921,13 +5293,15 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // rbracket = "]" => ActionFn(70);
-        let __sym0 = __pop_Variant0(__symbols);
+        // node_stmt = node_id, attr_list => ActionFn(48);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action70::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 45)
+        let __end = __sym1.2;
+        let __nt = super::__action48::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 44)
     }
     fn __reduce67<
         'input,
@@ -4938,13 +5312,13 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // semicolon = ";" => ActionFn(67);
-        let __sym0 = __pop_Variant0(__symbols);
+        // node_stmt = node_id => ActionFn(49);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action67::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 46)
+        let __nt = super::__action49::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 44)
     }
     fn __reduce68<
         'input,
@@ -4955,13 +5329,15 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = node_stmt => ActionFn(26);
+        // port = colon, id => ActionFn(52);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant6(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action26::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        let __end = __sym1.2;
+        let __nt = super::__action52::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (2, 45)
     }
     fn __reduce69<
         'input,
@@ -4972,13 +5348,13 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = edge_stmt => ActionFn(27);
-        let __sym0 = __pop_Variant1(__symbols);
+        // rbracket = "]" => ActionFn(69);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action27::<>(input, __sym0);
+        let __nt = super::__action69::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        (1, 46)
     }
     fn __reduce70<
         'input,
@@ -4989,11 +5365,11 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = attr_stmt => ActionFn(28);
-        let __sym0 = __pop_Variant1(__symbols);
+        // semicolon = ";" => ActionFn(66);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action28::<>(input, __sym0);
+        let __nt = super::__action66::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 47)
     }
@@ -5006,16 +5382,13 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = id, "=", id => ActionFn(29);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = node_stmt => ActionFn(25);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action29::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 47)
+        let __end = __sym0.2;
+        let __nt = super::__action25::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce72<
         'input,
@@ -5026,13 +5399,13 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = subgraph => ActionFn(30);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = edge_stmt => ActionFn(26);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action30::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        let __nt = super::__action26::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce73<
         'input,
@@ -5043,16 +5416,13 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_block = "{", stmt_list, "}" => ActionFn(22);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // stmt = attr_stmt => ActionFn(27);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action22::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 48)
+        let __end = __sym0.2;
+        let __nt = super::__action27::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce74<
         'input,
@@ -5063,16 +5433,16 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list = stmt, semicolon, stmt_list => ActionFn(23);
+        // stmt = id, "=", id => ActionFn(28);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action23::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 49)
+        let __nt = super::__action28::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (3, 48)
     }
     fn __reduce75<
         'input,
@@ -5083,15 +5453,13 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list = stmt, stmt_list => ActionFn(24);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = subgraph => ActionFn(29);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action24::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 49)
+        let __end = __sym0.2;
+        let __nt = super::__action29::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce76<
         'input,
@@ -5102,12 +5470,16 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list =  => ActionFn(80);
-        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
-        let __end = __start;
-        let __nt = super::__action80::<>(input, &__start, &__end);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (0, 49)
+        // stmt_block = "{", stmt_list, "}" => ActionFn(21);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant0(__symbols);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym2.2;
+        let __nt = super::__action21::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (3, 49)
     }
     fn __reduce77<
         'input,
@@ -5118,18 +5490,16 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "subgraph", id, "{", stmt_list, "}" => ActionFn(54);
-        assert!(__symbols.len() >= 5);
-        let __sym4 = __pop_Variant0(__symbols);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant0(__symbols);
+        // stmt_list = stmt, semicolon, stmt_list => ActionFn(22);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant11(__symbols);
         let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym4.2;
-        let __nt = super::__action54::<>(input, __sym0, __sym1, __sym2, __sym3, __sym4);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (5, 50)
+        let __end = __sym2.2;
+        let __nt = super::__action22::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (3, 50)
     }
     fn __reduce78<
         'input,
@@ -5140,17 +5510,15 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "subgraph", "{", stmt_list, "}" => ActionFn(55);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant0(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // stmt_list = stmt, stmt_list => ActionFn(23);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action55::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 50)
+        let __end = __sym1.2;
+        let __nt = super::__action23::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (2, 50)
     }
     fn __reduce79<
         'input,
@@ -5161,16 +5529,75 @@ mod __parse__Expr2 {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "{", stmt_list, "}" => ActionFn(56);
+        // stmt_list =  => ActionFn(81);
+        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
+        let __end = __start;
+        let __nt = super::__action81::<>(input, &__start, &__end);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (0, 50)
+    }
+    fn __reduce80<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "subgraph", id, "{", stmt_list, "}" => ActionFn(53);
+        assert!(__symbols.len() >= 5);
+        let __sym4 = __pop_Variant0(__symbols);
+        let __sym3 = __pop_Variant11(__symbols);
+        let __sym2 = __pop_Variant0(__symbols);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym4.2;
+        let __nt = super::__action53::<>(input, __sym0, __sym1, __sym2, __sym3, __sym4);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (5, 51)
+    }
+    fn __reduce81<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "subgraph", "{", stmt_list, "}" => ActionFn(54);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant0(__symbols);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym3.2;
+        let __nt = super::__action54::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (4, 51)
+    }
+    fn __reduce82<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "{", stmt_list, "}" => ActionFn(55);
         assert!(__symbols.len() >= 3);
         let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant11(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action56::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 50)
+        let __nt = super::__action55::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (3, 51)
     }
 }
 #[allow(unused_imports)]
@@ -5181,6 +5608,7 @@ pub use self::__parse__Expr2::Expr2Parser;
 mod __parse__Graph {
 
     use std::str::FromStr;
+    use crate::cgraph::ast::*;
     #[allow(unused_extern_crates)]
     extern crate lalrpop_util as __lalrpop_util;
     #[allow(unused_imports)]
@@ -5193,6 +5621,17 @@ mod __parse__Graph {
      {
         Variant0(&'input str),
         Variant1(()),
+        Variant2(AstNodeId),
+        Variant3(Vec<AstAttr>),
+        Variant4(AstGraph),
+        Variant5(AstStmt),
+        Variant6(String),
+        Variant7(Vec<AstEdgeEndpoint>),
+        Variant8(AstAttr),
+        Variant9(bool),
+        Variant10(core::option::Option<String>),
+        Variant11(Vec<AstStmt>),
+        Variant12(AstSubGraph),
     }
     const __ACTION: &[i8] = &[
         // State 0
@@ -5204,27 +5643,27 @@ mod __parse__Graph {
         // State 3
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0,
         // State 4
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 12, 13, 0, 14, 15, -77, 42, 43, 44, 45,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 12, 13, 0, 14, 15, -80, 42, 43, 44, 45,
         // State 5
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 42, 43, 44, 45,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 42, 43, 44, 45,
         // State 6
-        0, -63, -63, 52, -63, 18, -63, 0, 0, -63, -63, -63, 0, -63, -63, -63, -63, -63, -63, -63,
+        0, -66, -66, 53, -66, 18, -66, 0, 0, -66, -66, -66, 0, -66, -66, -66, -66, -66, -66, -66,
         // State 7
-        0, 54, 55, 0, -65, 0, 56, 0, 0, -65, -65, -65, 0, -65, -65, -65, -65, -65, -65, -65,
+        0, 55, 56, 0, -68, 0, 57, 0, 0, -68, -68, -68, 0, -68, -68, -68, -68, -68, -68, -68,
         // State 8
-        0, 0, 0, 0, 58, 0, 0, 0, 0, 11, 12, 13, 0, 14, 15, -77, 42, 43, 44, 45,
+        0, 0, 0, 0, 59, 0, 0, 0, 0, 11, 12, 13, 0, 14, 15, -80, 42, 43, 44, 45,
         // State 9
-        0, 54, 55, 0, -73, 0, 0, 0, 0, -73, -73, -73, 0, -73, -73, -73, -73, -73, -73, -73,
+        0, 55, 56, 0, -76, 0, 0, 0, 0, -76, -76, -76, 0, -76, -76, -76, -76, -76, -76, -76,
         // State 10
-        0, 0, 0, 0, 0, 0, 56, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 57, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 11
-        0, 0, 0, 0, 0, 0, 56, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 57, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 12
-        0, 0, 0, 0, 0, 0, 56, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 57, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 13
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 0, 42, 43, 44, 45,
         // State 14
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 12, 13, 0, 14, 15, -77, 42, 43, 44, 45,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 12, 13, 0, 14, 15, -80, 42, 43, 44, 45,
         // State 15
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0,
         // State 16
@@ -5232,137 +5671,139 @@ mod __parse__Graph {
         // State 17
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 42, 43, 44, 45,
         // State 18
-        0, 0, 0, 0, -42, 0, 56, 0, 0, -42, -42, -42, 0, -42, -42, -42, -42, -42, -42, -42,
+        0, 0, 0, 0, -43, 0, 57, 0, 0, -43, -43, -43, 0, -43, -43, -43, -43, -43, -43, -43,
         // State 19
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 15, 0, 42, 43, 44, 45,
         // State 20
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 42, 43, 44, 45,
         // State 21
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 12, 13, 0, 14, 15, -77, 42, 43, 44, 45,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 12, 13, 0, 14, 15, -80, 42, 43, 44, 45,
         // State 22
-        0, 0, 0, 0, -45, 0, 56, 0, 0, -45, -45, -45, 0, -45, -45, -45, -45, -45, -45, -45,
+        0, 0, 0, 0, -46, 0, 57, 0, 0, -46, -46, -46, 0, -46, -46, -46, -46, -46, -46, -46,
         // State 23
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 12, 13, 0, 14, 15, -77, 42, 43, 44, 45,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 12, 13, 0, 14, 15, -80, 42, 43, 44, 45,
         // State 24
-        0, -63, -63, 52, -63, 0, -63, 0, 0, -63, -63, -63, 0, -63, -63, -63, -63, -63, -63, -63,
+        0, -66, -66, 53, -66, 0, -66, 0, 0, -66, -66, -66, 0, -66, -66, -66, -66, -66, -66, -66,
         // State 25
-        0, 54, 55, 0, -39, 0, -39, 0, 0, -39, -39, -39, 0, -39, -39, -39, -39, -39, -39, -39,
+        0, 55, 56, 0, -40, 0, -40, 0, 0, -40, -40, -40, 0, -40, -40, -40, -40, -40, -40, -40,
         // State 26
-        0, 54, 55, 0, -41, 0, -41, 0, 0, -41, -41, -41, 0, -41, -41, -41, -41, -41, -41, -41,
+        0, 55, 56, 0, -42, 0, -42, 0, 0, -42, -42, -42, 0, -42, -42, -42, -42, -42, -42, -42,
         // State 27
-        0, 0, 0, 0, 0, 0, 0, 76, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 77, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 28
-        0, 0, 0, 0, 0, 0, 0, -29, 0, 0, 0, 0, 0, 0, 0, 0, 42, 43, 44, 45,
+        0, 0, 0, 0, 0, 0, 0, -30, 0, 0, 0, 0, 0, 0, 0, 0, 42, 43, 44, 45,
         // State 29
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 12, 13, 0, 14, 15, -77, 42, 43, 44, 45,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 12, 13, 0, 14, 15, -80, 42, 43, 44, 45,
         // State 30
-        0, 0, 0, 0, -31, 0, 56, 0, 0, -31, -31, -31, 0, -31, -31, -31, -31, -31, -31, -31,
+        0, 0, 0, 0, -32, 0, 57, 0, 0, -32, -32, -32, 0, -32, -32, -32, -32, -32, -32, -32,
         // State 31
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 42, 43, 44, 45,
         // State 32
-        84, 0, 0, 0, 58, 0, 0, -50, 0, 0, 0, 0, 0, 0, 0, 0, -50, -50, -50, -50,
+        85, 0, 0, 0, 59, 0, 0, -51, 0, 0, 0, 0, 0, 0, 0, 0, -51, -51, -51, -51,
         // State 33
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 34
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -52, 0, -52, -52, -52, -52,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -53, 0, -53, -53, -53, -53,
         // State 35
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -51, 0, -51, -51, -51, -51,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -52, 0, -52, -52, -52, -52,
         // State 36
-        -56, -56, -56, -56, -56, -56, -56, -56, 0, -56, -56, -56, 0, -56, -56, -56, -56, -56, -56, -56,
+        -57, -57, -57, -57, -57, -57, -57, -57, 0, -57, -57, -57, 0, -57, -57, -57, -57, -57, -57, -57,
         // State 37
-        -53, -53, -53, -53, -53, -53, -53, -53, 0, -53, -53, -53, 0, -53, -53, -53, -53, -53, -53, -53,
-        // State 38
         -54, -54, -54, -54, -54, -54, -54, -54, 0, -54, -54, -54, 0, -54, -54, -54, -54, -54, -54, -54,
-        // State 39
+        // State 38
         -55, -55, -55, -55, -55, -55, -55, -55, 0, -55, -55, -55, 0, -55, -55, -55, -55, -55, -55, -55,
+        // State 39
+        -56, -56, -56, -56, -56, -56, -56, -56, 0, -56, -56, -56, 0, -56, -56, -56, -56, -56, -56, -56,
         // State 40
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 41
-        -60, -60, -60, -60, -60, -60, -60, -60, 0, -60, -60, -60, 0, -60, -60, -60, -60, -60, -60, -60,
+        -63, -63, -63, -63, -63, -63, -63, -63, 0, -63, -63, -63, 0, -63, -63, -63, -63, -63, -63, -63,
         // State 42
-        -57, -57, -57, -57, -57, -57, -57, -57, 0, -57, -57, -57, 0, -57, -57, -57, -57, -57, -57, -57,
+        -60, -60, -60, -60, -60, -60, -60, -60, 0, -60, -60, -60, 0, -60, -60, -60, -60, -60, -60, -60,
         // State 43
-        -59, -59, -59, -59, -59, -59, -59, -59, 0, -59, -59, -59, 0, -59, -59, -59, -59, -59, -59, -59,
+        -62, -62, -62, -62, -62, -62, -62, -62, 0, -62, -62, -62, 0, -62, -62, -62, -62, -62, -62, -62,
         // State 44
-        -58, -58, -58, -58, -58, -58, -58, -58, 0, -58, -58, -58, 0, -58, -58, -58, -58, -58, -58, -58,
+        -61, -61, -61, -61, -61, -61, -61, -61, 0, -61, -61, -61, 0, -61, -61, -61, -61, -61, -61, -61,
         // State 45
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 46
-        0, 0, 0, 0, -71, 0, 0, 0, 0, -71, -71, -71, 0, -71, -71, -71, -71, -71, -71, -71,
+        0, 0, 0, 0, -74, 0, 0, 0, 0, -74, -74, -74, 0, -74, -74, -74, -74, -74, -74, -74,
         // State 47
-        0, 0, 0, 0, -70, 0, 0, 0, 0, -70, -70, -70, 0, -70, -70, -70, -70, -70, -70, -70,
+        0, 0, 0, 0, -73, 0, 0, 0, 0, -73, -73, -73, 0, -73, -73, -73, -73, -73, -73, -73,
         // State 48
-        0, 0, 0, 0, -69, 0, 0, 0, 0, -69, -69, -69, 0, -69, -69, -69, -69, -69, -69, -69,
+        0, 0, 0, 0, -72, 0, 0, 0, 0, -72, -72, -72, 0, -72, -72, -72, -72, -72, -72, -72,
         // State 49
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 59, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 0, 0, 0, 0,
         // State 50
-        0, -62, -62, 0, -62, 0, -62, 0, 0, -62, -62, -62, 0, -62, -62, -62, -62, -62, -62, -62,
-        // State 51
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -35, -35, -35, -35,
-        // State 52
-        0, 0, 0, 0, -64, 0, 0, 0, 0, -64, -64, -64, 0, -64, -64, -64, -64, -64, -64, -64,
-        // State 53
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -47, -47, 0, -47, -47, -47, -47,
-        // State 54
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -46, -46, 0, -46, -46, -46, -46,
-        // State 55
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -61, -61, -61, -61,
-        // State 56
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -76, 0, 0, 0, 0,
-        // State 57
-        0, 0, 0, 0, 0, 0, 0, -68, 0, -68, -68, -68, 0, -68, -68, -68, -68, -68, -68, -68,
-        // State 58
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        // State 51
+        0, -65, -65, 0, -65, 0, -65, 0, 0, -65, -65, -65, 0, -65, -65, -65, -65, -65, -65, -65,
+        // State 52
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -36, -36, -36, -36,
+        // State 53
+        0, 0, 0, 0, -67, 0, 0, 0, 0, -67, -67, -67, 0, -67, -67, -67, -67, -67, -67, -67,
+        // State 54
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -48, -48, 0, -48, -48, -48, -48,
+        // State 55
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -47, -47, 0, -47, -47, -47, -47,
+        // State 56
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -64, -64, -64, -64,
+        // State 57
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -79, 0, 0, 0, 0,
+        // State 58
+        0, 0, 0, 0, 0, 0, 0, -71, 0, -71, -71, -71, 0, -71, -71, -71, -71, -71, -71, -71,
         // State 59
-        0, 0, 0, 0, -34, 0, 0, 0, 0, -34, -34, -34, 0, -34, -34, -34, -34, -34, -34, -34,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 60
-        0, 0, 0, 0, -32, 0, 0, 0, 0, -32, -32, -32, 0, -32, -32, -32, -32, -32, -32, -32,
+        0, 0, 0, 0, -35, 0, 0, 0, 0, -35, -35, -35, 0, -35, -35, -35, -35, -35, -35, -35,
         // State 61
         0, 0, 0, 0, -33, 0, 0, 0, 0, -33, -33, -33, 0, -33, -33, -33, -33, -33, -33, -33,
         // State 62
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 30, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, -34, 0, 0, 0, 0, -34, -34, -34, 0, -34, -34, -34, -34, -34, -34, -34,
         // State 63
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 73, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 30, 0, 0, 0, 0, 0,
         // State 64
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 74, 0, 0, 0, 0,
         // State 65
-        0, -66, -66, 0, -66, 0, -66, 0, 0, -66, -66, -66, 0, -66, -66, -66, -66, -66, -66, -66,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 66
-        0, 0, 0, 0, -72, 0, 0, 0, 0, -72, -72, -72, 0, -72, -72, -72, -72, -72, -72, -72,
+        0, -69, -69, 0, -69, 0, -69, 0, 0, -69, -69, -69, 0, -69, -69, -69, -69, -69, -69, -69,
         // State 67
-        0, 0, 0, 0, -43, 0, 0, 0, 0, -43, -43, -43, 0, -43, -43, -43, -43, -43, -43, -43,
+        0, 0, 0, 0, -75, 0, 0, 0, 0, -75, -75, -75, 0, -75, -75, -75, -75, -75, -75, -75,
         // State 68
-        0, 0, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        // State 69
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -75, 0, 0, 0, 0,
-        // State 70
         0, 0, 0, 0, -44, 0, 0, 0, 0, -44, -44, -44, 0, -44, -44, -44, -44, -44, -44, -44,
+        // State 69
+        0, 0, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        // State 70
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -78, 0, 0, 0, 0,
         // State 71
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 79, 0, 0, 0, 0,
+        0, 0, 0, 0, -45, 0, 0, 0, 0, -45, -45, -45, 0, -45, -45, -45, -45, -45, -45, -45,
         // State 72
-        0, -80, -80, 0, -80, 0, -80, 0, 0, -80, -80, -80, 0, -80, -80, -80, -80, -80, -80, -80,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 80, 0, 0, 0, 0,
         // State 73
-        0, 0, 0, 0, -38, 0, -38, 0, 0, -38, -38, -38, 0, -38, -38, -38, -38, -38, -38, -38,
+        0, -83, -83, 0, -83, 0, -83, 0, 0, -83, -83, -83, 0, -83, -83, -83, -83, -83, -83, -83,
         // State 74
-        0, 0, 0, 0, -40, 0, -40, 0, 0, -40, -40, -40, 0, -40, -40, -40, -40, -40, -40, -40,
+        0, 0, 0, 0, -39, 0, -39, 0, 0, -39, -39, -39, 0, -39, -39, -39, -39, -39, -39, -39,
         // State 75
-        0, 0, 0, 0, -67, 0, -67, 0, 0, -67, -67, -67, 0, -67, -67, -67, -67, -67, -67, -67,
+        0, 0, 0, 0, -41, 0, -41, 0, 0, -41, -41, -41, 0, -41, -41, -41, -41, -41, -41, -41,
         // State 76
-        0, 0, 0, 0, 0, 0, 0, -28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, -70, 0, -70, 0, 0, -70, -70, -70, 0, -70, -70, -70, -70, -70, -70, -70,
         // State 77
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 81, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, -29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         // State 78
-        0, -79, -79, 0, -79, 0, -79, 0, 0, -79, -79, -79, 0, -79, -79, -79, -79, -79, -79, -79,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 82, 0, 0, 0, 0,
         // State 79
-        0, 0, 0, 0, -30, 0, 0, 0, 0, -30, -30, -30, 0, -30, -30, -30, -30, -30, -30, -30,
+        0, -82, -82, 0, -82, 0, -82, 0, 0, -82, -82, -82, 0, -82, -82, -82, -82, -82, -82, -82,
         // State 80
-        0, -78, -78, 0, -78, 0, -78, 0, 0, -78, -78, -78, 0, -78, -78, -78, -78, -78, -78, -78,
+        0, 0, 0, 0, -31, 0, 0, 0, 0, -31, -31, -31, 0, -31, -31, -31, -31, -31, -31, -31,
         // State 81
-        0, 0, 0, 0, 0, 0, 0, -49, 0, 0, 0, 0, 0, 0, 0, 0, -49, -49, -49, -49,
+        0, -81, -81, 0, -81, 0, -81, 0, 0, -81, -81, -81, 0, -81, -81, -81, -81, -81, -81, -81,
         // State 82
-        0, 0, 0, 0, 0, 0, 0, -48, 0, 0, 0, 0, 0, 0, 0, 0, -48, -48, -48, -48,
+        0, 0, 0, 0, 0, 0, 0, -50, 0, 0, 0, 0, 0, 0, 0, 0, -50, -50, -50, -50,
         // State 83
-        0, 0, 0, 0, 0, 0, 0, -36, 0, 0, 0, 0, 0, 0, 0, 0, -36, -36, -36, -36,
+        0, 0, 0, 0, 0, 0, 0, -49, 0, 0, 0, 0, 0, 0, 0, 0, -49, -49, -49, -49,
+        // State 84
+        0, 0, 0, 0, 0, 0, 0, -37, 0, 0, 0, 0, 0, 0, 0, 0, -37, -37, -37, -37,
     ];
     fn __action(state: i8, integer: usize) -> i8 {
         __ACTION[(state as usize) * 20 + integer]
@@ -5435,7 +5876,7 @@ mod __parse__Graph {
         // State 32
         0,
         // State 33
-        -21,
+        -22,
         // State 34
         0,
         // State 35
@@ -5449,7 +5890,7 @@ mod __parse__Graph {
         // State 39
         0,
         // State 40
-        -9,
+        -10,
         // State 41
         0,
         // State 42
@@ -5459,7 +5900,7 @@ mod __parse__Graph {
         // State 44
         0,
         // State 45
-        -8,
+        -9,
         // State 46
         0,
         // State 47
@@ -5469,7 +5910,7 @@ mod __parse__Graph {
         // State 49
         0,
         // State 50
-        0,
+        -8,
         // State 51
         0,
         // State 52
@@ -5485,9 +5926,9 @@ mod __parse__Graph {
         // State 57
         0,
         // State 58
-        -74,
-        // State 59
         0,
+        // State 59
+        -77,
         // State 60
         0,
         // State 61
@@ -5497,9 +5938,9 @@ mod __parse__Graph {
         // State 63
         0,
         // State 64
-        -7,
-        // State 65
         0,
+        // State 65
+        -7,
         // State 66
         0,
         // State 67
@@ -5536,30 +5977,32 @@ mod __parse__Graph {
         0,
         // State 83
         0,
+        // State 84
+        0,
     ];
     fn __goto(state: i8, nt: usize) -> i8 {
         match nt {
             6 => 33,
             25 => match state {
-                28 => 76,
+                28 => 77,
                 _ => 27,
             },
             26 => match state {
-                10 => 59,
-                11 => 60,
-                12 => 61,
-                18 => 67,
-                22 => 70,
-                30 => 79,
-                _ => 52,
+                10 => 60,
+                11 => 61,
+                12 => 62,
+                18 => 68,
+                22 => 71,
+                30 => 80,
+                _ => 53,
             },
             27 => 46,
             28 => 16,
-            29 => 81,
+            29 => 82,
             31 => match state {
                 9 => 22,
-                25 => 73,
-                26 => 74,
+                25 => 74,
+                26 => 75,
                 _ => 18,
             },
             32 => 47,
@@ -5574,43 +6017,44 @@ mod __parse__Graph {
                 5 => 15,
                 19 => 24,
                 31 => 32,
-                13 => 62,
-                16 => 65,
-                17 => 66,
-                20 | 28 => 68,
+                13 => 63,
+                16 => 66,
+                17 => 67,
+                20 | 28 => 69,
                 _ => 6,
             },
-            37 => 36,
-            38 => 37,
-            39 => 38,
-            40 => 39,
-            41 => 20,
-            42 => match state {
+            38 => 36,
+            39 => 37,
+            40 => 38,
+            41 => 39,
+            42 => 20,
+            43 => match state {
                 19 => 25,
                 _ => 7,
             },
-            43 => 48,
-            44 => 50,
-            45 => 30,
-            46 => match state {
-                32 => 82,
+            44 => 48,
+            45 => 51,
+            46 => 30,
+            47 => match state {
+                32 => 83,
                 _ => 21,
             },
-            47 => 8,
-            48 => match state {
+            48 => 8,
+            49 => match state {
                 3 => 45,
-                15 => 64,
+                5 => 50,
+                15 => 65,
                 _ => 40,
             },
-            49 => match state {
-                8 => 56,
-                14 => 63,
-                21 => 69,
-                23 => 71,
-                29 => 77,
+            50 => match state {
+                8 => 57,
+                14 => 64,
+                21 => 70,
+                23 => 72,
+                29 => 78,
                 _ => 49,
             },
-            50 => match state {
+            51 => match state {
                 19 => 26,
                 _ => 9,
             },
@@ -5636,7 +6080,7 @@ mod __parse__Graph {
         r###""}""###,
         r###"r#"\"[^\"]*\""#"###,
         r###"r#"<[^>]*>"#"###,
-        r###"r#"[-]*[0-9]+"#"###,
+        r###"r#"[-]?[0-9]+(\\.[0-9]+)?"#"###,
         r###"r#"[a-zA-Z_][a-zA-Z0-9_]*"#"###,
     ];
     fn __expected_tokens(__state: i8) -> alloc::vec::Vec<alloc::string::String> {
@@ -5678,7 +6122,7 @@ mod __parse__Graph {
         type Token = Token<'input>;
         type TokenIndex = usize;
         type Symbol = __Symbol<'input>;
-        type Success = ();
+        type Success = AstGraph;
         type StateIndex = i8;
         type Action = i8;
         type ReduceIndex = i8;
@@ -5870,141 +6314,141 @@ mod __parse__Graph {
             }
             8 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 6,
                 }
             }
             9 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 7,
+                    states_to_pop: 2,
+                    nonterminal_produced: 6,
                 }
             }
             10 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 8,
+                    nonterminal_produced: 7,
                 }
             }
             11 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 9,
+                    nonterminal_produced: 8,
                 }
             }
             12 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 10,
+                    nonterminal_produced: 9,
                 }
             }
             13 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 11,
+                    nonterminal_produced: 10,
                 }
             }
             14 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 12,
+                    nonterminal_produced: 11,
                 }
             }
             15 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 13,
+                    nonterminal_produced: 12,
                 }
             }
             16 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 14,
+                    nonterminal_produced: 13,
                 }
             }
             17 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 15,
+                    nonterminal_produced: 14,
                 }
             }
             18 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 16,
+                    nonterminal_produced: 15,
                 }
             }
             19 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
+                    nonterminal_produced: 16,
+                }
+            }
+            20 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
                     nonterminal_produced: 17,
                 }
             }
-            20 => __state_machine::SimulatedReduce::Accept,
-            21 => {
+            21 => __state_machine::SimulatedReduce::Accept,
+            22 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 19,
                 }
             }
-            22 => {
+            23 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 20,
                 }
             }
-            23 => {
+            24 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 21,
                 }
             }
-            24 => {
+            25 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 22,
                 }
             }
-            25 => {
+            26 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 23,
                 }
             }
-            26 => {
+            27 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 24,
                 }
             }
-            27 => {
-                __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 25,
-                }
-            }
             28 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
+                    states_to_pop: 2,
                     nonterminal_produced: 25,
                 }
             }
             29 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
-                    nonterminal_produced: 26,
+                    states_to_pop: 1,
+                    nonterminal_produced: 25,
                 }
             }
             30 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 4,
                     nonterminal_produced: 26,
                 }
             }
             31 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 27,
+                    states_to_pop: 3,
+                    nonterminal_produced: 26,
                 }
             }
             32 => {
@@ -6021,55 +6465,55 @@ mod __parse__Graph {
             }
             34 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 28,
+                    states_to_pop: 2,
+                    nonterminal_produced: 27,
                 }
             }
             35 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 29,
+                    nonterminal_produced: 28,
                 }
             }
             36 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 30,
+                    nonterminal_produced: 29,
                 }
             }
             37 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
-                    nonterminal_produced: 31,
+                    states_to_pop: 1,
+                    nonterminal_produced: 30,
                 }
             }
             38 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 31,
                 }
             }
             39 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 2,
                     nonterminal_produced: 31,
                 }
             }
             40 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 31,
                 }
             }
             41 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 2,
-                    nonterminal_produced: 32,
+                    nonterminal_produced: 31,
                 }
             }
             42 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 2,
                     nonterminal_produced: 32,
                 }
             }
@@ -6081,14 +6525,14 @@ mod __parse__Graph {
             }
             44 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 32,
                 }
             }
             45 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 33,
+                    states_to_pop: 2,
+                    nonterminal_produced: 32,
                 }
             }
             46 => {
@@ -6099,8 +6543,8 @@ mod __parse__Graph {
             }
             47 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
-                    nonterminal_produced: 34,
+                    states_to_pop: 1,
+                    nonterminal_produced: 33,
                 }
             }
             48 => {
@@ -6111,14 +6555,14 @@ mod __parse__Graph {
             }
             49 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 4,
                     nonterminal_produced: 34,
                 }
             }
             50 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 35,
+                    states_to_pop: 3,
+                    nonterminal_produced: 34,
                 }
             }
             51 => {
@@ -6130,7 +6574,7 @@ mod __parse__Graph {
             52 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 36,
+                    nonterminal_produced: 35,
                 }
             }
             53 => {
@@ -6154,85 +6598,85 @@ mod __parse__Graph {
             56 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 37,
+                    nonterminal_produced: 36,
                 }
             }
             57 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 38,
+                    nonterminal_produced: 37,
                 }
             }
             58 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 39,
+                    states_to_pop: 0,
+                    nonterminal_produced: 37,
                 }
             }
             59 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 40,
+                    nonterminal_produced: 38,
                 }
             }
             60 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 41,
+                    nonterminal_produced: 39,
                 }
             }
             61 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 42,
+                    states_to_pop: 1,
+                    nonterminal_produced: 40,
                 }
             }
             62 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 42,
+                    nonterminal_produced: 41,
                 }
             }
             63 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 43,
+                    states_to_pop: 1,
+                    nonterminal_produced: 42,
                 }
             }
             64 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
+                    states_to_pop: 2,
                     nonterminal_produced: 43,
                 }
             }
             65 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 44,
+                    states_to_pop: 1,
+                    nonterminal_produced: 43,
                 }
             }
             66 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 45,
+                    states_to_pop: 2,
+                    nonterminal_produced: 44,
                 }
             }
             67 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 46,
+                    nonterminal_produced: 44,
                 }
             }
             68 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    states_to_pop: 2,
+                    nonterminal_produced: 45,
                 }
             }
             69 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    nonterminal_produced: 46,
                 }
             }
             70 => {
@@ -6243,56 +6687,74 @@ mod __parse__Graph {
             }
             71 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
-                    nonterminal_produced: 47,
+                    states_to_pop: 1,
+                    nonterminal_produced: 48,
                 }
             }
             72 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    nonterminal_produced: 48,
                 }
             }
             73 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 1,
                     nonterminal_produced: 48,
                 }
             }
             74 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 3,
-                    nonterminal_produced: 49,
+                    nonterminal_produced: 48,
                 }
             }
             75 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 49,
+                    states_to_pop: 1,
+                    nonterminal_produced: 48,
                 }
             }
             76 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 0,
+                    states_to_pop: 3,
                     nonterminal_produced: 49,
                 }
             }
             77 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 5,
+                    states_to_pop: 3,
                     nonterminal_produced: 50,
                 }
             }
             78 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
+                    states_to_pop: 2,
                     nonterminal_produced: 50,
                 }
             }
             79 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 0,
                     nonterminal_produced: 50,
+                }
+            }
+            80 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 5,
+                    nonterminal_produced: 51,
+                }
+            }
+            81 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 4,
+                    nonterminal_produced: 51,
+                }
+            }
+            82 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 3,
+                    nonterminal_produced: 51,
                 }
             }
             _ => panic!("invalid reduction index {}", __reduce_index)
@@ -6319,7 +6781,7 @@ mod __parse__Graph {
         >(
             &self,
             input: &'input str,
-        ) -> Result<(), __lalrpop_util::ParseError<usize, Token<'input>, &'static str>>
+        ) -> Result<AstGraph, __lalrpop_util::ParseError<usize, Token<'input>, &'static str>>
         {
             let mut __tokens = self.builder.matcher(input);
             __state_machine::Parser::drive(
@@ -6373,7 +6835,7 @@ mod __parse__Graph {
         __states: &mut alloc::vec::Vec<i8>,
         __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
         _: core::marker::PhantomData<(&'input ())>,
-    ) -> Option<Result<(),__lalrpop_util::ParseError<usize, Token<'input>, &'static str>>>
+    ) -> Option<Result<AstGraph,__lalrpop_util::ParseError<usize, Token<'input>, &'static str>>>
     {
         let (__pop_states, __nonterminal) = match __action {
             0 => {
@@ -6437,15 +6899,15 @@ mod __parse__Graph {
                 __reduce19(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             20 => {
+                __reduce20(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            21 => {
                 // __Graph = Graph => ActionFn(0);
-                let __sym0 = __pop_Variant1(__symbols);
+                let __sym0 = __pop_Variant4(__symbols);
                 let __start = __sym0.0;
                 let __end = __sym0.2;
                 let __nt = super::__action0::<>(input, __sym0);
                 return Some(Ok(__nt));
-            }
-            21 => {
-                __reduce21(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             22 => {
                 __reduce22(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
@@ -6621,6 +7083,15 @@ mod __parse__Graph {
             79 => {
                 __reduce79(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
+            80 => {
+                __reduce80(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            81 => {
+                __reduce81(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            82 => {
+                __reduce82(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
             _ => panic!("invalid action code {}", __action)
         };
         let __states_len = __states.len();
@@ -6645,6 +7116,127 @@ mod __parse__Graph {
             _ => __symbol_type_mismatch()
         }
     }
+    fn __pop_Variant8<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstAttr, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant8(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant4<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstGraph, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant4(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant2<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstNodeId, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant2(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant5<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstStmt, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant5(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant12<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstSubGraph, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant12(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant6<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, String, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant6(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant3<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstAttr>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant3(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant7<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstEdgeEndpoint>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant7(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant11<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstStmt>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant11(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant9<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, bool, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant9(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant10<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, core::option::Option<String>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant10(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
     fn __pop_Variant0<
       'input,
     >(
@@ -6665,10 +7257,10 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // () =  => ActionFn(79);
+        // () =  => ActionFn(78);
         let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
         let __end = __start;
-        let __nt = super::__action79::<>(input, &__start, &__end);
+        let __nt = super::__action78::<>(input, &__start, &__end);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (0, 0)
     }
@@ -6715,12 +7307,12 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Expr1 = node_id => ActionFn(18);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Expr1 = node_id => ActionFn(17);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action18::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action17::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 3)
     }
     fn __reduce4<
@@ -6732,12 +7324,12 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Expr2 = a_list => ActionFn(19);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Expr2 = a_list => ActionFn(18);
+        let __sym0 = __pop_Variant3(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action19::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action18::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
         (1, 4)
     }
     fn __reduce5<
@@ -6766,16 +7358,16 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = "strict", graph_kind, id, stmt_block => ActionFn(15);
+        // Graph = "strict", graph_kind, id, stmt_block => ActionFn(82);
         assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym3 = __pop_Variant11(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant9(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym3.2;
-        let __nt = super::__action15::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action82::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (4, 6)
     }
     fn __reduce7<
@@ -6787,15 +7379,15 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = graph_kind, id, stmt_block => ActionFn(16);
+        // Graph = "strict", graph_kind, stmt_block => ActionFn(83);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant9(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action16::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action83::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (3, 6)
     }
     fn __reduce8<
@@ -6807,17 +7399,37 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = graph_kind, stmt_block => ActionFn(17);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Graph = graph_kind, id, stmt_block => ActionFn(84);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant9(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action17::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 6)
+        let __end = __sym2.2;
+        let __nt = super::__action84::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
+        (3, 6)
     }
     fn __reduce9<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // Graph = graph_kind, stmt_block => ActionFn(85);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant9(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym1.2;
+        let __nt = super::__action85::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
+        (2, 6)
+    }
+    fn __reduce10<
         'input,
     >(
         input: &'input str,
@@ -6834,7 +7446,7 @@ mod __parse__Graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 7)
     }
-    fn __reduce10<
+    fn __reduce11<
         'input,
     >(
         input: &'input str,
@@ -6851,7 +7463,7 @@ mod __parse__Graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 8)
     }
-    fn __reduce11<
+    fn __reduce12<
         'input,
     >(
         input: &'input str,
@@ -6868,23 +7480,6 @@ mod __parse__Graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 9)
     }
-    fn __reduce12<
-        'input,
-    >(
-        input: &'input str,
-        __lookahead_start: Option<&usize>,
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
-        _: core::marker::PhantomData<(&'input ())>,
-    ) -> (usize, usize)
-    {
-        // T_digraph = DIGRAPH => ActionFn(76);
-        let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action76::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 10)
-    }
     fn __reduce13<
         'input,
     >(
@@ -6894,13 +7489,13 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_edge = EDGE => ActionFn(74);
+        // T_digraph = DIGRAPH => ActionFn(75);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action74::<>(input, __sym0);
+        let __nt = super::__action75::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 11)
+        (1, 10)
     }
     fn __reduce14<
         'input,
@@ -6911,13 +7506,13 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_graph = GRAPH => ActionFn(75);
+        // T_edge = EDGE => ActionFn(73);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action75::<>(input, __sym0);
+        let __nt = super::__action73::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 12)
+        (1, 11)
     }
     fn __reduce15<
         'input,
@@ -6928,13 +7523,13 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_node = NODE => ActionFn(73);
+        // T_graph = GRAPH => ActionFn(74);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action73::<>(input, __sym0);
+        let __nt = super::__action74::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 13)
+        (1, 12)
     }
     fn __reduce16<
         'input,
@@ -6945,13 +7540,13 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_strict = STRICT => ActionFn(78);
+        // T_node = NODE => ActionFn(72);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action78::<>(input, __sym0);
+        let __nt = super::__action72::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 14)
+        (1, 13)
     }
     fn __reduce17<
         'input,
@@ -6962,13 +7557,13 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_subgraph = SUBGRAPH => ActionFn(77);
+        // T_strict = STRICT => ActionFn(77);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action77::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 15)
+        (1, 14)
     }
     fn __reduce18<
         'input,
@@ -6979,13 +7574,13 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // __Expr1 = Expr1 => ActionFn(1);
+        // T_subgraph = SUBGRAPH => ActionFn(76);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action1::<>(input, __sym0);
+        let __nt = super::__action76::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 16)
+        (1, 15)
     }
     fn __reduce19<
         'input,
@@ -6996,15 +7591,32 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
+        // __Expr1 = Expr1 => ActionFn(1);
+        let __sym0 = __pop_Variant2(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym0.2;
+        let __nt = super::__action1::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (1, 16)
+    }
+    fn __reduce20<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
         // __Expr2 = Expr2 => ActionFn(2);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant3(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action2::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
         (1, 17)
     }
-    fn __reduce21<
+    fn __reduce22<
         'input,
     >(
         input: &'input str,
@@ -7021,7 +7633,7 @@ mod __parse__Graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 19)
     }
-    fn __reduce22<
+    fn __reduce23<
         'input,
     >(
         input: &'input str,
@@ -7038,7 +7650,7 @@ mod __parse__Graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 20)
     }
-    fn __reduce23<
+    fn __reduce24<
         'input,
     >(
         input: &'input str,
@@ -7055,7 +7667,7 @@ mod __parse__Graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 21)
     }
-    fn __reduce24<
+    fn __reduce25<
         'input,
     >(
         input: &'input str,
@@ -7072,7 +7684,7 @@ mod __parse__Graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 22)
     }
-    fn __reduce25<
+    fn __reduce26<
         'input,
     >(
         input: &'input str,
@@ -7089,7 +7701,7 @@ mod __parse__Graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 23)
     }
-    fn __reduce26<
+    fn __reduce27<
         'input,
     >(
         input: &'input str,
@@ -7106,25 +7718,6 @@ mod __parse__Graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 24)
     }
-    fn __reduce27<
-        'input,
-    >(
-        input: &'input str,
-        __lookahead_start: Option<&usize>,
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
-        _: core::marker::PhantomData<(&'input ())>,
-    ) -> (usize, usize)
-    {
-        // a_list = elem_pair, a_list => ActionFn(36);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action36::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 25)
-    }
     fn __reduce28<
         'input,
     >(
@@ -7134,13 +7727,15 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // a_list = elem_pair => ActionFn(37);
-        let __sym0 = __pop_Variant1(__symbols);
+        // a_list = elem_pair, a_list => ActionFn(35);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant8(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action37::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 25)
+        let __end = __sym1.2;
+        let __nt = super::__action35::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (2, 25)
     }
     fn __reduce29<
         'input,
@@ -7151,17 +7746,13 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_list = lbracket, a_list, rbracket, attr_list => ActionFn(34);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // a_list = elem_pair => ActionFn(36);
+        let __sym0 = __pop_Variant8(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action34::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 26)
+        let __end = __sym0.2;
+        let __nt = super::__action36::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (1, 25)
     }
     fn __reduce30<
         'input,
@@ -7172,16 +7763,17 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_list = lbracket, a_list, rbracket => ActionFn(35);
-        assert!(__symbols.len() >= 3);
+        // attr_list = lbracket, a_list, rbracket, attr_list => ActionFn(33);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant3(__symbols);
         let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action35::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 26)
+        let __end = __sym3.2;
+        let __nt = super::__action33::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (4, 26)
     }
     fn __reduce31<
         'input,
@@ -7192,15 +7784,16 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "graph", attr_list => ActionFn(31);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // attr_list = lbracket, a_list, rbracket => ActionFn(34);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action31::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 27)
+        let __end = __sym2.2;
+        let __nt = super::__action34::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (3, 26)
     }
     fn __reduce32<
         'input,
@@ -7211,14 +7804,14 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "node", attr_list => ActionFn(32);
+        // attr_stmt = "graph", attr_list => ActionFn(30);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action32::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action30::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (2, 27)
     }
     fn __reduce33<
@@ -7230,14 +7823,14 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "edge", attr_list => ActionFn(33);
+        // attr_stmt = "node", attr_list => ActionFn(31);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action33::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action31::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (2, 27)
     }
     fn __reduce34<
@@ -7249,13 +7842,15 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // colon = ":" => ActionFn(66);
+        // attr_stmt = "edge", attr_list => ActionFn(32);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action66::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 28)
+        let __end = __sym1.2;
+        let __nt = super::__action32::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 27)
     }
     fn __reduce35<
         'input,
@@ -7266,13 +7861,13 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // comma = "," => ActionFn(68);
+        // colon = ":" => ActionFn(65);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action68::<>(input, __sym0);
+        let __nt = super::__action65::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 29)
+        (1, 28)
     }
     fn __reduce36<
         'input,
@@ -7283,13 +7878,13 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // compass_pt = id_ident => ActionFn(57);
-        let __sym0 = __pop_Variant1(__symbols);
+        // comma = "," => ActionFn(67);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action57::<>(input, __sym0);
+        let __nt = super::__action67::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 30)
+        (1, 29)
     }
     fn __reduce37<
         'input,
@@ -7300,16 +7895,13 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, node_id, edge_rhs => ActionFn(45);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // compass_pt = id_ident => ActionFn(56);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action45::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 31)
+        let __end = __sym0.2;
+        let __nt = super::__action56::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 30)
     }
     fn __reduce38<
         'input,
@@ -7320,15 +7912,16 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, node_id => ActionFn(46);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, node_id, edge_rhs => ActionFn(44);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant7(__symbols);
+        let __sym1 = __pop_Variant2(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action46::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 31)
+        let __end = __sym2.2;
+        let __nt = super::__action44::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (3, 31)
     }
     fn __reduce39<
         'input,
@@ -7339,16 +7932,15 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, subgraph, edge_rhs => ActionFn(47);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, node_id => ActionFn(45);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant2(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action47::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 31)
+        let __end = __sym1.2;
+        let __nt = super::__action45::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (2, 31)
     }
     fn __reduce40<
         'input,
@@ -7359,15 +7951,16 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, subgraph => ActionFn(48);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, subgraph, edge_rhs => ActionFn(46);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant7(__symbols);
+        let __sym1 = __pop_Variant12(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action48::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 31)
+        let __end = __sym2.2;
+        let __nt = super::__action46::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (3, 31)
     }
     fn __reduce41<
         'input,
@@ -7378,15 +7971,15 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = node_id, edge_rhs => ActionFn(41);
+        // edge_rhs = edgeop, subgraph => ActionFn(47);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant12(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action41::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 32)
+        let __nt = super::__action47::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (2, 31)
     }
     fn __reduce42<
         'input,
@@ -7397,16 +7990,15 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = node_id, edge_rhs, attr_list => ActionFn(42);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edge_stmt = node_id, edge_rhs => ActionFn(40);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action42::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 32)
+        let __end = __sym1.2;
+        let __nt = super::__action40::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 32)
     }
     fn __reduce43<
         'input,
@@ -7417,15 +8009,15 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = subgraph, edge_rhs, attr_list => ActionFn(43);
+        // edge_stmt = node_id, edge_rhs, attr_list => ActionFn(41);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant3(__symbols);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action43::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action41::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (3, 32)
     }
     fn __reduce44<
@@ -7437,15 +8029,16 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = subgraph, edge_rhs => ActionFn(44);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edge_stmt = subgraph, edge_rhs, attr_list => ActionFn(42);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant3(__symbols);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action44::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 32)
+        let __end = __sym2.2;
+        let __nt = super::__action42::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (3, 32)
     }
     fn __reduce45<
         'input,
@@ -7456,13 +8049,15 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edgeop = "->" => ActionFn(71);
-        let __sym0 = __pop_Variant0(__symbols);
+        // edge_stmt = subgraph, edge_rhs => ActionFn(43);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action71::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 33)
+        let __end = __sym1.2;
+        let __nt = super::__action43::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 32)
     }
     fn __reduce46<
         'input,
@@ -7473,11 +8068,11 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edgeop = "--" => ActionFn(72);
+        // edgeop = "->" => ActionFn(70);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action72::<>(input, __sym0);
+        let __nt = super::__action70::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 33)
     }
@@ -7490,17 +8085,13 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id, semicolon => ActionFn(38);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edgeop = "--" => ActionFn(71);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action38::<>(input, __sym0, __sym1, __sym2, __sym3);
+        let __end = __sym0.2;
+        let __nt = super::__action71::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 34)
+        (1, 33)
     }
     fn __reduce48<
         'input,
@@ -7511,16 +8102,16 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id, comma => ActionFn(39);
+        // elem_pair = id, "=", id, semicolon => ActionFn(37);
         assert!(__symbols.len() >= 4);
         let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym3.2;
-        let __nt = super::__action39::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action37::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
         (4, 34)
     }
     fn __reduce49<
@@ -7532,16 +8123,17 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id => ActionFn(40);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
+        // elem_pair = id, "=", id, comma => ActionFn(38);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action40::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 34)
+        let __end = __sym3.2;
+        let __nt = super::__action38::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
+        (4, 34)
     }
     fn __reduce50<
         'input,
@@ -7552,13 +8144,16 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // graph_kind = "graph" => ActionFn(20);
-        let __sym0 = __pop_Variant0(__symbols);
+        // elem_pair = id, "=", id => ActionFn(39);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action20::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 35)
+        let __end = __sym2.2;
+        let __nt = super::__action39::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
+        (3, 34)
     }
     fn __reduce51<
         'input,
@@ -7569,12 +8164,12 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // graph_kind = "digraph" => ActionFn(21);
+        // graph_kind = "graph" => ActionFn(19);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action21::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action19::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant9(__nt), __end));
         (1, 35)
     }
     fn __reduce52<
@@ -7586,13 +8181,13 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_ident => ActionFn(58);
-        let __sym0 = __pop_Variant1(__symbols);
+        // graph_kind = "digraph" => ActionFn(20);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action58::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 36)
+        let __nt = super::__action20::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant9(__nt), __end));
+        (1, 35)
     }
     fn __reduce53<
         'input,
@@ -7603,12 +8198,12 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_num => ActionFn(59);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_ident => ActionFn(57);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action59::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action57::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce54<
@@ -7620,12 +8215,12 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_str => ActionFn(60);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_num => ActionFn(58);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action60::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action58::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce55<
@@ -7637,12 +8232,12 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_html => ActionFn(61);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_str => ActionFn(59);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action61::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action59::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce56<
@@ -7654,13 +8249,13 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_html = r#"<[^>]*>"# => ActionFn(65);
-        let __sym0 = __pop_Variant0(__symbols);
+        // id = id_html => ActionFn(60);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action65::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 37)
+        let __nt = super::__action60::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 36)
     }
     fn __reduce57<
         'input,
@@ -7671,13 +8266,13 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_ident = r#"[a-zA-Z_][a-zA-Z0-9_]*"# => ActionFn(62);
-        let __sym0 = __pop_Variant0(__symbols);
+        // id? = id => ActionFn(79);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action62::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 38)
+        let __nt = super::__action79::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant10(__nt), __end));
+        (1, 37)
     }
     fn __reduce58<
         'input,
@@ -7688,13 +8283,12 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_num = r#"[-]*[0-9]+"# => ActionFn(63);
-        let __sym0 = __pop_Variant0(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action63::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 39)
+        // id? =  => ActionFn(80);
+        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
+        let __end = __start;
+        let __nt = super::__action80::<>(input, &__start, &__end);
+        __symbols.push((__start, __Symbol::Variant10(__nt), __end));
+        (0, 37)
     }
     fn __reduce59<
         'input,
@@ -7705,13 +8299,13 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_str = r#"\"[^\"]*\""# => ActionFn(64);
+        // id_html = r#"<[^>]*>"# => ActionFn(64);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action64::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 40)
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 38)
     }
     fn __reduce60<
         'input,
@@ -7722,13 +8316,13 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // lbracket = "[" => ActionFn(69);
+        // id_ident = r#"[a-zA-Z_][a-zA-Z0-9_]*"# => ActionFn(61);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action69::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 41)
+        let __nt = super::__action61::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 39)
     }
     fn __reduce61<
         'input,
@@ -7739,15 +8333,13 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_id = id, port => ActionFn(51);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id_num = r#"[-]?[0-9]+(\\.[0-9]+)?"# => ActionFn(62);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action51::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 42)
+        let __end = __sym0.2;
+        let __nt = super::__action62::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 40)
     }
     fn __reduce62<
         'input,
@@ -7758,13 +8350,13 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_id = id => ActionFn(52);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id_str = r#"\"[^\"]*\""# => ActionFn(63);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action52::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 42)
+        let __nt = super::__action63::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 41)
     }
     fn __reduce63<
         'input,
@@ -7775,15 +8367,13 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_stmt = node_id, attr_list => ActionFn(49);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // lbracket = "[" => ActionFn(68);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action49::<>(input, __sym0, __sym1);
+        let __end = __sym0.2;
+        let __nt = super::__action68::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 43)
+        (1, 42)
     }
     fn __reduce64<
         'input,
@@ -7794,13 +8384,15 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_stmt = node_id => ActionFn(50);
-        let __sym0 = __pop_Variant1(__symbols);
+        // node_id = id, port => ActionFn(50);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action50::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 43)
+        let __end = __sym1.2;
+        let __nt = super::__action50::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (2, 43)
     }
     fn __reduce65<
         'input,
@@ -7811,15 +8403,13 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // port = colon, id => ActionFn(53);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // node_id = id => ActionFn(51);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action53::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 44)
+        let __end = __sym0.2;
+        let __nt = super::__action51::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (1, 43)
     }
     fn __reduce66<
         'input,
@@ -7830,13 +8420,15 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // rbracket = "]" => ActionFn(70);
-        let __sym0 = __pop_Variant0(__symbols);
+        // node_stmt = node_id, attr_list => ActionFn(48);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action70::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 45)
+        let __end = __sym1.2;
+        let __nt = super::__action48::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 44)
     }
     fn __reduce67<
         'input,
@@ -7847,13 +8439,13 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // semicolon = ";" => ActionFn(67);
-        let __sym0 = __pop_Variant0(__symbols);
+        // node_stmt = node_id => ActionFn(49);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action67::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 46)
+        let __nt = super::__action49::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 44)
     }
     fn __reduce68<
         'input,
@@ -7864,13 +8456,15 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = node_stmt => ActionFn(26);
+        // port = colon, id => ActionFn(52);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant6(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action26::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        let __end = __sym1.2;
+        let __nt = super::__action52::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (2, 45)
     }
     fn __reduce69<
         'input,
@@ -7881,13 +8475,13 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = edge_stmt => ActionFn(27);
-        let __sym0 = __pop_Variant1(__symbols);
+        // rbracket = "]" => ActionFn(69);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action27::<>(input, __sym0);
+        let __nt = super::__action69::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        (1, 46)
     }
     fn __reduce70<
         'input,
@@ -7898,11 +8492,11 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = attr_stmt => ActionFn(28);
-        let __sym0 = __pop_Variant1(__symbols);
+        // semicolon = ";" => ActionFn(66);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action28::<>(input, __sym0);
+        let __nt = super::__action66::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 47)
     }
@@ -7915,16 +8509,13 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = id, "=", id => ActionFn(29);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = node_stmt => ActionFn(25);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action29::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 47)
+        let __end = __sym0.2;
+        let __nt = super::__action25::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce72<
         'input,
@@ -7935,13 +8526,13 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = subgraph => ActionFn(30);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = edge_stmt => ActionFn(26);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action30::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        let __nt = super::__action26::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce73<
         'input,
@@ -7952,16 +8543,13 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_block = "{", stmt_list, "}" => ActionFn(22);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // stmt = attr_stmt => ActionFn(27);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action22::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 48)
+        let __end = __sym0.2;
+        let __nt = super::__action27::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce74<
         'input,
@@ -7972,16 +8560,16 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list = stmt, semicolon, stmt_list => ActionFn(23);
+        // stmt = id, "=", id => ActionFn(28);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action23::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 49)
+        let __nt = super::__action28::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (3, 48)
     }
     fn __reduce75<
         'input,
@@ -7992,15 +8580,13 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list = stmt, stmt_list => ActionFn(24);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = subgraph => ActionFn(29);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action24::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 49)
+        let __end = __sym0.2;
+        let __nt = super::__action29::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce76<
         'input,
@@ -8011,12 +8597,16 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list =  => ActionFn(80);
-        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
-        let __end = __start;
-        let __nt = super::__action80::<>(input, &__start, &__end);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (0, 49)
+        // stmt_block = "{", stmt_list, "}" => ActionFn(21);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant0(__symbols);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym2.2;
+        let __nt = super::__action21::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (3, 49)
     }
     fn __reduce77<
         'input,
@@ -8027,18 +8617,16 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "subgraph", id, "{", stmt_list, "}" => ActionFn(54);
-        assert!(__symbols.len() >= 5);
-        let __sym4 = __pop_Variant0(__symbols);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant0(__symbols);
+        // stmt_list = stmt, semicolon, stmt_list => ActionFn(22);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant11(__symbols);
         let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym4.2;
-        let __nt = super::__action54::<>(input, __sym0, __sym1, __sym2, __sym3, __sym4);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (5, 50)
+        let __end = __sym2.2;
+        let __nt = super::__action22::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (3, 50)
     }
     fn __reduce78<
         'input,
@@ -8049,17 +8637,15 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "subgraph", "{", stmt_list, "}" => ActionFn(55);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant0(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // stmt_list = stmt, stmt_list => ActionFn(23);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action55::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 50)
+        let __end = __sym1.2;
+        let __nt = super::__action23::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (2, 50)
     }
     fn __reduce79<
         'input,
@@ -8070,16 +8656,75 @@ mod __parse__Graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "{", stmt_list, "}" => ActionFn(56);
+        // stmt_list =  => ActionFn(81);
+        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
+        let __end = __start;
+        let __nt = super::__action81::<>(input, &__start, &__end);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (0, 50)
+    }
+    fn __reduce80<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "subgraph", id, "{", stmt_list, "}" => ActionFn(53);
+        assert!(__symbols.len() >= 5);
+        let __sym4 = __pop_Variant0(__symbols);
+        let __sym3 = __pop_Variant11(__symbols);
+        let __sym2 = __pop_Variant0(__symbols);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym4.2;
+        let __nt = super::__action53::<>(input, __sym0, __sym1, __sym2, __sym3, __sym4);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (5, 51)
+    }
+    fn __reduce81<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "subgraph", "{", stmt_list, "}" => ActionFn(54);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant0(__symbols);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym3.2;
+        let __nt = super::__action54::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (4, 51)
+    }
+    fn __reduce82<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "{", stmt_list, "}" => ActionFn(55);
         assert!(__symbols.len() >= 3);
         let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant11(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action56::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 50)
+        let __nt = super::__action55::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (3, 51)
     }
 }
 #[allow(unused_imports)]
@@ -8090,6 +8735,7 @@ pub use self::__parse__Graph::GraphParser;
 mod __parse__T_digraph {
 
     use std::str::FromStr;
+    use crate::cgraph::ast::*;
     #[allow(unused_extern_crates)]
     extern crate lalrpop_util as __lalrpop_util;
     #[allow(unused_imports)]
@@ -8102,6 +8748,17 @@ mod __parse__T_digraph {
      {
         Variant0(&'input str),
         Variant1(()),
+        Variant2(AstNodeId),
+        Variant3(Vec<AstAttr>),
+        Variant4(AstGraph),
+        Variant5(AstStmt),
+        Variant6(String),
+        Variant7(Vec<AstEdgeEndpoint>),
+        Variant8(AstAttr),
+        Variant9(bool),
+        Variant10(core::option::Option<String>),
+        Variant11(Vec<AstStmt>),
+        Variant12(AstSubGraph),
     }
     const __ACTION: &[i8] = &[
         // State 0
@@ -8120,9 +8777,9 @@ mod __parse__T_digraph {
         // State 0
         0,
         // State 1
-        -13,
+        -14,
         // State 2
-        -22,
+        -23,
         // State 3
         -2,
     ];
@@ -8152,7 +8809,7 @@ mod __parse__T_digraph {
         r###""}""###,
         r###"r#"\"[^\"]*\""#"###,
         r###"r#"<[^>]*>"#"###,
-        r###"r#"[-]*[0-9]+"#"###,
+        r###"r#"[-]?[0-9]+(\\.[0-9]+)?"#"###,
         r###"r#"[a-zA-Z_][a-zA-Z0-9_]*"#"###,
     ];
     fn __expected_tokens(__state: i8) -> alloc::vec::Vec<alloc::string::String> {
@@ -8386,141 +9043,141 @@ mod __parse__T_digraph {
             }
             8 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 6,
                 }
             }
             9 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 7,
+                    states_to_pop: 2,
+                    nonterminal_produced: 6,
                 }
             }
             10 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 8,
+                    nonterminal_produced: 7,
                 }
             }
             11 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 9,
+                    nonterminal_produced: 8,
                 }
             }
             12 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 10,
+                    nonterminal_produced: 9,
                 }
             }
             13 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 11,
+                    nonterminal_produced: 10,
                 }
             }
             14 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 12,
+                    nonterminal_produced: 11,
                 }
             }
             15 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 13,
+                    nonterminal_produced: 12,
                 }
             }
             16 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 14,
+                    nonterminal_produced: 13,
                 }
             }
             17 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 15,
+                    nonterminal_produced: 14,
                 }
             }
             18 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 16,
+                    nonterminal_produced: 15,
                 }
             }
             19 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 17,
+                    nonterminal_produced: 16,
                 }
             }
             20 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
+                    nonterminal_produced: 17,
+                }
+            }
+            21 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
                     nonterminal_produced: 18,
                 }
             }
-            21 => __state_machine::SimulatedReduce::Accept,
-            22 => {
+            22 => __state_machine::SimulatedReduce::Accept,
+            23 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 20,
                 }
             }
-            23 => {
+            24 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 21,
                 }
             }
-            24 => {
+            25 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 22,
                 }
             }
-            25 => {
+            26 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 23,
                 }
             }
-            26 => {
+            27 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 24,
                 }
             }
-            27 => {
-                __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 25,
-                }
-            }
             28 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
+                    states_to_pop: 2,
                     nonterminal_produced: 25,
                 }
             }
             29 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
-                    nonterminal_produced: 26,
+                    states_to_pop: 1,
+                    nonterminal_produced: 25,
                 }
             }
             30 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 4,
                     nonterminal_produced: 26,
                 }
             }
             31 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 27,
+                    states_to_pop: 3,
+                    nonterminal_produced: 26,
                 }
             }
             32 => {
@@ -8537,55 +9194,55 @@ mod __parse__T_digraph {
             }
             34 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 28,
+                    states_to_pop: 2,
+                    nonterminal_produced: 27,
                 }
             }
             35 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 29,
+                    nonterminal_produced: 28,
                 }
             }
             36 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 30,
+                    nonterminal_produced: 29,
                 }
             }
             37 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
-                    nonterminal_produced: 31,
+                    states_to_pop: 1,
+                    nonterminal_produced: 30,
                 }
             }
             38 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 31,
                 }
             }
             39 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 2,
                     nonterminal_produced: 31,
                 }
             }
             40 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 31,
                 }
             }
             41 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 2,
-                    nonterminal_produced: 32,
+                    nonterminal_produced: 31,
                 }
             }
             42 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 2,
                     nonterminal_produced: 32,
                 }
             }
@@ -8597,14 +9254,14 @@ mod __parse__T_digraph {
             }
             44 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 32,
                 }
             }
             45 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 33,
+                    states_to_pop: 2,
+                    nonterminal_produced: 32,
                 }
             }
             46 => {
@@ -8615,8 +9272,8 @@ mod __parse__T_digraph {
             }
             47 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
-                    nonterminal_produced: 34,
+                    states_to_pop: 1,
+                    nonterminal_produced: 33,
                 }
             }
             48 => {
@@ -8627,14 +9284,14 @@ mod __parse__T_digraph {
             }
             49 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 4,
                     nonterminal_produced: 34,
                 }
             }
             50 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 35,
+                    states_to_pop: 3,
+                    nonterminal_produced: 34,
                 }
             }
             51 => {
@@ -8646,7 +9303,7 @@ mod __parse__T_digraph {
             52 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 36,
+                    nonterminal_produced: 35,
                 }
             }
             53 => {
@@ -8670,85 +9327,85 @@ mod __parse__T_digraph {
             56 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 37,
+                    nonterminal_produced: 36,
                 }
             }
             57 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 38,
+                    nonterminal_produced: 37,
                 }
             }
             58 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 39,
+                    states_to_pop: 0,
+                    nonterminal_produced: 37,
                 }
             }
             59 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 40,
+                    nonterminal_produced: 38,
                 }
             }
             60 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 41,
+                    nonterminal_produced: 39,
                 }
             }
             61 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 42,
+                    states_to_pop: 1,
+                    nonterminal_produced: 40,
                 }
             }
             62 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 42,
+                    nonterminal_produced: 41,
                 }
             }
             63 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 43,
+                    states_to_pop: 1,
+                    nonterminal_produced: 42,
                 }
             }
             64 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
+                    states_to_pop: 2,
                     nonterminal_produced: 43,
                 }
             }
             65 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 44,
+                    states_to_pop: 1,
+                    nonterminal_produced: 43,
                 }
             }
             66 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 45,
+                    states_to_pop: 2,
+                    nonterminal_produced: 44,
                 }
             }
             67 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 46,
+                    nonterminal_produced: 44,
                 }
             }
             68 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    states_to_pop: 2,
+                    nonterminal_produced: 45,
                 }
             }
             69 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    nonterminal_produced: 46,
                 }
             }
             70 => {
@@ -8759,56 +9416,74 @@ mod __parse__T_digraph {
             }
             71 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
-                    nonterminal_produced: 47,
+                    states_to_pop: 1,
+                    nonterminal_produced: 48,
                 }
             }
             72 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    nonterminal_produced: 48,
                 }
             }
             73 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 1,
                     nonterminal_produced: 48,
                 }
             }
             74 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 3,
-                    nonterminal_produced: 49,
+                    nonterminal_produced: 48,
                 }
             }
             75 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 49,
+                    states_to_pop: 1,
+                    nonterminal_produced: 48,
                 }
             }
             76 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 0,
+                    states_to_pop: 3,
                     nonterminal_produced: 49,
                 }
             }
             77 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 5,
+                    states_to_pop: 3,
                     nonterminal_produced: 50,
                 }
             }
             78 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
+                    states_to_pop: 2,
                     nonterminal_produced: 50,
                 }
             }
             79 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 0,
                     nonterminal_produced: 50,
+                }
+            }
+            80 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 5,
+                    nonterminal_produced: 51,
+                }
+            }
+            81 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 4,
+                    nonterminal_produced: 51,
+                }
+            }
+            82 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 3,
+                    nonterminal_produced: 51,
                 }
             }
             _ => panic!("invalid reduction index {}", __reduce_index)
@@ -8956,15 +9631,15 @@ mod __parse__T_digraph {
                 __reduce20(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             21 => {
+                __reduce21(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            22 => {
                 // __T_digraph = T_digraph => ActionFn(6);
                 let __sym0 = __pop_Variant1(__symbols);
                 let __start = __sym0.0;
                 let __end = __sym0.2;
                 let __nt = super::__action6::<>(input, __sym0);
                 return Some(Ok(__nt));
-            }
-            22 => {
-                __reduce22(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             23 => {
                 __reduce23(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
@@ -9137,6 +9812,15 @@ mod __parse__T_digraph {
             79 => {
                 __reduce79(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
+            80 => {
+                __reduce80(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            81 => {
+                __reduce81(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            82 => {
+                __reduce82(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
             _ => panic!("invalid action code {}", __action)
         };
         let __states_len = __states.len();
@@ -9161,6 +9845,127 @@ mod __parse__T_digraph {
             _ => __symbol_type_mismatch()
         }
     }
+    fn __pop_Variant8<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstAttr, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant8(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant4<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstGraph, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant4(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant2<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstNodeId, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant2(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant5<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstStmt, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant5(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant12<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstSubGraph, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant12(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant6<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, String, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant6(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant3<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstAttr>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant3(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant7<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstEdgeEndpoint>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant7(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant11<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstStmt>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant11(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant9<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, bool, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant9(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant10<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, core::option::Option<String>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant10(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
     fn __pop_Variant0<
       'input,
     >(
@@ -9181,10 +9986,10 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // () =  => ActionFn(79);
+        // () =  => ActionFn(78);
         let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
         let __end = __start;
-        let __nt = super::__action79::<>(input, &__start, &__end);
+        let __nt = super::__action78::<>(input, &__start, &__end);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (0, 0)
     }
@@ -9231,12 +10036,12 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Expr1 = node_id => ActionFn(18);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Expr1 = node_id => ActionFn(17);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action18::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action17::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 3)
     }
     fn __reduce4<
@@ -9248,12 +10053,12 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Expr2 = a_list => ActionFn(19);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Expr2 = a_list => ActionFn(18);
+        let __sym0 = __pop_Variant3(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action19::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action18::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
         (1, 4)
     }
     fn __reduce5<
@@ -9282,16 +10087,16 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = "strict", graph_kind, id, stmt_block => ActionFn(15);
+        // Graph = "strict", graph_kind, id, stmt_block => ActionFn(82);
         assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym3 = __pop_Variant11(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant9(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym3.2;
-        let __nt = super::__action15::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action82::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (4, 6)
     }
     fn __reduce7<
@@ -9303,15 +10108,15 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = graph_kind, id, stmt_block => ActionFn(16);
+        // Graph = "strict", graph_kind, stmt_block => ActionFn(83);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant9(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action16::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action83::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (3, 6)
     }
     fn __reduce8<
@@ -9323,17 +10128,37 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = graph_kind, stmt_block => ActionFn(17);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Graph = graph_kind, id, stmt_block => ActionFn(84);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant9(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action17::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 6)
+        let __end = __sym2.2;
+        let __nt = super::__action84::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
+        (3, 6)
     }
     fn __reduce9<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // Graph = graph_kind, stmt_block => ActionFn(85);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant9(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym1.2;
+        let __nt = super::__action85::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
+        (2, 6)
+    }
+    fn __reduce10<
         'input,
     >(
         input: &'input str,
@@ -9350,7 +10175,7 @@ mod __parse__T_digraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 7)
     }
-    fn __reduce10<
+    fn __reduce11<
         'input,
     >(
         input: &'input str,
@@ -9367,7 +10192,7 @@ mod __parse__T_digraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 8)
     }
-    fn __reduce11<
+    fn __reduce12<
         'input,
     >(
         input: &'input str,
@@ -9384,23 +10209,6 @@ mod __parse__T_digraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 9)
     }
-    fn __reduce12<
-        'input,
-    >(
-        input: &'input str,
-        __lookahead_start: Option<&usize>,
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
-        _: core::marker::PhantomData<(&'input ())>,
-    ) -> (usize, usize)
-    {
-        // T_digraph = DIGRAPH => ActionFn(76);
-        let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action76::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 10)
-    }
     fn __reduce13<
         'input,
     >(
@@ -9410,13 +10218,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_edge = EDGE => ActionFn(74);
+        // T_digraph = DIGRAPH => ActionFn(75);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action74::<>(input, __sym0);
+        let __nt = super::__action75::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 11)
+        (1, 10)
     }
     fn __reduce14<
         'input,
@@ -9427,13 +10235,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_graph = GRAPH => ActionFn(75);
+        // T_edge = EDGE => ActionFn(73);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action75::<>(input, __sym0);
+        let __nt = super::__action73::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 12)
+        (1, 11)
     }
     fn __reduce15<
         'input,
@@ -9444,13 +10252,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_node = NODE => ActionFn(73);
+        // T_graph = GRAPH => ActionFn(74);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action73::<>(input, __sym0);
+        let __nt = super::__action74::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 13)
+        (1, 12)
     }
     fn __reduce16<
         'input,
@@ -9461,13 +10269,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_strict = STRICT => ActionFn(78);
+        // T_node = NODE => ActionFn(72);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action78::<>(input, __sym0);
+        let __nt = super::__action72::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 14)
+        (1, 13)
     }
     fn __reduce17<
         'input,
@@ -9478,13 +10286,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_subgraph = SUBGRAPH => ActionFn(77);
+        // T_strict = STRICT => ActionFn(77);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action77::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 15)
+        (1, 14)
     }
     fn __reduce18<
         'input,
@@ -9495,13 +10303,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // __Expr1 = Expr1 => ActionFn(1);
+        // T_subgraph = SUBGRAPH => ActionFn(76);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action1::<>(input, __sym0);
+        let __nt = super::__action76::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 16)
+        (1, 15)
     }
     fn __reduce19<
         'input,
@@ -9512,13 +10320,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // __Expr2 = Expr2 => ActionFn(2);
-        let __sym0 = __pop_Variant1(__symbols);
+        // __Expr1 = Expr1 => ActionFn(1);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action2::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 17)
+        let __nt = super::__action1::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (1, 16)
     }
     fn __reduce20<
         'input,
@@ -9529,15 +10337,32 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
+        // __Expr2 = Expr2 => ActionFn(2);
+        let __sym0 = __pop_Variant3(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym0.2;
+        let __nt = super::__action2::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (1, 17)
+    }
+    fn __reduce21<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
         // __Graph = Graph => ActionFn(0);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant4(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action0::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (1, 18)
     }
-    fn __reduce22<
+    fn __reduce23<
         'input,
     >(
         input: &'input str,
@@ -9554,7 +10379,7 @@ mod __parse__T_digraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 20)
     }
-    fn __reduce23<
+    fn __reduce24<
         'input,
     >(
         input: &'input str,
@@ -9571,7 +10396,7 @@ mod __parse__T_digraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 21)
     }
-    fn __reduce24<
+    fn __reduce25<
         'input,
     >(
         input: &'input str,
@@ -9588,7 +10413,7 @@ mod __parse__T_digraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 22)
     }
-    fn __reduce25<
+    fn __reduce26<
         'input,
     >(
         input: &'input str,
@@ -9605,7 +10430,7 @@ mod __parse__T_digraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 23)
     }
-    fn __reduce26<
+    fn __reduce27<
         'input,
     >(
         input: &'input str,
@@ -9622,25 +10447,6 @@ mod __parse__T_digraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 24)
     }
-    fn __reduce27<
-        'input,
-    >(
-        input: &'input str,
-        __lookahead_start: Option<&usize>,
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
-        _: core::marker::PhantomData<(&'input ())>,
-    ) -> (usize, usize)
-    {
-        // a_list = elem_pair, a_list => ActionFn(36);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action36::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 25)
-    }
     fn __reduce28<
         'input,
     >(
@@ -9650,13 +10456,15 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // a_list = elem_pair => ActionFn(37);
-        let __sym0 = __pop_Variant1(__symbols);
+        // a_list = elem_pair, a_list => ActionFn(35);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant8(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action37::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 25)
+        let __end = __sym1.2;
+        let __nt = super::__action35::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (2, 25)
     }
     fn __reduce29<
         'input,
@@ -9667,17 +10475,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_list = lbracket, a_list, rbracket, attr_list => ActionFn(34);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // a_list = elem_pair => ActionFn(36);
+        let __sym0 = __pop_Variant8(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action34::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 26)
+        let __end = __sym0.2;
+        let __nt = super::__action36::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (1, 25)
     }
     fn __reduce30<
         'input,
@@ -9688,16 +10492,17 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_list = lbracket, a_list, rbracket => ActionFn(35);
-        assert!(__symbols.len() >= 3);
+        // attr_list = lbracket, a_list, rbracket, attr_list => ActionFn(33);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant3(__symbols);
         let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action35::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 26)
+        let __end = __sym3.2;
+        let __nt = super::__action33::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (4, 26)
     }
     fn __reduce31<
         'input,
@@ -9708,15 +10513,16 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "graph", attr_list => ActionFn(31);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // attr_list = lbracket, a_list, rbracket => ActionFn(34);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action31::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 27)
+        let __end = __sym2.2;
+        let __nt = super::__action34::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (3, 26)
     }
     fn __reduce32<
         'input,
@@ -9727,14 +10533,14 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "node", attr_list => ActionFn(32);
+        // attr_stmt = "graph", attr_list => ActionFn(30);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action32::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action30::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (2, 27)
     }
     fn __reduce33<
@@ -9746,14 +10552,14 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "edge", attr_list => ActionFn(33);
+        // attr_stmt = "node", attr_list => ActionFn(31);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action33::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action31::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (2, 27)
     }
     fn __reduce34<
@@ -9765,13 +10571,15 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // colon = ":" => ActionFn(66);
+        // attr_stmt = "edge", attr_list => ActionFn(32);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action66::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 28)
+        let __end = __sym1.2;
+        let __nt = super::__action32::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 27)
     }
     fn __reduce35<
         'input,
@@ -9782,13 +10590,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // comma = "," => ActionFn(68);
+        // colon = ":" => ActionFn(65);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action68::<>(input, __sym0);
+        let __nt = super::__action65::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 29)
+        (1, 28)
     }
     fn __reduce36<
         'input,
@@ -9799,13 +10607,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // compass_pt = id_ident => ActionFn(57);
-        let __sym0 = __pop_Variant1(__symbols);
+        // comma = "," => ActionFn(67);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action57::<>(input, __sym0);
+        let __nt = super::__action67::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 30)
+        (1, 29)
     }
     fn __reduce37<
         'input,
@@ -9816,16 +10624,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, node_id, edge_rhs => ActionFn(45);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // compass_pt = id_ident => ActionFn(56);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action45::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 31)
+        let __end = __sym0.2;
+        let __nt = super::__action56::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 30)
     }
     fn __reduce38<
         'input,
@@ -9836,15 +10641,16 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, node_id => ActionFn(46);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, node_id, edge_rhs => ActionFn(44);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant7(__symbols);
+        let __sym1 = __pop_Variant2(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action46::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 31)
+        let __end = __sym2.2;
+        let __nt = super::__action44::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (3, 31)
     }
     fn __reduce39<
         'input,
@@ -9855,16 +10661,15 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, subgraph, edge_rhs => ActionFn(47);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, node_id => ActionFn(45);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant2(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action47::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 31)
+        let __end = __sym1.2;
+        let __nt = super::__action45::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (2, 31)
     }
     fn __reduce40<
         'input,
@@ -9875,15 +10680,16 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, subgraph => ActionFn(48);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, subgraph, edge_rhs => ActionFn(46);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant7(__symbols);
+        let __sym1 = __pop_Variant12(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action48::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 31)
+        let __end = __sym2.2;
+        let __nt = super::__action46::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (3, 31)
     }
     fn __reduce41<
         'input,
@@ -9894,15 +10700,15 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = node_id, edge_rhs => ActionFn(41);
+        // edge_rhs = edgeop, subgraph => ActionFn(47);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant12(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action41::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 32)
+        let __nt = super::__action47::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (2, 31)
     }
     fn __reduce42<
         'input,
@@ -9913,16 +10719,15 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = node_id, edge_rhs, attr_list => ActionFn(42);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edge_stmt = node_id, edge_rhs => ActionFn(40);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action42::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 32)
+        let __end = __sym1.2;
+        let __nt = super::__action40::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 32)
     }
     fn __reduce43<
         'input,
@@ -9933,15 +10738,15 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = subgraph, edge_rhs, attr_list => ActionFn(43);
+        // edge_stmt = node_id, edge_rhs, attr_list => ActionFn(41);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant3(__symbols);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action43::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action41::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (3, 32)
     }
     fn __reduce44<
@@ -9953,15 +10758,16 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = subgraph, edge_rhs => ActionFn(44);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edge_stmt = subgraph, edge_rhs, attr_list => ActionFn(42);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant3(__symbols);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action44::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 32)
+        let __end = __sym2.2;
+        let __nt = super::__action42::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (3, 32)
     }
     fn __reduce45<
         'input,
@@ -9972,13 +10778,15 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edgeop = "->" => ActionFn(71);
-        let __sym0 = __pop_Variant0(__symbols);
+        // edge_stmt = subgraph, edge_rhs => ActionFn(43);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action71::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 33)
+        let __end = __sym1.2;
+        let __nt = super::__action43::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 32)
     }
     fn __reduce46<
         'input,
@@ -9989,11 +10797,11 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edgeop = "--" => ActionFn(72);
+        // edgeop = "->" => ActionFn(70);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action72::<>(input, __sym0);
+        let __nt = super::__action70::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 33)
     }
@@ -10006,17 +10814,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id, semicolon => ActionFn(38);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edgeop = "--" => ActionFn(71);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action38::<>(input, __sym0, __sym1, __sym2, __sym3);
+        let __end = __sym0.2;
+        let __nt = super::__action71::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 34)
+        (1, 33)
     }
     fn __reduce48<
         'input,
@@ -10027,16 +10831,16 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id, comma => ActionFn(39);
+        // elem_pair = id, "=", id, semicolon => ActionFn(37);
         assert!(__symbols.len() >= 4);
         let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym3.2;
-        let __nt = super::__action39::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action37::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
         (4, 34)
     }
     fn __reduce49<
@@ -10048,16 +10852,17 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id => ActionFn(40);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
+        // elem_pair = id, "=", id, comma => ActionFn(38);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action40::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 34)
+        let __end = __sym3.2;
+        let __nt = super::__action38::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
+        (4, 34)
     }
     fn __reduce50<
         'input,
@@ -10068,13 +10873,16 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // graph_kind = "graph" => ActionFn(20);
-        let __sym0 = __pop_Variant0(__symbols);
+        // elem_pair = id, "=", id => ActionFn(39);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action20::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 35)
+        let __end = __sym2.2;
+        let __nt = super::__action39::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
+        (3, 34)
     }
     fn __reduce51<
         'input,
@@ -10085,12 +10893,12 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // graph_kind = "digraph" => ActionFn(21);
+        // graph_kind = "graph" => ActionFn(19);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action21::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action19::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant9(__nt), __end));
         (1, 35)
     }
     fn __reduce52<
@@ -10102,13 +10910,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_ident => ActionFn(58);
-        let __sym0 = __pop_Variant1(__symbols);
+        // graph_kind = "digraph" => ActionFn(20);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action58::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 36)
+        let __nt = super::__action20::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant9(__nt), __end));
+        (1, 35)
     }
     fn __reduce53<
         'input,
@@ -10119,12 +10927,12 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_num => ActionFn(59);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_ident => ActionFn(57);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action59::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action57::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce54<
@@ -10136,12 +10944,12 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_str => ActionFn(60);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_num => ActionFn(58);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action60::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action58::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce55<
@@ -10153,12 +10961,12 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_html => ActionFn(61);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_str => ActionFn(59);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action61::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action59::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce56<
@@ -10170,13 +10978,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_html = r#"<[^>]*>"# => ActionFn(65);
-        let __sym0 = __pop_Variant0(__symbols);
+        // id = id_html => ActionFn(60);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action65::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 37)
+        let __nt = super::__action60::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 36)
     }
     fn __reduce57<
         'input,
@@ -10187,13 +10995,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_ident = r#"[a-zA-Z_][a-zA-Z0-9_]*"# => ActionFn(62);
-        let __sym0 = __pop_Variant0(__symbols);
+        // id? = id => ActionFn(79);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action62::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 38)
+        let __nt = super::__action79::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant10(__nt), __end));
+        (1, 37)
     }
     fn __reduce58<
         'input,
@@ -10204,13 +11012,12 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_num = r#"[-]*[0-9]+"# => ActionFn(63);
-        let __sym0 = __pop_Variant0(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action63::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 39)
+        // id? =  => ActionFn(80);
+        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
+        let __end = __start;
+        let __nt = super::__action80::<>(input, &__start, &__end);
+        __symbols.push((__start, __Symbol::Variant10(__nt), __end));
+        (0, 37)
     }
     fn __reduce59<
         'input,
@@ -10221,13 +11028,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_str = r#"\"[^\"]*\""# => ActionFn(64);
+        // id_html = r#"<[^>]*>"# => ActionFn(64);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action64::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 40)
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 38)
     }
     fn __reduce60<
         'input,
@@ -10238,13 +11045,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // lbracket = "[" => ActionFn(69);
+        // id_ident = r#"[a-zA-Z_][a-zA-Z0-9_]*"# => ActionFn(61);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action69::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 41)
+        let __nt = super::__action61::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 39)
     }
     fn __reduce61<
         'input,
@@ -10255,15 +11062,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_id = id, port => ActionFn(51);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id_num = r#"[-]?[0-9]+(\\.[0-9]+)?"# => ActionFn(62);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action51::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 42)
+        let __end = __sym0.2;
+        let __nt = super::__action62::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 40)
     }
     fn __reduce62<
         'input,
@@ -10274,13 +11079,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_id = id => ActionFn(52);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id_str = r#"\"[^\"]*\""# => ActionFn(63);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action52::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 42)
+        let __nt = super::__action63::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 41)
     }
     fn __reduce63<
         'input,
@@ -10291,15 +11096,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_stmt = node_id, attr_list => ActionFn(49);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // lbracket = "[" => ActionFn(68);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action49::<>(input, __sym0, __sym1);
+        let __end = __sym0.2;
+        let __nt = super::__action68::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 43)
+        (1, 42)
     }
     fn __reduce64<
         'input,
@@ -10310,13 +11113,15 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_stmt = node_id => ActionFn(50);
-        let __sym0 = __pop_Variant1(__symbols);
+        // node_id = id, port => ActionFn(50);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action50::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 43)
+        let __end = __sym1.2;
+        let __nt = super::__action50::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (2, 43)
     }
     fn __reduce65<
         'input,
@@ -10327,15 +11132,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // port = colon, id => ActionFn(53);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // node_id = id => ActionFn(51);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action53::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 44)
+        let __end = __sym0.2;
+        let __nt = super::__action51::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (1, 43)
     }
     fn __reduce66<
         'input,
@@ -10346,13 +11149,15 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // rbracket = "]" => ActionFn(70);
-        let __sym0 = __pop_Variant0(__symbols);
+        // node_stmt = node_id, attr_list => ActionFn(48);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action70::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 45)
+        let __end = __sym1.2;
+        let __nt = super::__action48::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 44)
     }
     fn __reduce67<
         'input,
@@ -10363,13 +11168,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // semicolon = ";" => ActionFn(67);
-        let __sym0 = __pop_Variant0(__symbols);
+        // node_stmt = node_id => ActionFn(49);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action67::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 46)
+        let __nt = super::__action49::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 44)
     }
     fn __reduce68<
         'input,
@@ -10380,13 +11185,15 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = node_stmt => ActionFn(26);
+        // port = colon, id => ActionFn(52);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant6(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action26::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        let __end = __sym1.2;
+        let __nt = super::__action52::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (2, 45)
     }
     fn __reduce69<
         'input,
@@ -10397,13 +11204,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = edge_stmt => ActionFn(27);
-        let __sym0 = __pop_Variant1(__symbols);
+        // rbracket = "]" => ActionFn(69);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action27::<>(input, __sym0);
+        let __nt = super::__action69::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        (1, 46)
     }
     fn __reduce70<
         'input,
@@ -10414,11 +11221,11 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = attr_stmt => ActionFn(28);
-        let __sym0 = __pop_Variant1(__symbols);
+        // semicolon = ";" => ActionFn(66);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action28::<>(input, __sym0);
+        let __nt = super::__action66::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 47)
     }
@@ -10431,16 +11238,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = id, "=", id => ActionFn(29);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = node_stmt => ActionFn(25);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action29::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 47)
+        let __end = __sym0.2;
+        let __nt = super::__action25::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce72<
         'input,
@@ -10451,13 +11255,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = subgraph => ActionFn(30);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = edge_stmt => ActionFn(26);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action30::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        let __nt = super::__action26::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce73<
         'input,
@@ -10468,16 +11272,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_block = "{", stmt_list, "}" => ActionFn(22);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // stmt = attr_stmt => ActionFn(27);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action22::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 48)
+        let __end = __sym0.2;
+        let __nt = super::__action27::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce74<
         'input,
@@ -10488,16 +11289,16 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list = stmt, semicolon, stmt_list => ActionFn(23);
+        // stmt = id, "=", id => ActionFn(28);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action23::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 49)
+        let __nt = super::__action28::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (3, 48)
     }
     fn __reduce75<
         'input,
@@ -10508,15 +11309,13 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list = stmt, stmt_list => ActionFn(24);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = subgraph => ActionFn(29);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action24::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 49)
+        let __end = __sym0.2;
+        let __nt = super::__action29::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce76<
         'input,
@@ -10527,12 +11326,16 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list =  => ActionFn(80);
-        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
-        let __end = __start;
-        let __nt = super::__action80::<>(input, &__start, &__end);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (0, 49)
+        // stmt_block = "{", stmt_list, "}" => ActionFn(21);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant0(__symbols);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym2.2;
+        let __nt = super::__action21::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (3, 49)
     }
     fn __reduce77<
         'input,
@@ -10543,18 +11346,16 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "subgraph", id, "{", stmt_list, "}" => ActionFn(54);
-        assert!(__symbols.len() >= 5);
-        let __sym4 = __pop_Variant0(__symbols);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant0(__symbols);
+        // stmt_list = stmt, semicolon, stmt_list => ActionFn(22);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant11(__symbols);
         let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym4.2;
-        let __nt = super::__action54::<>(input, __sym0, __sym1, __sym2, __sym3, __sym4);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (5, 50)
+        let __end = __sym2.2;
+        let __nt = super::__action22::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (3, 50)
     }
     fn __reduce78<
         'input,
@@ -10565,17 +11366,15 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "subgraph", "{", stmt_list, "}" => ActionFn(55);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant0(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // stmt_list = stmt, stmt_list => ActionFn(23);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action55::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 50)
+        let __end = __sym1.2;
+        let __nt = super::__action23::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (2, 50)
     }
     fn __reduce79<
         'input,
@@ -10586,16 +11385,75 @@ mod __parse__T_digraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "{", stmt_list, "}" => ActionFn(56);
+        // stmt_list =  => ActionFn(81);
+        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
+        let __end = __start;
+        let __nt = super::__action81::<>(input, &__start, &__end);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (0, 50)
+    }
+    fn __reduce80<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "subgraph", id, "{", stmt_list, "}" => ActionFn(53);
+        assert!(__symbols.len() >= 5);
+        let __sym4 = __pop_Variant0(__symbols);
+        let __sym3 = __pop_Variant11(__symbols);
+        let __sym2 = __pop_Variant0(__symbols);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym4.2;
+        let __nt = super::__action53::<>(input, __sym0, __sym1, __sym2, __sym3, __sym4);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (5, 51)
+    }
+    fn __reduce81<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "subgraph", "{", stmt_list, "}" => ActionFn(54);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant0(__symbols);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym3.2;
+        let __nt = super::__action54::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (4, 51)
+    }
+    fn __reduce82<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "{", stmt_list, "}" => ActionFn(55);
         assert!(__symbols.len() >= 3);
         let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant11(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action56::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 50)
+        let __nt = super::__action55::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (3, 51)
     }
 }
 #[allow(unused_imports)]
@@ -10606,6 +11464,7 @@ pub use self::__parse__T_digraph::T_digraphParser;
 mod __parse__T_edge {
 
     use std::str::FromStr;
+    use crate::cgraph::ast::*;
     #[allow(unused_extern_crates)]
     extern crate lalrpop_util as __lalrpop_util;
     #[allow(unused_imports)]
@@ -10618,6 +11477,17 @@ mod __parse__T_edge {
      {
         Variant0(&'input str),
         Variant1(()),
+        Variant2(AstNodeId),
+        Variant3(Vec<AstAttr>),
+        Variant4(AstGraph),
+        Variant5(AstStmt),
+        Variant6(String),
+        Variant7(Vec<AstEdgeEndpoint>),
+        Variant8(AstAttr),
+        Variant9(bool),
+        Variant10(core::option::Option<String>),
+        Variant11(Vec<AstStmt>),
+        Variant12(AstSubGraph),
     }
     const __ACTION: &[i8] = &[
         // State 0
@@ -10636,9 +11506,9 @@ mod __parse__T_edge {
         // State 0
         0,
         // State 1
-        -14,
+        -15,
         // State 2
-        -23,
+        -24,
         // State 3
         -3,
     ];
@@ -10668,7 +11538,7 @@ mod __parse__T_edge {
         r###""}""###,
         r###"r#"\"[^\"]*\""#"###,
         r###"r#"<[^>]*>"#"###,
-        r###"r#"[-]*[0-9]+"#"###,
+        r###"r#"[-]?[0-9]+(\\.[0-9]+)?"#"###,
         r###"r#"[a-zA-Z_][a-zA-Z0-9_]*"#"###,
     ];
     fn __expected_tokens(__state: i8) -> alloc::vec::Vec<alloc::string::String> {
@@ -10902,141 +11772,141 @@ mod __parse__T_edge {
             }
             8 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 6,
                 }
             }
             9 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 7,
+                    states_to_pop: 2,
+                    nonterminal_produced: 6,
                 }
             }
             10 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 8,
+                    nonterminal_produced: 7,
                 }
             }
             11 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 9,
+                    nonterminal_produced: 8,
                 }
             }
             12 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 10,
+                    nonterminal_produced: 9,
                 }
             }
             13 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 11,
+                    nonterminal_produced: 10,
                 }
             }
             14 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 12,
+                    nonterminal_produced: 11,
                 }
             }
             15 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 13,
+                    nonterminal_produced: 12,
                 }
             }
             16 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 14,
+                    nonterminal_produced: 13,
                 }
             }
             17 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 15,
+                    nonterminal_produced: 14,
                 }
             }
             18 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 16,
+                    nonterminal_produced: 15,
                 }
             }
             19 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 17,
+                    nonterminal_produced: 16,
                 }
             }
             20 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 18,
+                    nonterminal_produced: 17,
                 }
             }
             21 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
+                    nonterminal_produced: 18,
+                }
+            }
+            22 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
                     nonterminal_produced: 19,
                 }
             }
-            22 => __state_machine::SimulatedReduce::Accept,
-            23 => {
+            23 => __state_machine::SimulatedReduce::Accept,
+            24 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 21,
                 }
             }
-            24 => {
+            25 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 22,
                 }
             }
-            25 => {
+            26 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 23,
                 }
             }
-            26 => {
+            27 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 24,
                 }
             }
-            27 => {
-                __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 25,
-                }
-            }
             28 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
+                    states_to_pop: 2,
                     nonterminal_produced: 25,
                 }
             }
             29 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
-                    nonterminal_produced: 26,
+                    states_to_pop: 1,
+                    nonterminal_produced: 25,
                 }
             }
             30 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 4,
                     nonterminal_produced: 26,
                 }
             }
             31 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 27,
+                    states_to_pop: 3,
+                    nonterminal_produced: 26,
                 }
             }
             32 => {
@@ -11053,55 +11923,55 @@ mod __parse__T_edge {
             }
             34 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 28,
+                    states_to_pop: 2,
+                    nonterminal_produced: 27,
                 }
             }
             35 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 29,
+                    nonterminal_produced: 28,
                 }
             }
             36 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 30,
+                    nonterminal_produced: 29,
                 }
             }
             37 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
-                    nonterminal_produced: 31,
+                    states_to_pop: 1,
+                    nonterminal_produced: 30,
                 }
             }
             38 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 31,
                 }
             }
             39 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 2,
                     nonterminal_produced: 31,
                 }
             }
             40 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 31,
                 }
             }
             41 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 2,
-                    nonterminal_produced: 32,
+                    nonterminal_produced: 31,
                 }
             }
             42 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 2,
                     nonterminal_produced: 32,
                 }
             }
@@ -11113,14 +11983,14 @@ mod __parse__T_edge {
             }
             44 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 32,
                 }
             }
             45 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 33,
+                    states_to_pop: 2,
+                    nonterminal_produced: 32,
                 }
             }
             46 => {
@@ -11131,8 +12001,8 @@ mod __parse__T_edge {
             }
             47 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
-                    nonterminal_produced: 34,
+                    states_to_pop: 1,
+                    nonterminal_produced: 33,
                 }
             }
             48 => {
@@ -11143,14 +12013,14 @@ mod __parse__T_edge {
             }
             49 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 4,
                     nonterminal_produced: 34,
                 }
             }
             50 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 35,
+                    states_to_pop: 3,
+                    nonterminal_produced: 34,
                 }
             }
             51 => {
@@ -11162,7 +12032,7 @@ mod __parse__T_edge {
             52 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 36,
+                    nonterminal_produced: 35,
                 }
             }
             53 => {
@@ -11186,85 +12056,85 @@ mod __parse__T_edge {
             56 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 37,
+                    nonterminal_produced: 36,
                 }
             }
             57 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 38,
+                    nonterminal_produced: 37,
                 }
             }
             58 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 39,
+                    states_to_pop: 0,
+                    nonterminal_produced: 37,
                 }
             }
             59 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 40,
+                    nonterminal_produced: 38,
                 }
             }
             60 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 41,
+                    nonterminal_produced: 39,
                 }
             }
             61 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 42,
+                    states_to_pop: 1,
+                    nonterminal_produced: 40,
                 }
             }
             62 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 42,
+                    nonterminal_produced: 41,
                 }
             }
             63 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 43,
+                    states_to_pop: 1,
+                    nonterminal_produced: 42,
                 }
             }
             64 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
+                    states_to_pop: 2,
                     nonterminal_produced: 43,
                 }
             }
             65 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 44,
+                    states_to_pop: 1,
+                    nonterminal_produced: 43,
                 }
             }
             66 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 45,
+                    states_to_pop: 2,
+                    nonterminal_produced: 44,
                 }
             }
             67 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 46,
+                    nonterminal_produced: 44,
                 }
             }
             68 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    states_to_pop: 2,
+                    nonterminal_produced: 45,
                 }
             }
             69 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    nonterminal_produced: 46,
                 }
             }
             70 => {
@@ -11275,56 +12145,74 @@ mod __parse__T_edge {
             }
             71 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
-                    nonterminal_produced: 47,
+                    states_to_pop: 1,
+                    nonterminal_produced: 48,
                 }
             }
             72 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    nonterminal_produced: 48,
                 }
             }
             73 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 1,
                     nonterminal_produced: 48,
                 }
             }
             74 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 3,
-                    nonterminal_produced: 49,
+                    nonterminal_produced: 48,
                 }
             }
             75 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 49,
+                    states_to_pop: 1,
+                    nonterminal_produced: 48,
                 }
             }
             76 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 0,
+                    states_to_pop: 3,
                     nonterminal_produced: 49,
                 }
             }
             77 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 5,
+                    states_to_pop: 3,
                     nonterminal_produced: 50,
                 }
             }
             78 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
+                    states_to_pop: 2,
                     nonterminal_produced: 50,
                 }
             }
             79 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 0,
                     nonterminal_produced: 50,
+                }
+            }
+            80 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 5,
+                    nonterminal_produced: 51,
+                }
+            }
+            81 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 4,
+                    nonterminal_produced: 51,
+                }
+            }
+            82 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 3,
+                    nonterminal_produced: 51,
                 }
             }
             _ => panic!("invalid reduction index {}", __reduce_index)
@@ -11475,15 +12363,15 @@ mod __parse__T_edge {
                 __reduce21(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             22 => {
+                __reduce22(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            23 => {
                 // __T_edge = T_edge => ActionFn(4);
                 let __sym0 = __pop_Variant1(__symbols);
                 let __start = __sym0.0;
                 let __end = __sym0.2;
                 let __nt = super::__action4::<>(input, __sym0);
                 return Some(Ok(__nt));
-            }
-            23 => {
-                __reduce23(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             24 => {
                 __reduce24(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
@@ -11653,6 +12541,15 @@ mod __parse__T_edge {
             79 => {
                 __reduce79(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
+            80 => {
+                __reduce80(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            81 => {
+                __reduce81(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            82 => {
+                __reduce82(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
             _ => panic!("invalid action code {}", __action)
         };
         let __states_len = __states.len();
@@ -11677,6 +12574,127 @@ mod __parse__T_edge {
             _ => __symbol_type_mismatch()
         }
     }
+    fn __pop_Variant8<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstAttr, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant8(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant4<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstGraph, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant4(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant2<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstNodeId, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant2(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant5<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstStmt, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant5(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant12<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstSubGraph, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant12(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant6<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, String, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant6(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant3<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstAttr>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant3(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant7<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstEdgeEndpoint>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant7(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant11<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstStmt>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant11(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant9<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, bool, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant9(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant10<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, core::option::Option<String>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant10(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
     fn __pop_Variant0<
       'input,
     >(
@@ -11697,10 +12715,10 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // () =  => ActionFn(79);
+        // () =  => ActionFn(78);
         let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
         let __end = __start;
-        let __nt = super::__action79::<>(input, &__start, &__end);
+        let __nt = super::__action78::<>(input, &__start, &__end);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (0, 0)
     }
@@ -11747,12 +12765,12 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Expr1 = node_id => ActionFn(18);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Expr1 = node_id => ActionFn(17);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action18::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action17::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 3)
     }
     fn __reduce4<
@@ -11764,12 +12782,12 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Expr2 = a_list => ActionFn(19);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Expr2 = a_list => ActionFn(18);
+        let __sym0 = __pop_Variant3(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action19::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action18::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
         (1, 4)
     }
     fn __reduce5<
@@ -11798,16 +12816,16 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = "strict", graph_kind, id, stmt_block => ActionFn(15);
+        // Graph = "strict", graph_kind, id, stmt_block => ActionFn(82);
         assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym3 = __pop_Variant11(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant9(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym3.2;
-        let __nt = super::__action15::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action82::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (4, 6)
     }
     fn __reduce7<
@@ -11819,15 +12837,15 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = graph_kind, id, stmt_block => ActionFn(16);
+        // Graph = "strict", graph_kind, stmt_block => ActionFn(83);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant9(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action16::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action83::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (3, 6)
     }
     fn __reduce8<
@@ -11839,17 +12857,37 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = graph_kind, stmt_block => ActionFn(17);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Graph = graph_kind, id, stmt_block => ActionFn(84);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant9(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action17::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 6)
+        let __end = __sym2.2;
+        let __nt = super::__action84::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
+        (3, 6)
     }
     fn __reduce9<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // Graph = graph_kind, stmt_block => ActionFn(85);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant9(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym1.2;
+        let __nt = super::__action85::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
+        (2, 6)
+    }
+    fn __reduce10<
         'input,
     >(
         input: &'input str,
@@ -11866,7 +12904,7 @@ mod __parse__T_edge {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 7)
     }
-    fn __reduce10<
+    fn __reduce11<
         'input,
     >(
         input: &'input str,
@@ -11883,7 +12921,7 @@ mod __parse__T_edge {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 8)
     }
-    fn __reduce11<
+    fn __reduce12<
         'input,
     >(
         input: &'input str,
@@ -11900,23 +12938,6 @@ mod __parse__T_edge {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 9)
     }
-    fn __reduce12<
-        'input,
-    >(
-        input: &'input str,
-        __lookahead_start: Option<&usize>,
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
-        _: core::marker::PhantomData<(&'input ())>,
-    ) -> (usize, usize)
-    {
-        // T_digraph = DIGRAPH => ActionFn(76);
-        let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action76::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 10)
-    }
     fn __reduce13<
         'input,
     >(
@@ -11926,13 +12947,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_edge = EDGE => ActionFn(74);
+        // T_digraph = DIGRAPH => ActionFn(75);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action74::<>(input, __sym0);
+        let __nt = super::__action75::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 11)
+        (1, 10)
     }
     fn __reduce14<
         'input,
@@ -11943,13 +12964,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_graph = GRAPH => ActionFn(75);
+        // T_edge = EDGE => ActionFn(73);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action75::<>(input, __sym0);
+        let __nt = super::__action73::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 12)
+        (1, 11)
     }
     fn __reduce15<
         'input,
@@ -11960,13 +12981,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_node = NODE => ActionFn(73);
+        // T_graph = GRAPH => ActionFn(74);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action73::<>(input, __sym0);
+        let __nt = super::__action74::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 13)
+        (1, 12)
     }
     fn __reduce16<
         'input,
@@ -11977,13 +12998,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_strict = STRICT => ActionFn(78);
+        // T_node = NODE => ActionFn(72);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action78::<>(input, __sym0);
+        let __nt = super::__action72::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 14)
+        (1, 13)
     }
     fn __reduce17<
         'input,
@@ -11994,13 +13015,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_subgraph = SUBGRAPH => ActionFn(77);
+        // T_strict = STRICT => ActionFn(77);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action77::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 15)
+        (1, 14)
     }
     fn __reduce18<
         'input,
@@ -12011,13 +13032,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // __Expr1 = Expr1 => ActionFn(1);
+        // T_subgraph = SUBGRAPH => ActionFn(76);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action1::<>(input, __sym0);
+        let __nt = super::__action76::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 16)
+        (1, 15)
     }
     fn __reduce19<
         'input,
@@ -12028,13 +13049,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // __Expr2 = Expr2 => ActionFn(2);
-        let __sym0 = __pop_Variant1(__symbols);
+        // __Expr1 = Expr1 => ActionFn(1);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action2::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 17)
+        let __nt = super::__action1::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (1, 16)
     }
     fn __reduce20<
         'input,
@@ -12045,15 +13066,32 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
+        // __Expr2 = Expr2 => ActionFn(2);
+        let __sym0 = __pop_Variant3(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym0.2;
+        let __nt = super::__action2::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (1, 17)
+    }
+    fn __reduce21<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
         // __Graph = Graph => ActionFn(0);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant4(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action0::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (1, 18)
     }
-    fn __reduce21<
+    fn __reduce22<
         'input,
     >(
         input: &'input str,
@@ -12070,7 +13108,7 @@ mod __parse__T_edge {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 19)
     }
-    fn __reduce23<
+    fn __reduce24<
         'input,
     >(
         input: &'input str,
@@ -12087,7 +13125,7 @@ mod __parse__T_edge {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 21)
     }
-    fn __reduce24<
+    fn __reduce25<
         'input,
     >(
         input: &'input str,
@@ -12104,7 +13142,7 @@ mod __parse__T_edge {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 22)
     }
-    fn __reduce25<
+    fn __reduce26<
         'input,
     >(
         input: &'input str,
@@ -12121,7 +13159,7 @@ mod __parse__T_edge {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 23)
     }
-    fn __reduce26<
+    fn __reduce27<
         'input,
     >(
         input: &'input str,
@@ -12138,25 +13176,6 @@ mod __parse__T_edge {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 24)
     }
-    fn __reduce27<
-        'input,
-    >(
-        input: &'input str,
-        __lookahead_start: Option<&usize>,
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
-        _: core::marker::PhantomData<(&'input ())>,
-    ) -> (usize, usize)
-    {
-        // a_list = elem_pair, a_list => ActionFn(36);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action36::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 25)
-    }
     fn __reduce28<
         'input,
     >(
@@ -12166,13 +13185,15 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // a_list = elem_pair => ActionFn(37);
-        let __sym0 = __pop_Variant1(__symbols);
+        // a_list = elem_pair, a_list => ActionFn(35);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant8(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action37::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 25)
+        let __end = __sym1.2;
+        let __nt = super::__action35::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (2, 25)
     }
     fn __reduce29<
         'input,
@@ -12183,17 +13204,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_list = lbracket, a_list, rbracket, attr_list => ActionFn(34);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // a_list = elem_pair => ActionFn(36);
+        let __sym0 = __pop_Variant8(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action34::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 26)
+        let __end = __sym0.2;
+        let __nt = super::__action36::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (1, 25)
     }
     fn __reduce30<
         'input,
@@ -12204,16 +13221,17 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_list = lbracket, a_list, rbracket => ActionFn(35);
-        assert!(__symbols.len() >= 3);
+        // attr_list = lbracket, a_list, rbracket, attr_list => ActionFn(33);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant3(__symbols);
         let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action35::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 26)
+        let __end = __sym3.2;
+        let __nt = super::__action33::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (4, 26)
     }
     fn __reduce31<
         'input,
@@ -12224,15 +13242,16 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "graph", attr_list => ActionFn(31);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // attr_list = lbracket, a_list, rbracket => ActionFn(34);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action31::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 27)
+        let __end = __sym2.2;
+        let __nt = super::__action34::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (3, 26)
     }
     fn __reduce32<
         'input,
@@ -12243,14 +13262,14 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "node", attr_list => ActionFn(32);
+        // attr_stmt = "graph", attr_list => ActionFn(30);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action32::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action30::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (2, 27)
     }
     fn __reduce33<
@@ -12262,14 +13281,14 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "edge", attr_list => ActionFn(33);
+        // attr_stmt = "node", attr_list => ActionFn(31);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action33::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action31::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (2, 27)
     }
     fn __reduce34<
@@ -12281,13 +13300,15 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // colon = ":" => ActionFn(66);
+        // attr_stmt = "edge", attr_list => ActionFn(32);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action66::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 28)
+        let __end = __sym1.2;
+        let __nt = super::__action32::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 27)
     }
     fn __reduce35<
         'input,
@@ -12298,13 +13319,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // comma = "," => ActionFn(68);
+        // colon = ":" => ActionFn(65);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action68::<>(input, __sym0);
+        let __nt = super::__action65::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 29)
+        (1, 28)
     }
     fn __reduce36<
         'input,
@@ -12315,13 +13336,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // compass_pt = id_ident => ActionFn(57);
-        let __sym0 = __pop_Variant1(__symbols);
+        // comma = "," => ActionFn(67);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action57::<>(input, __sym0);
+        let __nt = super::__action67::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 30)
+        (1, 29)
     }
     fn __reduce37<
         'input,
@@ -12332,16 +13353,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, node_id, edge_rhs => ActionFn(45);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // compass_pt = id_ident => ActionFn(56);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action45::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 31)
+        let __end = __sym0.2;
+        let __nt = super::__action56::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 30)
     }
     fn __reduce38<
         'input,
@@ -12352,15 +13370,16 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, node_id => ActionFn(46);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, node_id, edge_rhs => ActionFn(44);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant7(__symbols);
+        let __sym1 = __pop_Variant2(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action46::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 31)
+        let __end = __sym2.2;
+        let __nt = super::__action44::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (3, 31)
     }
     fn __reduce39<
         'input,
@@ -12371,16 +13390,15 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, subgraph, edge_rhs => ActionFn(47);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, node_id => ActionFn(45);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant2(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action47::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 31)
+        let __end = __sym1.2;
+        let __nt = super::__action45::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (2, 31)
     }
     fn __reduce40<
         'input,
@@ -12391,15 +13409,16 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, subgraph => ActionFn(48);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, subgraph, edge_rhs => ActionFn(46);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant7(__symbols);
+        let __sym1 = __pop_Variant12(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action48::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 31)
+        let __end = __sym2.2;
+        let __nt = super::__action46::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (3, 31)
     }
     fn __reduce41<
         'input,
@@ -12410,15 +13429,15 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = node_id, edge_rhs => ActionFn(41);
+        // edge_rhs = edgeop, subgraph => ActionFn(47);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant12(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action41::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 32)
+        let __nt = super::__action47::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (2, 31)
     }
     fn __reduce42<
         'input,
@@ -12429,16 +13448,15 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = node_id, edge_rhs, attr_list => ActionFn(42);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edge_stmt = node_id, edge_rhs => ActionFn(40);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action42::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 32)
+        let __end = __sym1.2;
+        let __nt = super::__action40::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 32)
     }
     fn __reduce43<
         'input,
@@ -12449,15 +13467,15 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = subgraph, edge_rhs, attr_list => ActionFn(43);
+        // edge_stmt = node_id, edge_rhs, attr_list => ActionFn(41);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant3(__symbols);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action43::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action41::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (3, 32)
     }
     fn __reduce44<
@@ -12469,15 +13487,16 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = subgraph, edge_rhs => ActionFn(44);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edge_stmt = subgraph, edge_rhs, attr_list => ActionFn(42);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant3(__symbols);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action44::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 32)
+        let __end = __sym2.2;
+        let __nt = super::__action42::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (3, 32)
     }
     fn __reduce45<
         'input,
@@ -12488,13 +13507,15 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edgeop = "->" => ActionFn(71);
-        let __sym0 = __pop_Variant0(__symbols);
+        // edge_stmt = subgraph, edge_rhs => ActionFn(43);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action71::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 33)
+        let __end = __sym1.2;
+        let __nt = super::__action43::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 32)
     }
     fn __reduce46<
         'input,
@@ -12505,11 +13526,11 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edgeop = "--" => ActionFn(72);
+        // edgeop = "->" => ActionFn(70);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action72::<>(input, __sym0);
+        let __nt = super::__action70::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 33)
     }
@@ -12522,17 +13543,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id, semicolon => ActionFn(38);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edgeop = "--" => ActionFn(71);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action38::<>(input, __sym0, __sym1, __sym2, __sym3);
+        let __end = __sym0.2;
+        let __nt = super::__action71::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 34)
+        (1, 33)
     }
     fn __reduce48<
         'input,
@@ -12543,16 +13560,16 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id, comma => ActionFn(39);
+        // elem_pair = id, "=", id, semicolon => ActionFn(37);
         assert!(__symbols.len() >= 4);
         let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym3.2;
-        let __nt = super::__action39::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action37::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
         (4, 34)
     }
     fn __reduce49<
@@ -12564,16 +13581,17 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id => ActionFn(40);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
+        // elem_pair = id, "=", id, comma => ActionFn(38);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action40::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 34)
+        let __end = __sym3.2;
+        let __nt = super::__action38::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
+        (4, 34)
     }
     fn __reduce50<
         'input,
@@ -12584,13 +13602,16 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // graph_kind = "graph" => ActionFn(20);
-        let __sym0 = __pop_Variant0(__symbols);
+        // elem_pair = id, "=", id => ActionFn(39);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action20::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 35)
+        let __end = __sym2.2;
+        let __nt = super::__action39::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
+        (3, 34)
     }
     fn __reduce51<
         'input,
@@ -12601,12 +13622,12 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // graph_kind = "digraph" => ActionFn(21);
+        // graph_kind = "graph" => ActionFn(19);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action21::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action19::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant9(__nt), __end));
         (1, 35)
     }
     fn __reduce52<
@@ -12618,13 +13639,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_ident => ActionFn(58);
-        let __sym0 = __pop_Variant1(__symbols);
+        // graph_kind = "digraph" => ActionFn(20);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action58::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 36)
+        let __nt = super::__action20::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant9(__nt), __end));
+        (1, 35)
     }
     fn __reduce53<
         'input,
@@ -12635,12 +13656,12 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_num => ActionFn(59);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_ident => ActionFn(57);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action59::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action57::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce54<
@@ -12652,12 +13673,12 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_str => ActionFn(60);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_num => ActionFn(58);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action60::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action58::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce55<
@@ -12669,12 +13690,12 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_html => ActionFn(61);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_str => ActionFn(59);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action61::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action59::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce56<
@@ -12686,13 +13707,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_html = r#"<[^>]*>"# => ActionFn(65);
-        let __sym0 = __pop_Variant0(__symbols);
+        // id = id_html => ActionFn(60);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action65::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 37)
+        let __nt = super::__action60::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 36)
     }
     fn __reduce57<
         'input,
@@ -12703,13 +13724,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_ident = r#"[a-zA-Z_][a-zA-Z0-9_]*"# => ActionFn(62);
-        let __sym0 = __pop_Variant0(__symbols);
+        // id? = id => ActionFn(79);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action62::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 38)
+        let __nt = super::__action79::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant10(__nt), __end));
+        (1, 37)
     }
     fn __reduce58<
         'input,
@@ -12720,13 +13741,12 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_num = r#"[-]*[0-9]+"# => ActionFn(63);
-        let __sym0 = __pop_Variant0(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action63::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 39)
+        // id? =  => ActionFn(80);
+        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
+        let __end = __start;
+        let __nt = super::__action80::<>(input, &__start, &__end);
+        __symbols.push((__start, __Symbol::Variant10(__nt), __end));
+        (0, 37)
     }
     fn __reduce59<
         'input,
@@ -12737,13 +13757,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_str = r#"\"[^\"]*\""# => ActionFn(64);
+        // id_html = r#"<[^>]*>"# => ActionFn(64);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action64::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 40)
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 38)
     }
     fn __reduce60<
         'input,
@@ -12754,13 +13774,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // lbracket = "[" => ActionFn(69);
+        // id_ident = r#"[a-zA-Z_][a-zA-Z0-9_]*"# => ActionFn(61);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action69::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 41)
+        let __nt = super::__action61::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 39)
     }
     fn __reduce61<
         'input,
@@ -12771,15 +13791,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_id = id, port => ActionFn(51);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id_num = r#"[-]?[0-9]+(\\.[0-9]+)?"# => ActionFn(62);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action51::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 42)
+        let __end = __sym0.2;
+        let __nt = super::__action62::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 40)
     }
     fn __reduce62<
         'input,
@@ -12790,13 +13808,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_id = id => ActionFn(52);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id_str = r#"\"[^\"]*\""# => ActionFn(63);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action52::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 42)
+        let __nt = super::__action63::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 41)
     }
     fn __reduce63<
         'input,
@@ -12807,15 +13825,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_stmt = node_id, attr_list => ActionFn(49);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // lbracket = "[" => ActionFn(68);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action49::<>(input, __sym0, __sym1);
+        let __end = __sym0.2;
+        let __nt = super::__action68::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 43)
+        (1, 42)
     }
     fn __reduce64<
         'input,
@@ -12826,13 +13842,15 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_stmt = node_id => ActionFn(50);
-        let __sym0 = __pop_Variant1(__symbols);
+        // node_id = id, port => ActionFn(50);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action50::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 43)
+        let __end = __sym1.2;
+        let __nt = super::__action50::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (2, 43)
     }
     fn __reduce65<
         'input,
@@ -12843,15 +13861,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // port = colon, id => ActionFn(53);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // node_id = id => ActionFn(51);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action53::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 44)
+        let __end = __sym0.2;
+        let __nt = super::__action51::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (1, 43)
     }
     fn __reduce66<
         'input,
@@ -12862,13 +13878,15 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // rbracket = "]" => ActionFn(70);
-        let __sym0 = __pop_Variant0(__symbols);
+        // node_stmt = node_id, attr_list => ActionFn(48);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action70::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 45)
+        let __end = __sym1.2;
+        let __nt = super::__action48::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 44)
     }
     fn __reduce67<
         'input,
@@ -12879,13 +13897,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // semicolon = ";" => ActionFn(67);
-        let __sym0 = __pop_Variant0(__symbols);
+        // node_stmt = node_id => ActionFn(49);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action67::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 46)
+        let __nt = super::__action49::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 44)
     }
     fn __reduce68<
         'input,
@@ -12896,13 +13914,15 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = node_stmt => ActionFn(26);
+        // port = colon, id => ActionFn(52);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant6(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action26::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        let __end = __sym1.2;
+        let __nt = super::__action52::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (2, 45)
     }
     fn __reduce69<
         'input,
@@ -12913,13 +13933,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = edge_stmt => ActionFn(27);
-        let __sym0 = __pop_Variant1(__symbols);
+        // rbracket = "]" => ActionFn(69);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action27::<>(input, __sym0);
+        let __nt = super::__action69::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        (1, 46)
     }
     fn __reduce70<
         'input,
@@ -12930,11 +13950,11 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = attr_stmt => ActionFn(28);
-        let __sym0 = __pop_Variant1(__symbols);
+        // semicolon = ";" => ActionFn(66);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action28::<>(input, __sym0);
+        let __nt = super::__action66::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 47)
     }
@@ -12947,16 +13967,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = id, "=", id => ActionFn(29);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = node_stmt => ActionFn(25);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action29::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 47)
+        let __end = __sym0.2;
+        let __nt = super::__action25::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce72<
         'input,
@@ -12967,13 +13984,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = subgraph => ActionFn(30);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = edge_stmt => ActionFn(26);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action30::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        let __nt = super::__action26::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce73<
         'input,
@@ -12984,16 +14001,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_block = "{", stmt_list, "}" => ActionFn(22);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // stmt = attr_stmt => ActionFn(27);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action22::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 48)
+        let __end = __sym0.2;
+        let __nt = super::__action27::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce74<
         'input,
@@ -13004,16 +14018,16 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list = stmt, semicolon, stmt_list => ActionFn(23);
+        // stmt = id, "=", id => ActionFn(28);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action23::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 49)
+        let __nt = super::__action28::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (3, 48)
     }
     fn __reduce75<
         'input,
@@ -13024,15 +14038,13 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list = stmt, stmt_list => ActionFn(24);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = subgraph => ActionFn(29);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action24::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 49)
+        let __end = __sym0.2;
+        let __nt = super::__action29::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce76<
         'input,
@@ -13043,12 +14055,16 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list =  => ActionFn(80);
-        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
-        let __end = __start;
-        let __nt = super::__action80::<>(input, &__start, &__end);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (0, 49)
+        // stmt_block = "{", stmt_list, "}" => ActionFn(21);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant0(__symbols);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym2.2;
+        let __nt = super::__action21::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (3, 49)
     }
     fn __reduce77<
         'input,
@@ -13059,18 +14075,16 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "subgraph", id, "{", stmt_list, "}" => ActionFn(54);
-        assert!(__symbols.len() >= 5);
-        let __sym4 = __pop_Variant0(__symbols);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant0(__symbols);
+        // stmt_list = stmt, semicolon, stmt_list => ActionFn(22);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant11(__symbols);
         let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym4.2;
-        let __nt = super::__action54::<>(input, __sym0, __sym1, __sym2, __sym3, __sym4);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (5, 50)
+        let __end = __sym2.2;
+        let __nt = super::__action22::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (3, 50)
     }
     fn __reduce78<
         'input,
@@ -13081,17 +14095,15 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "subgraph", "{", stmt_list, "}" => ActionFn(55);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant0(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // stmt_list = stmt, stmt_list => ActionFn(23);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action55::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 50)
+        let __end = __sym1.2;
+        let __nt = super::__action23::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (2, 50)
     }
     fn __reduce79<
         'input,
@@ -13102,16 +14114,75 @@ mod __parse__T_edge {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "{", stmt_list, "}" => ActionFn(56);
+        // stmt_list =  => ActionFn(81);
+        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
+        let __end = __start;
+        let __nt = super::__action81::<>(input, &__start, &__end);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (0, 50)
+    }
+    fn __reduce80<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "subgraph", id, "{", stmt_list, "}" => ActionFn(53);
+        assert!(__symbols.len() >= 5);
+        let __sym4 = __pop_Variant0(__symbols);
+        let __sym3 = __pop_Variant11(__symbols);
+        let __sym2 = __pop_Variant0(__symbols);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym4.2;
+        let __nt = super::__action53::<>(input, __sym0, __sym1, __sym2, __sym3, __sym4);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (5, 51)
+    }
+    fn __reduce81<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "subgraph", "{", stmt_list, "}" => ActionFn(54);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant0(__symbols);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym3.2;
+        let __nt = super::__action54::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (4, 51)
+    }
+    fn __reduce82<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "{", stmt_list, "}" => ActionFn(55);
         assert!(__symbols.len() >= 3);
         let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant11(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action56::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 50)
+        let __nt = super::__action55::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (3, 51)
     }
 }
 #[allow(unused_imports)]
@@ -13122,6 +14193,7 @@ pub use self::__parse__T_edge::T_edgeParser;
 mod __parse__T_graph {
 
     use std::str::FromStr;
+    use crate::cgraph::ast::*;
     #[allow(unused_extern_crates)]
     extern crate lalrpop_util as __lalrpop_util;
     #[allow(unused_imports)]
@@ -13134,6 +14206,17 @@ mod __parse__T_graph {
      {
         Variant0(&'input str),
         Variant1(()),
+        Variant2(AstNodeId),
+        Variant3(Vec<AstAttr>),
+        Variant4(AstGraph),
+        Variant5(AstStmt),
+        Variant6(String),
+        Variant7(Vec<AstEdgeEndpoint>),
+        Variant8(AstAttr),
+        Variant9(bool),
+        Variant10(core::option::Option<String>),
+        Variant11(Vec<AstStmt>),
+        Variant12(AstSubGraph),
     }
     const __ACTION: &[i8] = &[
         // State 0
@@ -13152,9 +14235,9 @@ mod __parse__T_graph {
         // State 0
         0,
         // State 1
-        -15,
+        -16,
         // State 2
-        -24,
+        -25,
         // State 3
         -6,
     ];
@@ -13184,7 +14267,7 @@ mod __parse__T_graph {
         r###""}""###,
         r###"r#"\"[^\"]*\""#"###,
         r###"r#"<[^>]*>"#"###,
-        r###"r#"[-]*[0-9]+"#"###,
+        r###"r#"[-]?[0-9]+(\\.[0-9]+)?"#"###,
         r###"r#"[a-zA-Z_][a-zA-Z0-9_]*"#"###,
     ];
     fn __expected_tokens(__state: i8) -> alloc::vec::Vec<alloc::string::String> {
@@ -13418,141 +14501,141 @@ mod __parse__T_graph {
             }
             8 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 6,
                 }
             }
             9 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 7,
+                    states_to_pop: 2,
+                    nonterminal_produced: 6,
                 }
             }
             10 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 8,
+                    nonterminal_produced: 7,
                 }
             }
             11 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 9,
+                    nonterminal_produced: 8,
                 }
             }
             12 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 10,
+                    nonterminal_produced: 9,
                 }
             }
             13 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 11,
+                    nonterminal_produced: 10,
                 }
             }
             14 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 12,
+                    nonterminal_produced: 11,
                 }
             }
             15 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 13,
+                    nonterminal_produced: 12,
                 }
             }
             16 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 14,
+                    nonterminal_produced: 13,
                 }
             }
             17 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 15,
+                    nonterminal_produced: 14,
                 }
             }
             18 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 16,
+                    nonterminal_produced: 15,
                 }
             }
             19 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 17,
+                    nonterminal_produced: 16,
                 }
             }
             20 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 18,
+                    nonterminal_produced: 17,
                 }
             }
             21 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 19,
+                    nonterminal_produced: 18,
                 }
             }
             22 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
+                    nonterminal_produced: 19,
+                }
+            }
+            23 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
                     nonterminal_produced: 20,
                 }
             }
-            23 => __state_machine::SimulatedReduce::Accept,
-            24 => {
+            24 => __state_machine::SimulatedReduce::Accept,
+            25 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 22,
                 }
             }
-            25 => {
+            26 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 23,
                 }
             }
-            26 => {
+            27 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 24,
                 }
             }
-            27 => {
-                __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 25,
-                }
-            }
             28 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
+                    states_to_pop: 2,
                     nonterminal_produced: 25,
                 }
             }
             29 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
-                    nonterminal_produced: 26,
+                    states_to_pop: 1,
+                    nonterminal_produced: 25,
                 }
             }
             30 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 4,
                     nonterminal_produced: 26,
                 }
             }
             31 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 27,
+                    states_to_pop: 3,
+                    nonterminal_produced: 26,
                 }
             }
             32 => {
@@ -13569,55 +14652,55 @@ mod __parse__T_graph {
             }
             34 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 28,
+                    states_to_pop: 2,
+                    nonterminal_produced: 27,
                 }
             }
             35 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 29,
+                    nonterminal_produced: 28,
                 }
             }
             36 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 30,
+                    nonterminal_produced: 29,
                 }
             }
             37 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
-                    nonterminal_produced: 31,
+                    states_to_pop: 1,
+                    nonterminal_produced: 30,
                 }
             }
             38 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 31,
                 }
             }
             39 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 2,
                     nonterminal_produced: 31,
                 }
             }
             40 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 31,
                 }
             }
             41 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 2,
-                    nonterminal_produced: 32,
+                    nonterminal_produced: 31,
                 }
             }
             42 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 2,
                     nonterminal_produced: 32,
                 }
             }
@@ -13629,14 +14712,14 @@ mod __parse__T_graph {
             }
             44 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 32,
                 }
             }
             45 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 33,
+                    states_to_pop: 2,
+                    nonterminal_produced: 32,
                 }
             }
             46 => {
@@ -13647,8 +14730,8 @@ mod __parse__T_graph {
             }
             47 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
-                    nonterminal_produced: 34,
+                    states_to_pop: 1,
+                    nonterminal_produced: 33,
                 }
             }
             48 => {
@@ -13659,14 +14742,14 @@ mod __parse__T_graph {
             }
             49 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 4,
                     nonterminal_produced: 34,
                 }
             }
             50 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 35,
+                    states_to_pop: 3,
+                    nonterminal_produced: 34,
                 }
             }
             51 => {
@@ -13678,7 +14761,7 @@ mod __parse__T_graph {
             52 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 36,
+                    nonterminal_produced: 35,
                 }
             }
             53 => {
@@ -13702,85 +14785,85 @@ mod __parse__T_graph {
             56 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 37,
+                    nonterminal_produced: 36,
                 }
             }
             57 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 38,
+                    nonterminal_produced: 37,
                 }
             }
             58 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 39,
+                    states_to_pop: 0,
+                    nonterminal_produced: 37,
                 }
             }
             59 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 40,
+                    nonterminal_produced: 38,
                 }
             }
             60 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 41,
+                    nonterminal_produced: 39,
                 }
             }
             61 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 42,
+                    states_to_pop: 1,
+                    nonterminal_produced: 40,
                 }
             }
             62 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 42,
+                    nonterminal_produced: 41,
                 }
             }
             63 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 43,
+                    states_to_pop: 1,
+                    nonterminal_produced: 42,
                 }
             }
             64 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
+                    states_to_pop: 2,
                     nonterminal_produced: 43,
                 }
             }
             65 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 44,
+                    states_to_pop: 1,
+                    nonterminal_produced: 43,
                 }
             }
             66 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 45,
+                    states_to_pop: 2,
+                    nonterminal_produced: 44,
                 }
             }
             67 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 46,
+                    nonterminal_produced: 44,
                 }
             }
             68 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    states_to_pop: 2,
+                    nonterminal_produced: 45,
                 }
             }
             69 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    nonterminal_produced: 46,
                 }
             }
             70 => {
@@ -13791,56 +14874,74 @@ mod __parse__T_graph {
             }
             71 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
-                    nonterminal_produced: 47,
+                    states_to_pop: 1,
+                    nonterminal_produced: 48,
                 }
             }
             72 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    nonterminal_produced: 48,
                 }
             }
             73 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 1,
                     nonterminal_produced: 48,
                 }
             }
             74 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 3,
-                    nonterminal_produced: 49,
+                    nonterminal_produced: 48,
                 }
             }
             75 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 49,
+                    states_to_pop: 1,
+                    nonterminal_produced: 48,
                 }
             }
             76 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 0,
+                    states_to_pop: 3,
                     nonterminal_produced: 49,
                 }
             }
             77 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 5,
+                    states_to_pop: 3,
                     nonterminal_produced: 50,
                 }
             }
             78 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
+                    states_to_pop: 2,
                     nonterminal_produced: 50,
                 }
             }
             79 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 0,
                     nonterminal_produced: 50,
+                }
+            }
+            80 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 5,
+                    nonterminal_produced: 51,
+                }
+            }
+            81 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 4,
+                    nonterminal_produced: 51,
+                }
+            }
+            82 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 3,
+                    nonterminal_produced: 51,
                 }
             }
             _ => panic!("invalid reduction index {}", __reduce_index)
@@ -13994,15 +15095,15 @@ mod __parse__T_graph {
                 __reduce22(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             23 => {
+                __reduce23(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            24 => {
                 // __T_graph = T_graph => ActionFn(5);
                 let __sym0 = __pop_Variant1(__symbols);
                 let __start = __sym0.0;
                 let __end = __sym0.2;
                 let __nt = super::__action5::<>(input, __sym0);
                 return Some(Ok(__nt));
-            }
-            24 => {
-                __reduce24(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             25 => {
                 __reduce25(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
@@ -14169,6 +15270,15 @@ mod __parse__T_graph {
             79 => {
                 __reduce79(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
+            80 => {
+                __reduce80(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            81 => {
+                __reduce81(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            82 => {
+                __reduce82(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
             _ => panic!("invalid action code {}", __action)
         };
         let __states_len = __states.len();
@@ -14193,6 +15303,127 @@ mod __parse__T_graph {
             _ => __symbol_type_mismatch()
         }
     }
+    fn __pop_Variant8<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstAttr, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant8(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant4<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstGraph, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant4(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant2<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstNodeId, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant2(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant5<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstStmt, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant5(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant12<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstSubGraph, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant12(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant6<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, String, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant6(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant3<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstAttr>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant3(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant7<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstEdgeEndpoint>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant7(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant11<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstStmt>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant11(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant9<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, bool, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant9(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant10<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, core::option::Option<String>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant10(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
     fn __pop_Variant0<
       'input,
     >(
@@ -14213,10 +15444,10 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // () =  => ActionFn(79);
+        // () =  => ActionFn(78);
         let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
         let __end = __start;
-        let __nt = super::__action79::<>(input, &__start, &__end);
+        let __nt = super::__action78::<>(input, &__start, &__end);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (0, 0)
     }
@@ -14263,12 +15494,12 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Expr1 = node_id => ActionFn(18);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Expr1 = node_id => ActionFn(17);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action18::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action17::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 3)
     }
     fn __reduce4<
@@ -14280,12 +15511,12 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Expr2 = a_list => ActionFn(19);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Expr2 = a_list => ActionFn(18);
+        let __sym0 = __pop_Variant3(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action19::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action18::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
         (1, 4)
     }
     fn __reduce5<
@@ -14314,16 +15545,16 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = "strict", graph_kind, id, stmt_block => ActionFn(15);
+        // Graph = "strict", graph_kind, id, stmt_block => ActionFn(82);
         assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym3 = __pop_Variant11(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant9(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym3.2;
-        let __nt = super::__action15::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action82::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (4, 6)
     }
     fn __reduce7<
@@ -14335,15 +15566,15 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = graph_kind, id, stmt_block => ActionFn(16);
+        // Graph = "strict", graph_kind, stmt_block => ActionFn(83);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant9(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action16::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action83::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (3, 6)
     }
     fn __reduce8<
@@ -14355,17 +15586,37 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = graph_kind, stmt_block => ActionFn(17);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Graph = graph_kind, id, stmt_block => ActionFn(84);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant9(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action17::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 6)
+        let __end = __sym2.2;
+        let __nt = super::__action84::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
+        (3, 6)
     }
     fn __reduce9<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // Graph = graph_kind, stmt_block => ActionFn(85);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant9(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym1.2;
+        let __nt = super::__action85::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
+        (2, 6)
+    }
+    fn __reduce10<
         'input,
     >(
         input: &'input str,
@@ -14382,7 +15633,7 @@ mod __parse__T_graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 7)
     }
-    fn __reduce10<
+    fn __reduce11<
         'input,
     >(
         input: &'input str,
@@ -14399,7 +15650,7 @@ mod __parse__T_graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 8)
     }
-    fn __reduce11<
+    fn __reduce12<
         'input,
     >(
         input: &'input str,
@@ -14416,23 +15667,6 @@ mod __parse__T_graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 9)
     }
-    fn __reduce12<
-        'input,
-    >(
-        input: &'input str,
-        __lookahead_start: Option<&usize>,
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
-        _: core::marker::PhantomData<(&'input ())>,
-    ) -> (usize, usize)
-    {
-        // T_digraph = DIGRAPH => ActionFn(76);
-        let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action76::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 10)
-    }
     fn __reduce13<
         'input,
     >(
@@ -14442,13 +15676,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_edge = EDGE => ActionFn(74);
+        // T_digraph = DIGRAPH => ActionFn(75);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action74::<>(input, __sym0);
+        let __nt = super::__action75::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 11)
+        (1, 10)
     }
     fn __reduce14<
         'input,
@@ -14459,13 +15693,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_graph = GRAPH => ActionFn(75);
+        // T_edge = EDGE => ActionFn(73);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action75::<>(input, __sym0);
+        let __nt = super::__action73::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 12)
+        (1, 11)
     }
     fn __reduce15<
         'input,
@@ -14476,13 +15710,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_node = NODE => ActionFn(73);
+        // T_graph = GRAPH => ActionFn(74);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action73::<>(input, __sym0);
+        let __nt = super::__action74::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 13)
+        (1, 12)
     }
     fn __reduce16<
         'input,
@@ -14493,13 +15727,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_strict = STRICT => ActionFn(78);
+        // T_node = NODE => ActionFn(72);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action78::<>(input, __sym0);
+        let __nt = super::__action72::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 14)
+        (1, 13)
     }
     fn __reduce17<
         'input,
@@ -14510,13 +15744,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_subgraph = SUBGRAPH => ActionFn(77);
+        // T_strict = STRICT => ActionFn(77);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action77::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 15)
+        (1, 14)
     }
     fn __reduce18<
         'input,
@@ -14527,13 +15761,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // __Expr1 = Expr1 => ActionFn(1);
+        // T_subgraph = SUBGRAPH => ActionFn(76);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action1::<>(input, __sym0);
+        let __nt = super::__action76::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 16)
+        (1, 15)
     }
     fn __reduce19<
         'input,
@@ -14544,13 +15778,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // __Expr2 = Expr2 => ActionFn(2);
-        let __sym0 = __pop_Variant1(__symbols);
+        // __Expr1 = Expr1 => ActionFn(1);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action2::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 17)
+        let __nt = super::__action1::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (1, 16)
     }
     fn __reduce20<
         'input,
@@ -14561,15 +15795,32 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
+        // __Expr2 = Expr2 => ActionFn(2);
+        let __sym0 = __pop_Variant3(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym0.2;
+        let __nt = super::__action2::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (1, 17)
+    }
+    fn __reduce21<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
         // __Graph = Graph => ActionFn(0);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant4(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action0::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (1, 18)
     }
-    fn __reduce21<
+    fn __reduce22<
         'input,
     >(
         input: &'input str,
@@ -14586,7 +15837,7 @@ mod __parse__T_graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 19)
     }
-    fn __reduce22<
+    fn __reduce23<
         'input,
     >(
         input: &'input str,
@@ -14603,7 +15854,7 @@ mod __parse__T_graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 20)
     }
-    fn __reduce24<
+    fn __reduce25<
         'input,
     >(
         input: &'input str,
@@ -14620,7 +15871,7 @@ mod __parse__T_graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 22)
     }
-    fn __reduce25<
+    fn __reduce26<
         'input,
     >(
         input: &'input str,
@@ -14637,7 +15888,7 @@ mod __parse__T_graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 23)
     }
-    fn __reduce26<
+    fn __reduce27<
         'input,
     >(
         input: &'input str,
@@ -14654,25 +15905,6 @@ mod __parse__T_graph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 24)
     }
-    fn __reduce27<
-        'input,
-    >(
-        input: &'input str,
-        __lookahead_start: Option<&usize>,
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
-        _: core::marker::PhantomData<(&'input ())>,
-    ) -> (usize, usize)
-    {
-        // a_list = elem_pair, a_list => ActionFn(36);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action36::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 25)
-    }
     fn __reduce28<
         'input,
     >(
@@ -14682,13 +15914,15 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // a_list = elem_pair => ActionFn(37);
-        let __sym0 = __pop_Variant1(__symbols);
+        // a_list = elem_pair, a_list => ActionFn(35);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant8(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action37::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 25)
+        let __end = __sym1.2;
+        let __nt = super::__action35::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (2, 25)
     }
     fn __reduce29<
         'input,
@@ -14699,17 +15933,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_list = lbracket, a_list, rbracket, attr_list => ActionFn(34);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // a_list = elem_pair => ActionFn(36);
+        let __sym0 = __pop_Variant8(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action34::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 26)
+        let __end = __sym0.2;
+        let __nt = super::__action36::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (1, 25)
     }
     fn __reduce30<
         'input,
@@ -14720,16 +15950,17 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_list = lbracket, a_list, rbracket => ActionFn(35);
-        assert!(__symbols.len() >= 3);
+        // attr_list = lbracket, a_list, rbracket, attr_list => ActionFn(33);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant3(__symbols);
         let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action35::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 26)
+        let __end = __sym3.2;
+        let __nt = super::__action33::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (4, 26)
     }
     fn __reduce31<
         'input,
@@ -14740,15 +15971,16 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "graph", attr_list => ActionFn(31);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // attr_list = lbracket, a_list, rbracket => ActionFn(34);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action31::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 27)
+        let __end = __sym2.2;
+        let __nt = super::__action34::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (3, 26)
     }
     fn __reduce32<
         'input,
@@ -14759,14 +15991,14 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "node", attr_list => ActionFn(32);
+        // attr_stmt = "graph", attr_list => ActionFn(30);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action32::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action30::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (2, 27)
     }
     fn __reduce33<
@@ -14778,14 +16010,14 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "edge", attr_list => ActionFn(33);
+        // attr_stmt = "node", attr_list => ActionFn(31);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action33::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action31::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (2, 27)
     }
     fn __reduce34<
@@ -14797,13 +16029,15 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // colon = ":" => ActionFn(66);
+        // attr_stmt = "edge", attr_list => ActionFn(32);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action66::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 28)
+        let __end = __sym1.2;
+        let __nt = super::__action32::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 27)
     }
     fn __reduce35<
         'input,
@@ -14814,13 +16048,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // comma = "," => ActionFn(68);
+        // colon = ":" => ActionFn(65);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action68::<>(input, __sym0);
+        let __nt = super::__action65::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 29)
+        (1, 28)
     }
     fn __reduce36<
         'input,
@@ -14831,13 +16065,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // compass_pt = id_ident => ActionFn(57);
-        let __sym0 = __pop_Variant1(__symbols);
+        // comma = "," => ActionFn(67);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action57::<>(input, __sym0);
+        let __nt = super::__action67::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 30)
+        (1, 29)
     }
     fn __reduce37<
         'input,
@@ -14848,16 +16082,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, node_id, edge_rhs => ActionFn(45);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // compass_pt = id_ident => ActionFn(56);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action45::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 31)
+        let __end = __sym0.2;
+        let __nt = super::__action56::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 30)
     }
     fn __reduce38<
         'input,
@@ -14868,15 +16099,16 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, node_id => ActionFn(46);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, node_id, edge_rhs => ActionFn(44);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant7(__symbols);
+        let __sym1 = __pop_Variant2(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action46::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 31)
+        let __end = __sym2.2;
+        let __nt = super::__action44::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (3, 31)
     }
     fn __reduce39<
         'input,
@@ -14887,16 +16119,15 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, subgraph, edge_rhs => ActionFn(47);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, node_id => ActionFn(45);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant2(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action47::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 31)
+        let __end = __sym1.2;
+        let __nt = super::__action45::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (2, 31)
     }
     fn __reduce40<
         'input,
@@ -14907,15 +16138,16 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, subgraph => ActionFn(48);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, subgraph, edge_rhs => ActionFn(46);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant7(__symbols);
+        let __sym1 = __pop_Variant12(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action48::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 31)
+        let __end = __sym2.2;
+        let __nt = super::__action46::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (3, 31)
     }
     fn __reduce41<
         'input,
@@ -14926,15 +16158,15 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = node_id, edge_rhs => ActionFn(41);
+        // edge_rhs = edgeop, subgraph => ActionFn(47);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant12(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action41::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 32)
+        let __nt = super::__action47::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (2, 31)
     }
     fn __reduce42<
         'input,
@@ -14945,16 +16177,15 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = node_id, edge_rhs, attr_list => ActionFn(42);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edge_stmt = node_id, edge_rhs => ActionFn(40);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action42::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 32)
+        let __end = __sym1.2;
+        let __nt = super::__action40::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 32)
     }
     fn __reduce43<
         'input,
@@ -14965,15 +16196,15 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = subgraph, edge_rhs, attr_list => ActionFn(43);
+        // edge_stmt = node_id, edge_rhs, attr_list => ActionFn(41);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant3(__symbols);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action43::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action41::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (3, 32)
     }
     fn __reduce44<
@@ -14985,15 +16216,16 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = subgraph, edge_rhs => ActionFn(44);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edge_stmt = subgraph, edge_rhs, attr_list => ActionFn(42);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant3(__symbols);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action44::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 32)
+        let __end = __sym2.2;
+        let __nt = super::__action42::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (3, 32)
     }
     fn __reduce45<
         'input,
@@ -15004,13 +16236,15 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edgeop = "->" => ActionFn(71);
-        let __sym0 = __pop_Variant0(__symbols);
+        // edge_stmt = subgraph, edge_rhs => ActionFn(43);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action71::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 33)
+        let __end = __sym1.2;
+        let __nt = super::__action43::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 32)
     }
     fn __reduce46<
         'input,
@@ -15021,11 +16255,11 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edgeop = "--" => ActionFn(72);
+        // edgeop = "->" => ActionFn(70);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action72::<>(input, __sym0);
+        let __nt = super::__action70::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 33)
     }
@@ -15038,17 +16272,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id, semicolon => ActionFn(38);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edgeop = "--" => ActionFn(71);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action38::<>(input, __sym0, __sym1, __sym2, __sym3);
+        let __end = __sym0.2;
+        let __nt = super::__action71::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 34)
+        (1, 33)
     }
     fn __reduce48<
         'input,
@@ -15059,16 +16289,16 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id, comma => ActionFn(39);
+        // elem_pair = id, "=", id, semicolon => ActionFn(37);
         assert!(__symbols.len() >= 4);
         let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym3.2;
-        let __nt = super::__action39::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action37::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
         (4, 34)
     }
     fn __reduce49<
@@ -15080,16 +16310,17 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id => ActionFn(40);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
+        // elem_pair = id, "=", id, comma => ActionFn(38);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action40::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 34)
+        let __end = __sym3.2;
+        let __nt = super::__action38::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
+        (4, 34)
     }
     fn __reduce50<
         'input,
@@ -15100,13 +16331,16 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // graph_kind = "graph" => ActionFn(20);
-        let __sym0 = __pop_Variant0(__symbols);
+        // elem_pair = id, "=", id => ActionFn(39);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action20::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 35)
+        let __end = __sym2.2;
+        let __nt = super::__action39::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
+        (3, 34)
     }
     fn __reduce51<
         'input,
@@ -15117,12 +16351,12 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // graph_kind = "digraph" => ActionFn(21);
+        // graph_kind = "graph" => ActionFn(19);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action21::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action19::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant9(__nt), __end));
         (1, 35)
     }
     fn __reduce52<
@@ -15134,13 +16368,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_ident => ActionFn(58);
-        let __sym0 = __pop_Variant1(__symbols);
+        // graph_kind = "digraph" => ActionFn(20);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action58::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 36)
+        let __nt = super::__action20::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant9(__nt), __end));
+        (1, 35)
     }
     fn __reduce53<
         'input,
@@ -15151,12 +16385,12 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_num => ActionFn(59);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_ident => ActionFn(57);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action59::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action57::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce54<
@@ -15168,12 +16402,12 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_str => ActionFn(60);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_num => ActionFn(58);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action60::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action58::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce55<
@@ -15185,12 +16419,12 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_html => ActionFn(61);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_str => ActionFn(59);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action61::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action59::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce56<
@@ -15202,13 +16436,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_html = r#"<[^>]*>"# => ActionFn(65);
-        let __sym0 = __pop_Variant0(__symbols);
+        // id = id_html => ActionFn(60);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action65::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 37)
+        let __nt = super::__action60::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 36)
     }
     fn __reduce57<
         'input,
@@ -15219,13 +16453,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_ident = r#"[a-zA-Z_][a-zA-Z0-9_]*"# => ActionFn(62);
-        let __sym0 = __pop_Variant0(__symbols);
+        // id? = id => ActionFn(79);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action62::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 38)
+        let __nt = super::__action79::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant10(__nt), __end));
+        (1, 37)
     }
     fn __reduce58<
         'input,
@@ -15236,13 +16470,12 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_num = r#"[-]*[0-9]+"# => ActionFn(63);
-        let __sym0 = __pop_Variant0(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action63::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 39)
+        // id? =  => ActionFn(80);
+        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
+        let __end = __start;
+        let __nt = super::__action80::<>(input, &__start, &__end);
+        __symbols.push((__start, __Symbol::Variant10(__nt), __end));
+        (0, 37)
     }
     fn __reduce59<
         'input,
@@ -15253,13 +16486,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_str = r#"\"[^\"]*\""# => ActionFn(64);
+        // id_html = r#"<[^>]*>"# => ActionFn(64);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action64::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 40)
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 38)
     }
     fn __reduce60<
         'input,
@@ -15270,13 +16503,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // lbracket = "[" => ActionFn(69);
+        // id_ident = r#"[a-zA-Z_][a-zA-Z0-9_]*"# => ActionFn(61);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action69::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 41)
+        let __nt = super::__action61::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 39)
     }
     fn __reduce61<
         'input,
@@ -15287,15 +16520,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_id = id, port => ActionFn(51);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id_num = r#"[-]?[0-9]+(\\.[0-9]+)?"# => ActionFn(62);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action51::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 42)
+        let __end = __sym0.2;
+        let __nt = super::__action62::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 40)
     }
     fn __reduce62<
         'input,
@@ -15306,13 +16537,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_id = id => ActionFn(52);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id_str = r#"\"[^\"]*\""# => ActionFn(63);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action52::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 42)
+        let __nt = super::__action63::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 41)
     }
     fn __reduce63<
         'input,
@@ -15323,15 +16554,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_stmt = node_id, attr_list => ActionFn(49);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // lbracket = "[" => ActionFn(68);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action49::<>(input, __sym0, __sym1);
+        let __end = __sym0.2;
+        let __nt = super::__action68::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 43)
+        (1, 42)
     }
     fn __reduce64<
         'input,
@@ -15342,13 +16571,15 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_stmt = node_id => ActionFn(50);
-        let __sym0 = __pop_Variant1(__symbols);
+        // node_id = id, port => ActionFn(50);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action50::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 43)
+        let __end = __sym1.2;
+        let __nt = super::__action50::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (2, 43)
     }
     fn __reduce65<
         'input,
@@ -15359,15 +16590,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // port = colon, id => ActionFn(53);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // node_id = id => ActionFn(51);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action53::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 44)
+        let __end = __sym0.2;
+        let __nt = super::__action51::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (1, 43)
     }
     fn __reduce66<
         'input,
@@ -15378,13 +16607,15 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // rbracket = "]" => ActionFn(70);
-        let __sym0 = __pop_Variant0(__symbols);
+        // node_stmt = node_id, attr_list => ActionFn(48);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action70::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 45)
+        let __end = __sym1.2;
+        let __nt = super::__action48::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 44)
     }
     fn __reduce67<
         'input,
@@ -15395,13 +16626,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // semicolon = ";" => ActionFn(67);
-        let __sym0 = __pop_Variant0(__symbols);
+        // node_stmt = node_id => ActionFn(49);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action67::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 46)
+        let __nt = super::__action49::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 44)
     }
     fn __reduce68<
         'input,
@@ -15412,13 +16643,15 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = node_stmt => ActionFn(26);
+        // port = colon, id => ActionFn(52);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant6(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action26::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        let __end = __sym1.2;
+        let __nt = super::__action52::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (2, 45)
     }
     fn __reduce69<
         'input,
@@ -15429,13 +16662,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = edge_stmt => ActionFn(27);
-        let __sym0 = __pop_Variant1(__symbols);
+        // rbracket = "]" => ActionFn(69);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action27::<>(input, __sym0);
+        let __nt = super::__action69::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        (1, 46)
     }
     fn __reduce70<
         'input,
@@ -15446,11 +16679,11 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = attr_stmt => ActionFn(28);
-        let __sym0 = __pop_Variant1(__symbols);
+        // semicolon = ";" => ActionFn(66);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action28::<>(input, __sym0);
+        let __nt = super::__action66::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 47)
     }
@@ -15463,16 +16696,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = id, "=", id => ActionFn(29);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = node_stmt => ActionFn(25);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action29::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 47)
+        let __end = __sym0.2;
+        let __nt = super::__action25::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce72<
         'input,
@@ -15483,13 +16713,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = subgraph => ActionFn(30);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = edge_stmt => ActionFn(26);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action30::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        let __nt = super::__action26::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce73<
         'input,
@@ -15500,16 +16730,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_block = "{", stmt_list, "}" => ActionFn(22);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // stmt = attr_stmt => ActionFn(27);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action22::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 48)
+        let __end = __sym0.2;
+        let __nt = super::__action27::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce74<
         'input,
@@ -15520,16 +16747,16 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list = stmt, semicolon, stmt_list => ActionFn(23);
+        // stmt = id, "=", id => ActionFn(28);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action23::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 49)
+        let __nt = super::__action28::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (3, 48)
     }
     fn __reduce75<
         'input,
@@ -15540,15 +16767,13 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list = stmt, stmt_list => ActionFn(24);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = subgraph => ActionFn(29);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action24::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 49)
+        let __end = __sym0.2;
+        let __nt = super::__action29::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce76<
         'input,
@@ -15559,12 +16784,16 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list =  => ActionFn(80);
-        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
-        let __end = __start;
-        let __nt = super::__action80::<>(input, &__start, &__end);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (0, 49)
+        // stmt_block = "{", stmt_list, "}" => ActionFn(21);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant0(__symbols);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym2.2;
+        let __nt = super::__action21::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (3, 49)
     }
     fn __reduce77<
         'input,
@@ -15575,18 +16804,16 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "subgraph", id, "{", stmt_list, "}" => ActionFn(54);
-        assert!(__symbols.len() >= 5);
-        let __sym4 = __pop_Variant0(__symbols);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant0(__symbols);
+        // stmt_list = stmt, semicolon, stmt_list => ActionFn(22);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant11(__symbols);
         let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym4.2;
-        let __nt = super::__action54::<>(input, __sym0, __sym1, __sym2, __sym3, __sym4);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (5, 50)
+        let __end = __sym2.2;
+        let __nt = super::__action22::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (3, 50)
     }
     fn __reduce78<
         'input,
@@ -15597,17 +16824,15 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "subgraph", "{", stmt_list, "}" => ActionFn(55);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant0(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // stmt_list = stmt, stmt_list => ActionFn(23);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action55::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 50)
+        let __end = __sym1.2;
+        let __nt = super::__action23::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (2, 50)
     }
     fn __reduce79<
         'input,
@@ -15618,16 +16843,75 @@ mod __parse__T_graph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "{", stmt_list, "}" => ActionFn(56);
+        // stmt_list =  => ActionFn(81);
+        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
+        let __end = __start;
+        let __nt = super::__action81::<>(input, &__start, &__end);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (0, 50)
+    }
+    fn __reduce80<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "subgraph", id, "{", stmt_list, "}" => ActionFn(53);
+        assert!(__symbols.len() >= 5);
+        let __sym4 = __pop_Variant0(__symbols);
+        let __sym3 = __pop_Variant11(__symbols);
+        let __sym2 = __pop_Variant0(__symbols);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym4.2;
+        let __nt = super::__action53::<>(input, __sym0, __sym1, __sym2, __sym3, __sym4);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (5, 51)
+    }
+    fn __reduce81<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "subgraph", "{", stmt_list, "}" => ActionFn(54);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant0(__symbols);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym3.2;
+        let __nt = super::__action54::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (4, 51)
+    }
+    fn __reduce82<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "{", stmt_list, "}" => ActionFn(55);
         assert!(__symbols.len() >= 3);
         let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant11(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action56::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 50)
+        let __nt = super::__action55::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (3, 51)
     }
 }
 #[allow(unused_imports)]
@@ -15638,6 +16922,7 @@ pub use self::__parse__T_graph::T_graphParser;
 mod __parse__T_node {
 
     use std::str::FromStr;
+    use crate::cgraph::ast::*;
     #[allow(unused_extern_crates)]
     extern crate lalrpop_util as __lalrpop_util;
     #[allow(unused_imports)]
@@ -15650,6 +16935,17 @@ mod __parse__T_node {
      {
         Variant0(&'input str),
         Variant1(()),
+        Variant2(AstNodeId),
+        Variant3(Vec<AstAttr>),
+        Variant4(AstGraph),
+        Variant5(AstStmt),
+        Variant6(String),
+        Variant7(Vec<AstEdgeEndpoint>),
+        Variant8(AstAttr),
+        Variant9(bool),
+        Variant10(core::option::Option<String>),
+        Variant11(Vec<AstStmt>),
+        Variant12(AstSubGraph),
     }
     const __ACTION: &[i8] = &[
         // State 0
@@ -15668,11 +16964,11 @@ mod __parse__T_node {
         // State 0
         0,
         // State 1
-        -16,
+        -17,
         // State 2
-        -25,
+        -26,
         // State 3
-        -10,
+        -11,
     ];
     fn __goto(state: i8, nt: usize) -> i8 {
         match nt {
@@ -15700,7 +16996,7 @@ mod __parse__T_node {
         r###""}""###,
         r###"r#"\"[^\"]*\""#"###,
         r###"r#"<[^>]*>"#"###,
-        r###"r#"[-]*[0-9]+"#"###,
+        r###"r#"[-]?[0-9]+(\\.[0-9]+)?"#"###,
         r###"r#"[a-zA-Z_][a-zA-Z0-9_]*"#"###,
     ];
     fn __expected_tokens(__state: i8) -> alloc::vec::Vec<alloc::string::String> {
@@ -15934,141 +17230,141 @@ mod __parse__T_node {
             }
             8 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 6,
                 }
             }
             9 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 7,
+                    states_to_pop: 2,
+                    nonterminal_produced: 6,
                 }
             }
             10 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 8,
+                    nonterminal_produced: 7,
                 }
             }
             11 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 9,
+                    nonterminal_produced: 8,
                 }
             }
             12 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 10,
+                    nonterminal_produced: 9,
                 }
             }
             13 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 11,
+                    nonterminal_produced: 10,
                 }
             }
             14 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 12,
+                    nonterminal_produced: 11,
                 }
             }
             15 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 13,
+                    nonterminal_produced: 12,
                 }
             }
             16 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 14,
+                    nonterminal_produced: 13,
                 }
             }
             17 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 15,
+                    nonterminal_produced: 14,
                 }
             }
             18 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 16,
+                    nonterminal_produced: 15,
                 }
             }
             19 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 17,
+                    nonterminal_produced: 16,
                 }
             }
             20 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 18,
+                    nonterminal_produced: 17,
                 }
             }
             21 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 19,
+                    nonterminal_produced: 18,
                 }
             }
             22 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 20,
+                    nonterminal_produced: 19,
                 }
             }
             23 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
+                    nonterminal_produced: 20,
+                }
+            }
+            24 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
                     nonterminal_produced: 21,
                 }
             }
-            24 => __state_machine::SimulatedReduce::Accept,
-            25 => {
+            25 => __state_machine::SimulatedReduce::Accept,
+            26 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 23,
                 }
             }
-            26 => {
+            27 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 24,
                 }
             }
-            27 => {
-                __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 25,
-                }
-            }
             28 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
+                    states_to_pop: 2,
                     nonterminal_produced: 25,
                 }
             }
             29 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
-                    nonterminal_produced: 26,
+                    states_to_pop: 1,
+                    nonterminal_produced: 25,
                 }
             }
             30 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 4,
                     nonterminal_produced: 26,
                 }
             }
             31 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 27,
+                    states_to_pop: 3,
+                    nonterminal_produced: 26,
                 }
             }
             32 => {
@@ -16085,55 +17381,55 @@ mod __parse__T_node {
             }
             34 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 28,
+                    states_to_pop: 2,
+                    nonterminal_produced: 27,
                 }
             }
             35 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 29,
+                    nonterminal_produced: 28,
                 }
             }
             36 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 30,
+                    nonterminal_produced: 29,
                 }
             }
             37 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
-                    nonterminal_produced: 31,
+                    states_to_pop: 1,
+                    nonterminal_produced: 30,
                 }
             }
             38 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 31,
                 }
             }
             39 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 2,
                     nonterminal_produced: 31,
                 }
             }
             40 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 31,
                 }
             }
             41 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 2,
-                    nonterminal_produced: 32,
+                    nonterminal_produced: 31,
                 }
             }
             42 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 2,
                     nonterminal_produced: 32,
                 }
             }
@@ -16145,14 +17441,14 @@ mod __parse__T_node {
             }
             44 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 32,
                 }
             }
             45 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 33,
+                    states_to_pop: 2,
+                    nonterminal_produced: 32,
                 }
             }
             46 => {
@@ -16163,8 +17459,8 @@ mod __parse__T_node {
             }
             47 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
-                    nonterminal_produced: 34,
+                    states_to_pop: 1,
+                    nonterminal_produced: 33,
                 }
             }
             48 => {
@@ -16175,14 +17471,14 @@ mod __parse__T_node {
             }
             49 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 4,
                     nonterminal_produced: 34,
                 }
             }
             50 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 35,
+                    states_to_pop: 3,
+                    nonterminal_produced: 34,
                 }
             }
             51 => {
@@ -16194,7 +17490,7 @@ mod __parse__T_node {
             52 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 36,
+                    nonterminal_produced: 35,
                 }
             }
             53 => {
@@ -16218,85 +17514,85 @@ mod __parse__T_node {
             56 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 37,
+                    nonterminal_produced: 36,
                 }
             }
             57 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 38,
+                    nonterminal_produced: 37,
                 }
             }
             58 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 39,
+                    states_to_pop: 0,
+                    nonterminal_produced: 37,
                 }
             }
             59 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 40,
+                    nonterminal_produced: 38,
                 }
             }
             60 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 41,
+                    nonterminal_produced: 39,
                 }
             }
             61 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 42,
+                    states_to_pop: 1,
+                    nonterminal_produced: 40,
                 }
             }
             62 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 42,
+                    nonterminal_produced: 41,
                 }
             }
             63 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 43,
+                    states_to_pop: 1,
+                    nonterminal_produced: 42,
                 }
             }
             64 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
+                    states_to_pop: 2,
                     nonterminal_produced: 43,
                 }
             }
             65 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 44,
+                    states_to_pop: 1,
+                    nonterminal_produced: 43,
                 }
             }
             66 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 45,
+                    states_to_pop: 2,
+                    nonterminal_produced: 44,
                 }
             }
             67 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 46,
+                    nonterminal_produced: 44,
                 }
             }
             68 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    states_to_pop: 2,
+                    nonterminal_produced: 45,
                 }
             }
             69 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    nonterminal_produced: 46,
                 }
             }
             70 => {
@@ -16307,56 +17603,74 @@ mod __parse__T_node {
             }
             71 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
-                    nonterminal_produced: 47,
+                    states_to_pop: 1,
+                    nonterminal_produced: 48,
                 }
             }
             72 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    nonterminal_produced: 48,
                 }
             }
             73 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 1,
                     nonterminal_produced: 48,
                 }
             }
             74 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 3,
-                    nonterminal_produced: 49,
+                    nonterminal_produced: 48,
                 }
             }
             75 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 49,
+                    states_to_pop: 1,
+                    nonterminal_produced: 48,
                 }
             }
             76 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 0,
+                    states_to_pop: 3,
                     nonterminal_produced: 49,
                 }
             }
             77 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 5,
+                    states_to_pop: 3,
                     nonterminal_produced: 50,
                 }
             }
             78 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
+                    states_to_pop: 2,
                     nonterminal_produced: 50,
                 }
             }
             79 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 0,
                     nonterminal_produced: 50,
+                }
+            }
+            80 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 5,
+                    nonterminal_produced: 51,
+                }
+            }
+            81 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 4,
+                    nonterminal_produced: 51,
+                }
+            }
+            82 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 3,
+                    nonterminal_produced: 51,
                 }
             }
             _ => panic!("invalid reduction index {}", __reduce_index)
@@ -16513,15 +17827,15 @@ mod __parse__T_node {
                 __reduce23(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             24 => {
+                __reduce24(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            25 => {
                 // __T_node = T_node => ActionFn(3);
                 let __sym0 = __pop_Variant1(__symbols);
                 let __start = __sym0.0;
                 let __end = __sym0.2;
                 let __nt = super::__action3::<>(input, __sym0);
                 return Some(Ok(__nt));
-            }
-            25 => {
-                __reduce25(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             26 => {
                 __reduce26(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
@@ -16685,6 +17999,15 @@ mod __parse__T_node {
             79 => {
                 __reduce79(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
+            80 => {
+                __reduce80(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            81 => {
+                __reduce81(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            82 => {
+                __reduce82(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
             _ => panic!("invalid action code {}", __action)
         };
         let __states_len = __states.len();
@@ -16709,6 +18032,127 @@ mod __parse__T_node {
             _ => __symbol_type_mismatch()
         }
     }
+    fn __pop_Variant8<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstAttr, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant8(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant4<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstGraph, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant4(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant2<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstNodeId, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant2(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant5<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstStmt, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant5(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant12<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstSubGraph, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant12(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant6<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, String, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant6(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant3<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstAttr>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant3(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant7<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstEdgeEndpoint>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant7(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant11<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstStmt>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant11(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant9<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, bool, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant9(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant10<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, core::option::Option<String>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant10(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
     fn __pop_Variant0<
       'input,
     >(
@@ -16729,10 +18173,10 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // () =  => ActionFn(79);
+        // () =  => ActionFn(78);
         let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
         let __end = __start;
-        let __nt = super::__action79::<>(input, &__start, &__end);
+        let __nt = super::__action78::<>(input, &__start, &__end);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (0, 0)
     }
@@ -16779,12 +18223,12 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Expr1 = node_id => ActionFn(18);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Expr1 = node_id => ActionFn(17);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action18::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action17::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 3)
     }
     fn __reduce4<
@@ -16796,12 +18240,12 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Expr2 = a_list => ActionFn(19);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Expr2 = a_list => ActionFn(18);
+        let __sym0 = __pop_Variant3(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action19::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action18::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
         (1, 4)
     }
     fn __reduce5<
@@ -16830,16 +18274,16 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = "strict", graph_kind, id, stmt_block => ActionFn(15);
+        // Graph = "strict", graph_kind, id, stmt_block => ActionFn(82);
         assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym3 = __pop_Variant11(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant9(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym3.2;
-        let __nt = super::__action15::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action82::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (4, 6)
     }
     fn __reduce7<
@@ -16851,15 +18295,15 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = graph_kind, id, stmt_block => ActionFn(16);
+        // Graph = "strict", graph_kind, stmt_block => ActionFn(83);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant9(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action16::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action83::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (3, 6)
     }
     fn __reduce8<
@@ -16871,17 +18315,37 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = graph_kind, stmt_block => ActionFn(17);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Graph = graph_kind, id, stmt_block => ActionFn(84);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant9(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action17::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 6)
+        let __end = __sym2.2;
+        let __nt = super::__action84::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
+        (3, 6)
     }
     fn __reduce9<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // Graph = graph_kind, stmt_block => ActionFn(85);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant9(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym1.2;
+        let __nt = super::__action85::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
+        (2, 6)
+    }
+    fn __reduce10<
         'input,
     >(
         input: &'input str,
@@ -16898,7 +18362,7 @@ mod __parse__T_node {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 7)
     }
-    fn __reduce10<
+    fn __reduce11<
         'input,
     >(
         input: &'input str,
@@ -16915,7 +18379,7 @@ mod __parse__T_node {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 8)
     }
-    fn __reduce11<
+    fn __reduce12<
         'input,
     >(
         input: &'input str,
@@ -16932,23 +18396,6 @@ mod __parse__T_node {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 9)
     }
-    fn __reduce12<
-        'input,
-    >(
-        input: &'input str,
-        __lookahead_start: Option<&usize>,
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
-        _: core::marker::PhantomData<(&'input ())>,
-    ) -> (usize, usize)
-    {
-        // T_digraph = DIGRAPH => ActionFn(76);
-        let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action76::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 10)
-    }
     fn __reduce13<
         'input,
     >(
@@ -16958,13 +18405,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_edge = EDGE => ActionFn(74);
+        // T_digraph = DIGRAPH => ActionFn(75);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action74::<>(input, __sym0);
+        let __nt = super::__action75::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 11)
+        (1, 10)
     }
     fn __reduce14<
         'input,
@@ -16975,13 +18422,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_graph = GRAPH => ActionFn(75);
+        // T_edge = EDGE => ActionFn(73);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action75::<>(input, __sym0);
+        let __nt = super::__action73::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 12)
+        (1, 11)
     }
     fn __reduce15<
         'input,
@@ -16992,13 +18439,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_node = NODE => ActionFn(73);
+        // T_graph = GRAPH => ActionFn(74);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action73::<>(input, __sym0);
+        let __nt = super::__action74::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 13)
+        (1, 12)
     }
     fn __reduce16<
         'input,
@@ -17009,13 +18456,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_strict = STRICT => ActionFn(78);
+        // T_node = NODE => ActionFn(72);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action78::<>(input, __sym0);
+        let __nt = super::__action72::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 14)
+        (1, 13)
     }
     fn __reduce17<
         'input,
@@ -17026,13 +18473,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_subgraph = SUBGRAPH => ActionFn(77);
+        // T_strict = STRICT => ActionFn(77);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action77::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 15)
+        (1, 14)
     }
     fn __reduce18<
         'input,
@@ -17043,13 +18490,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // __Expr1 = Expr1 => ActionFn(1);
+        // T_subgraph = SUBGRAPH => ActionFn(76);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action1::<>(input, __sym0);
+        let __nt = super::__action76::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 16)
+        (1, 15)
     }
     fn __reduce19<
         'input,
@@ -17060,13 +18507,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // __Expr2 = Expr2 => ActionFn(2);
-        let __sym0 = __pop_Variant1(__symbols);
+        // __Expr1 = Expr1 => ActionFn(1);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action2::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 17)
+        let __nt = super::__action1::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (1, 16)
     }
     fn __reduce20<
         'input,
@@ -17077,15 +18524,32 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
+        // __Expr2 = Expr2 => ActionFn(2);
+        let __sym0 = __pop_Variant3(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym0.2;
+        let __nt = super::__action2::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (1, 17)
+    }
+    fn __reduce21<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
         // __Graph = Graph => ActionFn(0);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant4(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action0::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (1, 18)
     }
-    fn __reduce21<
+    fn __reduce22<
         'input,
     >(
         input: &'input str,
@@ -17102,7 +18566,7 @@ mod __parse__T_node {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 19)
     }
-    fn __reduce22<
+    fn __reduce23<
         'input,
     >(
         input: &'input str,
@@ -17119,7 +18583,7 @@ mod __parse__T_node {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 20)
     }
-    fn __reduce23<
+    fn __reduce24<
         'input,
     >(
         input: &'input str,
@@ -17136,7 +18600,7 @@ mod __parse__T_node {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 21)
     }
-    fn __reduce25<
+    fn __reduce26<
         'input,
     >(
         input: &'input str,
@@ -17153,7 +18617,7 @@ mod __parse__T_node {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 23)
     }
-    fn __reduce26<
+    fn __reduce27<
         'input,
     >(
         input: &'input str,
@@ -17170,25 +18634,6 @@ mod __parse__T_node {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 24)
     }
-    fn __reduce27<
-        'input,
-    >(
-        input: &'input str,
-        __lookahead_start: Option<&usize>,
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
-        _: core::marker::PhantomData<(&'input ())>,
-    ) -> (usize, usize)
-    {
-        // a_list = elem_pair, a_list => ActionFn(36);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action36::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 25)
-    }
     fn __reduce28<
         'input,
     >(
@@ -17198,13 +18643,15 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // a_list = elem_pair => ActionFn(37);
-        let __sym0 = __pop_Variant1(__symbols);
+        // a_list = elem_pair, a_list => ActionFn(35);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant8(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action37::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 25)
+        let __end = __sym1.2;
+        let __nt = super::__action35::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (2, 25)
     }
     fn __reduce29<
         'input,
@@ -17215,17 +18662,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_list = lbracket, a_list, rbracket, attr_list => ActionFn(34);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // a_list = elem_pair => ActionFn(36);
+        let __sym0 = __pop_Variant8(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action34::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 26)
+        let __end = __sym0.2;
+        let __nt = super::__action36::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (1, 25)
     }
     fn __reduce30<
         'input,
@@ -17236,16 +18679,17 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_list = lbracket, a_list, rbracket => ActionFn(35);
-        assert!(__symbols.len() >= 3);
+        // attr_list = lbracket, a_list, rbracket, attr_list => ActionFn(33);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant3(__symbols);
         let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action35::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 26)
+        let __end = __sym3.2;
+        let __nt = super::__action33::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (4, 26)
     }
     fn __reduce31<
         'input,
@@ -17256,15 +18700,16 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "graph", attr_list => ActionFn(31);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // attr_list = lbracket, a_list, rbracket => ActionFn(34);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action31::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 27)
+        let __end = __sym2.2;
+        let __nt = super::__action34::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (3, 26)
     }
     fn __reduce32<
         'input,
@@ -17275,14 +18720,14 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "node", attr_list => ActionFn(32);
+        // attr_stmt = "graph", attr_list => ActionFn(30);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action32::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action30::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (2, 27)
     }
     fn __reduce33<
@@ -17294,14 +18739,14 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "edge", attr_list => ActionFn(33);
+        // attr_stmt = "node", attr_list => ActionFn(31);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action33::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action31::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (2, 27)
     }
     fn __reduce34<
@@ -17313,13 +18758,15 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // colon = ":" => ActionFn(66);
+        // attr_stmt = "edge", attr_list => ActionFn(32);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action66::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 28)
+        let __end = __sym1.2;
+        let __nt = super::__action32::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 27)
     }
     fn __reduce35<
         'input,
@@ -17330,13 +18777,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // comma = "," => ActionFn(68);
+        // colon = ":" => ActionFn(65);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action68::<>(input, __sym0);
+        let __nt = super::__action65::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 29)
+        (1, 28)
     }
     fn __reduce36<
         'input,
@@ -17347,13 +18794,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // compass_pt = id_ident => ActionFn(57);
-        let __sym0 = __pop_Variant1(__symbols);
+        // comma = "," => ActionFn(67);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action57::<>(input, __sym0);
+        let __nt = super::__action67::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 30)
+        (1, 29)
     }
     fn __reduce37<
         'input,
@@ -17364,16 +18811,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, node_id, edge_rhs => ActionFn(45);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // compass_pt = id_ident => ActionFn(56);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action45::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 31)
+        let __end = __sym0.2;
+        let __nt = super::__action56::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 30)
     }
     fn __reduce38<
         'input,
@@ -17384,15 +18828,16 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, node_id => ActionFn(46);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, node_id, edge_rhs => ActionFn(44);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant7(__symbols);
+        let __sym1 = __pop_Variant2(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action46::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 31)
+        let __end = __sym2.2;
+        let __nt = super::__action44::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (3, 31)
     }
     fn __reduce39<
         'input,
@@ -17403,16 +18848,15 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, subgraph, edge_rhs => ActionFn(47);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, node_id => ActionFn(45);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant2(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action47::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 31)
+        let __end = __sym1.2;
+        let __nt = super::__action45::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (2, 31)
     }
     fn __reduce40<
         'input,
@@ -17423,15 +18867,16 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, subgraph => ActionFn(48);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, subgraph, edge_rhs => ActionFn(46);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant7(__symbols);
+        let __sym1 = __pop_Variant12(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action48::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 31)
+        let __end = __sym2.2;
+        let __nt = super::__action46::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (3, 31)
     }
     fn __reduce41<
         'input,
@@ -17442,15 +18887,15 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = node_id, edge_rhs => ActionFn(41);
+        // edge_rhs = edgeop, subgraph => ActionFn(47);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant12(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action41::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 32)
+        let __nt = super::__action47::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (2, 31)
     }
     fn __reduce42<
         'input,
@@ -17461,16 +18906,15 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = node_id, edge_rhs, attr_list => ActionFn(42);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edge_stmt = node_id, edge_rhs => ActionFn(40);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action42::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 32)
+        let __end = __sym1.2;
+        let __nt = super::__action40::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 32)
     }
     fn __reduce43<
         'input,
@@ -17481,15 +18925,15 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = subgraph, edge_rhs, attr_list => ActionFn(43);
+        // edge_stmt = node_id, edge_rhs, attr_list => ActionFn(41);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant3(__symbols);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action43::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action41::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (3, 32)
     }
     fn __reduce44<
@@ -17501,15 +18945,16 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = subgraph, edge_rhs => ActionFn(44);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edge_stmt = subgraph, edge_rhs, attr_list => ActionFn(42);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant3(__symbols);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action44::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 32)
+        let __end = __sym2.2;
+        let __nt = super::__action42::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (3, 32)
     }
     fn __reduce45<
         'input,
@@ -17520,13 +18965,15 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edgeop = "->" => ActionFn(71);
-        let __sym0 = __pop_Variant0(__symbols);
+        // edge_stmt = subgraph, edge_rhs => ActionFn(43);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action71::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 33)
+        let __end = __sym1.2;
+        let __nt = super::__action43::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 32)
     }
     fn __reduce46<
         'input,
@@ -17537,11 +18984,11 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edgeop = "--" => ActionFn(72);
+        // edgeop = "->" => ActionFn(70);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action72::<>(input, __sym0);
+        let __nt = super::__action70::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 33)
     }
@@ -17554,17 +19001,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id, semicolon => ActionFn(38);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edgeop = "--" => ActionFn(71);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action38::<>(input, __sym0, __sym1, __sym2, __sym3);
+        let __end = __sym0.2;
+        let __nt = super::__action71::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 34)
+        (1, 33)
     }
     fn __reduce48<
         'input,
@@ -17575,16 +19018,16 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id, comma => ActionFn(39);
+        // elem_pair = id, "=", id, semicolon => ActionFn(37);
         assert!(__symbols.len() >= 4);
         let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym3.2;
-        let __nt = super::__action39::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action37::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
         (4, 34)
     }
     fn __reduce49<
@@ -17596,16 +19039,17 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id => ActionFn(40);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
+        // elem_pair = id, "=", id, comma => ActionFn(38);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action40::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 34)
+        let __end = __sym3.2;
+        let __nt = super::__action38::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
+        (4, 34)
     }
     fn __reduce50<
         'input,
@@ -17616,13 +19060,16 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // graph_kind = "graph" => ActionFn(20);
-        let __sym0 = __pop_Variant0(__symbols);
+        // elem_pair = id, "=", id => ActionFn(39);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action20::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 35)
+        let __end = __sym2.2;
+        let __nt = super::__action39::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
+        (3, 34)
     }
     fn __reduce51<
         'input,
@@ -17633,12 +19080,12 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // graph_kind = "digraph" => ActionFn(21);
+        // graph_kind = "graph" => ActionFn(19);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action21::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action19::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant9(__nt), __end));
         (1, 35)
     }
     fn __reduce52<
@@ -17650,13 +19097,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_ident => ActionFn(58);
-        let __sym0 = __pop_Variant1(__symbols);
+        // graph_kind = "digraph" => ActionFn(20);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action58::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 36)
+        let __nt = super::__action20::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant9(__nt), __end));
+        (1, 35)
     }
     fn __reduce53<
         'input,
@@ -17667,12 +19114,12 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_num => ActionFn(59);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_ident => ActionFn(57);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action59::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action57::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce54<
@@ -17684,12 +19131,12 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_str => ActionFn(60);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_num => ActionFn(58);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action60::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action58::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce55<
@@ -17701,12 +19148,12 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_html => ActionFn(61);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_str => ActionFn(59);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action61::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action59::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce56<
@@ -17718,13 +19165,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_html = r#"<[^>]*>"# => ActionFn(65);
-        let __sym0 = __pop_Variant0(__symbols);
+        // id = id_html => ActionFn(60);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action65::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 37)
+        let __nt = super::__action60::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 36)
     }
     fn __reduce57<
         'input,
@@ -17735,13 +19182,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_ident = r#"[a-zA-Z_][a-zA-Z0-9_]*"# => ActionFn(62);
-        let __sym0 = __pop_Variant0(__symbols);
+        // id? = id => ActionFn(79);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action62::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 38)
+        let __nt = super::__action79::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant10(__nt), __end));
+        (1, 37)
     }
     fn __reduce58<
         'input,
@@ -17752,13 +19199,12 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_num = r#"[-]*[0-9]+"# => ActionFn(63);
-        let __sym0 = __pop_Variant0(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action63::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 39)
+        // id? =  => ActionFn(80);
+        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
+        let __end = __start;
+        let __nt = super::__action80::<>(input, &__start, &__end);
+        __symbols.push((__start, __Symbol::Variant10(__nt), __end));
+        (0, 37)
     }
     fn __reduce59<
         'input,
@@ -17769,13 +19215,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_str = r#"\"[^\"]*\""# => ActionFn(64);
+        // id_html = r#"<[^>]*>"# => ActionFn(64);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action64::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 40)
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 38)
     }
     fn __reduce60<
         'input,
@@ -17786,13 +19232,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // lbracket = "[" => ActionFn(69);
+        // id_ident = r#"[a-zA-Z_][a-zA-Z0-9_]*"# => ActionFn(61);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action69::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 41)
+        let __nt = super::__action61::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 39)
     }
     fn __reduce61<
         'input,
@@ -17803,15 +19249,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_id = id, port => ActionFn(51);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id_num = r#"[-]?[0-9]+(\\.[0-9]+)?"# => ActionFn(62);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action51::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 42)
+        let __end = __sym0.2;
+        let __nt = super::__action62::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 40)
     }
     fn __reduce62<
         'input,
@@ -17822,13 +19266,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_id = id => ActionFn(52);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id_str = r#"\"[^\"]*\""# => ActionFn(63);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action52::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 42)
+        let __nt = super::__action63::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 41)
     }
     fn __reduce63<
         'input,
@@ -17839,15 +19283,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_stmt = node_id, attr_list => ActionFn(49);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // lbracket = "[" => ActionFn(68);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action49::<>(input, __sym0, __sym1);
+        let __end = __sym0.2;
+        let __nt = super::__action68::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 43)
+        (1, 42)
     }
     fn __reduce64<
         'input,
@@ -17858,13 +19300,15 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_stmt = node_id => ActionFn(50);
-        let __sym0 = __pop_Variant1(__symbols);
+        // node_id = id, port => ActionFn(50);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action50::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 43)
+        let __end = __sym1.2;
+        let __nt = super::__action50::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (2, 43)
     }
     fn __reduce65<
         'input,
@@ -17875,15 +19319,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // port = colon, id => ActionFn(53);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // node_id = id => ActionFn(51);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action53::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 44)
+        let __end = __sym0.2;
+        let __nt = super::__action51::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (1, 43)
     }
     fn __reduce66<
         'input,
@@ -17894,13 +19336,15 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // rbracket = "]" => ActionFn(70);
-        let __sym0 = __pop_Variant0(__symbols);
+        // node_stmt = node_id, attr_list => ActionFn(48);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action70::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 45)
+        let __end = __sym1.2;
+        let __nt = super::__action48::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 44)
     }
     fn __reduce67<
         'input,
@@ -17911,13 +19355,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // semicolon = ";" => ActionFn(67);
-        let __sym0 = __pop_Variant0(__symbols);
+        // node_stmt = node_id => ActionFn(49);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action67::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 46)
+        let __nt = super::__action49::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 44)
     }
     fn __reduce68<
         'input,
@@ -17928,13 +19372,15 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = node_stmt => ActionFn(26);
+        // port = colon, id => ActionFn(52);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant6(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action26::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        let __end = __sym1.2;
+        let __nt = super::__action52::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (2, 45)
     }
     fn __reduce69<
         'input,
@@ -17945,13 +19391,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = edge_stmt => ActionFn(27);
-        let __sym0 = __pop_Variant1(__symbols);
+        // rbracket = "]" => ActionFn(69);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action27::<>(input, __sym0);
+        let __nt = super::__action69::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        (1, 46)
     }
     fn __reduce70<
         'input,
@@ -17962,11 +19408,11 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = attr_stmt => ActionFn(28);
-        let __sym0 = __pop_Variant1(__symbols);
+        // semicolon = ";" => ActionFn(66);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action28::<>(input, __sym0);
+        let __nt = super::__action66::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 47)
     }
@@ -17979,16 +19425,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = id, "=", id => ActionFn(29);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = node_stmt => ActionFn(25);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action29::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 47)
+        let __end = __sym0.2;
+        let __nt = super::__action25::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce72<
         'input,
@@ -17999,13 +19442,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = subgraph => ActionFn(30);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = edge_stmt => ActionFn(26);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action30::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        let __nt = super::__action26::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce73<
         'input,
@@ -18016,16 +19459,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_block = "{", stmt_list, "}" => ActionFn(22);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // stmt = attr_stmt => ActionFn(27);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action22::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 48)
+        let __end = __sym0.2;
+        let __nt = super::__action27::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce74<
         'input,
@@ -18036,16 +19476,16 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list = stmt, semicolon, stmt_list => ActionFn(23);
+        // stmt = id, "=", id => ActionFn(28);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action23::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 49)
+        let __nt = super::__action28::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (3, 48)
     }
     fn __reduce75<
         'input,
@@ -18056,15 +19496,13 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list = stmt, stmt_list => ActionFn(24);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = subgraph => ActionFn(29);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action24::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 49)
+        let __end = __sym0.2;
+        let __nt = super::__action29::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce76<
         'input,
@@ -18075,12 +19513,16 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list =  => ActionFn(80);
-        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
-        let __end = __start;
-        let __nt = super::__action80::<>(input, &__start, &__end);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (0, 49)
+        // stmt_block = "{", stmt_list, "}" => ActionFn(21);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant0(__symbols);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym2.2;
+        let __nt = super::__action21::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (3, 49)
     }
     fn __reduce77<
         'input,
@@ -18091,18 +19533,16 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "subgraph", id, "{", stmt_list, "}" => ActionFn(54);
-        assert!(__symbols.len() >= 5);
-        let __sym4 = __pop_Variant0(__symbols);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant0(__symbols);
+        // stmt_list = stmt, semicolon, stmt_list => ActionFn(22);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant11(__symbols);
         let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym4.2;
-        let __nt = super::__action54::<>(input, __sym0, __sym1, __sym2, __sym3, __sym4);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (5, 50)
+        let __end = __sym2.2;
+        let __nt = super::__action22::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (3, 50)
     }
     fn __reduce78<
         'input,
@@ -18113,17 +19553,15 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "subgraph", "{", stmt_list, "}" => ActionFn(55);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant0(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // stmt_list = stmt, stmt_list => ActionFn(23);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action55::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 50)
+        let __end = __sym1.2;
+        let __nt = super::__action23::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (2, 50)
     }
     fn __reduce79<
         'input,
@@ -18134,16 +19572,75 @@ mod __parse__T_node {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "{", stmt_list, "}" => ActionFn(56);
+        // stmt_list =  => ActionFn(81);
+        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
+        let __end = __start;
+        let __nt = super::__action81::<>(input, &__start, &__end);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (0, 50)
+    }
+    fn __reduce80<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "subgraph", id, "{", stmt_list, "}" => ActionFn(53);
+        assert!(__symbols.len() >= 5);
+        let __sym4 = __pop_Variant0(__symbols);
+        let __sym3 = __pop_Variant11(__symbols);
+        let __sym2 = __pop_Variant0(__symbols);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym4.2;
+        let __nt = super::__action53::<>(input, __sym0, __sym1, __sym2, __sym3, __sym4);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (5, 51)
+    }
+    fn __reduce81<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "subgraph", "{", stmt_list, "}" => ActionFn(54);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant0(__symbols);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym3.2;
+        let __nt = super::__action54::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (4, 51)
+    }
+    fn __reduce82<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "{", stmt_list, "}" => ActionFn(55);
         assert!(__symbols.len() >= 3);
         let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant11(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action56::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 50)
+        let __nt = super::__action55::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (3, 51)
     }
 }
 #[allow(unused_imports)]
@@ -18154,6 +19651,7 @@ pub use self::__parse__T_node::T_nodeParser;
 mod __parse__T_strict {
 
     use std::str::FromStr;
+    use crate::cgraph::ast::*;
     #[allow(unused_extern_crates)]
     extern crate lalrpop_util as __lalrpop_util;
     #[allow(unused_imports)]
@@ -18166,6 +19664,17 @@ mod __parse__T_strict {
      {
         Variant0(&'input str),
         Variant1(()),
+        Variant2(AstNodeId),
+        Variant3(Vec<AstAttr>),
+        Variant4(AstGraph),
+        Variant5(AstStmt),
+        Variant6(String),
+        Variant7(Vec<AstEdgeEndpoint>),
+        Variant8(AstAttr),
+        Variant9(bool),
+        Variant10(core::option::Option<String>),
+        Variant11(Vec<AstStmt>),
+        Variant12(AstSubGraph),
     }
     const __ACTION: &[i8] = &[
         // State 0
@@ -18184,11 +19693,11 @@ mod __parse__T_strict {
         // State 0
         0,
         // State 1
-        -17,
+        -18,
         // State 2
-        -26,
+        -27,
         // State 3
-        -11,
+        -12,
     ];
     fn __goto(state: i8, nt: usize) -> i8 {
         match nt {
@@ -18216,7 +19725,7 @@ mod __parse__T_strict {
         r###""}""###,
         r###"r#"\"[^\"]*\""#"###,
         r###"r#"<[^>]*>"#"###,
-        r###"r#"[-]*[0-9]+"#"###,
+        r###"r#"[-]?[0-9]+(\\.[0-9]+)?"#"###,
         r###"r#"[a-zA-Z_][a-zA-Z0-9_]*"#"###,
     ];
     fn __expected_tokens(__state: i8) -> alloc::vec::Vec<alloc::string::String> {
@@ -18450,141 +19959,141 @@ mod __parse__T_strict {
             }
             8 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 6,
                 }
             }
             9 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 7,
+                    states_to_pop: 2,
+                    nonterminal_produced: 6,
                 }
             }
             10 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 8,
+                    nonterminal_produced: 7,
                 }
             }
             11 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 9,
+                    nonterminal_produced: 8,
                 }
             }
             12 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 10,
+                    nonterminal_produced: 9,
                 }
             }
             13 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 11,
+                    nonterminal_produced: 10,
                 }
             }
             14 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 12,
+                    nonterminal_produced: 11,
                 }
             }
             15 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 13,
+                    nonterminal_produced: 12,
                 }
             }
             16 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 14,
+                    nonterminal_produced: 13,
                 }
             }
             17 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 15,
+                    nonterminal_produced: 14,
                 }
             }
             18 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 16,
+                    nonterminal_produced: 15,
                 }
             }
             19 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 17,
+                    nonterminal_produced: 16,
                 }
             }
             20 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 18,
+                    nonterminal_produced: 17,
                 }
             }
             21 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 19,
+                    nonterminal_produced: 18,
                 }
             }
             22 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 20,
+                    nonterminal_produced: 19,
                 }
             }
             23 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 21,
+                    nonterminal_produced: 20,
                 }
             }
             24 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
+                    nonterminal_produced: 21,
+                }
+            }
+            25 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
                     nonterminal_produced: 22,
                 }
             }
-            25 => __state_machine::SimulatedReduce::Accept,
-            26 => {
+            26 => __state_machine::SimulatedReduce::Accept,
+            27 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
                     nonterminal_produced: 24,
                 }
             }
-            27 => {
-                __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 25,
-                }
-            }
             28 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
+                    states_to_pop: 2,
                     nonterminal_produced: 25,
                 }
             }
             29 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
-                    nonterminal_produced: 26,
+                    states_to_pop: 1,
+                    nonterminal_produced: 25,
                 }
             }
             30 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 4,
                     nonterminal_produced: 26,
                 }
             }
             31 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 27,
+                    states_to_pop: 3,
+                    nonterminal_produced: 26,
                 }
             }
             32 => {
@@ -18601,55 +20110,55 @@ mod __parse__T_strict {
             }
             34 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 28,
+                    states_to_pop: 2,
+                    nonterminal_produced: 27,
                 }
             }
             35 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 29,
+                    nonterminal_produced: 28,
                 }
             }
             36 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 30,
+                    nonterminal_produced: 29,
                 }
             }
             37 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
-                    nonterminal_produced: 31,
+                    states_to_pop: 1,
+                    nonterminal_produced: 30,
                 }
             }
             38 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 31,
                 }
             }
             39 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 2,
                     nonterminal_produced: 31,
                 }
             }
             40 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 31,
                 }
             }
             41 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 2,
-                    nonterminal_produced: 32,
+                    nonterminal_produced: 31,
                 }
             }
             42 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 2,
                     nonterminal_produced: 32,
                 }
             }
@@ -18661,14 +20170,14 @@ mod __parse__T_strict {
             }
             44 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 32,
                 }
             }
             45 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 33,
+                    states_to_pop: 2,
+                    nonterminal_produced: 32,
                 }
             }
             46 => {
@@ -18679,8 +20188,8 @@ mod __parse__T_strict {
             }
             47 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
-                    nonterminal_produced: 34,
+                    states_to_pop: 1,
+                    nonterminal_produced: 33,
                 }
             }
             48 => {
@@ -18691,14 +20200,14 @@ mod __parse__T_strict {
             }
             49 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 4,
                     nonterminal_produced: 34,
                 }
             }
             50 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 35,
+                    states_to_pop: 3,
+                    nonterminal_produced: 34,
                 }
             }
             51 => {
@@ -18710,7 +20219,7 @@ mod __parse__T_strict {
             52 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 36,
+                    nonterminal_produced: 35,
                 }
             }
             53 => {
@@ -18734,85 +20243,85 @@ mod __parse__T_strict {
             56 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 37,
+                    nonterminal_produced: 36,
                 }
             }
             57 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 38,
+                    nonterminal_produced: 37,
                 }
             }
             58 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 39,
+                    states_to_pop: 0,
+                    nonterminal_produced: 37,
                 }
             }
             59 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 40,
+                    nonterminal_produced: 38,
                 }
             }
             60 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 41,
+                    nonterminal_produced: 39,
                 }
             }
             61 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 42,
+                    states_to_pop: 1,
+                    nonterminal_produced: 40,
                 }
             }
             62 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 42,
+                    nonterminal_produced: 41,
                 }
             }
             63 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 43,
+                    states_to_pop: 1,
+                    nonterminal_produced: 42,
                 }
             }
             64 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
+                    states_to_pop: 2,
                     nonterminal_produced: 43,
                 }
             }
             65 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 44,
+                    states_to_pop: 1,
+                    nonterminal_produced: 43,
                 }
             }
             66 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 45,
+                    states_to_pop: 2,
+                    nonterminal_produced: 44,
                 }
             }
             67 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 46,
+                    nonterminal_produced: 44,
                 }
             }
             68 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    states_to_pop: 2,
+                    nonterminal_produced: 45,
                 }
             }
             69 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    nonterminal_produced: 46,
                 }
             }
             70 => {
@@ -18823,56 +20332,74 @@ mod __parse__T_strict {
             }
             71 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
-                    nonterminal_produced: 47,
+                    states_to_pop: 1,
+                    nonterminal_produced: 48,
                 }
             }
             72 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    nonterminal_produced: 48,
                 }
             }
             73 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 1,
                     nonterminal_produced: 48,
                 }
             }
             74 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 3,
-                    nonterminal_produced: 49,
+                    nonterminal_produced: 48,
                 }
             }
             75 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 49,
+                    states_to_pop: 1,
+                    nonterminal_produced: 48,
                 }
             }
             76 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 0,
+                    states_to_pop: 3,
                     nonterminal_produced: 49,
                 }
             }
             77 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 5,
+                    states_to_pop: 3,
                     nonterminal_produced: 50,
                 }
             }
             78 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
+                    states_to_pop: 2,
                     nonterminal_produced: 50,
                 }
             }
             79 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 0,
                     nonterminal_produced: 50,
+                }
+            }
+            80 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 5,
+                    nonterminal_produced: 51,
+                }
+            }
+            81 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 4,
+                    nonterminal_produced: 51,
+                }
+            }
+            82 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 3,
+                    nonterminal_produced: 51,
                 }
             }
             _ => panic!("invalid reduction index {}", __reduce_index)
@@ -19032,15 +20559,15 @@ mod __parse__T_strict {
                 __reduce24(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             25 => {
+                __reduce25(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            26 => {
                 // __T_strict = T_strict => ActionFn(8);
                 let __sym0 = __pop_Variant1(__symbols);
                 let __start = __sym0.0;
                 let __end = __sym0.2;
                 let __nt = super::__action8::<>(input, __sym0);
                 return Some(Ok(__nt));
-            }
-            26 => {
-                __reduce26(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             27 => {
                 __reduce27(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
@@ -19201,6 +20728,15 @@ mod __parse__T_strict {
             79 => {
                 __reduce79(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
+            80 => {
+                __reduce80(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            81 => {
+                __reduce81(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            82 => {
+                __reduce82(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
             _ => panic!("invalid action code {}", __action)
         };
         let __states_len = __states.len();
@@ -19225,6 +20761,127 @@ mod __parse__T_strict {
             _ => __symbol_type_mismatch()
         }
     }
+    fn __pop_Variant8<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstAttr, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant8(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant4<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstGraph, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant4(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant2<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstNodeId, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant2(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant5<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstStmt, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant5(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant12<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstSubGraph, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant12(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant6<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, String, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant6(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant3<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstAttr>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant3(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant7<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstEdgeEndpoint>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant7(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant11<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstStmt>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant11(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant9<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, bool, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant9(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant10<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, core::option::Option<String>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant10(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
     fn __pop_Variant0<
       'input,
     >(
@@ -19245,10 +20902,10 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // () =  => ActionFn(79);
+        // () =  => ActionFn(78);
         let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
         let __end = __start;
-        let __nt = super::__action79::<>(input, &__start, &__end);
+        let __nt = super::__action78::<>(input, &__start, &__end);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (0, 0)
     }
@@ -19295,12 +20952,12 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Expr1 = node_id => ActionFn(18);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Expr1 = node_id => ActionFn(17);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action18::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action17::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 3)
     }
     fn __reduce4<
@@ -19312,12 +20969,12 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Expr2 = a_list => ActionFn(19);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Expr2 = a_list => ActionFn(18);
+        let __sym0 = __pop_Variant3(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action19::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action18::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
         (1, 4)
     }
     fn __reduce5<
@@ -19346,16 +21003,16 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = "strict", graph_kind, id, stmt_block => ActionFn(15);
+        // Graph = "strict", graph_kind, id, stmt_block => ActionFn(82);
         assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym3 = __pop_Variant11(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant9(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym3.2;
-        let __nt = super::__action15::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action82::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (4, 6)
     }
     fn __reduce7<
@@ -19367,15 +21024,15 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = graph_kind, id, stmt_block => ActionFn(16);
+        // Graph = "strict", graph_kind, stmt_block => ActionFn(83);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant9(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action16::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action83::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (3, 6)
     }
     fn __reduce8<
@@ -19387,17 +21044,37 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = graph_kind, stmt_block => ActionFn(17);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Graph = graph_kind, id, stmt_block => ActionFn(84);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant9(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action17::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 6)
+        let __end = __sym2.2;
+        let __nt = super::__action84::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
+        (3, 6)
     }
     fn __reduce9<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // Graph = graph_kind, stmt_block => ActionFn(85);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant9(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym1.2;
+        let __nt = super::__action85::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
+        (2, 6)
+    }
+    fn __reduce10<
         'input,
     >(
         input: &'input str,
@@ -19414,7 +21091,7 @@ mod __parse__T_strict {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 7)
     }
-    fn __reduce10<
+    fn __reduce11<
         'input,
     >(
         input: &'input str,
@@ -19431,7 +21108,7 @@ mod __parse__T_strict {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 8)
     }
-    fn __reduce11<
+    fn __reduce12<
         'input,
     >(
         input: &'input str,
@@ -19448,23 +21125,6 @@ mod __parse__T_strict {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 9)
     }
-    fn __reduce12<
-        'input,
-    >(
-        input: &'input str,
-        __lookahead_start: Option<&usize>,
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
-        _: core::marker::PhantomData<(&'input ())>,
-    ) -> (usize, usize)
-    {
-        // T_digraph = DIGRAPH => ActionFn(76);
-        let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action76::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 10)
-    }
     fn __reduce13<
         'input,
     >(
@@ -19474,13 +21134,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_edge = EDGE => ActionFn(74);
+        // T_digraph = DIGRAPH => ActionFn(75);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action74::<>(input, __sym0);
+        let __nt = super::__action75::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 11)
+        (1, 10)
     }
     fn __reduce14<
         'input,
@@ -19491,13 +21151,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_graph = GRAPH => ActionFn(75);
+        // T_edge = EDGE => ActionFn(73);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action75::<>(input, __sym0);
+        let __nt = super::__action73::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 12)
+        (1, 11)
     }
     fn __reduce15<
         'input,
@@ -19508,13 +21168,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_node = NODE => ActionFn(73);
+        // T_graph = GRAPH => ActionFn(74);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action73::<>(input, __sym0);
+        let __nt = super::__action74::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 13)
+        (1, 12)
     }
     fn __reduce16<
         'input,
@@ -19525,13 +21185,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_strict = STRICT => ActionFn(78);
+        // T_node = NODE => ActionFn(72);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action78::<>(input, __sym0);
+        let __nt = super::__action72::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 14)
+        (1, 13)
     }
     fn __reduce17<
         'input,
@@ -19542,13 +21202,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_subgraph = SUBGRAPH => ActionFn(77);
+        // T_strict = STRICT => ActionFn(77);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action77::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 15)
+        (1, 14)
     }
     fn __reduce18<
         'input,
@@ -19559,13 +21219,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // __Expr1 = Expr1 => ActionFn(1);
+        // T_subgraph = SUBGRAPH => ActionFn(76);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action1::<>(input, __sym0);
+        let __nt = super::__action76::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 16)
+        (1, 15)
     }
     fn __reduce19<
         'input,
@@ -19576,13 +21236,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // __Expr2 = Expr2 => ActionFn(2);
-        let __sym0 = __pop_Variant1(__symbols);
+        // __Expr1 = Expr1 => ActionFn(1);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action2::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 17)
+        let __nt = super::__action1::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (1, 16)
     }
     fn __reduce20<
         'input,
@@ -19593,15 +21253,32 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
+        // __Expr2 = Expr2 => ActionFn(2);
+        let __sym0 = __pop_Variant3(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym0.2;
+        let __nt = super::__action2::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (1, 17)
+    }
+    fn __reduce21<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
         // __Graph = Graph => ActionFn(0);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant4(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action0::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (1, 18)
     }
-    fn __reduce21<
+    fn __reduce22<
         'input,
     >(
         input: &'input str,
@@ -19618,7 +21295,7 @@ mod __parse__T_strict {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 19)
     }
-    fn __reduce22<
+    fn __reduce23<
         'input,
     >(
         input: &'input str,
@@ -19635,7 +21312,7 @@ mod __parse__T_strict {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 20)
     }
-    fn __reduce23<
+    fn __reduce24<
         'input,
     >(
         input: &'input str,
@@ -19652,7 +21329,7 @@ mod __parse__T_strict {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 21)
     }
-    fn __reduce24<
+    fn __reduce25<
         'input,
     >(
         input: &'input str,
@@ -19669,7 +21346,7 @@ mod __parse__T_strict {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 22)
     }
-    fn __reduce26<
+    fn __reduce27<
         'input,
     >(
         input: &'input str,
@@ -19686,25 +21363,6 @@ mod __parse__T_strict {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 24)
     }
-    fn __reduce27<
-        'input,
-    >(
-        input: &'input str,
-        __lookahead_start: Option<&usize>,
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
-        _: core::marker::PhantomData<(&'input ())>,
-    ) -> (usize, usize)
-    {
-        // a_list = elem_pair, a_list => ActionFn(36);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action36::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 25)
-    }
     fn __reduce28<
         'input,
     >(
@@ -19714,13 +21372,15 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // a_list = elem_pair => ActionFn(37);
-        let __sym0 = __pop_Variant1(__symbols);
+        // a_list = elem_pair, a_list => ActionFn(35);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant8(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action37::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 25)
+        let __end = __sym1.2;
+        let __nt = super::__action35::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (2, 25)
     }
     fn __reduce29<
         'input,
@@ -19731,17 +21391,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_list = lbracket, a_list, rbracket, attr_list => ActionFn(34);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // a_list = elem_pair => ActionFn(36);
+        let __sym0 = __pop_Variant8(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action34::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 26)
+        let __end = __sym0.2;
+        let __nt = super::__action36::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (1, 25)
     }
     fn __reduce30<
         'input,
@@ -19752,16 +21408,17 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_list = lbracket, a_list, rbracket => ActionFn(35);
-        assert!(__symbols.len() >= 3);
+        // attr_list = lbracket, a_list, rbracket, attr_list => ActionFn(33);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant3(__symbols);
         let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action35::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 26)
+        let __end = __sym3.2;
+        let __nt = super::__action33::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (4, 26)
     }
     fn __reduce31<
         'input,
@@ -19772,15 +21429,16 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "graph", attr_list => ActionFn(31);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // attr_list = lbracket, a_list, rbracket => ActionFn(34);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action31::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 27)
+        let __end = __sym2.2;
+        let __nt = super::__action34::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (3, 26)
     }
     fn __reduce32<
         'input,
@@ -19791,14 +21449,14 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "node", attr_list => ActionFn(32);
+        // attr_stmt = "graph", attr_list => ActionFn(30);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action32::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action30::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (2, 27)
     }
     fn __reduce33<
@@ -19810,14 +21468,14 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "edge", attr_list => ActionFn(33);
+        // attr_stmt = "node", attr_list => ActionFn(31);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action33::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action31::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (2, 27)
     }
     fn __reduce34<
@@ -19829,13 +21487,15 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // colon = ":" => ActionFn(66);
+        // attr_stmt = "edge", attr_list => ActionFn(32);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action66::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 28)
+        let __end = __sym1.2;
+        let __nt = super::__action32::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 27)
     }
     fn __reduce35<
         'input,
@@ -19846,13 +21506,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // comma = "," => ActionFn(68);
+        // colon = ":" => ActionFn(65);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action68::<>(input, __sym0);
+        let __nt = super::__action65::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 29)
+        (1, 28)
     }
     fn __reduce36<
         'input,
@@ -19863,13 +21523,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // compass_pt = id_ident => ActionFn(57);
-        let __sym0 = __pop_Variant1(__symbols);
+        // comma = "," => ActionFn(67);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action57::<>(input, __sym0);
+        let __nt = super::__action67::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 30)
+        (1, 29)
     }
     fn __reduce37<
         'input,
@@ -19880,16 +21540,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, node_id, edge_rhs => ActionFn(45);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // compass_pt = id_ident => ActionFn(56);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action45::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 31)
+        let __end = __sym0.2;
+        let __nt = super::__action56::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 30)
     }
     fn __reduce38<
         'input,
@@ -19900,15 +21557,16 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, node_id => ActionFn(46);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, node_id, edge_rhs => ActionFn(44);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant7(__symbols);
+        let __sym1 = __pop_Variant2(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action46::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 31)
+        let __end = __sym2.2;
+        let __nt = super::__action44::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (3, 31)
     }
     fn __reduce39<
         'input,
@@ -19919,16 +21577,15 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, subgraph, edge_rhs => ActionFn(47);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, node_id => ActionFn(45);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant2(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action47::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 31)
+        let __end = __sym1.2;
+        let __nt = super::__action45::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (2, 31)
     }
     fn __reduce40<
         'input,
@@ -19939,15 +21596,16 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, subgraph => ActionFn(48);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, subgraph, edge_rhs => ActionFn(46);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant7(__symbols);
+        let __sym1 = __pop_Variant12(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action48::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 31)
+        let __end = __sym2.2;
+        let __nt = super::__action46::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (3, 31)
     }
     fn __reduce41<
         'input,
@@ -19958,15 +21616,15 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = node_id, edge_rhs => ActionFn(41);
+        // edge_rhs = edgeop, subgraph => ActionFn(47);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant12(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action41::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 32)
+        let __nt = super::__action47::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (2, 31)
     }
     fn __reduce42<
         'input,
@@ -19977,16 +21635,15 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = node_id, edge_rhs, attr_list => ActionFn(42);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edge_stmt = node_id, edge_rhs => ActionFn(40);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action42::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 32)
+        let __end = __sym1.2;
+        let __nt = super::__action40::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 32)
     }
     fn __reduce43<
         'input,
@@ -19997,15 +21654,15 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = subgraph, edge_rhs, attr_list => ActionFn(43);
+        // edge_stmt = node_id, edge_rhs, attr_list => ActionFn(41);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant3(__symbols);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action43::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action41::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (3, 32)
     }
     fn __reduce44<
@@ -20017,15 +21674,16 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = subgraph, edge_rhs => ActionFn(44);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edge_stmt = subgraph, edge_rhs, attr_list => ActionFn(42);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant3(__symbols);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action44::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 32)
+        let __end = __sym2.2;
+        let __nt = super::__action42::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (3, 32)
     }
     fn __reduce45<
         'input,
@@ -20036,13 +21694,15 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edgeop = "->" => ActionFn(71);
-        let __sym0 = __pop_Variant0(__symbols);
+        // edge_stmt = subgraph, edge_rhs => ActionFn(43);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action71::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 33)
+        let __end = __sym1.2;
+        let __nt = super::__action43::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 32)
     }
     fn __reduce46<
         'input,
@@ -20053,11 +21713,11 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edgeop = "--" => ActionFn(72);
+        // edgeop = "->" => ActionFn(70);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action72::<>(input, __sym0);
+        let __nt = super::__action70::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 33)
     }
@@ -20070,17 +21730,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id, semicolon => ActionFn(38);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edgeop = "--" => ActionFn(71);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action38::<>(input, __sym0, __sym1, __sym2, __sym3);
+        let __end = __sym0.2;
+        let __nt = super::__action71::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 34)
+        (1, 33)
     }
     fn __reduce48<
         'input,
@@ -20091,16 +21747,16 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id, comma => ActionFn(39);
+        // elem_pair = id, "=", id, semicolon => ActionFn(37);
         assert!(__symbols.len() >= 4);
         let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym3.2;
-        let __nt = super::__action39::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action37::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
         (4, 34)
     }
     fn __reduce49<
@@ -20112,16 +21768,17 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id => ActionFn(40);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
+        // elem_pair = id, "=", id, comma => ActionFn(38);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action40::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 34)
+        let __end = __sym3.2;
+        let __nt = super::__action38::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
+        (4, 34)
     }
     fn __reduce50<
         'input,
@@ -20132,13 +21789,16 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // graph_kind = "graph" => ActionFn(20);
-        let __sym0 = __pop_Variant0(__symbols);
+        // elem_pair = id, "=", id => ActionFn(39);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action20::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 35)
+        let __end = __sym2.2;
+        let __nt = super::__action39::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
+        (3, 34)
     }
     fn __reduce51<
         'input,
@@ -20149,12 +21809,12 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // graph_kind = "digraph" => ActionFn(21);
+        // graph_kind = "graph" => ActionFn(19);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action21::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action19::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant9(__nt), __end));
         (1, 35)
     }
     fn __reduce52<
@@ -20166,13 +21826,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_ident => ActionFn(58);
-        let __sym0 = __pop_Variant1(__symbols);
+        // graph_kind = "digraph" => ActionFn(20);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action58::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 36)
+        let __nt = super::__action20::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant9(__nt), __end));
+        (1, 35)
     }
     fn __reduce53<
         'input,
@@ -20183,12 +21843,12 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_num => ActionFn(59);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_ident => ActionFn(57);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action59::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action57::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce54<
@@ -20200,12 +21860,12 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_str => ActionFn(60);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_num => ActionFn(58);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action60::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action58::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce55<
@@ -20217,12 +21877,12 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_html => ActionFn(61);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_str => ActionFn(59);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action61::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action59::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce56<
@@ -20234,13 +21894,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_html = r#"<[^>]*>"# => ActionFn(65);
-        let __sym0 = __pop_Variant0(__symbols);
+        // id = id_html => ActionFn(60);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action65::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 37)
+        let __nt = super::__action60::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 36)
     }
     fn __reduce57<
         'input,
@@ -20251,13 +21911,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_ident = r#"[a-zA-Z_][a-zA-Z0-9_]*"# => ActionFn(62);
-        let __sym0 = __pop_Variant0(__symbols);
+        // id? = id => ActionFn(79);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action62::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 38)
+        let __nt = super::__action79::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant10(__nt), __end));
+        (1, 37)
     }
     fn __reduce58<
         'input,
@@ -20268,13 +21928,12 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_num = r#"[-]*[0-9]+"# => ActionFn(63);
-        let __sym0 = __pop_Variant0(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action63::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 39)
+        // id? =  => ActionFn(80);
+        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
+        let __end = __start;
+        let __nt = super::__action80::<>(input, &__start, &__end);
+        __symbols.push((__start, __Symbol::Variant10(__nt), __end));
+        (0, 37)
     }
     fn __reduce59<
         'input,
@@ -20285,13 +21944,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_str = r#"\"[^\"]*\""# => ActionFn(64);
+        // id_html = r#"<[^>]*>"# => ActionFn(64);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action64::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 40)
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 38)
     }
     fn __reduce60<
         'input,
@@ -20302,13 +21961,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // lbracket = "[" => ActionFn(69);
+        // id_ident = r#"[a-zA-Z_][a-zA-Z0-9_]*"# => ActionFn(61);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action69::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 41)
+        let __nt = super::__action61::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 39)
     }
     fn __reduce61<
         'input,
@@ -20319,15 +21978,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_id = id, port => ActionFn(51);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id_num = r#"[-]?[0-9]+(\\.[0-9]+)?"# => ActionFn(62);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action51::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 42)
+        let __end = __sym0.2;
+        let __nt = super::__action62::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 40)
     }
     fn __reduce62<
         'input,
@@ -20338,13 +21995,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_id = id => ActionFn(52);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id_str = r#"\"[^\"]*\""# => ActionFn(63);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action52::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 42)
+        let __nt = super::__action63::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 41)
     }
     fn __reduce63<
         'input,
@@ -20355,15 +22012,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_stmt = node_id, attr_list => ActionFn(49);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // lbracket = "[" => ActionFn(68);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action49::<>(input, __sym0, __sym1);
+        let __end = __sym0.2;
+        let __nt = super::__action68::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 43)
+        (1, 42)
     }
     fn __reduce64<
         'input,
@@ -20374,13 +22029,15 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_stmt = node_id => ActionFn(50);
-        let __sym0 = __pop_Variant1(__symbols);
+        // node_id = id, port => ActionFn(50);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action50::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 43)
+        let __end = __sym1.2;
+        let __nt = super::__action50::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (2, 43)
     }
     fn __reduce65<
         'input,
@@ -20391,15 +22048,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // port = colon, id => ActionFn(53);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // node_id = id => ActionFn(51);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action53::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 44)
+        let __end = __sym0.2;
+        let __nt = super::__action51::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (1, 43)
     }
     fn __reduce66<
         'input,
@@ -20410,13 +22065,15 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // rbracket = "]" => ActionFn(70);
-        let __sym0 = __pop_Variant0(__symbols);
+        // node_stmt = node_id, attr_list => ActionFn(48);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action70::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 45)
+        let __end = __sym1.2;
+        let __nt = super::__action48::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 44)
     }
     fn __reduce67<
         'input,
@@ -20427,13 +22084,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // semicolon = ";" => ActionFn(67);
-        let __sym0 = __pop_Variant0(__symbols);
+        // node_stmt = node_id => ActionFn(49);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action67::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 46)
+        let __nt = super::__action49::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 44)
     }
     fn __reduce68<
         'input,
@@ -20444,13 +22101,15 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = node_stmt => ActionFn(26);
+        // port = colon, id => ActionFn(52);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant6(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action26::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        let __end = __sym1.2;
+        let __nt = super::__action52::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (2, 45)
     }
     fn __reduce69<
         'input,
@@ -20461,13 +22120,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = edge_stmt => ActionFn(27);
-        let __sym0 = __pop_Variant1(__symbols);
+        // rbracket = "]" => ActionFn(69);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action27::<>(input, __sym0);
+        let __nt = super::__action69::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        (1, 46)
     }
     fn __reduce70<
         'input,
@@ -20478,11 +22137,11 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = attr_stmt => ActionFn(28);
-        let __sym0 = __pop_Variant1(__symbols);
+        // semicolon = ";" => ActionFn(66);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action28::<>(input, __sym0);
+        let __nt = super::__action66::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 47)
     }
@@ -20495,16 +22154,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = id, "=", id => ActionFn(29);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = node_stmt => ActionFn(25);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action29::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 47)
+        let __end = __sym0.2;
+        let __nt = super::__action25::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce72<
         'input,
@@ -20515,13 +22171,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = subgraph => ActionFn(30);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = edge_stmt => ActionFn(26);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action30::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        let __nt = super::__action26::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce73<
         'input,
@@ -20532,16 +22188,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_block = "{", stmt_list, "}" => ActionFn(22);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // stmt = attr_stmt => ActionFn(27);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action22::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 48)
+        let __end = __sym0.2;
+        let __nt = super::__action27::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce74<
         'input,
@@ -20552,16 +22205,16 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list = stmt, semicolon, stmt_list => ActionFn(23);
+        // stmt = id, "=", id => ActionFn(28);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action23::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 49)
+        let __nt = super::__action28::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (3, 48)
     }
     fn __reduce75<
         'input,
@@ -20572,15 +22225,13 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list = stmt, stmt_list => ActionFn(24);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = subgraph => ActionFn(29);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action24::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 49)
+        let __end = __sym0.2;
+        let __nt = super::__action29::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce76<
         'input,
@@ -20591,12 +22242,16 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list =  => ActionFn(80);
-        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
-        let __end = __start;
-        let __nt = super::__action80::<>(input, &__start, &__end);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (0, 49)
+        // stmt_block = "{", stmt_list, "}" => ActionFn(21);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant0(__symbols);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym2.2;
+        let __nt = super::__action21::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (3, 49)
     }
     fn __reduce77<
         'input,
@@ -20607,18 +22262,16 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "subgraph", id, "{", stmt_list, "}" => ActionFn(54);
-        assert!(__symbols.len() >= 5);
-        let __sym4 = __pop_Variant0(__symbols);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant0(__symbols);
+        // stmt_list = stmt, semicolon, stmt_list => ActionFn(22);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant11(__symbols);
         let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym4.2;
-        let __nt = super::__action54::<>(input, __sym0, __sym1, __sym2, __sym3, __sym4);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (5, 50)
+        let __end = __sym2.2;
+        let __nt = super::__action22::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (3, 50)
     }
     fn __reduce78<
         'input,
@@ -20629,17 +22282,15 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "subgraph", "{", stmt_list, "}" => ActionFn(55);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant0(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // stmt_list = stmt, stmt_list => ActionFn(23);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action55::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 50)
+        let __end = __sym1.2;
+        let __nt = super::__action23::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (2, 50)
     }
     fn __reduce79<
         'input,
@@ -20650,16 +22301,75 @@ mod __parse__T_strict {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "{", stmt_list, "}" => ActionFn(56);
+        // stmt_list =  => ActionFn(81);
+        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
+        let __end = __start;
+        let __nt = super::__action81::<>(input, &__start, &__end);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (0, 50)
+    }
+    fn __reduce80<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "subgraph", id, "{", stmt_list, "}" => ActionFn(53);
+        assert!(__symbols.len() >= 5);
+        let __sym4 = __pop_Variant0(__symbols);
+        let __sym3 = __pop_Variant11(__symbols);
+        let __sym2 = __pop_Variant0(__symbols);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym4.2;
+        let __nt = super::__action53::<>(input, __sym0, __sym1, __sym2, __sym3, __sym4);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (5, 51)
+    }
+    fn __reduce81<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "subgraph", "{", stmt_list, "}" => ActionFn(54);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant0(__symbols);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym3.2;
+        let __nt = super::__action54::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (4, 51)
+    }
+    fn __reduce82<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "{", stmt_list, "}" => ActionFn(55);
         assert!(__symbols.len() >= 3);
         let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant11(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action56::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 50)
+        let __nt = super::__action55::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (3, 51)
     }
 }
 #[allow(unused_imports)]
@@ -20670,6 +22380,7 @@ pub use self::__parse__T_strict::T_strictParser;
 mod __parse__T_subgraph {
 
     use std::str::FromStr;
+    use crate::cgraph::ast::*;
     #[allow(unused_extern_crates)]
     extern crate lalrpop_util as __lalrpop_util;
     #[allow(unused_imports)]
@@ -20682,6 +22393,17 @@ mod __parse__T_subgraph {
      {
         Variant0(&'input str),
         Variant1(()),
+        Variant2(AstNodeId),
+        Variant3(Vec<AstAttr>),
+        Variant4(AstGraph),
+        Variant5(AstStmt),
+        Variant6(String),
+        Variant7(Vec<AstEdgeEndpoint>),
+        Variant8(AstAttr),
+        Variant9(bool),
+        Variant10(core::option::Option<String>),
+        Variant11(Vec<AstStmt>),
+        Variant12(AstSubGraph),
     }
     const __ACTION: &[i8] = &[
         // State 0
@@ -20700,11 +22422,11 @@ mod __parse__T_subgraph {
         // State 0
         0,
         // State 1
-        -18,
+        -19,
         // State 2
-        -27,
+        -28,
         // State 3
-        -12,
+        -13,
     ];
     fn __goto(state: i8, nt: usize) -> i8 {
         match nt {
@@ -20732,7 +22454,7 @@ mod __parse__T_subgraph {
         r###""}""###,
         r###"r#"\"[^\"]*\""#"###,
         r###"r#"<[^>]*>"#"###,
-        r###"r#"[-]*[0-9]+"#"###,
+        r###"r#"[-]?[0-9]+(\\.[0-9]+)?"#"###,
         r###"r#"[a-zA-Z_][a-zA-Z0-9_]*"#"###,
     ];
     fn __expected_tokens(__state: i8) -> alloc::vec::Vec<alloc::string::String> {
@@ -20966,141 +22688,141 @@ mod __parse__T_subgraph {
             }
             8 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 6,
                 }
             }
             9 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 7,
+                    states_to_pop: 2,
+                    nonterminal_produced: 6,
                 }
             }
             10 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 8,
+                    nonterminal_produced: 7,
                 }
             }
             11 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 9,
+                    nonterminal_produced: 8,
                 }
             }
             12 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 10,
+                    nonterminal_produced: 9,
                 }
             }
             13 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 11,
+                    nonterminal_produced: 10,
                 }
             }
             14 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 12,
+                    nonterminal_produced: 11,
                 }
             }
             15 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 13,
+                    nonterminal_produced: 12,
                 }
             }
             16 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 14,
+                    nonterminal_produced: 13,
                 }
             }
             17 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 15,
+                    nonterminal_produced: 14,
                 }
             }
             18 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 16,
+                    nonterminal_produced: 15,
                 }
             }
             19 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 17,
+                    nonterminal_produced: 16,
                 }
             }
             20 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 18,
+                    nonterminal_produced: 17,
                 }
             }
             21 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 19,
+                    nonterminal_produced: 18,
                 }
             }
             22 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 20,
+                    nonterminal_produced: 19,
                 }
             }
             23 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 21,
+                    nonterminal_produced: 20,
                 }
             }
             24 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 22,
+                    nonterminal_produced: 21,
                 }
             }
             25 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
+                    nonterminal_produced: 22,
+                }
+            }
+            26 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 1,
                     nonterminal_produced: 23,
                 }
             }
-            26 => __state_machine::SimulatedReduce::Accept,
-            27 => {
-                __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 25,
-                }
-            }
+            27 => __state_machine::SimulatedReduce::Accept,
             28 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
+                    states_to_pop: 2,
                     nonterminal_produced: 25,
                 }
             }
             29 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
-                    nonterminal_produced: 26,
+                    states_to_pop: 1,
+                    nonterminal_produced: 25,
                 }
             }
             30 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 4,
                     nonterminal_produced: 26,
                 }
             }
             31 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 27,
+                    states_to_pop: 3,
+                    nonterminal_produced: 26,
                 }
             }
             32 => {
@@ -21117,55 +22839,55 @@ mod __parse__T_subgraph {
             }
             34 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 28,
+                    states_to_pop: 2,
+                    nonterminal_produced: 27,
                 }
             }
             35 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 29,
+                    nonterminal_produced: 28,
                 }
             }
             36 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 30,
+                    nonterminal_produced: 29,
                 }
             }
             37 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
-                    nonterminal_produced: 31,
+                    states_to_pop: 1,
+                    nonterminal_produced: 30,
                 }
             }
             38 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 31,
                 }
             }
             39 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 2,
                     nonterminal_produced: 31,
                 }
             }
             40 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 31,
                 }
             }
             41 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 2,
-                    nonterminal_produced: 32,
+                    nonterminal_produced: 31,
                 }
             }
             42 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 2,
                     nonterminal_produced: 32,
                 }
             }
@@ -21177,14 +22899,14 @@ mod __parse__T_subgraph {
             }
             44 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
+                    states_to_pop: 3,
                     nonterminal_produced: 32,
                 }
             }
             45 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 33,
+                    states_to_pop: 2,
+                    nonterminal_produced: 32,
                 }
             }
             46 => {
@@ -21195,8 +22917,8 @@ mod __parse__T_subgraph {
             }
             47 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
-                    nonterminal_produced: 34,
+                    states_to_pop: 1,
+                    nonterminal_produced: 33,
                 }
             }
             48 => {
@@ -21207,14 +22929,14 @@ mod __parse__T_subgraph {
             }
             49 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 4,
                     nonterminal_produced: 34,
                 }
             }
             50 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 35,
+                    states_to_pop: 3,
+                    nonterminal_produced: 34,
                 }
             }
             51 => {
@@ -21226,7 +22948,7 @@ mod __parse__T_subgraph {
             52 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 36,
+                    nonterminal_produced: 35,
                 }
             }
             53 => {
@@ -21250,85 +22972,85 @@ mod __parse__T_subgraph {
             56 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 37,
+                    nonterminal_produced: 36,
                 }
             }
             57 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 38,
+                    nonterminal_produced: 37,
                 }
             }
             58 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 39,
+                    states_to_pop: 0,
+                    nonterminal_produced: 37,
                 }
             }
             59 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 40,
+                    nonterminal_produced: 38,
                 }
             }
             60 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 41,
+                    nonterminal_produced: 39,
                 }
             }
             61 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 42,
+                    states_to_pop: 1,
+                    nonterminal_produced: 40,
                 }
             }
             62 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 42,
+                    nonterminal_produced: 41,
                 }
             }
             63 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 43,
+                    states_to_pop: 1,
+                    nonterminal_produced: 42,
                 }
             }
             64 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
+                    states_to_pop: 2,
                     nonterminal_produced: 43,
                 }
             }
             65 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 44,
+                    states_to_pop: 1,
+                    nonterminal_produced: 43,
                 }
             }
             66 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 45,
+                    states_to_pop: 2,
+                    nonterminal_produced: 44,
                 }
             }
             67 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 46,
+                    nonterminal_produced: 44,
                 }
             }
             68 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    states_to_pop: 2,
+                    nonterminal_produced: 45,
                 }
             }
             69 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    nonterminal_produced: 46,
                 }
             }
             70 => {
@@ -21339,56 +23061,74 @@ mod __parse__T_subgraph {
             }
             71 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
-                    nonterminal_produced: 47,
+                    states_to_pop: 1,
+                    nonterminal_produced: 48,
                 }
             }
             72 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 1,
-                    nonterminal_produced: 47,
+                    nonterminal_produced: 48,
                 }
             }
             73 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 1,
                     nonterminal_produced: 48,
                 }
             }
             74 => {
                 __state_machine::SimulatedReduce::Reduce {
                     states_to_pop: 3,
-                    nonterminal_produced: 49,
+                    nonterminal_produced: 48,
                 }
             }
             75 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 2,
-                    nonterminal_produced: 49,
+                    states_to_pop: 1,
+                    nonterminal_produced: 48,
                 }
             }
             76 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 0,
+                    states_to_pop: 3,
                     nonterminal_produced: 49,
                 }
             }
             77 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 5,
+                    states_to_pop: 3,
                     nonterminal_produced: 50,
                 }
             }
             78 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 4,
+                    states_to_pop: 2,
                     nonterminal_produced: 50,
                 }
             }
             79 => {
                 __state_machine::SimulatedReduce::Reduce {
-                    states_to_pop: 3,
+                    states_to_pop: 0,
                     nonterminal_produced: 50,
+                }
+            }
+            80 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 5,
+                    nonterminal_produced: 51,
+                }
+            }
+            81 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 4,
+                    nonterminal_produced: 51,
+                }
+            }
+            82 => {
+                __state_machine::SimulatedReduce::Reduce {
+                    states_to_pop: 3,
+                    nonterminal_produced: 51,
                 }
             }
             _ => panic!("invalid reduction index {}", __reduce_index)
@@ -21551,15 +23291,15 @@ mod __parse__T_subgraph {
                 __reduce25(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             26 => {
+                __reduce26(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            27 => {
                 // __T_subgraph = T_subgraph => ActionFn(7);
                 let __sym0 = __pop_Variant1(__symbols);
                 let __start = __sym0.0;
                 let __end = __sym0.2;
                 let __nt = super::__action7::<>(input, __sym0);
                 return Some(Ok(__nt));
-            }
-            27 => {
-                __reduce27(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
             28 => {
                 __reduce28(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
@@ -21717,6 +23457,15 @@ mod __parse__T_subgraph {
             79 => {
                 __reduce79(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
             }
+            80 => {
+                __reduce80(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            81 => {
+                __reduce81(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
+            82 => {
+                __reduce82(input, __lookahead_start, __symbols, core::marker::PhantomData::<(&())>)
+            }
             _ => panic!("invalid action code {}", __action)
         };
         let __states_len = __states.len();
@@ -21741,6 +23490,127 @@ mod __parse__T_subgraph {
             _ => __symbol_type_mismatch()
         }
     }
+    fn __pop_Variant8<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstAttr, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant8(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant4<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstGraph, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant4(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant2<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstNodeId, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant2(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant5<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstStmt, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant5(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant12<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, AstSubGraph, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant12(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant6<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, String, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant6(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant3<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstAttr>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant3(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant7<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstEdgeEndpoint>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant7(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant11<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, Vec<AstStmt>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant11(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant9<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, bool, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant9(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
+    fn __pop_Variant10<
+      'input,
+    >(
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>
+    ) -> (usize, core::option::Option<String>, usize)
+     {
+        match __symbols.pop() {
+            Some((__l, __Symbol::Variant10(__v), __r)) => (__l, __v, __r),
+            _ => __symbol_type_mismatch()
+        }
+    }
     fn __pop_Variant0<
       'input,
     >(
@@ -21761,10 +23631,10 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // () =  => ActionFn(79);
+        // () =  => ActionFn(78);
         let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
         let __end = __start;
-        let __nt = super::__action79::<>(input, &__start, &__end);
+        let __nt = super::__action78::<>(input, &__start, &__end);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (0, 0)
     }
@@ -21811,12 +23681,12 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Expr1 = node_id => ActionFn(18);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Expr1 = node_id => ActionFn(17);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action18::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action17::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
         (1, 3)
     }
     fn __reduce4<
@@ -21828,12 +23698,12 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Expr2 = a_list => ActionFn(19);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Expr2 = a_list => ActionFn(18);
+        let __sym0 = __pop_Variant3(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action19::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action18::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
         (1, 4)
     }
     fn __reduce5<
@@ -21862,16 +23732,16 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = "strict", graph_kind, id, stmt_block => ActionFn(15);
+        // Graph = "strict", graph_kind, id, stmt_block => ActionFn(82);
         assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym3 = __pop_Variant11(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant9(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym3.2;
-        let __nt = super::__action15::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action82::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (4, 6)
     }
     fn __reduce7<
@@ -21883,15 +23753,15 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = graph_kind, id, stmt_block => ActionFn(16);
+        // Graph = "strict", graph_kind, stmt_block => ActionFn(83);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant9(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action16::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action83::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (3, 6)
     }
     fn __reduce8<
@@ -21903,17 +23773,37 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // Graph = graph_kind, stmt_block => ActionFn(17);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // Graph = graph_kind, id, stmt_block => ActionFn(84);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant9(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action17::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 6)
+        let __end = __sym2.2;
+        let __nt = super::__action84::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
+        (3, 6)
     }
     fn __reduce9<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // Graph = graph_kind, stmt_block => ActionFn(85);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant9(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym1.2;
+        let __nt = super::__action85::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
+        (2, 6)
+    }
+    fn __reduce10<
         'input,
     >(
         input: &'input str,
@@ -21930,7 +23820,7 @@ mod __parse__T_subgraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 7)
     }
-    fn __reduce10<
+    fn __reduce11<
         'input,
     >(
         input: &'input str,
@@ -21947,7 +23837,7 @@ mod __parse__T_subgraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 8)
     }
-    fn __reduce11<
+    fn __reduce12<
         'input,
     >(
         input: &'input str,
@@ -21964,23 +23854,6 @@ mod __parse__T_subgraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 9)
     }
-    fn __reduce12<
-        'input,
-    >(
-        input: &'input str,
-        __lookahead_start: Option<&usize>,
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
-        _: core::marker::PhantomData<(&'input ())>,
-    ) -> (usize, usize)
-    {
-        // T_digraph = DIGRAPH => ActionFn(76);
-        let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action76::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 10)
-    }
     fn __reduce13<
         'input,
     >(
@@ -21990,13 +23863,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_edge = EDGE => ActionFn(74);
+        // T_digraph = DIGRAPH => ActionFn(75);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action74::<>(input, __sym0);
+        let __nt = super::__action75::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 11)
+        (1, 10)
     }
     fn __reduce14<
         'input,
@@ -22007,13 +23880,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_graph = GRAPH => ActionFn(75);
+        // T_edge = EDGE => ActionFn(73);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action75::<>(input, __sym0);
+        let __nt = super::__action73::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 12)
+        (1, 11)
     }
     fn __reduce15<
         'input,
@@ -22024,13 +23897,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_node = NODE => ActionFn(73);
+        // T_graph = GRAPH => ActionFn(74);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action73::<>(input, __sym0);
+        let __nt = super::__action74::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 13)
+        (1, 12)
     }
     fn __reduce16<
         'input,
@@ -22041,13 +23914,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_strict = STRICT => ActionFn(78);
+        // T_node = NODE => ActionFn(72);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action78::<>(input, __sym0);
+        let __nt = super::__action72::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 14)
+        (1, 13)
     }
     fn __reduce17<
         'input,
@@ -22058,13 +23931,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // T_subgraph = SUBGRAPH => ActionFn(77);
+        // T_strict = STRICT => ActionFn(77);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action77::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 15)
+        (1, 14)
     }
     fn __reduce18<
         'input,
@@ -22075,13 +23948,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // __Expr1 = Expr1 => ActionFn(1);
+        // T_subgraph = SUBGRAPH => ActionFn(76);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action1::<>(input, __sym0);
+        let __nt = super::__action76::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 16)
+        (1, 15)
     }
     fn __reduce19<
         'input,
@@ -22092,13 +23965,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // __Expr2 = Expr2 => ActionFn(2);
-        let __sym0 = __pop_Variant1(__symbols);
+        // __Expr1 = Expr1 => ActionFn(1);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action2::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 17)
+        let __nt = super::__action1::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (1, 16)
     }
     fn __reduce20<
         'input,
@@ -22109,15 +23982,32 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
+        // __Expr2 = Expr2 => ActionFn(2);
+        let __sym0 = __pop_Variant3(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym0.2;
+        let __nt = super::__action2::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (1, 17)
+    }
+    fn __reduce21<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
         // __Graph = Graph => ActionFn(0);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant4(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action0::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        __symbols.push((__start, __Symbol::Variant4(__nt), __end));
         (1, 18)
     }
-    fn __reduce21<
+    fn __reduce22<
         'input,
     >(
         input: &'input str,
@@ -22134,7 +24024,7 @@ mod __parse__T_subgraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 19)
     }
-    fn __reduce22<
+    fn __reduce23<
         'input,
     >(
         input: &'input str,
@@ -22151,7 +24041,7 @@ mod __parse__T_subgraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 20)
     }
-    fn __reduce23<
+    fn __reduce24<
         'input,
     >(
         input: &'input str,
@@ -22168,7 +24058,7 @@ mod __parse__T_subgraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 21)
     }
-    fn __reduce24<
+    fn __reduce25<
         'input,
     >(
         input: &'input str,
@@ -22185,7 +24075,7 @@ mod __parse__T_subgraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 22)
     }
-    fn __reduce25<
+    fn __reduce26<
         'input,
     >(
         input: &'input str,
@@ -22202,25 +24092,6 @@ mod __parse__T_subgraph {
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 23)
     }
-    fn __reduce27<
-        'input,
-    >(
-        input: &'input str,
-        __lookahead_start: Option<&usize>,
-        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
-        _: core::marker::PhantomData<(&'input ())>,
-    ) -> (usize, usize)
-    {
-        // a_list = elem_pair, a_list => ActionFn(36);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action36::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 25)
-    }
     fn __reduce28<
         'input,
     >(
@@ -22230,13 +24101,15 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // a_list = elem_pair => ActionFn(37);
-        let __sym0 = __pop_Variant1(__symbols);
+        // a_list = elem_pair, a_list => ActionFn(35);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant8(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action37::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 25)
+        let __end = __sym1.2;
+        let __nt = super::__action35::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (2, 25)
     }
     fn __reduce29<
         'input,
@@ -22247,17 +24120,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_list = lbracket, a_list, rbracket, attr_list => ActionFn(34);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // a_list = elem_pair => ActionFn(36);
+        let __sym0 = __pop_Variant8(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action34::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 26)
+        let __end = __sym0.2;
+        let __nt = super::__action36::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (1, 25)
     }
     fn __reduce30<
         'input,
@@ -22268,16 +24137,17 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_list = lbracket, a_list, rbracket => ActionFn(35);
-        assert!(__symbols.len() >= 3);
+        // attr_list = lbracket, a_list, rbracket, attr_list => ActionFn(33);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant3(__symbols);
         let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action35::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 26)
+        let __end = __sym3.2;
+        let __nt = super::__action33::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (4, 26)
     }
     fn __reduce31<
         'input,
@@ -22288,15 +24158,16 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "graph", attr_list => ActionFn(31);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // attr_list = lbracket, a_list, rbracket => ActionFn(34);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action31::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 27)
+        let __end = __sym2.2;
+        let __nt = super::__action34::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant3(__nt), __end));
+        (3, 26)
     }
     fn __reduce32<
         'input,
@@ -22307,14 +24178,14 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "node", attr_list => ActionFn(32);
+        // attr_stmt = "graph", attr_list => ActionFn(30);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action32::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action30::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (2, 27)
     }
     fn __reduce33<
@@ -22326,14 +24197,14 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // attr_stmt = "edge", attr_list => ActionFn(33);
+        // attr_stmt = "node", attr_list => ActionFn(31);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action33::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action31::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (2, 27)
     }
     fn __reduce34<
@@ -22345,13 +24216,15 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // colon = ":" => ActionFn(66);
+        // attr_stmt = "edge", attr_list => ActionFn(32);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action66::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 28)
+        let __end = __sym1.2;
+        let __nt = super::__action32::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 27)
     }
     fn __reduce35<
         'input,
@@ -22362,13 +24235,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // comma = "," => ActionFn(68);
+        // colon = ":" => ActionFn(65);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action68::<>(input, __sym0);
+        let __nt = super::__action65::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 29)
+        (1, 28)
     }
     fn __reduce36<
         'input,
@@ -22379,13 +24252,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // compass_pt = id_ident => ActionFn(57);
-        let __sym0 = __pop_Variant1(__symbols);
+        // comma = "," => ActionFn(67);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action57::<>(input, __sym0);
+        let __nt = super::__action67::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 30)
+        (1, 29)
     }
     fn __reduce37<
         'input,
@@ -22396,16 +24269,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, node_id, edge_rhs => ActionFn(45);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // compass_pt = id_ident => ActionFn(56);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action45::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 31)
+        let __end = __sym0.2;
+        let __nt = super::__action56::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 30)
     }
     fn __reduce38<
         'input,
@@ -22416,15 +24286,16 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, node_id => ActionFn(46);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, node_id, edge_rhs => ActionFn(44);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant7(__symbols);
+        let __sym1 = __pop_Variant2(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action46::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 31)
+        let __end = __sym2.2;
+        let __nt = super::__action44::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (3, 31)
     }
     fn __reduce39<
         'input,
@@ -22435,16 +24306,15 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, subgraph, edge_rhs => ActionFn(47);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, node_id => ActionFn(45);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant2(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action47::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 31)
+        let __end = __sym1.2;
+        let __nt = super::__action45::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (2, 31)
     }
     fn __reduce40<
         'input,
@@ -22455,15 +24325,16 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_rhs = edgeop, subgraph => ActionFn(48);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        // edge_rhs = edgeop, subgraph, edge_rhs => ActionFn(46);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant7(__symbols);
+        let __sym1 = __pop_Variant12(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action48::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 31)
+        let __end = __sym2.2;
+        let __nt = super::__action46::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (3, 31)
     }
     fn __reduce41<
         'input,
@@ -22474,15 +24345,15 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = node_id, edge_rhs => ActionFn(41);
+        // edge_rhs = edgeop, subgraph => ActionFn(47);
         assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant12(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
         let __end = __sym1.2;
-        let __nt = super::__action41::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 32)
+        let __nt = super::__action47::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant7(__nt), __end));
+        (2, 31)
     }
     fn __reduce42<
         'input,
@@ -22493,16 +24364,15 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = node_id, edge_rhs, attr_list => ActionFn(42);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edge_stmt = node_id, edge_rhs => ActionFn(40);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action42::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 32)
+        let __end = __sym1.2;
+        let __nt = super::__action40::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 32)
     }
     fn __reduce43<
         'input,
@@ -22513,15 +24383,15 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = subgraph, edge_rhs, attr_list => ActionFn(43);
+        // edge_stmt = node_id, edge_rhs, attr_list => ActionFn(41);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant3(__symbols);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action43::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action41::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
         (3, 32)
     }
     fn __reduce44<
@@ -22533,15 +24403,16 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edge_stmt = subgraph, edge_rhs => ActionFn(44);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edge_stmt = subgraph, edge_rhs, attr_list => ActionFn(42);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant3(__symbols);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action44::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 32)
+        let __end = __sym2.2;
+        let __nt = super::__action42::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (3, 32)
     }
     fn __reduce45<
         'input,
@@ -22552,13 +24423,15 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edgeop = "->" => ActionFn(71);
-        let __sym0 = __pop_Variant0(__symbols);
+        // edge_stmt = subgraph, edge_rhs => ActionFn(43);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant7(__symbols);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action71::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 33)
+        let __end = __sym1.2;
+        let __nt = super::__action43::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 32)
     }
     fn __reduce46<
         'input,
@@ -22569,11 +24442,11 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // edgeop = "--" => ActionFn(72);
+        // edgeop = "->" => ActionFn(70);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action72::<>(input, __sym0);
+        let __nt = super::__action70::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 33)
     }
@@ -22586,17 +24459,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id, semicolon => ActionFn(38);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // edgeop = "--" => ActionFn(71);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action38::<>(input, __sym0, __sym1, __sym2, __sym3);
+        let __end = __sym0.2;
+        let __nt = super::__action71::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 34)
+        (1, 33)
     }
     fn __reduce48<
         'input,
@@ -22607,16 +24476,16 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id, comma => ActionFn(39);
+        // elem_pair = id, "=", id, semicolon => ActionFn(37);
         assert!(__symbols.len() >= 4);
         let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym3.2;
-        let __nt = super::__action39::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action37::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
         (4, 34)
     }
     fn __reduce49<
@@ -22628,16 +24497,17 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // elem_pair = id, "=", id => ActionFn(40);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
+        // elem_pair = id, "=", id, comma => ActionFn(38);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
         let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action40::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 34)
+        let __end = __sym3.2;
+        let __nt = super::__action38::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
+        (4, 34)
     }
     fn __reduce50<
         'input,
@@ -22648,13 +24518,16 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // graph_kind = "graph" => ActionFn(20);
-        let __sym0 = __pop_Variant0(__symbols);
+        // elem_pair = id, "=", id => ActionFn(39);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action20::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 35)
+        let __end = __sym2.2;
+        let __nt = super::__action39::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant8(__nt), __end));
+        (3, 34)
     }
     fn __reduce51<
         'input,
@@ -22665,12 +24538,12 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // graph_kind = "digraph" => ActionFn(21);
+        // graph_kind = "graph" => ActionFn(19);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action21::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action19::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant9(__nt), __end));
         (1, 35)
     }
     fn __reduce52<
@@ -22682,13 +24555,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_ident => ActionFn(58);
-        let __sym0 = __pop_Variant1(__symbols);
+        // graph_kind = "digraph" => ActionFn(20);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action58::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 36)
+        let __nt = super::__action20::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant9(__nt), __end));
+        (1, 35)
     }
     fn __reduce53<
         'input,
@@ -22699,12 +24572,12 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_num => ActionFn(59);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_ident => ActionFn(57);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action59::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action57::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce54<
@@ -22716,12 +24589,12 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_str => ActionFn(60);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_num => ActionFn(58);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action60::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action58::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce55<
@@ -22733,12 +24606,12 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id = id_html => ActionFn(61);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id = id_str => ActionFn(59);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action61::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
+        let __nt = super::__action59::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
         (1, 36)
     }
     fn __reduce56<
@@ -22750,13 +24623,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_html = r#"<[^>]*>"# => ActionFn(65);
-        let __sym0 = __pop_Variant0(__symbols);
+        // id = id_html => ActionFn(60);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action65::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 37)
+        let __nt = super::__action60::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 36)
     }
     fn __reduce57<
         'input,
@@ -22767,13 +24640,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_ident = r#"[a-zA-Z_][a-zA-Z0-9_]*"# => ActionFn(62);
-        let __sym0 = __pop_Variant0(__symbols);
+        // id? = id => ActionFn(79);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action62::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 38)
+        let __nt = super::__action79::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant10(__nt), __end));
+        (1, 37)
     }
     fn __reduce58<
         'input,
@@ -22784,13 +24657,12 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_num = r#"[-]*[0-9]+"# => ActionFn(63);
-        let __sym0 = __pop_Variant0(__symbols);
-        let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action63::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 39)
+        // id? =  => ActionFn(80);
+        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
+        let __end = __start;
+        let __nt = super::__action80::<>(input, &__start, &__end);
+        __symbols.push((__start, __Symbol::Variant10(__nt), __end));
+        (0, 37)
     }
     fn __reduce59<
         'input,
@@ -22801,13 +24673,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // id_str = r#"\"[^\"]*\""# => ActionFn(64);
+        // id_html = r#"<[^>]*>"# => ActionFn(64);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
         let __nt = super::__action64::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 40)
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 38)
     }
     fn __reduce60<
         'input,
@@ -22818,13 +24690,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // lbracket = "[" => ActionFn(69);
+        // id_ident = r#"[a-zA-Z_][a-zA-Z0-9_]*"# => ActionFn(61);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action69::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 41)
+        let __nt = super::__action61::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 39)
     }
     fn __reduce61<
         'input,
@@ -22835,15 +24707,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_id = id, port => ActionFn(51);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id_num = r#"[-]?[0-9]+(\\.[0-9]+)?"# => ActionFn(62);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action51::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 42)
+        let __end = __sym0.2;
+        let __nt = super::__action62::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 40)
     }
     fn __reduce62<
         'input,
@@ -22854,13 +24724,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_id = id => ActionFn(52);
-        let __sym0 = __pop_Variant1(__symbols);
+        // id_str = r#"\"[^\"]*\""# => ActionFn(63);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action52::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 42)
+        let __nt = super::__action63::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (1, 41)
     }
     fn __reduce63<
         'input,
@@ -22871,15 +24741,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_stmt = node_id, attr_list => ActionFn(49);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // lbracket = "[" => ActionFn(68);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action49::<>(input, __sym0, __sym1);
+        let __end = __sym0.2;
+        let __nt = super::__action68::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 43)
+        (1, 42)
     }
     fn __reduce64<
         'input,
@@ -22890,13 +24758,15 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // node_stmt = node_id => ActionFn(50);
-        let __sym0 = __pop_Variant1(__symbols);
+        // node_id = id, port => ActionFn(50);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action50::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 43)
+        let __end = __sym1.2;
+        let __nt = super::__action50::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (2, 43)
     }
     fn __reduce65<
         'input,
@@ -22907,15 +24777,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // port = colon, id => ActionFn(53);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // node_id = id => ActionFn(51);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action53::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 44)
+        let __end = __sym0.2;
+        let __nt = super::__action51::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant2(__nt), __end));
+        (1, 43)
     }
     fn __reduce66<
         'input,
@@ -22926,13 +24794,15 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // rbracket = "]" => ActionFn(70);
-        let __sym0 = __pop_Variant0(__symbols);
+        // node_stmt = node_id, attr_list => ActionFn(48);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant3(__symbols);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action70::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 45)
+        let __end = __sym1.2;
+        let __nt = super::__action48::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (2, 44)
     }
     fn __reduce67<
         'input,
@@ -22943,13 +24813,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // semicolon = ";" => ActionFn(67);
-        let __sym0 = __pop_Variant0(__symbols);
+        // node_stmt = node_id => ActionFn(49);
+        let __sym0 = __pop_Variant2(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action67::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 46)
+        let __nt = super::__action49::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 44)
     }
     fn __reduce68<
         'input,
@@ -22960,13 +24830,15 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = node_stmt => ActionFn(26);
+        // port = colon, id => ActionFn(52);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant6(__symbols);
         let __sym0 = __pop_Variant1(__symbols);
         let __start = __sym0.0;
-        let __end = __sym0.2;
-        let __nt = super::__action26::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        let __end = __sym1.2;
+        let __nt = super::__action52::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant6(__nt), __end));
+        (2, 45)
     }
     fn __reduce69<
         'input,
@@ -22977,13 +24849,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = edge_stmt => ActionFn(27);
-        let __sym0 = __pop_Variant1(__symbols);
+        // rbracket = "]" => ActionFn(69);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action27::<>(input, __sym0);
+        let __nt = super::__action69::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        (1, 46)
     }
     fn __reduce70<
         'input,
@@ -22994,11 +24866,11 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = attr_stmt => ActionFn(28);
-        let __sym0 = __pop_Variant1(__symbols);
+        // semicolon = ";" => ActionFn(66);
+        let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action28::<>(input, __sym0);
+        let __nt = super::__action66::<>(input, __sym0);
         __symbols.push((__start, __Symbol::Variant1(__nt), __end));
         (1, 47)
     }
@@ -23011,16 +24883,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = id, "=", id => ActionFn(29);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = node_stmt => ActionFn(25);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action29::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 47)
+        let __end = __sym0.2;
+        let __nt = super::__action25::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce72<
         'input,
@@ -23031,13 +24900,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt = subgraph => ActionFn(30);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = edge_stmt => ActionFn(26);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
         let __end = __sym0.2;
-        let __nt = super::__action30::<>(input, __sym0);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (1, 47)
+        let __nt = super::__action26::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce73<
         'input,
@@ -23048,16 +24917,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_block = "{", stmt_list, "}" => ActionFn(22);
-        assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // stmt = attr_stmt => ActionFn(27);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym2.2;
-        let __nt = super::__action22::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 48)
+        let __end = __sym0.2;
+        let __nt = super::__action27::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce74<
         'input,
@@ -23068,16 +24934,16 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list = stmt, semicolon, stmt_list => ActionFn(23);
+        // stmt = id, "=", id => ActionFn(28);
         assert!(__symbols.len() >= 3);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        let __sym2 = __pop_Variant6(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant6(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action23::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 49)
+        let __nt = super::__action28::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (3, 48)
     }
     fn __reduce75<
         'input,
@@ -23088,15 +24954,13 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list = stmt, stmt_list => ActionFn(24);
-        assert!(__symbols.len() >= 2);
-        let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant1(__symbols);
+        // stmt = subgraph => ActionFn(29);
+        let __sym0 = __pop_Variant12(__symbols);
         let __start = __sym0.0;
-        let __end = __sym1.2;
-        let __nt = super::__action24::<>(input, __sym0, __sym1);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (2, 49)
+        let __end = __sym0.2;
+        let __nt = super::__action29::<>(input, __sym0);
+        __symbols.push((__start, __Symbol::Variant5(__nt), __end));
+        (1, 48)
     }
     fn __reduce76<
         'input,
@@ -23107,12 +24971,16 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // stmt_list =  => ActionFn(80);
-        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
-        let __end = __start;
-        let __nt = super::__action80::<>(input, &__start, &__end);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (0, 49)
+        // stmt_block = "{", stmt_list, "}" => ActionFn(21);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant0(__symbols);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym2.2;
+        let __nt = super::__action21::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (3, 49)
     }
     fn __reduce77<
         'input,
@@ -23123,18 +24991,16 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "subgraph", id, "{", stmt_list, "}" => ActionFn(54);
-        assert!(__symbols.len() >= 5);
-        let __sym4 = __pop_Variant0(__symbols);
-        let __sym3 = __pop_Variant1(__symbols);
-        let __sym2 = __pop_Variant0(__symbols);
+        // stmt_list = stmt, semicolon, stmt_list => ActionFn(22);
+        assert!(__symbols.len() >= 3);
+        let __sym2 = __pop_Variant11(__symbols);
         let __sym1 = __pop_Variant1(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym4.2;
-        let __nt = super::__action54::<>(input, __sym0, __sym1, __sym2, __sym3, __sym4);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (5, 50)
+        let __end = __sym2.2;
+        let __nt = super::__action22::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (3, 50)
     }
     fn __reduce78<
         'input,
@@ -23145,17 +25011,15 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "subgraph", "{", stmt_list, "}" => ActionFn(55);
-        assert!(__symbols.len() >= 4);
-        let __sym3 = __pop_Variant0(__symbols);
-        let __sym2 = __pop_Variant1(__symbols);
-        let __sym1 = __pop_Variant0(__symbols);
-        let __sym0 = __pop_Variant0(__symbols);
+        // stmt_list = stmt, stmt_list => ActionFn(23);
+        assert!(__symbols.len() >= 2);
+        let __sym1 = __pop_Variant11(__symbols);
+        let __sym0 = __pop_Variant5(__symbols);
         let __start = __sym0.0;
-        let __end = __sym3.2;
-        let __nt = super::__action55::<>(input, __sym0, __sym1, __sym2, __sym3);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (4, 50)
+        let __end = __sym1.2;
+        let __nt = super::__action23::<>(input, __sym0, __sym1);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (2, 50)
     }
     fn __reduce79<
         'input,
@@ -23166,16 +25030,75 @@ mod __parse__T_subgraph {
         _: core::marker::PhantomData<(&'input ())>,
     ) -> (usize, usize)
     {
-        // subgraph = "{", stmt_list, "}" => ActionFn(56);
+        // stmt_list =  => ActionFn(81);
+        let __start = __lookahead_start.cloned().or_else(|| __symbols.last().map(|s| s.2)).unwrap_or_default();
+        let __end = __start;
+        let __nt = super::__action81::<>(input, &__start, &__end);
+        __symbols.push((__start, __Symbol::Variant11(__nt), __end));
+        (0, 50)
+    }
+    fn __reduce80<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "subgraph", id, "{", stmt_list, "}" => ActionFn(53);
+        assert!(__symbols.len() >= 5);
+        let __sym4 = __pop_Variant0(__symbols);
+        let __sym3 = __pop_Variant11(__symbols);
+        let __sym2 = __pop_Variant0(__symbols);
+        let __sym1 = __pop_Variant6(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym4.2;
+        let __nt = super::__action53::<>(input, __sym0, __sym1, __sym2, __sym3, __sym4);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (5, 51)
+    }
+    fn __reduce81<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "subgraph", "{", stmt_list, "}" => ActionFn(54);
+        assert!(__symbols.len() >= 4);
+        let __sym3 = __pop_Variant0(__symbols);
+        let __sym2 = __pop_Variant11(__symbols);
+        let __sym1 = __pop_Variant0(__symbols);
+        let __sym0 = __pop_Variant0(__symbols);
+        let __start = __sym0.0;
+        let __end = __sym3.2;
+        let __nt = super::__action54::<>(input, __sym0, __sym1, __sym2, __sym3);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (4, 51)
+    }
+    fn __reduce82<
+        'input,
+    >(
+        input: &'input str,
+        __lookahead_start: Option<&usize>,
+        __symbols: &mut alloc::vec::Vec<(usize,__Symbol<'input>,usize)>,
+        _: core::marker::PhantomData<(&'input ())>,
+    ) -> (usize, usize)
+    {
+        // subgraph = "{", stmt_list, "}" => ActionFn(55);
         assert!(__symbols.len() >= 3);
         let __sym2 = __pop_Variant0(__symbols);
-        let __sym1 = __pop_Variant1(__symbols);
+        let __sym1 = __pop_Variant11(__symbols);
         let __sym0 = __pop_Variant0(__symbols);
         let __start = __sym0.0;
         let __end = __sym2.2;
-        let __nt = super::__action56::<>(input, __sym0, __sym1, __sym2);
-        __symbols.push((__start, __Symbol::Variant1(__nt), __end));
-        (3, 50)
+        let __nt = super::__action55::<>(input, __sym0, __sym1, __sym2);
+        __symbols.push((__start, __Symbol::Variant12(__nt), __end));
+        (3, 51)
     }
 }
 #[allow(unused_imports)]
@@ -23184,6 +25107,7 @@ pub use self::__parse__T_subgraph::T_subgraphParser;
 mod __intern_token {
     #![allow(unused_imports)]
     use std::str::FromStr;
+    use crate::cgraph::ast::*;
     #[allow(unused_extern_crates)]
     extern crate lalrpop_util as __lalrpop_util;
     #[allow(unused_imports)]
@@ -23194,7 +25118,7 @@ mod __intern_token {
         let __strs: &[(&str, bool)] = &[
             ("(?:\"[\0-!\\#-\u{10ffff}]*\")", false),
             ("(?:<[\0-=\\?-\u{10ffff}]*>)", false),
-            ("(?:\\-*[0-9]+)", false),
+            ("(?:\\-?[0-9]+((?:\\.[0-9]+))?)", false),
             ("(?:[A-Z_a-z][0-9A-Z_a-z]*)", false),
             (",", false),
             ("(?:\\-\\-)", false),
@@ -23228,9 +25152,10 @@ fn __action0<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-)
+    (_, __0, _): (usize, AstGraph, usize),
+) -> AstGraph
 {
+    __0
 }
 
 #[allow(unused_variables)]
@@ -23239,9 +25164,10 @@ fn __action1<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-)
+    (_, __0, _): (usize, AstNodeId, usize),
+) -> AstNodeId
 {
+    __0
 }
 
 #[allow(unused_variables)]
@@ -23250,9 +25176,10 @@ fn __action2<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-)
+    (_, __0, _): (usize, Vec<AstAttr>, usize),
+) -> Vec<AstAttr>
 {
+    __0
 }
 
 #[allow(unused_variables)]
@@ -23393,12 +25320,18 @@ fn __action15<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, &'input str, usize),
-    (_, __1, _): (usize, (), usize),
-    (_, __2, _): (usize, (), usize),
-    (_, __3, _): (usize, (), usize),
-)
+    (_, _, _): (usize, &'input str, usize),
+    (_, k, _): (usize, bool, usize),
+    (_, name, _): (usize, core::option::Option<String>, usize),
+    (_, stmts, _): (usize, Vec<AstStmt>, usize),
+) -> AstGraph
 {
+    AstGraph {
+        strict: true,
+        directed: k,
+        id: name,
+        stmts,
+    }
 }
 
 #[allow(unused_variables)]
@@ -23407,11 +25340,17 @@ fn __action16<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-    (_, __1, _): (usize, (), usize),
-    (_, __2, _): (usize, (), usize),
-)
+    (_, k, _): (usize, bool, usize),
+    (_, name, _): (usize, core::option::Option<String>, usize),
+    (_, stmts, _): (usize, Vec<AstStmt>, usize),
+) -> AstGraph
 {
+    AstGraph {
+        strict: false,
+        directed: k,
+        id: name,
+        stmts,
+    }
 }
 
 #[allow(unused_variables)]
@@ -23420,10 +25359,10 @@ fn __action17<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-    (_, __1, _): (usize, (), usize),
-)
+    (_, __0, _): (usize, AstNodeId, usize),
+) -> AstNodeId
 {
+    __0
 }
 
 #[allow(unused_variables)]
@@ -23432,9 +25371,10 @@ fn __action18<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-)
+    (_, __0, _): (usize, Vec<AstAttr>, usize),
+) -> Vec<AstAttr>
 {
+    __0
 }
 
 #[allow(unused_variables)]
@@ -23443,9 +25383,10 @@ fn __action19<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-)
+    (_, __0, _): (usize, &'input str, usize),
+) -> bool
 {
+    false
 }
 
 #[allow(unused_variables)]
@@ -23455,8 +25396,9 @@ fn __action20<
 >(
     input: &'input str,
     (_, __0, _): (usize, &'input str, usize),
-)
+) -> bool
 {
+    true
 }
 
 #[allow(unused_variables)]
@@ -23465,9 +25407,12 @@ fn __action21<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, &'input str, usize),
-)
+    (_, _, _): (usize, &'input str, usize),
+    (_, __0, _): (usize, Vec<AstStmt>, usize),
+    (_, _, _): (usize, &'input str, usize),
+) -> Vec<AstStmt>
 {
+    __0
 }
 
 #[allow(unused_variables)]
@@ -23476,11 +25421,15 @@ fn __action22<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, &'input str, usize),
-    (_, __1, _): (usize, (), usize),
-    (_, __2, _): (usize, &'input str, usize),
-)
+    (_, s, _): (usize, AstStmt, usize),
+    (_, _, _): (usize, (), usize),
+    (_, mut rest, _): (usize, Vec<AstStmt>, usize),
+) -> Vec<AstStmt>
 {
+    {
+        rest.insert(0, s);
+        rest
+    }
 }
 
 #[allow(unused_variables)]
@@ -23489,11 +25438,14 @@ fn __action23<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-    (_, __1, _): (usize, (), usize),
-    (_, __2, _): (usize, (), usize),
-)
+    (_, s, _): (usize, AstStmt, usize),
+    (_, mut rest, _): (usize, Vec<AstStmt>, usize),
+) -> Vec<AstStmt>
 {
+    {
+        rest.insert(0, s);
+        rest
+    }
 }
 
 #[allow(unused_variables)]
@@ -23503,9 +25455,9 @@ fn __action24<
 >(
     input: &'input str,
     (_, __0, _): (usize, (), usize),
-    (_, __1, _): (usize, (), usize),
-)
+) -> Vec<AstStmt>
 {
+    Vec::new()
 }
 
 #[allow(unused_variables)]
@@ -23514,9 +25466,10 @@ fn __action25<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-)
+    (_, __0, _): (usize, AstStmt, usize),
+) -> AstStmt
 {
+    __0
 }
 
 #[allow(unused_variables)]
@@ -23525,9 +25478,10 @@ fn __action26<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-)
+    (_, __0, _): (usize, AstStmt, usize),
+) -> AstStmt
 {
+    __0
 }
 
 #[allow(unused_variables)]
@@ -23536,9 +25490,10 @@ fn __action27<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-)
+    (_, __0, _): (usize, AstStmt, usize),
+) -> AstStmt
 {
+    __0
 }
 
 #[allow(unused_variables)]
@@ -23547,9 +25502,12 @@ fn __action28<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-)
+    (_, lhs, _): (usize, String, usize),
+    (_, _, _): (usize, &'input str, usize),
+    (_, rhs, _): (usize, String, usize),
+) -> AstStmt
 {
+    AstStmt::Assign { lhs, rhs }
 }
 
 #[allow(unused_variables)]
@@ -23558,11 +25516,10 @@ fn __action29<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-    (_, __1, _): (usize, &'input str, usize),
-    (_, __2, _): (usize, (), usize),
-)
+    (_, sg, _): (usize, AstSubGraph, usize),
+) -> AstStmt
 {
+    AstStmt::SubGraph(sg)
 }
 
 #[allow(unused_variables)]
@@ -23571,9 +25528,11 @@ fn __action30<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-)
+    (_, _, _): (usize, &'input str, usize),
+    (_, attrs, _): (usize, Vec<AstAttr>, usize),
+) -> AstStmt
 {
+    AstStmt::Attr { target: AstAttrTarget::Graph, attrs }
 }
 
 #[allow(unused_variables)]
@@ -23582,10 +25541,11 @@ fn __action31<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, &'input str, usize),
-    (_, __1, _): (usize, (), usize),
-)
+    (_, _, _): (usize, &'input str, usize),
+    (_, attrs, _): (usize, Vec<AstAttr>, usize),
+) -> AstStmt
 {
+    AstStmt::Attr { target: AstAttrTarget::Node, attrs }
 }
 
 #[allow(unused_variables)]
@@ -23594,10 +25554,11 @@ fn __action32<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, &'input str, usize),
-    (_, __1, _): (usize, (), usize),
-)
+    (_, _, _): (usize, &'input str, usize),
+    (_, attrs, _): (usize, Vec<AstAttr>, usize),
+) -> AstStmt
 {
+    AstStmt::Attr { target: AstAttrTarget::Edge, attrs }
 }
 
 #[allow(unused_variables)]
@@ -23606,10 +25567,16 @@ fn __action33<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, &'input str, usize),
-    (_, __1, _): (usize, (), usize),
-)
+    (_, _, _): (usize, (), usize),
+    (_, mut a, _): (usize, Vec<AstAttr>, usize),
+    (_, _, _): (usize, (), usize),
+    (_, mut rest, _): (usize, Vec<AstAttr>, usize),
+) -> Vec<AstAttr>
 {
+    {
+        a.append(&mut rest);
+        a
+    }
 }
 
 #[allow(unused_variables)]
@@ -23618,12 +25585,12 @@ fn __action34<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-    (_, __1, _): (usize, (), usize),
-    (_, __2, _): (usize, (), usize),
-    (_, __3, _): (usize, (), usize),
-)
+    (_, _, _): (usize, (), usize),
+    (_, a, _): (usize, Vec<AstAttr>, usize),
+    (_, _, _): (usize, (), usize),
+) -> Vec<AstAttr>
 {
+    a
 }
 
 #[allow(unused_variables)]
@@ -23632,11 +25599,14 @@ fn __action35<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-    (_, __1, _): (usize, (), usize),
-    (_, __2, _): (usize, (), usize),
-)
+    (_, e, _): (usize, AstAttr, usize),
+    (_, mut rest, _): (usize, Vec<AstAttr>, usize),
+) -> Vec<AstAttr>
 {
+    {
+        rest.insert(0, e);
+        rest
+    }
 }
 
 #[allow(unused_variables)]
@@ -23645,10 +25615,10 @@ fn __action36<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-    (_, __1, _): (usize, (), usize),
-)
+    (_, e, _): (usize, AstAttr, usize),
+) -> Vec<AstAttr>
 {
+    vec![e]
 }
 
 #[allow(unused_variables)]
@@ -23657,9 +25627,13 @@ fn __action37<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-)
+    (_, k, _): (usize, String, usize),
+    (_, _, _): (usize, &'input str, usize),
+    (_, v, _): (usize, String, usize),
+    (_, _, _): (usize, (), usize),
+) -> AstAttr
 {
+    AstAttr { key: k, value: v }
 }
 
 #[allow(unused_variables)]
@@ -23668,12 +25642,13 @@ fn __action38<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-    (_, __1, _): (usize, &'input str, usize),
-    (_, __2, _): (usize, (), usize),
-    (_, __3, _): (usize, (), usize),
-)
+    (_, k, _): (usize, String, usize),
+    (_, _, _): (usize, &'input str, usize),
+    (_, v, _): (usize, String, usize),
+    (_, _, _): (usize, (), usize),
+) -> AstAttr
 {
+    AstAttr { key: k, value: v }
 }
 
 #[allow(unused_variables)]
@@ -23682,12 +25657,12 @@ fn __action39<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-    (_, __1, _): (usize, &'input str, usize),
-    (_, __2, _): (usize, (), usize),
-    (_, __3, _): (usize, (), usize),
-)
+    (_, k, _): (usize, String, usize),
+    (_, _, _): (usize, &'input str, usize),
+    (_, v, _): (usize, String, usize),
+) -> AstAttr
 {
+    AstAttr { key: k, value: v }
 }
 
 #[allow(unused_variables)]
@@ -23696,11 +25671,15 @@ fn __action40<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-    (_, __1, _): (usize, &'input str, usize),
-    (_, __2, _): (usize, (), usize),
-)
+    (_, n, _): (usize, AstNodeId, usize),
+    (_, rhs, _): (usize, Vec<AstEdgeEndpoint>, usize),
+) -> AstStmt
 {
+    {
+        let mut endpoints = vec![AstEdgeEndpoint::Node(n)];
+        endpoints.extend(rhs);
+        AstStmt::Edge { endpoints, attrs: Vec::new() }
+    }
 }
 
 #[allow(unused_variables)]
@@ -23709,10 +25688,16 @@ fn __action41<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-    (_, __1, _): (usize, (), usize),
-)
+    (_, n, _): (usize, AstNodeId, usize),
+    (_, rhs, _): (usize, Vec<AstEdgeEndpoint>, usize),
+    (_, attrs, _): (usize, Vec<AstAttr>, usize),
+) -> AstStmt
 {
+    {
+        let mut endpoints = vec![AstEdgeEndpoint::Node(n)];
+        endpoints.extend(rhs);
+        AstStmt::Edge { endpoints, attrs }
+    }
 }
 
 #[allow(unused_variables)]
@@ -23721,11 +25706,16 @@ fn __action42<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-    (_, __1, _): (usize, (), usize),
-    (_, __2, _): (usize, (), usize),
-)
+    (_, sg, _): (usize, AstSubGraph, usize),
+    (_, rhs, _): (usize, Vec<AstEdgeEndpoint>, usize),
+    (_, attrs, _): (usize, Vec<AstAttr>, usize),
+) -> AstStmt
 {
+    {
+        let mut endpoints = vec![AstEdgeEndpoint::SubGraph(sg)];
+        endpoints.extend(rhs);
+        AstStmt::Edge { endpoints, attrs }
+    }
 }
 
 #[allow(unused_variables)]
@@ -23734,11 +25724,15 @@ fn __action43<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-    (_, __1, _): (usize, (), usize),
-    (_, __2, _): (usize, (), usize),
-)
+    (_, sg, _): (usize, AstSubGraph, usize),
+    (_, rhs, _): (usize, Vec<AstEdgeEndpoint>, usize),
+) -> AstStmt
 {
+    {
+        let mut endpoints = vec![AstEdgeEndpoint::SubGraph(sg)];
+        endpoints.extend(rhs);
+        AstStmt::Edge { endpoints, attrs: Vec::new() }
+    }
 }
 
 #[allow(unused_variables)]
@@ -23747,10 +25741,15 @@ fn __action44<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-    (_, __1, _): (usize, (), usize),
-)
+    (_, _, _): (usize, (), usize),
+    (_, n, _): (usize, AstNodeId, usize),
+    (_, mut rest, _): (usize, Vec<AstEdgeEndpoint>, usize),
+) -> Vec<AstEdgeEndpoint>
 {
+    {
+        rest.insert(0, AstEdgeEndpoint::Node(n));
+        rest
+    }
 }
 
 #[allow(unused_variables)]
@@ -23759,11 +25758,11 @@ fn __action45<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-    (_, __1, _): (usize, (), usize),
-    (_, __2, _): (usize, (), usize),
-)
+    (_, _, _): (usize, (), usize),
+    (_, n, _): (usize, AstNodeId, usize),
+) -> Vec<AstEdgeEndpoint>
 {
+    vec![AstEdgeEndpoint::Node(n)]
 }
 
 #[allow(unused_variables)]
@@ -23772,10 +25771,15 @@ fn __action46<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-    (_, __1, _): (usize, (), usize),
-)
+    (_, _, _): (usize, (), usize),
+    (_, sg, _): (usize, AstSubGraph, usize),
+    (_, mut rest, _): (usize, Vec<AstEdgeEndpoint>, usize),
+) -> Vec<AstEdgeEndpoint>
 {
+    {
+        rest.insert(0, AstEdgeEndpoint::SubGraph(sg));
+        rest
+    }
 }
 
 #[allow(unused_variables)]
@@ -23784,11 +25788,11 @@ fn __action47<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-    (_, __1, _): (usize, (), usize),
-    (_, __2, _): (usize, (), usize),
-)
+    (_, _, _): (usize, (), usize),
+    (_, sg, _): (usize, AstSubGraph, usize),
+) -> Vec<AstEdgeEndpoint>
 {
+    vec![AstEdgeEndpoint::SubGraph(sg)]
 }
 
 #[allow(unused_variables)]
@@ -23797,10 +25801,11 @@ fn __action48<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-    (_, __1, _): (usize, (), usize),
-)
+    (_, nid, _): (usize, AstNodeId, usize),
+    (_, attrs, _): (usize, Vec<AstAttr>, usize),
+) -> AstStmt
 {
+    AstStmt::Node { id: nid, attrs }
 }
 
 #[allow(unused_variables)]
@@ -23809,10 +25814,10 @@ fn __action49<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-    (_, __1, _): (usize, (), usize),
-)
+    (_, nid, _): (usize, AstNodeId, usize),
+) -> AstStmt
 {
+    AstStmt::Node { id: nid, attrs: Vec::new() }
 }
 
 #[allow(unused_variables)]
@@ -23821,9 +25826,11 @@ fn __action50<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-)
+    (_, name, _): (usize, String, usize),
+    (_, p, _): (usize, String, usize),
+) -> AstNodeId
 {
+    AstNodeId { name, port: Some(p) }
 }
 
 #[allow(unused_variables)]
@@ -23832,10 +25839,10 @@ fn __action51<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-    (_, __1, _): (usize, (), usize),
-)
+    (_, name, _): (usize, String, usize),
+) -> AstNodeId
 {
+    AstNodeId { name, port: None }
 }
 
 #[allow(unused_variables)]
@@ -23844,9 +25851,11 @@ fn __action52<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-)
+    (_, _, _): (usize, (), usize),
+    (_, name, _): (usize, String, usize),
+) -> String
 {
+    name
 }
 
 #[allow(unused_variables)]
@@ -23855,10 +25864,14 @@ fn __action53<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-    (_, __1, _): (usize, (), usize),
-)
+    (_, _, _): (usize, &'input str, usize),
+    (_, name, _): (usize, String, usize),
+    (_, _, _): (usize, &'input str, usize),
+    (_, stmts, _): (usize, Vec<AstStmt>, usize),
+    (_, _, _): (usize, &'input str, usize),
+) -> AstSubGraph
 {
+    AstSubGraph { id: Some(name), stmts }
 }
 
 #[allow(unused_variables)]
@@ -23867,13 +25880,13 @@ fn __action54<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, &'input str, usize),
-    (_, __1, _): (usize, (), usize),
-    (_, __2, _): (usize, &'input str, usize),
-    (_, __3, _): (usize, (), usize),
-    (_, __4, _): (usize, &'input str, usize),
-)
+    (_, _, _): (usize, &'input str, usize),
+    (_, _, _): (usize, &'input str, usize),
+    (_, stmts, _): (usize, Vec<AstStmt>, usize),
+    (_, _, _): (usize, &'input str, usize),
+) -> AstSubGraph
 {
+    AstSubGraph { id: None, stmts }
 }
 
 #[allow(unused_variables)]
@@ -23882,12 +25895,12 @@ fn __action55<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, &'input str, usize),
-    (_, __1, _): (usize, &'input str, usize),
-    (_, __2, _): (usize, (), usize),
-    (_, __3, _): (usize, &'input str, usize),
-)
+    (_, _, _): (usize, &'input str, usize),
+    (_, stmts, _): (usize, Vec<AstStmt>, usize),
+    (_, _, _): (usize, &'input str, usize),
+) -> AstSubGraph
 {
+    AstSubGraph { id: None, stmts }
 }
 
 #[allow(unused_variables)]
@@ -23896,11 +25909,10 @@ fn __action56<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, &'input str, usize),
-    (_, __1, _): (usize, (), usize),
-    (_, __2, _): (usize, &'input str, usize),
-)
+    (_, __0, _): (usize, String, usize),
+) -> String
 {
+    __0
 }
 
 #[allow(unused_variables)]
@@ -23909,9 +25921,10 @@ fn __action57<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-)
+    (_, __0, _): (usize, String, usize),
+) -> String
 {
+    __0
 }
 
 #[allow(unused_variables)]
@@ -23920,9 +25933,10 @@ fn __action58<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-)
+    (_, __0, _): (usize, String, usize),
+) -> String
 {
+    __0
 }
 
 #[allow(unused_variables)]
@@ -23931,9 +25945,10 @@ fn __action59<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-)
+    (_, __0, _): (usize, String, usize),
+) -> String
 {
+    __0
 }
 
 #[allow(unused_variables)]
@@ -23942,9 +25957,10 @@ fn __action60<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-)
+    (_, __0, _): (usize, String, usize),
+) -> String
 {
+    __0
 }
 
 #[allow(unused_variables)]
@@ -23953,9 +25969,10 @@ fn __action61<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
-)
+    (_, s, _): (usize, &'input str, usize),
+) -> String
 {
+    s.to_string()
 }
 
 #[allow(unused_variables)]
@@ -23964,9 +25981,10 @@ fn __action62<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, &'input str, usize),
-)
+    (_, s, _): (usize, &'input str, usize),
+) -> String
 {
+    s.to_string()
 }
 
 #[allow(unused_variables)]
@@ -23975,9 +25993,13 @@ fn __action63<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, &'input str, usize),
-)
+    (_, s, _): (usize, &'input str, usize),
+) -> String
 {
+    {
+        // Strip surrounding quotes
+        s[1..s.len()-1].to_string()
+    }
 }
 
 #[allow(unused_variables)]
@@ -23986,9 +26008,10 @@ fn __action64<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, &'input str, usize),
-)
+    (_, s, _): (usize, &'input str, usize),
+) -> String
 {
+    s.to_string()
 }
 
 #[allow(unused_variables)]
@@ -24074,7 +26097,7 @@ fn __action72<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, &'input str, usize),
+    (_, __0, _): (usize, (), usize),
 )
 {
 }
@@ -24140,7 +26163,8 @@ fn __action78<
     'input,
 >(
     input: &'input str,
-    (_, __0, _): (usize, (), usize),
+    __lookbehind: &usize,
+    __lookahead: &usize,
 )
 {
 }
@@ -24151,34 +26175,159 @@ fn __action79<
     'input,
 >(
     input: &'input str,
-    __lookbehind: &usize,
-    __lookahead: &usize,
-)
+    (_, __0, _): (usize, String, usize),
+) -> core::option::Option<String>
 {
+    Some(__0)
 }
 
 #[allow(unused_variables)]
-#[allow(clippy::too_many_arguments, clippy::needless_lifetimes,
-    clippy::just_underscores_and_digits)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes, clippy::just_underscores_and_digits)]
 fn __action80<
     'input,
 >(
     input: &'input str,
     __lookbehind: &usize,
     __lookahead: &usize,
-)
+) -> core::option::Option<String>
+{
+    None
+}
+
+#[allow(unused_variables)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes,
+    clippy::just_underscores_and_digits)]
+fn __action81<
+    'input,
+>(
+    input: &'input str,
+    __lookbehind: &usize,
+    __lookahead: &usize,
+) -> Vec<AstStmt>
 {
     let __start0 = *__lookbehind;
     let __end0 = *__lookahead;
-    let __temp0 = __action79(
+    let __temp0 = __action78(
         input,
         &__start0,
         &__end0,
     );
     let __temp0 = (__start0, __temp0, __end0);
-    __action25(
+    __action24(
         input,
         __temp0,
+    )
+}
+
+#[allow(unused_variables)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes,
+    clippy::just_underscores_and_digits)]
+fn __action82<
+    'input,
+>(
+    input: &'input str,
+    __0: (usize, &'input str, usize),
+    __1: (usize, bool, usize),
+    __2: (usize, String, usize),
+    __3: (usize, Vec<AstStmt>, usize),
+) -> AstGraph
+{
+    let __start0 = __2.0;
+    let __end0 = __2.2;
+    let __temp0 = __action79(
+        input,
+        __2,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action15(
+        input,
+        __0,
+        __1,
+        __temp0,
+        __3,
+    )
+}
+
+#[allow(unused_variables)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes,
+    clippy::just_underscores_and_digits)]
+fn __action83<
+    'input,
+>(
+    input: &'input str,
+    __0: (usize, &'input str, usize),
+    __1: (usize, bool, usize),
+    __2: (usize, Vec<AstStmt>, usize),
+) -> AstGraph
+{
+    let __start0 = __1.2;
+    let __end0 = __2.0;
+    let __temp0 = __action80(
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action15(
+        input,
+        __0,
+        __1,
+        __temp0,
+        __2,
+    )
+}
+
+#[allow(unused_variables)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes,
+    clippy::just_underscores_and_digits)]
+fn __action84<
+    'input,
+>(
+    input: &'input str,
+    __0: (usize, bool, usize),
+    __1: (usize, String, usize),
+    __2: (usize, Vec<AstStmt>, usize),
+) -> AstGraph
+{
+    let __start0 = __1.0;
+    let __end0 = __1.2;
+    let __temp0 = __action79(
+        input,
+        __1,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action16(
+        input,
+        __0,
+        __temp0,
+        __2,
+    )
+}
+
+#[allow(unused_variables)]
+#[allow(clippy::too_many_arguments, clippy::needless_lifetimes,
+    clippy::just_underscores_and_digits)]
+fn __action85<
+    'input,
+>(
+    input: &'input str,
+    __0: (usize, bool, usize),
+    __1: (usize, Vec<AstStmt>, usize),
+) -> AstGraph
+{
+    let __start0 = __0.2;
+    let __end0 = __1.0;
+    let __temp0 = __action80(
+        input,
+        &__start0,
+        &__end0,
+    );
+    let __temp0 = (__start0, __temp0, __end0);
+    __action16(
+        input,
+        __0,
+        __temp0,
+        __1,
     )
 }
 #[allow(clippy::type_complexity, dead_code)]

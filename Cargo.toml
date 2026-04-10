@@ -15,3 +15,11 @@ lalrpop = { version = "0.20.2", features = ["lexer"] }
 name = "dot"
 path = "src/bin/dot/main.rs"
 
+[[bin]]
+name = "rdot"
+path = "src/bin/rdot/main.rs"
+
+[[bin]]
+name = "xgr"
+path = "src/bin/xgr/main.rs"
+

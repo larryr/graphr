@@ -1,69 +1,114 @@
 
 use std::env;
+use std::fs::File;
+use std::io::{self, Write};
+use crate::cgraph::Graph;
+use crate::layout::{Layout, DotLayout};
+use crate::render::{Render, DotRenderer, PlainRenderer};
 
+/// Graphviz Context — manages the graph processing pipeline.
 pub struct Ctx {
-
+    input_files: Vec<String>,
+    output_file: Option<String>,
+    output_format: String,
 }
 
 pub fn new() -> Ctx {
-    println!("new Ctx");
     Ctx {
-
+        input_files: Vec::new(),
+        output_file: None,
+        output_format: "dot".to_string(),
     }
 }
-/** notes
-- keep in context any errors over all operations that can be emitted on exit
--
-**/
+
 impl Ctx {
     pub fn print(&self) {
-        println!("Hello, from module ctx!");
+        println!("Ctx: format={}, inputs={:?}, output={:?}",
+            self.output_format, self.input_files, self.output_file);
     }
 
-    pub fn parse_args(&self) {
-        println!("Hello, from module ctx2!");
-        for arg in env::args().skip(1) {
-            println!("{}", arg);
+    /// Parse command-line arguments.
+    /// Supports: -T<format>, -o <file>, and input files.
+    pub fn parse_args(&mut self) {
+        let args: Vec<String> = env::args().skip(1).collect();
+        let mut i = 0;
+        while i < args.len() {
+            let arg = &args[i];
+            if arg.starts_with("-T") {
+                self.output_format = arg[2..].to_string();
+            } else if arg == "-o" {
+                i += 1;
+                if i < args.len() {
+                    self.output_file = Some(args[i].clone());
+                }
+            } else if !arg.starts_with('-') {
+                self.input_files.push(arg.clone());
+            }
+            i += 1;
         }
     }
 
-    pub fn next_input_graph(&self) -> Vec<&str> {
-        let mut v = vec!["one", "two", "three"];
-        v.push("four");
-        v
+    /// Read and parse all input graphs.
+    /// If no input files specified, reads from stdin.
+    pub fn next_input_graph(&self) -> Vec<Graph> {
+        let mut graphs = Vec::new();
+
+        if self.input_files.is_empty() {
+            // Read from stdin
+            let mut stdin = io::stdin();
+            match Graph::parse(&mut stdin) {
+                Ok(g) => graphs.push(g),
+                Err(e) => eprintln!("Error parsing stdin: {}", e),
+            }
+        } else {
+            for path in &self.input_files {
+                match File::open(path) {
+                    Ok(mut f) => {
+                        match Graph::parse(&mut f) {
+                            Ok(g) => graphs.push(g),
+                            Err(e) => eprintln!("Error parsing {}: {}", path, e),
+                        }
+                    }
+                    Err(e) => eprintln!("Error opening {}: {}", path, e),
+                }
+            }
+        }
+
+        graphs
     }
 
-    /**
-    * layout_jobs - layout graph according to options in context.
-    * # Arguments
-    * `g` - graph structure
-    * # Remarks
-    */
-    pub fn layout_jobs(&self, g: &str) {
-        println!("layout_jobs: {}", g);
+    /// Run layout on a graph.
+    pub fn layout_jobs(&self, g: &mut Graph) {
+        let layout = DotLayout::new();
+        layout.layout(g);
     }
 
-    //
-    // Render functions
-    // not implemented:
-    // render()
-    //
+    /// Render a graph to the configured output.
+    pub fn render_jobs(&self, g: &Graph) {
+        let mut output: Box<dyn Write> = match &self.output_file {
+            Some(path) => {
+                match File::create(path) {
+                    Ok(f) => Box::new(f),
+                    Err(e) => {
+                        eprintln!("Error creating {}: {}", path, e);
+                        return;
+                    }
+                }
+            }
+            None => Box::new(io::stdout()),
+        };
 
-    /**
-    * render_jobs - render layout according to options in context.
-    * # Arguments
-    * `g` - graph structure
-    * # Remarks
-    */
-    pub fn render_jobs(&self, g: &str) {
-        println!("render_jobs: {}", g);
+        let result = match self.output_format.as_str() {
+            "plain" => PlainRenderer::new().render(g, &mut output),
+            "dot" | _ => DotRenderer::new().render(g, &mut output),
+        };
+
+        if let Err(e) = result {
+            eprintln!("Error rendering: {}", e);
+        }
     }
 
     pub fn finalize(&self) {
-        println!("finalize");
-    }
-
-    pub fn plugin_list(&self, kind : String, cnt: i32) {
-        println!("plugin_list - kind: {}, cnt: {}", kind, cnt);
+        // Cleanup — currently a no-op
     }
 }

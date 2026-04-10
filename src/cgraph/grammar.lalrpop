@@ -1,4 +1,5 @@
 use std::str::FromStr;
+use crate::cgraph::ast::*;
 
 grammar;
 
@@ -25,12 +26,6 @@ match {
 }
 
 
-//GRAPH_EOF_TOKEN: char = r'\u{0000}'; // EOF represented as null character
-//LETTER: () = r"[A-Za-z_]|[\u0080-\u00FF]";
-//DIGIT: () = r"[0-9]";
-//NAME: () = <LETTER>(<LETTER> | <DIGIT>)*;
-
-
 NODE: () = "node";
 EDGE: () = "edge";
 GRAPH: () = "graph";
@@ -42,144 +37,175 @@ STRICT: () = "strict";
 // Parser rules
 //
 
-pub Graph: () = {
-    "strict" graph_kind id stmt_block,
-    graph_kind id stmt_block,
-    graph_kind stmt_block,
+pub Graph: AstGraph = {
+    "strict" <k:graph_kind> <name:id?> <stmts:stmt_block> => AstGraph {
+        strict: true,
+        directed: k,
+        id: name,
+        stmts,
+    },
+    <k:graph_kind> <name:id?> <stmts:stmt_block> => AstGraph {
+        strict: false,
+        directed: k,
+        id: name,
+        stmts,
+    },
 };
 
-pub Expr1: () = {
+pub Expr1: AstNodeId = {
     node_id,
 };
 
-pub Expr2: () = {
+pub Expr2: Vec<AstAttr> = {
     a_list,
 };
 
-graph_kind: () = {
-    "graph",
-    "digraph",
+graph_kind: bool = {
+    "graph" => false,
+    "digraph" => true,
 };
 
-stmt_block: () = {
-    "{" stmt_list "}",
+stmt_block: Vec<AstStmt> = {
+    "{" <stmt_list> "}",
 };
 
-stmt_list: () = {
-    stmt semicolon stmt_list,
-    stmt stmt_list,
-    (),
+stmt_list: Vec<AstStmt> = {
+    <s:stmt> semicolon <mut rest:stmt_list> => {
+        rest.insert(0, s);
+        rest
+    },
+    <s:stmt> <mut rest:stmt_list> => {
+        rest.insert(0, s);
+        rest
+    },
+    () => Vec::new(),
 };
 
-stmt: () = {
+stmt: AstStmt = {
     node_stmt,
     edge_stmt,
     attr_stmt,
-    id "=" id,
-    subgraph,
+    <lhs:id> "=" <rhs:id> => AstStmt::Assign { lhs, rhs },
+    <sg:subgraph> => AstStmt::SubGraph(sg),
 };
 
-attr_stmt: () = {
-    "graph" attr_list,
-    "node" attr_list,
-    "edge" attr_list,
+attr_stmt: AstStmt = {
+    "graph" <attrs:attr_list> => AstStmt::Attr { target: AstAttrTarget::Graph, attrs },
+    "node" <attrs:attr_list> => AstStmt::Attr { target: AstAttrTarget::Node, attrs },
+    "edge" <attrs:attr_list> => AstStmt::Attr { target: AstAttrTarget::Edge, attrs },
 };
 
-attr_list: () = {
-    lbracket a_list rbracket attr_list,
-    lbracket a_list rbracket,
+attr_list: Vec<AstAttr> = {
+    lbracket <mut a:a_list> rbracket <mut rest:attr_list> => {
+        a.append(&mut rest);
+        a
+    },
+    lbracket <a:a_list> rbracket => a,
 };
 
-a_list: () = {
-    elem_pair a_list,
-    elem_pair,
+a_list: Vec<AstAttr> = {
+    <e:elem_pair> <mut rest:a_list> => {
+        rest.insert(0, e);
+        rest
+    },
+    <e:elem_pair> => vec![e],
 };
 
-elem_pair: () = {
-    id "=" id semicolon,
-    id "=" id comma,
-    id "=" id,
+elem_pair: AstAttr = {
+    <k:id> "=" <v:id> semicolon => AstAttr { key: k, value: v },
+    <k:id> "=" <v:id> comma => AstAttr { key: k, value: v },
+    <k:id> "=" <v:id> => AstAttr { key: k, value: v },
 };
 
-edge_stmt: () = {
-    node_id edge_rhs,
-    node_id edge_rhs attr_list,
-    subgraph edge_rhs attr_list,
-    subgraph edge_rhs,
+edge_stmt: AstStmt = {
+    <n:node_id> <rhs:edge_rhs> => {
+        let mut endpoints = vec![AstEdgeEndpoint::Node(n)];
+        endpoints.extend(rhs);
+        AstStmt::Edge { endpoints, attrs: Vec::new() }
+    },
+    <n:node_id> <rhs:edge_rhs> <attrs:attr_list> => {
+        let mut endpoints = vec![AstEdgeEndpoint::Node(n)];
+        endpoints.extend(rhs);
+        AstStmt::Edge { endpoints, attrs }
+    },
+    <sg:subgraph> <rhs:edge_rhs> <attrs:attr_list> => {
+        let mut endpoints = vec![AstEdgeEndpoint::SubGraph(sg)];
+        endpoints.extend(rhs);
+        AstStmt::Edge { endpoints, attrs }
+    },
+    <sg:subgraph> <rhs:edge_rhs> => {
+        let mut endpoints = vec![AstEdgeEndpoint::SubGraph(sg)];
+        endpoints.extend(rhs);
+        AstStmt::Edge { endpoints, attrs: Vec::new() }
+    },
 };
 
-edge_rhs: () = {
-    edgeop node_id edge_rhs,
-    edgeop node_id,
-    edgeop subgraph edge_rhs,
-    edgeop subgraph,
+edge_rhs: Vec<AstEdgeEndpoint> = {
+    edgeop <n:node_id> <mut rest:edge_rhs> => {
+        rest.insert(0, AstEdgeEndpoint::Node(n));
+        rest
+    },
+    edgeop <n:node_id> => vec![AstEdgeEndpoint::Node(n)],
+    edgeop <sg:subgraph> <mut rest:edge_rhs> => {
+        rest.insert(0, AstEdgeEndpoint::SubGraph(sg));
+        rest
+    },
+    edgeop <sg:subgraph> => vec![AstEdgeEndpoint::SubGraph(sg)],
 };
 
-node_stmt: () = {
-    node_id attr_list,
-    node_id,
+node_stmt: AstStmt = {
+    <nid:node_id> <attrs:attr_list> => AstStmt::Node { id: nid, attrs },
+    <nid:node_id> => AstStmt::Node { id: nid, attrs: Vec::new() },
 };
 
-node_id: () = {
-    id port,
-    id,
+node_id: AstNodeId = {
+    <name:id> <p:port> => AstNodeId { name, port: Some(p) },
+    <name:id> => AstNodeId { name, port: None },
 };
 
-port: () = {
-//    colon id colon compass_pt,
-    colon id,
-//    colon compass_pt,
+port: String = {
+    colon <name:id> => name,
 };
 
-subgraph: () = {
-    "subgraph" id "{" stmt_list "}",
-    "subgraph" "{" stmt_list "}",
-    "{" stmt_list "}"
+subgraph: AstSubGraph = {
+    "subgraph" <name:id> "{" <stmts:stmt_list> "}" => AstSubGraph { id: Some(name), stmts },
+    "subgraph" "{" <stmts:stmt_list> "}" => AstSubGraph { id: None, stmts },
+    "{" <stmts:stmt_list> "}" => AstSubGraph { id: None, stmts },
 };
 
 /*
 per grammar def:
-mpas_pt values are not keywords, the strings can be used elsewhere as ordinary identifiers.
+compass_pt values are not keywords, the strings can be used elsewhere as ordinary identifiers.
 The parser will accept any identifier as a compass_pt -- to be checked later.
 */
-compass_pt: () = {
+compass_pt: String = {
     id_ident,
-}
-/*
-compass_pt: () = {
-    "n",
-    "ne",
-    "e",
-    "se",
-    "s",
-    "sw",
-    "w",
-    "nw",
-    "c",
-    "_"
 };
-*/
-id: () = {
+
+id: String = {
     id_ident,
     id_num,
     id_str,
     id_html,
 };
 
-id_ident: () = {
-    r"[a-zA-Z_][a-zA-Z0-9_]*",
+id_ident: String = {
+    <s:r"[a-zA-Z_][a-zA-Z0-9_]*"> => s.to_string(),
 };
 
-id_num: () = {
-    r"[-]*[0-9]+",
+id_num: String = {
+    <s:r"[-]?[0-9]+(\.[0-9]+)?"> => s.to_string(),
 };
 
-id_str: () = {
-    r#""[^"]*""#,
+id_str: String = {
+    <s:r#""[^"]*""#> => {
+        // Strip surrounding quotes
+        s[1..s.len()-1].to_string()
+    },
 };
 
-id_html: () = {
-    r#"<[^>]*>"#,
+id_html: String = {
+    <s:r#"<[^>]*>"#> => s.to_string(),
 };
 
 colon: () = {
@@ -214,5 +240,3 @@ pub T_graph: () = GRAPH;
 pub T_digraph: () = DIGRAPH;
 pub T_subgraph: () = SUBGRAPH;
 pub T_strict: () = STRICT;
-
-

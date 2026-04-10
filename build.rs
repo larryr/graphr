@@ -1,7 +1,7 @@
 extern crate lalrpop;
 
 fn main() {
-    println!("cargo:rerun-if-changed=src/cgraph/node.lalrpop");
+    println!("cargo:rerun-if-changed=src/cgraph/grammar.lalrpop");
     let result = lalrpop::Configuration::new()
         .use_cargo_dir_conventions()
         .always_use_colors()
